@@ -17,20 +17,20 @@ interface ChallengeContextData {
   setPizza3: Dispatch<React.SetStateAction<ObjectProvider>>
   pizza4: ObjectProvider
   setPizza4: Dispatch<React.SetStateAction<ObjectProvider>>
-  cart: any
-  setCart: any
-  size: any
+  cart: number
+  setCart: Dispatch<React.SetStateAction<number>>
+  size: number[]
   setSize: any
-  adBacon: any
-  setAdBacon: any
-  adCalabreza: any
-  setAdCalabreza: any
-  adMussarela: any
-  setAdMussarela: any
-  adPalmito: any
-  setAdPalmito: any
-  formData: any
-  setFormData: any
+  adBacon: number
+  setAdBacon: Dispatch<React.SetStateAction<number>>
+  adCalabreza: number
+  setAdCalabreza: Dispatch<React.SetStateAction<number>>
+  adMussarela: number
+  setAdMussarela: Dispatch<React.SetStateAction<number>>
+  adPalmito: number
+  setAdPalmito: Dispatch<React.SetStateAction<number>>
+  formData: object
+  setFormData: object
 }
 
 interface DataStorageProps {
@@ -41,11 +41,11 @@ export const DataContext = createContext({} as ChallengeContextData)
 
 export const DataStorage = ({ children }: DataStorageProps) => {
   const objectPizza = {
-    checked: null,
-    name: null,
-    size: null,
-    recommended: null,
-    point: null
+    checked: false,
+    name: '',
+    size: '',
+    recommended: '',
+    point: ''
   }
 
   const [pizza1, setPizza1] = useState(objectPizza)
@@ -53,7 +53,7 @@ export const DataStorage = ({ children }: DataStorageProps) => {
   const [pizza3, setPizza3] = useState(objectPizza)
   const [pizza4, setPizza4] = useState(objectPizza)
 
-  const [cart, setCart] = useState(false)
+  const [cart, setCart] = useState(0)
   const [size, setSize] = useState([])
 
   const [adBacon, setAdBacon] = useState(0)
@@ -61,7 +61,7 @@ export const DataStorage = ({ children }: DataStorageProps) => {
   const [adMussarela, setAdMussarela] = useState(0)
   const [adPalmito, setAdPalmito] = useState(0)
 
-  const [formData, setFormData] = useState('')
+  const [formData, setFormData] = useState({})
 
   return (
     <DataContext.Provider
