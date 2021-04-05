@@ -20,7 +20,7 @@ const Etapa3 = ({
 }
 
 export const getStaticProps: GetStaticProps = async context => {
-  const res = await axios.get('https://pizzaria-toffanetto-everton-dgn.vercel.app/api/additionals')
+  const res = await axios.get('https://querocriarsite.com/api/additionals')
   const dataApi = res.data[0]
 
   return {
