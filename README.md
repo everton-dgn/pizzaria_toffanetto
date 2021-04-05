@@ -21,7 +21,7 @@
 
 # :camera_flash: Screenshots do Projeto
 
-![Imagem do projeto](https://raw.githubusercontent.com/everton-dgn/pizzaria_toffanetto/master/screenshots/light.jpg)
+![Imagem do projeto](https://raw.githubusercontent.com/everton-dgn/pizzaria_toffanetto/master/screenshots/desktop.jpg)
 
 ![Imagem do projeto](https://raw.githubusercontent.com/everton-dgn/pizzaria_toffanetto/master/screenshots/mobi.png)
 
@@ -69,7 +69,7 @@ Este projeto tem o objetivo de agilizar o processo do pedido de pizzas, proporci
 
 ## Acessando direto pelo site:
 
-- Você pode clicar nesse [link](https://google.com) e acessar a aplicação que está hospedada na plataforma Vercel.
+- Você pode clicar nesse [link](https://pizzaria-toffanetto.vercel.app/) e acessar a aplicação que está hospedada na plataforma Vercel.
 
 <br />
 
