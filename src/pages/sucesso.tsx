@@ -29,12 +29,6 @@ const Sucesso = () => {
     pizza4.checked === JSON.parse(pizza4.recommended) && pizza4.checked === true
   ]
 
-  console.log('resultado1', pizza1.recommended)
-  console.log('resultado2', pizza2.recommended)
-  console.log('resultado3', pizza3.recommended)
-  console.log('resultado4', pizza4.recommended)
-  console.log(verifyRecommendation)
-
   const sendZap = async () => {
     await Router.push(
       `https://api.whatsapp.com/send?phone=55${
