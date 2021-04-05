@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Whatsapp } from '@styled-icons/bootstrap'
+import { s } from 'theme'
 
 export const Zap = styled(Whatsapp)`
   //color: #374151;
@@ -40,12 +41,10 @@ export const Card = styled.div`
 
 export const CardContent = styled.div`
   width: 100%;
-  display: grid;
-  grid-template-columns:
-    calc(25% - 6rem / 4) calc(25% - 6rem / 4)
-    calc(25% - 6rem / 4) calc(25% - 6rem / 4);
-  grid-template-rows: auto;
-  grid-gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 `
 
 export const ContainerSuccess = styled.section`
@@ -57,10 +56,19 @@ export const ContainerSuccess = styled.section`
 export const ContainerList = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
   border: 0.2rem solid #34d399;
   border-radius: 1rem;
   padding: 1rem;
+  width: 100%;
+  margin-bottom: 2rem;
+
+  ${s.break(37)} {
+    width: calc(50% - 1.5rem);
+  }
+
+  ${s.break(65)} {
+    width: calc(25% - 1.5rem);
+  }
 `
 
 export const BtnSend = styled.button`
