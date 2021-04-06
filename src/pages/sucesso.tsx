@@ -21,13 +21,11 @@ const Sucesso = () => {
   } = useContext(DataContext)
 
   const verifyRecommendation = [
-    pizza1.checked === pizza1.recommended && pizza1.checked,
-    pizza2.checked === pizza2.recommended && pizza2.checked,
-    pizza3.checked === pizza3.recommended && pizza3.checked,
-    pizza4.checked === pizza4.recommended && pizza4.checked
+    pizza1.checked && pizza1.recommended,
+    pizza2.checked && pizza2.recommended,
+    pizza3.checked && pizza3.recommended,
+    pizza4.checked && pizza4.recommended
   ]
-
-  const convertCart = useCart(cart)
 
   const sendZap = async () => {
     await Router.push(
@@ -58,12 +56,12 @@ const Sucesso = () => {
       }${
         adPalmito !== 0 ? '• ' + adPalmito + ' x Palmito' + '%0a' : ''
       }%0a*Recomendação%20do%20dia:*%0a${
-        pizza1.checked === pizza1.recommended
-          ? 'Não selecionada! 😐'
-          : '• Sim! 😀. Você selecionou a recomendação do dia e acumulou ➕' +
+        verifyRecommendation.includes(true)
+          ? '• Sim! 😀. Você selecionou a recomendação do dia e acumulou ➕' +
             `${pizza1.point}` +
             ' pontos para a próxima compra!'
-      }%0a%0a*TOTAL:*%0a${convertCart}%0a`
+          : 'Não selecionada! 😐'
+      }%0a%0a*TOTAL:*%0a${useCart(cart)}%0a`
     )
   }
 
