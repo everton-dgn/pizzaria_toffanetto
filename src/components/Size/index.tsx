@@ -2,6 +2,7 @@ import { ChangeEvent, useContext, useState } from 'react'
 import * as S from 'components/Size/styles'
 import { DataContext } from 'hooks/UseContext'
 import { BtnNext } from 'components/BtnNext'
+import { useCart } from 'hooks/UseCart'
 
 interface SizeProps {
   data: [
@@ -11,11 +12,11 @@ interface SizeProps {
       ingredients: string
       name: string
       points: string
-      recommendation: string
+      recommendation: boolean
       sizeAndPrice: [
         {
           size: string
-          price: string
+          price: number
           slices: number
         }
       ]
@@ -27,8 +28,8 @@ export const Size = ({ data }: SizeProps) => {
   const { setSize, setCart } = useContext(DataContext)
   const [selectedValue, setSelectedValue] = useState('')
 
-  const addCart = (price: string, size: string) => {
-    setSize([price, size])
+  const addCart = (price: number, size: string) => {
+    setSize({price: price, size: size})
     setCart(price)
   }
 
@@ -59,7 +60,7 @@ export const Size = ({ data }: SizeProps) => {
                   <S.ContentInfo>
                     <S.SubTitle>({el.slices} Fatias)</S.SubTitle>
                   </S.ContentInfo>
-                  <S.Title>R$ {el.price}</S.Title>
+                  <S.Title>{useCart(el.price)}</S.Title>
                 </S.ContainerInfo>
               </S.RadioContent>
             </S.ContainerRadio>

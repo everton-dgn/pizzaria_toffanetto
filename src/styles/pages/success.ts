@@ -92,3 +92,7 @@ export const Title = styled.h1`
   font-size: 1.8rem;
   margin-bottom: 0.3rem;
 `
+
+export const Email = styled.p`
+  word-break: break-all;
+`

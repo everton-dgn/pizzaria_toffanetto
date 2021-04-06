@@ -4,6 +4,7 @@ import * as S from 'styles/pages/success'
 import Router from 'next/router'
 import { DataContext } from 'hooks/UseContext'
 import { c } from 'theme'
+import { useCart } from 'hooks/UseCart'
 
 const Sucesso = () => {
   const {
@@ -25,6 +26,8 @@ const Sucesso = () => {
     pizza3.checked === pizza3.recommended && pizza3.checked,
     pizza4.checked === pizza4.recommended && pizza4.checked
   ]
+
+  const convertCart = useCart(cart)
 
   const sendZap = async () => {
     await Router.push(
@@ -60,7 +63,7 @@ const Sucesso = () => {
           : '• Sim! 😀. Você selecionou a recomendação do dia e acumulou ➕' +
             `${pizza1.point}` +
             ' pontos para a próxima compra!'
-      }%0a%0a*TOTAL:*%0aR$%20${cart}%0a`
+      }%0a%0a*TOTAL:*%0a${convertCart}%0a`
     )
   }
 
@@ -102,7 +105,7 @@ const Sucesso = () => {
                 <p>{formData.name}</p>
                 <br />
                 <S.Title>E-mail:</S.Title>
-                <p>{formData.email}</p>
+                <S.Email>{formData.email}</S.Email>
                 <br />
                 <S.Title>Celular:</S.Title>
                 <p>{formData.phone}</p>

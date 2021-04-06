@@ -11,7 +11,6 @@ interface CardSquareProps {
       name: string
       points: string
       recommendation: string
-      sizeAndPrice: []
     }
   ]
 }

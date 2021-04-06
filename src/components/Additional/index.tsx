@@ -1,13 +1,14 @@
 import React, { useContext, useEffect } from 'react'
 import * as S from 'components/Additional/styles'
 import { DataContext } from 'hooks/UseContext'
+import { useCart } from 'hooks/UseCart'
 
 interface AdditionalProps {
   data: [
     {
       id: string
       name: string
-      price: string
+      price: number
       img: string
     }
   ]
@@ -48,7 +49,7 @@ export const Additional = ({ data }: AdditionalProps) => {
 
   useEffect(() => {
     const total = adBacon + adCalabreza + adMussarela + adPalmito
-    setCart((+size[0] * 100 + 4.99 * 100 * total) / 100)
+    setCart((size.price * 100 + 4.99 * 100 * total) / 100)
   }, [adBacon, adCalabreza, adMussarela, adPalmito, setCart, size])
 
   const changeAddQtd = (param: string) => {
@@ -92,7 +93,7 @@ export const Additional = ({ data }: AdditionalProps) => {
                   <S.ContentInfo>
                     <S.SubTitle>(200g / Porção)</S.SubTitle>
                   </S.ContentInfo>
-                  <S.Title>R$ {el.price}</S.Title>
+                  <S.Title>{useCart(el.price)}</S.Title>
                 </S.ContainerInfo>
                 <S.AddItem>
                   <S.BtnCount onClick={() => changeRemoveQtd(el.id)}>

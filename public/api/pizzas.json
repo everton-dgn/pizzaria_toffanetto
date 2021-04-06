@@ -7,22 +7,22 @@
         "sizeAndPrice": [
           {
             "size": "Pequena",
-            "price": "19.99",
+            "price": 19.99,
             "slices": 4
           },
           {
             "size": "Média",
-            "price": "29.99",
+            "price": 29.99,
             "slices": 6
           },
           {
             "size": "Grande",
-            "price": "39.99",
+            "price": 39.99,
             "slices": 8
           },
           {
             "size": "Família",
-            "price": "49.99",
+            "price": 49.99,
             "slices": 12
           }
         ],
@@ -37,22 +37,22 @@
         "sizeAndPrice": [
           {
             "size": "Pequena",
-            "price": "19.99",
+            "price": 19.99,
             "slices": 4
           },
           {
             "size": "Média",
-            "price": "29.99",
+            "price": 29.99,
             "slices": 6
           },
           {
             "size": "Grande",
-            "price": "39.99",
+            "price": 39.99,
             "slices": 8
           },
           {
             "size": "Família",
-            "price": "49.99",
+            "price": 49.99,
             "slices": 12
           }
         ],
@@ -67,22 +67,22 @@
         "sizeAndPrice": [
           {
             "size": "Pequena",
-            "price": "19.99",
+            "price": 19.99,
             "slices": 4
           },
           {
             "size": "Média",
-            "price": "29.99",
+            "price": 29.99,
             "slices": 6
           },
           {
             "size": "Grande",
-            "price": "39.99",
+            "price": 39.99,
             "slices": 8
           },
           {
             "size": "Família",
-            "price": "49.99",
+            "price": 49.99,
             "slices": 12
           }
         ],
@@ -97,22 +97,22 @@
         "sizeAndPrice": [
           {
             "size": "Pequena",
-            "price": "19.99",
+            "price": 19.99,
             "slices": 4
           },
           {
             "size": "Média",
-            "price": "29.99",
+            "price": 29.99,
             "slices": 6
           },
           {
             "size": "Grande",
-            "price": "39.99",
+            "price": 39.99,
             "slices": 8
           },
           {
             "size": "Família",
-            "price": "49.99",
+            "price": 49.99,
             "slices": 12
           }
         ],

@@ -68,7 +68,7 @@ export const ContainerInfo = styled.div<{ bonus: string }>`
   height: 100%;
 
   ${({ bonus }) =>
-    bonus === 'true' &&
+    bonus &&
     css`
       border: 0.2rem solid ${s.primary};
       border-radius: 0.8rem;
@@ -79,8 +79,8 @@ export const ContainerInfo = styled.div<{ bonus: string }>`
     margin-top: 0.5rem;
     display: none;
     font-size: 1.4rem;
-    ${props =>
-      props.bonus === 'true' &&
+    ${({ bonus }) =>
+      bonus &&
       css`
         display: flex;
         color: ${s.primary};
@@ -135,7 +135,7 @@ export const Text = styled.p`
 export const ButtonCard = styled.button`
   background-color: ${s.secondary};
   width: 100%;
-  padding: 0.9rem 1.2rem;
+  padding: 1.3rem 1.2rem;
   font-weight: bold;
   border-radius: 1rem;
   font-size: 1.6rem;

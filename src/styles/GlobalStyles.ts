@@ -16,20 +16,20 @@ export default createGlobalStyle`
   html {
     font-size: 62.5%;
 
-    ${s.breakMax(120)} {
-      font-size: 59.5%;
-    }
-
-    ${s.breakMax(99.2)} {
-      font-size: 56.5%;
-    }
+   /* ${s.breakMax(57.6)} {
+      font-size: 50.5%;
+    }*/
 
     ${s.breakMax(76.8)} {
       font-size: 53.5%;
     }
+    
+    ${s.breakMax(99.2)} {
+      font-size: 56.5%;
+    }
 
-    ${s.breakMax(57.6)} {
-      font-size: 50.5%;
+    ${s.breakMax(120)} {
+      font-size: 59.5%;
     }
   }
 

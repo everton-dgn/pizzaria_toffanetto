@@ -12,7 +12,7 @@ interface FlavorProps {
       name: string
       points: string
       recommendation: boolean
-      sizeAndPrice: [{ size: string; price: string; slices: number }]
+      sizeAndPrice: [{ size: number; price: number; slices: number }]
     }
   ]
 }
@@ -23,7 +23,7 @@ interface RecommendedCheckParams {
   id: string
   points: string
   name: string
-  size: string
+  size: number
 }
 
 export const Flavor = ({ data }: FlavorProps) => {
