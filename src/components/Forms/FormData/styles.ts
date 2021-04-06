@@ -75,13 +75,18 @@ export const BtnSend = styled.button`
   font-size: 1.8rem;
   text-transform: uppercase;
   background-color: #34d399;
-  width: fit-content;
-  padding: 1rem 7rem;
+  width: 100%;
+  max-width: 37rem;
+  padding: 1.5rem 7rem;
   margin: 1.6rem auto 0 auto;
   font-weight: bold;
   border-radius: 1rem;
   transition: background-color 0.2s linear;
 
+  ${s.break(90)} {
+    max-width: calc(30% + 2rem);
+  }
+  
   &:hover {
     background-color: #38e3a5;
   }

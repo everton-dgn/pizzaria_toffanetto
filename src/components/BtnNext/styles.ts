@@ -12,6 +12,11 @@ export const ContainerBtn = styled.div<{ center?: string }>`
     css`
       justify-content: flex-end;
     `}
+
+  a {
+    width: 100%;
+    max-width: 30rem;
+  }
 `
 
 export const BtnNext = styled.button`
@@ -19,8 +24,9 @@ export const BtnNext = styled.button`
   font-weight: bold;
   text-transform: uppercase;
   background-color: #34d399;
-  width: fit-content;
-  padding: 1rem 5rem;
+  width: 100%;
+  max-width: 30rem;
+  padding: 1.4rem 5rem;
   border-radius: 0.8rem;
   transition: background-color 0.2s linear;
 
