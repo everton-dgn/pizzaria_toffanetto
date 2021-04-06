@@ -28,7 +28,7 @@ const Home = ({ dataApi }: InferGetStaticPropsType<typeof getStaticProps>) => {
 }
 
 export const getStaticProps: GetStaticProps = async context => {
-  const res = await axios.get('https://pizzaria-toffanetto.vercel.app/api/pizzas.json')
+  const res = await axios.get('https://querocriarsite.com/api/pizzas.json')
 
   const dataApi = res.data[0]
 
