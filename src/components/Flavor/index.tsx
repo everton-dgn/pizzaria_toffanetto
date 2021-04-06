@@ -11,7 +11,7 @@ interface FlavorProps {
       ingredients: string
       name: string
       points: string
-      recommendation: string
+      recommendation: boolean
       sizeAndPrice: [{ size: string; price: string; slices: string }]
     }
   ]
@@ -19,7 +19,7 @@ interface FlavorProps {
 
 interface RecommendedCheckParams {
   e: any
-  recommendation: string
+  recommendation: boolean
   id: string
   points: string
   name: string

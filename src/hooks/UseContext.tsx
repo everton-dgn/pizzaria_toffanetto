@@ -1,11 +1,25 @@
 import React, { useState, createContext, ReactNode, Dispatch } from 'react'
 
 interface ObjectProvider {
-  checked: any
+  checked: boolean
   name: any
   size: any
   recommended: any
   point: any
+}
+
+interface FormDataProvider {
+  name?: string
+  phone?: string
+  email?: string
+  address?: {
+    street: string
+    number: string
+    neighborhood: string
+    city: string
+    state: string
+    zipCode: string
+  }
 }
 
 interface ChallengeContextData {
@@ -17,8 +31,8 @@ interface ChallengeContextData {
   setPizza3: Dispatch<React.SetStateAction<ObjectProvider>>
   pizza4: ObjectProvider
   setPizza4: Dispatch<React.SetStateAction<ObjectProvider>>
-  cart: number
-  setCart: Dispatch<React.SetStateAction<number>>
+  cart: string
+  setCart: Dispatch<React.SetStateAction<string>>
   size: number[]
   setSize: any
   adBacon: number
@@ -29,8 +43,8 @@ interface ChallengeContextData {
   setAdMussarela: Dispatch<React.SetStateAction<number>>
   adPalmito: number
   setAdPalmito: Dispatch<React.SetStateAction<number>>
-  formData: object
-  setFormData: object
+  formData: FormDataProvider
+  setFormData: Dispatch<React.SetStateAction<FormDataProvider>>
 }
 
 interface DataStorageProps {
@@ -53,7 +67,7 @@ export const DataStorage = ({ children }: DataStorageProps) => {
   const [pizza3, setPizza3] = useState(objectPizza)
   const [pizza4, setPizza4] = useState(objectPizza)
 
-  const [cart, setCart] = useState(0)
+  const [cart, setCart] = useState('')
   const [size, setSize] = useState([])
 
   const [adBacon, setAdBacon] = useState(0)

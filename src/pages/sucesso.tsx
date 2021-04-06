@@ -20,13 +20,10 @@ const Sucesso = () => {
   } = useContext(DataContext)
 
   const verifyRecommendation = [
-    pizza1.checked === JSON.parse(pizza1.recommended) &&
-      pizza1.checked === true,
-    pizza2.checked === JSON.parse(pizza2.recommended) &&
-      pizza2.checked === true,
-    pizza3.checked === JSON.parse(pizza3.recommended) &&
-      pizza3.checked === true,
-    pizza4.checked === JSON.parse(pizza4.recommended) && pizza4.checked === true
+    pizza1.checked === pizza1.recommended && pizza1.checked,
+    pizza2.checked === pizza2.recommended && pizza2.checked,
+    pizza3.checked === pizza3.recommended && pizza3.checked,
+    pizza4.checked === pizza4.recommended && pizza4.checked
   ]
 
   const sendZap = async () => {
@@ -37,19 +34,21 @@ const Sucesso = () => {
         formData.name
       }%0a%0a*E-mail:*%0a${formData.email}%0a%0a*Celular:*%0a${
         formData.phone
-      }%0a%0a*Endereço:*%0a${formData.address.street},%20${
-        formData.address.number
-      }%20-%20${formData.address.neighborhood}.%0a${formData.address.city},%20${
-        formData.address.state
-      }.%20${formData.address.zipCode}.%0a%0a*Sabor(es):*%0a${
-        pizza1.checked ? `• ${pizza1.name}%0a` : ''
-      }${pizza2.checked ? `• ${pizza2.name}%0a` : ''}${
-        pizza3.checked ? `• ${pizza3.name}%0a` : ''
-      }${pizza4.checked ? `• ${pizza4.name}%0a` : ''}%0a*Tamanho:*%0a${
-        pizza1.checked ? '• ' + pizza1.size + '%0a' : ''
-      }${pizza2.checked ? '• ' + pizza2.size + '%0a' : ''}${
-        pizza3.checked ? '• ' + pizza3.size + '%0a' : ''
-      }${pizza4.checked ? '• ' + pizza4.size + '%0a' : ''}%0a*Adiconais:*%0a${
+      }%0a%0a*Endereço:*%0a${formData.address?.street},%20${
+        formData.address?.number
+      }%20-%20${formData.address?.neighborhood}.%0a${
+        formData.address?.city
+      },%20${formData.address?.state}.%20${
+        formData.address?.zipCode
+      }.%0a%0a*Sabor(es):*%0a${pizza1.checked ? `• ${pizza1.name}%0a` : ''}${
+        pizza2.checked ? `• ${pizza2.name}%0a` : ''
+      }${pizza3.checked ? `• ${pizza3.name}%0a` : ''}${
+        pizza4.checked ? `• ${pizza4.name}%0a` : ''
+      }%0a*Tamanho:*%0a${pizza1.checked ? '• ' + pizza1.size + '%0a' : ''}${
+        pizza2.checked ? '• ' + pizza2.size + '%0a' : ''
+      }${pizza3.checked ? '• ' + pizza3.size + '%0a' : ''}${
+        pizza4.checked ? '• ' + pizza4.size + '%0a' : ''
+      }%0a*Adiconais:*%0a${
         adBacon !== 0 ? '• ' + adBacon + ' x Bacon' + '%0a' : ''
       }${adCalabreza !== 0 ? '• ' + adCalabreza + ' x Calabreza' + '%0a' : ''}${
         adMussarela !== 0 ? '• ' + adMussarela + ' x Mussarela' + '%0a' : ''
@@ -78,17 +77,17 @@ const Sucesso = () => {
               <S.ContainerList>
                 <S.Title>Sabor(es):</S.Title>
                 <ul>
-                  <li>{pizza1.checked === true && '• ' + pizza1.name}</li>
-                  <li>{pizza2.checked === true && '• ' + pizza2.name}</li>
-                  <li>{pizza3.checked === true && '• ' + pizza3.name}</li>
-                  <li>{pizza4.checked === true && '• ' + pizza4.name}</li>
+                  <li>{pizza1.checked && '• ' + pizza1.name}</li>
+                  <li>{pizza2.checked && '• ' + pizza2.name}</li>
+                  <li>{pizza3.checked && '• ' + pizza3.name}</li>
+                  <li>{pizza4.checked && '• ' + pizza4.name}</li>
                 </ul>
                 <br />
                 <S.Title>Tamanho:</S.Title>
-                <li>{pizza1.checked === true && '• ' + pizza1.size}</li>
-                <li>{pizza2.checked === true && '• ' + pizza2.size}</li>
-                <li>{pizza3.checked === true && '• ' + pizza3.size}</li>
-                <li>{pizza4.checked === true && '• ' + pizza4.size}</li>
+                <li>{pizza1.checked && '• ' + pizza1.size}</li>
+                <li>{pizza2.checked && '• ' + pizza2.size}</li>
+                <li>{pizza3.checked && '• ' + pizza3.size}</li>
+                <li>{pizza4.checked && '• ' + pizza4.size}</li>
                 <br />
                 <S.Title>Adiconais:</S.Title>
                 <ul>

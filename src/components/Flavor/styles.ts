@@ -64,7 +64,7 @@ export const ContainerImg = styled.div`
   }
 `
 
-export const ContainerInfo = styled.div<{ bonus: string }>`
+export const ContainerInfo = styled.div<{ bonus: boolean }>`
   display: flex;
   flex-direction: column;
   margin-left: 1.2rem;
@@ -72,7 +72,7 @@ export const ContainerInfo = styled.div<{ bonus: string }>`
   justify-content: start;
 
   ${({ bonus }) =>
-    bonus === 'true' &&
+    bonus &&
     css`
       border: 0.2rem solid #7f1d1d;
       border-radius: 0.8rem;
@@ -85,7 +85,7 @@ export const ContainerInfo = styled.div<{ bonus: string }>`
     font-weight: 500;
     font-size: 1rem;
     ${({ bonus }) =>
-      bonus === 'true' &&
+      bonus &&
       css`
         display: flex;
       `};
