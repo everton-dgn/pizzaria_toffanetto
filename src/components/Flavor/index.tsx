@@ -12,7 +12,7 @@ interface FlavorProps {
       name: string
       points: string
       recommendation: boolean
-      sizeAndPrice: [{ size: string; price: string; slices: string }]
+      sizeAndPrice: [{ size: string; price: string; slices: number }]
     }
   ]
 }
@@ -63,7 +63,7 @@ export const Flavor = ({ data }: FlavorProps) => {
     switch (id) {
       case 'pizza1':
         setPizza1({
-          checked: e.target.checked,
+          checked: e.checked,
           recommended: recommendation,
           point: points,
           name: name,
@@ -72,7 +72,7 @@ export const Flavor = ({ data }: FlavorProps) => {
         break
       case 'pizza2':
         setPizza2({
-          checked: e.target.checked,
+          checked: e.checked,
           recommended: recommendation,
           point: points,
           name: name,
@@ -81,7 +81,7 @@ export const Flavor = ({ data }: FlavorProps) => {
         break
       case 'pizza3':
         setPizza3({
-          checked: e.target.checked,
+          checked: e.checked,
           recommended: recommendation,
           point: points,
           name: name,
@@ -90,7 +90,7 @@ export const Flavor = ({ data }: FlavorProps) => {
         break
       case 'pizza4':
         setPizza4({
-          checked: e.target.checked,
+          checked: e.checked,
           recommended: recommendation,
           point: points,
           name: name,
@@ -112,7 +112,7 @@ export const Flavor = ({ data }: FlavorProps) => {
                 type="checkbox"
                 onClick={e =>
                   recommendedCheck({
-                    e: e,
+                    e: e.target,
                     recommendation: el.recommendation,
                     id: el.id,
                     points: el.points,

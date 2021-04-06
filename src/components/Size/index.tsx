@@ -16,7 +16,7 @@ interface SizeProps {
         {
           size: string
           price: string
-          slices: string
+          slices: number
         }
       ]
     }

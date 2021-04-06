@@ -31,8 +31,8 @@ interface ChallengeContextData {
   setPizza3: Dispatch<React.SetStateAction<ObjectProvider>>
   pizza4: ObjectProvider
   setPizza4: Dispatch<React.SetStateAction<ObjectProvider>>
-  cart: string
-  setCart: Dispatch<React.SetStateAction<string>>
+  cart: any
+  setCart: Dispatch<React.SetStateAction<any>>
   size: number[]
   setSize: any
   adBacon: number
