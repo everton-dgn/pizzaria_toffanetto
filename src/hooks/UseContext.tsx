@@ -2,10 +2,10 @@ import React, { useState, createContext, ReactNode, Dispatch } from 'react'
 
 interface ObjectProvider {
   checked: boolean
-  name: any
-  size: any
-  recommended: any
-  point: any
+  name: string
+  size: string
+  recommended: string
+  point: string
 }
 
 interface FormDataProvider {
