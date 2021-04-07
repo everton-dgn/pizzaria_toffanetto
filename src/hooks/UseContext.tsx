@@ -17,7 +17,7 @@ interface FormDataProvider {
     number: string
     neighborhood: string
     city: string
-    state: string
+    state: any
     zipCode: string
   }
 }
@@ -68,7 +68,7 @@ export const DataStorage = ({ children }: DataStorageProps) => {
   const [pizza4, setPizza4] = useState(objectPizza)
 
   const [cart, setCart] = useState(0)
-  const [size, setSize] = useState({ price: 0, size: ''})
+  const [size, setSize] = useState({ price: 0, size: '' })
 
   const [adBacon, setAdBacon] = useState(0)
   const [adCalabreza, setAdCalabreza] = useState(0)

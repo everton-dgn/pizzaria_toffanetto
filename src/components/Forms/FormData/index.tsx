@@ -1,6 +1,6 @@
 import { useRef, useContext } from 'react'
 import * as S from 'components/Forms/FormData/styles'
-import { Input } from 'components'
+import { Input, Select } from 'components'
 import { FormHandles, Scope, SubmitHandler } from '@unform/core'
 import * as Yup from 'yup'
 import Router from 'next/router'
@@ -10,15 +10,17 @@ import { Toast, NotifyError, NotifySuccess } from 'components/Toast'
 import { toast } from 'react-toastify'
 
 interface FormDataUnform {
-  name: string
-  email: string
-  phone: string
-  zipCode: string
-  street: string
-  number: string
-  neighborhood: string
-  city: string
-  state: string
+  name?: string
+  phone?: string
+  email?: string
+  address?: {
+    street: string
+    number: string
+    neighborhood: string
+    city: string
+    state: any
+    zipCode: string
+  }
 }
 
 export const FormData = () => {
@@ -137,11 +139,18 @@ export const FormData = () => {
                   placeholder="Cidade"
                 />
 
-                <Input
+                {/* <Input
                   name="state"
                   id="state"
                   label="Estado"
                   type="text"
+                  placeholder="Estado"
+                /> */}
+
+                <Select
+                  name="state"
+                  id="state"
+                  label="Estado"
                   placeholder="Estado"
                 />
               </Scope>
