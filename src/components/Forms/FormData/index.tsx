@@ -95,10 +95,10 @@ export const FormData = () => {
               <Input
                 name="phone"
                 id="phone"
-                label="DDD + Celular"
+                label="(DDD) + Celular"
                 type="text"
-                placeholder="DDD + Celular"
-                mask="(99) 9999-9999"
+                placeholder="(DDD) + Celular"
+                mask="(99) 99999-9999"
               />
 
               <Scope path="address">
