@@ -115,13 +115,13 @@ export const WrapperInput = styled.div<{ error: string | undefined }>`
         error !== undefined ? s.errorColor : s.borderSecondary}!important;
   }
 
-  .focusSelect + #label {
+  .elevationLabel + #label {
     font-size: 1.15rem;
     color: ${({ error }) => (error !== undefined ? s.errorColor : s.textLabel)};
-    margin-top: -1.8rem;
-    margin-left: 0;
     cursor: default;
     z-index: 2;
+    margin-left: 0;
+    margin-top: -1.8rem;
   }
 `
 

@@ -59,12 +59,28 @@ export const Select = ({ name, id, placeholder, ...rest }: Props) => {
     if (error !== undefined) clearError()
   }
 
-  const changeFocus = (e: any) => {
-    e.target.parentNode.parentNode.parentNode.parentNode.parentNode.classList.toggle(
+  const changeFocusAdd = (e: any) => {
+    e.target.parentNode.parentNode.parentNode.parentNode.parentNode.classList.add(
       'focusSelect'
     )
+
+    e.target.parentNode.parentNode.parentNode.parentNode.parentNode.classList.add(
+      'elevationLabel'
+    )
   }
-  console.log(renderAndSaveSelected)
+
+  const changeFocusRemove = (e: any) => {
+    e.target.parentNode.parentNode.parentNode.parentNode.parentNode.classList.remove(
+      'focusSelect'
+    )
+
+    // @ts-ignore
+    if (selectRef.current.state.value === null) {
+      e.target.parentNode.parentNode.parentNode.parentNode.parentNode.classList.remove(
+        'elevationLabel'
+      )
+    }
+  }
 
   return (
     <>
@@ -82,8 +98,8 @@ export const Select = ({ name, id, placeholder, ...rest }: Props) => {
               isClearable
               onInputChange={(value: any) => setRenderAndSaveSelected(value)}
               onChange={clearField}
-              onFocus={changeFocus}
-              onBlur={changeFocus}
+              onFocus={changeFocusAdd}
+              onBlur={changeFocusRemove}
             />
           </NoSSR>
 
