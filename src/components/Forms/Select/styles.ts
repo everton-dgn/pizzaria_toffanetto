@@ -108,6 +108,21 @@ export const WrapperInput = styled.div<{ error: string | undefined }>`
         ${({ error }) => (error !== undefined ? s.errorColor : s.borderlight)};
     }
   }
+
+  .focusSelect > div:nth-child(2) {
+    border: 0.15rem solid
+      ${({ error }) =>
+        error !== undefined ? s.errorColor : s.borderSecondary}!important;
+  }
+
+  .focusSelect + #label {
+    font-size: 1.15rem;
+    color: ${({ error }) => (error !== undefined ? s.errorColor : s.textLabel)};
+    margin-top: -1.8rem;
+    margin-left: 0;
+    cursor: default;
+    z-index: 2;
+  }
 `
 
 export const MsgError = styled.small<{ error: string | undefined }>`

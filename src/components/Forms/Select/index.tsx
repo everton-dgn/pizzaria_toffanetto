@@ -59,6 +59,13 @@ export const Select = ({ name, id, placeholder, ...rest }: Props) => {
     if (error !== undefined) clearError()
   }
 
+  const changeFocus = (e: any) => {
+    e.target.parentNode.parentNode.parentNode.parentNode.parentNode.classList.toggle(
+      'focusSelect'
+    )
+  }
+  console.log(renderAndSaveSelected)
+
   return (
     <>
       <S.ContainerInput>
@@ -73,8 +80,10 @@ export const Select = ({ name, id, placeholder, ...rest }: Props) => {
               placeholder={placeholder}
               noOptionsMessage={() => 'Nenhum resultado!'}
               isClearable
-              onInputChange={clearField}
-              onChange={(value: any) => setRenderAndSaveSelected(value)}
+              onInputChange={(value: any) => setRenderAndSaveSelected(value)}
+              onChange={clearField}
+              onFocus={changeFocus}
+              onBlur={changeFocus}
             />
           </NoSSR>
 
