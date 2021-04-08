@@ -51,8 +51,7 @@ export const WrapperInput = styled.div<{ error: string | undefined }>`
 
   .focusSelect > div:nth-child(2) {
     border: 0.15rem solid
-      ${({ error }) =>
-        error !== undefined ? s.errorColor : s.borderSecondary}!important;
+      ${({ error }) => (error !== undefined ? s.errorColor : s.borderSecondary)} !important;
   }
 
   .elevationLabel + #label {
@@ -68,14 +67,13 @@ export const WrapperInput = styled.div<{ error: string | undefined }>`
     color: ${({ error }) => (error !== undefined ? s.errorColor : s.textLabel)};
   }
 
-  /*.elevationLabel > div:first-of-type > div:first-of-type > div {
-    ${({ error }) =>
-    error !== undefined ? s.errorColor : '#a0a6c6'} !important;
-  }*/
+  .elevationLabel > div:nth-child(odd) {
+    box-shadow: 0.3rem 0.4rem 2rem 0 #d7d7e7;
+  }
 
   input {
     color: ${({ error }) =>
-      error !== undefined ? s.errorColor : s.textLabel}!important;
+      error !== undefined ? s.errorColor : s.textLabel} !important;
   }
 `
 

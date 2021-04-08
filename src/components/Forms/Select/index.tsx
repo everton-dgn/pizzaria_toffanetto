@@ -100,6 +100,7 @@ export const Select = ({ name, id, placeholder, ...rest }: Props) => {
               onChange={clearField}
               onFocus={changeFocusAdd}
               onBlur={changeFocusRemove}
+              maxMenuHeight={240}
             />
           </NoSSR>
 
