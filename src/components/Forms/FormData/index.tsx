@@ -80,6 +80,7 @@ export const FormData = () => {
                 type="text"
                 placeholder="Nome Completo"
                 autoFocus
+                mask=""
               />
 
               <Input
@@ -88,6 +89,7 @@ export const FormData = () => {
                 label="E-mail"
                 type="email"
                 placeholder="E-mail"
+                mask=""
               />
 
               <Input
@@ -96,6 +98,7 @@ export const FormData = () => {
                 label="DDD + Celular"
                 type="text"
                 placeholder="DDD + Celular"
+                mask="(99) 9999-9999"
               />
 
               <Scope path="address">
@@ -105,6 +108,7 @@ export const FormData = () => {
                   label="CEP"
                   type="text"
                   placeholder="CEP"
+                  mask="99999-999"
                 />
 
                 <Input
@@ -113,14 +117,16 @@ export const FormData = () => {
                   label="Rua"
                   type="text"
                   placeholder="Rua"
+                  mask=""
                 />
 
                 <Input
                   name="number"
                   id="number"
                   label="Número"
-                  type="number"
+                  type="text"
                   placeholder="Número"
+                  mask="9999999999"
                 />
 
                 <Input
@@ -129,6 +135,7 @@ export const FormData = () => {
                   label="Bairro"
                   type="text"
                   placeholder="Bairro"
+                  mask=""
                 />
 
                 <Input
@@ -137,15 +144,8 @@ export const FormData = () => {
                   label="Cidade"
                   type="text"
                   placeholder="Cidade"
+                  mask=""
                 />
-
-                {/* <Input
-                  name="state"
-                  id="state"
-                  label="Estado"
-                  type="text"
-                  placeholder="Estado"
-                /> */}
 
                 <Select
                   name="state"

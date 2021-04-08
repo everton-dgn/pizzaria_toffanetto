@@ -17,7 +17,7 @@ interface FormDataProvider {
     number: string
     neighborhood: string
     city: string
-    state: any
+    state: string
     zipCode: string
   }
 }

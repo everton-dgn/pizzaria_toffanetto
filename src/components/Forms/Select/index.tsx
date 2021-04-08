@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import * as S from 'components/Forms/Select/styles'
-import ReactSelect, { OptionTypeBase, Props as SelectProps } from 'react-select'
+import ReactSelect, {
+  components,
+  OptionTypeBase,
+  Props as SelectProps
+} from 'react-select'
 import { useField } from '@unform/core'
 import NoSSR from 'react-no-ssr'
 
@@ -82,6 +86,10 @@ export const Select = ({ name, id, placeholder, ...rest }: Props) => {
     }
   }
 
+  const Input = ({ autoComplete, ...props }: any) => (
+    <components.Input {...props} autoComplete="new-password" />
+  )
+
   return (
     <>
       <S.ContainerInput>
@@ -101,6 +109,10 @@ export const Select = ({ name, id, placeholder, ...rest }: Props) => {
               onFocus={changeFocusAdd}
               onBlur={changeFocusRemove}
               maxMenuHeight={240}
+              searchInput={{ autoComplete: 'new-password' }}
+              components={{
+                Input
+              }}
             />
           </NoSSR>
 
