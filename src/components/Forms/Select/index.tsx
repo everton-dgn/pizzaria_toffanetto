@@ -75,7 +75,7 @@ export const Select = ({ name, id, placeholder, ...rest }: Props) => {
     )
 
     // @ts-ignore
-    if (selectRef.current.state.value === null) {
+    if (selectRef.current?.state.value === null) {
       e.target.parentNode.parentNode.parentNode.parentNode.parentNode.classList.remove(
         'elevationLabel'
       )

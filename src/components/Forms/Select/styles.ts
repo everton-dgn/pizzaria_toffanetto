@@ -24,66 +24,6 @@ export const WrapperInput = styled.div<{ error: string | undefined }>`
     transition: all 0.2s linear;
   }
 
-  /*input {
-    appearance: none;
-    -moz-appearance: textfield;
-    -webkit-appearance: textfield;
-    border-radius: 1rem;
-    box-shadow: inset -0.3rem -0.3rem 0.9rem 0 #fff,
-      inset 0.3rem 0.3rem 0.9rem 0 #e0e0ef;
-    border: 0.15rem solid
-      ${({ error }) => (error !== undefined ? s.errorColor : 'transparent')};
-    outline: none;
-    padding: 1.3rem 1.4rem;
-    background-color: ${s.bgDefault};
-    font-size: 1.5rem;
-    z-index: 1;
-    color: ${({ error }) => (error !== undefined ? s.errorColor : s.textLabel)};
-    transition: all 0.2s ease-in-out;
-
-    &::placeholder {
-      font-size: 1.5rem;
-      color: ${({ error }) => (error !== undefined ? s.errorColor : '#a0a6c6')};
-    }
-
-    &:hover {
-      border: 0.15rem solid
-        ${({ error }) => (error !== undefined ? s.errorColor : s.borderlight)};
-    }
-
-    &:focus {
-      border: 0.15rem solid
-        ${({ error }) =>
-    error !== undefined ? s.errorColor : s.borderSecondary};
-    }
-
-    &:required:invalid + label:before {
-      content: '*';
-    }
-
-    &:focus + label,
-    &:not(:placeholder-shown) + label {
-      font-size: 1.15rem;
-      color: ${({ error }) =>
-    error !== undefined ? s.errorColor : s.textLabel};
-      margin-top: -1.8rem;
-      margin-left: 0;
-      cursor: default;
-      z-index: 2;
-    }
-
-    &:-webkit-autofill:focus + label,
-    &:-webkit-autofill:not(:placeholder-shown) + label {
-      font-size: 1.15rem;
-      color: ${({ error }) =>
-    error !== undefined ? s.errorColor : s.textLabel};
-      margin-top: -1.8rem;
-      margin-left: 0;
-      cursor: default;
-      z-index: 2;
-    }
-  }*/
-
   & > div > div {
     border-radius: 1rem;
     box-shadow: inset -0.3rem -0.3rem 0.9rem 0 #fff,
@@ -122,6 +62,20 @@ export const WrapperInput = styled.div<{ error: string | undefined }>`
     z-index: 2;
     margin-left: 0;
     margin-top: -1.8rem;
+  }
+
+  .elevationLabel > div:last-of-type > div:nth-child(1) > div {
+    color: ${({ error }) => (error !== undefined ? s.errorColor : s.textLabel)};
+  }
+
+  /*.elevationLabel > div:first-of-type > div:first-of-type > div {
+    ${({ error }) =>
+    error !== undefined ? s.errorColor : '#a0a6c6'} !important;
+  }*/
+
+  input {
+    color: ${({ error }) =>
+      error !== undefined ? s.errorColor : s.textLabel}!important;
   }
 `
 
