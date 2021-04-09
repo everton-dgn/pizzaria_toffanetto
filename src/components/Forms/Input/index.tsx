@@ -11,6 +11,7 @@ interface Props extends InputProps {
   type: string
   autoFocus?: boolean
   onKeyPress?: any
+  load?: boolean
 }
 
 export const Input = ({
@@ -19,6 +20,7 @@ export const Input = ({
   placeholder,
   mask,
   onKeyPress,
+  load,
   ...rest
 }: Props) => {
   const inputRef = useRef(null)
@@ -50,7 +52,9 @@ export const Input = ({
     <>
       <S.ContainerInput>
         <S.WrapperInput error={error}>
+          {name === 'zipCode' && load && <S.LoadCep />}
           <ReactInputMask
+            autoComplete="new-password"
             name={name}
             id={id}
             placeholder={placeholder}

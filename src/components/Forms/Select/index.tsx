@@ -21,6 +21,7 @@ export const Select = ({
   id,
   placeholder,
   setStateInSelect,
+  isDisabled,
   ...rest
 }: Props) => {
   const selectRef = useRef(null)
@@ -39,13 +40,13 @@ export const Select = ({
   useEffect(() => {
     if (setStateInSelect) {
       // @ts-ignore
+      selectRef.current?.select.setValue(setStateInSelect)
+      // @ts-ignore
       changeFocusAdd(selectRef.current?.select.inputRef)
       // @ts-ignore
       changeFocusRemove(selectRef.current?.select.inputRef)
-      // @ts-ignore
-      selectRef.current?.select.setValue(setStateInSelect)
     }
-  }, [setStateInSelect])
+  }, [setStateInSelect, isDisabled])
 
   const clearField = () => {
     if (error !== undefined) clearError()
@@ -82,7 +83,7 @@ export const Select = ({
   return (
     <>
       <S.ContainerInput>
-        <S.WrapperInput error={error}>
+        <S.WrapperInput error={error} disabledField={isDisabled}>
           <NoSSR>
             <ReactSelect
               name={name}
@@ -97,6 +98,7 @@ export const Select = ({
               onFocus={e => changeFocusAdd(e.target)}
               onBlur={e => changeFocusRemove(e.target)}
               maxMenuHeight={240}
+              isDisabled={isDisabled}
               // searchInput={{ autoComplete: 'dfdfdf' }}
               // components={{
               //  Input

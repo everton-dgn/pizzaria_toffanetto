@@ -63,9 +63,11 @@ export const FormData = () => {
     SetStateAction<{ value: any; label: any }>
   >()
 
+  const [loadZipCode, setLoadZipCode] = useState(false)
+  const [disabledField, setDisabledField] = useState(true)
+
   const SearchCep = async (params: any, server = 0) => {
-    // params recebe o cep (apenas números) e deve ser === 8
-    // if (params.length !== 8) return
+    setLoadZipCode(true)
 
     // Lista de servidores
     const servers = [
@@ -95,6 +97,10 @@ export const FormData = () => {
         })
       })
       .catch(() => (servers[server + 1] ? SearchCep(params, server + 1) : null))
+      .finally(() => {
+        setLoadZipCode(false)
+        setDisabledField(false)
+      })
   }
 
   const handleSubmit: SubmitHandler<FormDataUnform> = async data => {
@@ -175,6 +181,7 @@ export const FormData = () => {
                   placeholder="CEP"
                   mask="99999-999"
                   onKeyPress={SearchCep}
+                  load={loadZipCode}
                 />
 
                 <Input
@@ -184,6 +191,8 @@ export const FormData = () => {
                   type="text"
                   placeholder="Rua"
                   mask=""
+                  load={loadZipCode}
+                  disabled={disabledField}
                 />
 
                 <Input
@@ -202,6 +211,8 @@ export const FormData = () => {
                   type="text"
                   placeholder="Bairro"
                   mask=""
+                  load={loadZipCode}
+                  disabled={disabledField}
                 />
 
                 <Input
@@ -211,6 +222,8 @@ export const FormData = () => {
                   type="text"
                   placeholder="Cidade"
                   mask=""
+                  load={loadZipCode}
+                  disabled={disabledField}
                 />
 
                 <Select
@@ -220,6 +233,7 @@ export const FormData = () => {
                   placeholder="Estado"
                   options={statesOptions}
                   setStateInSelect={selectState}
+                  isDisabled={disabledField}
                 />
               </Scope>
             </S.ContentForm>

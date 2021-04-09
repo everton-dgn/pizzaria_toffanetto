@@ -1,5 +1,17 @@
 import styled from 'styled-components'
 import { s } from 'theme'
+import { ArrowRepeat } from '@styled-icons/bootstrap'
+
+export const LoadCep = styled(ArrowRepeat)`
+  width: 4rem;
+  height: 100%;
+  position: absolute;
+  z-index: 100;
+  right: 0;
+  color: #a0a6c6;
+  margin-right: 1rem;
+  animation: ${s.rotate} 0.8s linear infinite;
+`
 
 export const ContainerInput = styled.div`
   display: flex;
@@ -11,6 +23,7 @@ export const ContainerInput = styled.div`
 export const WrapperInput = styled.div<{ error: string | undefined }>`
   display: flex;
   flex-direction: column;
+  position: relative;
 
   label {
     color: ${({ error }) => (error !== undefined ? s.errorColor : '#a0a6c6')};
@@ -81,6 +94,17 @@ export const WrapperInput = styled.div<{ error: string | undefined }>`
       margin-left: 0;
       cursor: default;
       z-index: 2;
+    }
+
+    &:disabled {
+      background-color: #e7e7f6;
+      box-shadow: none;
+      cursor: no-drop;
+      border-color: transparent;
+
+      &:hover {
+        border-color: transparent;
+      }
     }
   }
 `

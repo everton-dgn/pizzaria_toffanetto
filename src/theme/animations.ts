@@ -58,5 +58,11 @@ export default {
     40% {
       transform: scale(1.0);
     }
+  `,
+
+  rotate: keyframes`
+  to {
+    transform: rotate(360deg);
+  }
   `
 }
