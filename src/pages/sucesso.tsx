@@ -27,7 +27,7 @@ const Sucesso = () => {
     pizza4.checked && pizza4.recommended
   ]
 
-  const sendZap = async () => {
+  const SendZap = async () => {
     await Router.push(
       `https://api.whatsapp.com/send?phone=55${
         formData.phone
@@ -131,7 +131,7 @@ const Sucesso = () => {
               </S.ContainerList>
             </S.CardContent>
 
-            <S.BtnSend onClick={sendZap}>
+            <S.BtnSend onClick={SendZap}>
               Enviar pedido pelo WhatsApp <S.Zap />
             </S.BtnSend>
           </S.Card>

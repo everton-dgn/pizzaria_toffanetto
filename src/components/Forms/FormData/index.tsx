@@ -8,6 +8,7 @@ import { DataContext } from 'hooks/UseContext'
 import { useValidate } from 'hooks/UseValidate'
 import { Toast, NotifyError, NotifySuccess } from 'components/Toast'
 import { toast } from 'react-toastify'
+import axios from 'axios'
 
 interface FormDataUnform {
   name?: string
@@ -18,19 +19,50 @@ interface FormDataUnform {
     number: string
     neighborhood: string
     city: string
-    state: any
+    state: string
     zipCode: string
   }
 }
 
 export const FormData = () => {
   const { setFormData } = useContext(DataContext)
-
   const formRef = useRef<FormHandles>(null)
-
   const schema = useValidate()
 
+  const SearchCep = async (params: any, server = 0) => {
+    // params recebe o cep (apenas números) e deve ser === 8
+    // if (params.length !== 8) return
+
+    // Lista de servidores
+    const servers = [
+      `https://brasilapi.com.br/api/cep/v1/${params}`,
+      // `https://viacep.com.br/ws/${params}/json`,
+      `https://ws.apicep.com/cep/${params}.json`,
+      `https://brasilapi.com.br/api/cep/v1/${params}`
+    ]
+
+    axios
+      .get(servers[server])
+      .then(({ data }) => {
+        formRef.current?.setFieldValue(
+          'address.street',
+          data.street || data.address || data.logradouro
+        )
+        formRef.current?.setFieldValue(
+          'address.neighborhood',
+          data.neighborhood || data.district || data.bairro
+        )
+        formRef.current?.setFieldValue(
+          'address.city',
+          data.city || data.localidade
+        )
+        formRef.current?.setFieldValue('address.state', data.state || data.uf)
+      })
+      .catch(() => (servers[server + 1] ? SearchCep(params, server + 1) : null))
+  }
+
   const handleSubmit: SubmitHandler<FormDataUnform> = async data => {
+    console.log(data)
     try {
       formRef.current?.setErrors({})
 
@@ -62,8 +94,6 @@ export const FormData = () => {
       }
     }
   }
-
-  console.log('renderizou')
 
   return (
     <>
@@ -109,6 +139,7 @@ export const FormData = () => {
                   type="text"
                   placeholder="CEP"
                   mask="99999-999"
+                  onKeyPress={SearchCep}
                 />
 
                 <Input

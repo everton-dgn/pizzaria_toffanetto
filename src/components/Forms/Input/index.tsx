@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import * as S from 'components/Forms/Input/styles'
 import { useField } from '@unform/core'
 import ReactInputMask, { Props as InputProps } from 'react-input-mask'
@@ -10,12 +10,21 @@ interface Props extends InputProps {
   label: string
   type: string
   autoFocus?: boolean
+  onKeyPress?: any
 }
 
-export const Input = ({ name, id, placeholder, mask, ...rest }: Props) => {
+export const Input = ({
+  name,
+  id,
+  placeholder,
+  mask,
+  onKeyPress,
+  ...rest
+}: Props) => {
   const inputRef = useRef(null)
-
   const { fieldName, registerField, error, clearError } = useField(name)
+
+  const [updateZipCode, setUpdateZipCode] = useState('')
 
   useEffect(() => {
     registerField({
@@ -23,10 +32,18 @@ export const Input = ({ name, id, placeholder, mask, ...rest }: Props) => {
       ref: inputRef.current,
       path: 'value'
     })
-  }, [fieldName, registerField])
+
+    if (name === 'zipCode' && updateZipCode.length === 8) {
+      onKeyPress(updateZipCode)
+    }
+  }, [updateZipCode, fieldName, registerField])
 
   const clearField = () => {
     if (error !== undefined) clearError()
+  }
+
+  const captureZipCode = (e: any) => {
+    setUpdateZipCode(e.target.value.replace('-', ''))
   }
 
   return (
@@ -42,6 +59,7 @@ export const Input = ({ name, id, placeholder, mask, ...rest }: Props) => {
             onInput={clearField}
             mask={mask}
             maskPlaceholder={null}
+            onKeyUp={captureZipCode}
           />
           <label htmlFor={id}>{placeholder}</label>
         </S.WrapperInput>
