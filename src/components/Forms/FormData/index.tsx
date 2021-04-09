@@ -1,4 +1,4 @@
-import { useRef, useContext } from 'react'
+import { useRef, useContext, useState, SetStateAction } from 'react'
 import * as S from 'components/Forms/FormData/styles'
 import { Input, Select } from 'components'
 import { FormHandles, Scope, SubmitHandler } from '@unform/core'
@@ -29,6 +29,10 @@ export const FormData = () => {
   const formRef = useRef<FormHandles>(null)
   const schema = useValidate()
 
+  const [selectState, setSelectState] = useState<
+    SetStateAction<{ value: any; label: any }>
+  >()
+
   const SearchCep = async (params: any, server = 0) => {
     // params recebe o cep (apenas números) e deve ser === 8
     // if (params.length !== 8) return
@@ -36,9 +40,8 @@ export const FormData = () => {
     // Lista de servidores
     const servers = [
       `https://brasilapi.com.br/api/cep/v1/${params}`,
-      // `https://viacep.com.br/ws/${params}/json`,
-      `https://ws.apicep.com/cep/${params}.json`,
-      `https://brasilapi.com.br/api/cep/v1/${params}`
+      `https://viacep.com.br/ws/${params}/json`,
+      `https://ws.apicep.com/cep/${params}.json`
     ]
 
     axios
@@ -56,13 +59,15 @@ export const FormData = () => {
           'address.city',
           data.city || data.localidade
         )
-        formRef.current?.setFieldValue('address.state', data.state || data.uf)
+        setSelectState({
+          value: data.state || data.uf,
+          label: data.state || data.uf
+        })
       })
       .catch(() => (servers[server + 1] ? SearchCep(params, server + 1) : null))
   }
 
   const handleSubmit: SubmitHandler<FormDataUnform> = async data => {
-    console.log(data)
     try {
       formRef.current?.setErrors({})
 
@@ -183,6 +188,7 @@ export const FormData = () => {
                   id="state"
                   label="Estado"
                   placeholder="Estado"
+                  setStateInSelect={selectState}
                 />
               </Scope>
             </S.ContentForm>

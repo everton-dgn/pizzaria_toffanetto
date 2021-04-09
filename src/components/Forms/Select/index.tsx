@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import * as S from 'components/Forms/Select/styles'
 import ReactSelect, {
-  components,
+  // components,
   OptionTypeBase,
   Props as SelectProps
 } from 'react-select'
@@ -13,9 +13,16 @@ interface Props extends SelectProps<OptionTypeBase> {
   id: string
   placeholder: string
   label: string
+  setStateInSelect?: any
 }
 
-export const Select = ({ name, id, placeholder, ...rest }: Props) => {
+export const Select = ({
+  name,
+  id,
+  placeholder,
+  setStateInSelect,
+  ...rest
+}: Props) => {
   const selectRef = useRef(null)
   const { fieldName, registerField, error, clearError } = useField(name)
 
@@ -57,38 +64,51 @@ export const Select = ({ name, id, placeholder, ...rest }: Props) => {
       ref: selectRef.current,
       path: 'state.value.value'
     })
-  }, [fieldName, registerField, renderAndSaveSelected])
+    if (setStateInSelect) {
+      // @ts-ignore
+      changeFocusAdd(selectRef.current?.select.inputRef)
+      // @ts-ignore
+      changeFocusRemove(selectRef.current?.select.inputRef)
+      // @ts-ignore
+      selectRef.current?.select.setValue(setStateInSelect)
+    }
+    // @ts-ignore
+    console.log(selectRef.current?.state.value)
+  }, [fieldName, registerField, renderAndSaveSelected, setStateInSelect])
 
   const clearField = () => {
     if (error !== undefined) clearError()
   }
 
   const changeFocusAdd = (e: any) => {
-    e.target.parentNode.parentNode.parentNode.parentNode.parentNode.classList.add(
+    e.parentNode.parentNode.parentNode.parentNode.parentNode.classList.add(
       'focusSelect'
     )
 
-    e.target.parentNode.parentNode.parentNode.parentNode.parentNode.classList.add(
+    e.parentNode.parentNode.parentNode.parentNode.parentNode.classList.add(
       'elevationLabel'
     )
   }
 
   const changeFocusRemove = (e: any) => {
-    e.target.parentNode.parentNode.parentNode.parentNode.parentNode.classList.remove(
+    // @ts-ignore
+    selectRef.current?.select.clearValue()
+    e.parentNode.parentNode.parentNode.parentNode.parentNode.classList.remove(
       'focusSelect'
     )
 
     // @ts-ignore
     if (selectRef.current?.state.value === null) {
-      e.target.parentNode.parentNode.parentNode.parentNode.parentNode.classList.remove(
+      e.parentNode.parentNode.parentNode.parentNode.parentNode.classList.remove(
         'elevationLabel'
       )
     }
   }
 
-  const Input = ({ autoComplete, ...props }: any) => (
-    <components.Input {...props} autoComplete="new-password" />
-  )
+  // desativa o autocomplete do chrome
+  /*  const Input = ({ autoComplete, ...props }: any) => (
+    <components.Input {...props} autoComplete="dfdfdf" />
+  ) */
 
   return (
     <>
@@ -106,13 +126,13 @@ export const Select = ({ name, id, placeholder, ...rest }: Props) => {
               isClearable
               onInputChange={(value: any) => setRenderAndSaveSelected(value)}
               onChange={clearField}
-              onFocus={changeFocusAdd}
-              onBlur={changeFocusRemove}
+              onFocus={e => changeFocusAdd(e.target)}
+              onBlur={e => changeFocusRemove(e.target)}
               maxMenuHeight={240}
-              searchInput={{ autoComplete: 'new-password' }}
-              components={{
-                Input
-              }}
+              // searchInput={{ autoComplete: 'dfdfdf' }}
+              // components={{
+              //  Input
+              // }}
             />
           </NoSSR>
 
