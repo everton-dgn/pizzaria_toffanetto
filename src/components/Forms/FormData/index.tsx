@@ -96,7 +96,13 @@ export const FormData = () => {
           label: data.state || data.uf
         })
       })
-      .catch(() => (servers[server + 1] ? SearchCep(params, server + 1) : null))
+      .catch(error => {
+        if (error.response?.status === 404) {
+          // mostra toast de erro
+          NotifyError('CEP inválido! Corrija o código informado.', 'Erro!')
+        }
+        return servers[server + 1] ? SearchCep(params, server + 1) : null
+      })
       .finally(() => {
         setLoadZipCode(false)
         setDisabledField(false)

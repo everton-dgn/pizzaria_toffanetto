@@ -3,7 +3,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import * as S from 'components/Toast/styles'
 
 const configToast = {
-  autoClose: 4000,
+  autoClose: 7000,
   hideProgressBar: false,
   closeOnClick: true,
   pauseOnHover: false,

@@ -38,6 +38,7 @@ export const WrapperInput = styled.div<{
   }
 
   & > div > div {
+    box-shadow: none;
     border-radius: 1rem;
     border: 0.15rem solid
       ${({ error }) => (error !== undefined ? s.errorColor : 'transparent')};
