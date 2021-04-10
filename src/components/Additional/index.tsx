@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import * as S from 'components/Additional/styles'
 import { DataContext } from 'hooks/UseContext'
 import { useCart } from 'hooks/UseCart'
@@ -25,50 +25,63 @@ export const Additional = ({ data }: AdditionalProps) => {
     setAdMussarela,
     adPalmito,
     setAdPalmito,
-    size,
+    // size,
+    cart,
     setCart
   } = useContext(DataContext)
 
-  const changeRemoveQtd = (param: string) => {
-    switch (param) {
+  const changeRemoveQtd = (id: string, price: number) => {
+    switch (id) {
       case 'bacon':
-        adBacon > 0 && setAdBacon(adBacon - 1)
+        if (adBacon > 0) {
+          setAdBacon(adBacon - 1)
+          setCart(cart - price)
+        }
         break
       case 'calabreza':
-        adCalabreza > 0 && setAdCalabreza(adCalabreza - 1)
+        if (adCalabreza > 0) {
+          setAdCalabreza(adCalabreza - 1)
+          setCart(cart - price)
+        }
         break
       case 'mussarela':
-        adMussarela > 0 && setAdMussarela(adMussarela - 1)
+        if (adMussarela > 0) {
+          setAdMussarela(adMussarela - 1)
+          setCart(cart - price)
+        }
         break
       case 'palmito':
-        adPalmito > 0 && setAdPalmito(adPalmito - 1)
+        if (adPalmito > 0) {
+          setAdPalmito(adPalmito - 1)
+          setCart(cart - price)
+        }
         break
       default:
         break
     }
   }
 
-  useEffect(() => {
-    const total = adBacon + adCalabreza + adMussarela + adPalmito
-    setCart((size.price * 100 + 4.99 * 100 * total) / 100)
-  }, [adBacon, adCalabreza, adMussarela, adPalmito, setCart, size])
-
-  const changeAddQtd = (param: string) => {
+  const changeAddQtd = (id: string, price: number) => {
+    // verifica se já possui 10 itens adicionados e se verdadeiro não incrementa
     const total = adBacon + adCalabreza + adMussarela + adPalmito
     if (total === 10) return
 
-    switch (param) {
+    switch (id) {
       case 'bacon':
         setAdBacon(adBacon + 1)
+        setCart(cart + price)
         break
       case 'calabreza':
         setAdCalabreza(adCalabreza + 1)
+        setCart(cart + price)
         break
       case 'mussarela':
         setAdMussarela(adMussarela + 1)
+        setCart(cart + price)
         break
       case 'palmito':
         setAdPalmito(adPalmito + 1)
+        setCart(cart + price)
         break
       default:
         break
@@ -102,7 +115,7 @@ export const Additional = ({ data }: AdditionalProps) => {
                   <S.Title>{ConvertNumberToPrice(el.price)}</S.Title>
                 </S.ContainerInfo>
                 <S.AddItem>
-                  <S.BtnCount onClick={() => changeRemoveQtd(el.id)}>
+                  <S.BtnCount onClick={() => changeRemoveQtd(el.id, el.price)}>
                     -
                   </S.BtnCount>
                   <input
@@ -111,7 +124,9 @@ export const Additional = ({ data }: AdditionalProps) => {
                     value={[adBacon, adCalabreza, adMussarela, adPalmito][i]}
                     readOnly
                   />
-                  <S.BtnCount onClick={() => changeAddQtd(el.id)}>+</S.BtnCount>
+                  <S.BtnCount onClick={() => changeAddQtd(el.id, el.price)}>
+                    +
+                  </S.BtnCount>
                 </S.AddItem>
               </S.Box>
             </S.ContainerAdditional>
