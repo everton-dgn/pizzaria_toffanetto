@@ -83,6 +83,14 @@ export const WrapperInput = styled.div<{
   .elevationLabel > div:nth-child(odd) {
     box-shadow: 0.3rem 0.4rem 2rem 0 #d7d7e7;
     background-color: ${s.bgDefault};
+
+    & > div > div:hover {
+      background-color: #e6e6f6;
+    }
+
+    .css-9gakcf-option {
+      background-color: #d7d7e7;
+    }
   }
 
   input {
