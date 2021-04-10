@@ -71,7 +71,7 @@ export const FormData = () => {
 
     // Lista de servidores
     const servers = [
-      `https://brasilapi.com.br/api/cep/v1/${params}`,
+      `https://brasilapi.com.br/api/cep/v12/${params}`,
       `https://viacep.com.br/ws/${params}/json`,
       `https://ws.apicep.com/cep/${params}.json`
     ]
@@ -79,6 +79,12 @@ export const FormData = () => {
     axios
       .get(servers[server])
       .then(({ data }) => {
+        const address = data.street || data.address || data.logradouro
+
+        if (!address) {
+          NotifyError('CEP inválido ou não encontrado.', 'Erro!')
+        }
+
         formRef.current?.setFieldValue(
           'address.street',
           data.street || data.address || data.logradouro
@@ -96,12 +102,12 @@ export const FormData = () => {
           label: data.state || data.uf
         })
       })
-      .catch(error => {
-        if (error.response?.status === 404) {
-          // mostra toast de erro
-          NotifyError('CEP inválido! Corrija o código informado.', 'Erro!')
+      .catch(() => {
+        if (servers[server + 1]) {
+          SearchCep(params, server + 1)
+        } else {
+          NotifyError('CEP inválido ou não encontrado.', 'Erro!')
         }
-        return servers[server + 1] ? SearchCep(params, server + 1) : null
       })
       .finally(() => {
         setLoadZipCode(false)
