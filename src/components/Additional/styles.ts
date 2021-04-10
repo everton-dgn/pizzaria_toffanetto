@@ -35,6 +35,12 @@ export const Card = styled.div`
   margin-bottom: 2rem;
   box-shadow: -0.6rem -0.6rem 1.6rem 0 #fff, 0.6rem 0.6rem 1.6rem 0 #e0e0ef;
   width: 100%;
+  border: 0.2rem solid #f5f5ff;
+  transition: border-color 0.2s linear;
+
+  &:hover {
+    border: 0.2rem solid ${s.primary};
+  }
 
   ${s.break(55.2)} {
     width: calc(50% - 1rem);

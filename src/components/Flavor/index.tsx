@@ -102,12 +102,27 @@ export const Flavor = ({ data }: FlavorProps) => {
     }
   }
 
+  const scrollBottom = () => {
+    if (!verifyCheckedRecommendation.includes(true)) {
+      let i = window.scrollY
+      const int = setInterval(function () {
+        window.scrollTo(0, i)
+        i += 10
+        if (i >= window.innerHeight) clearInterval(int)
+      }, 20)
+    }
+  }
+
   return (
     <>
       <S.TitleComponent>Sabores</S.TitleComponent>
       <S.ContainerCard>
         {data.map((el, i) => (
-          <S.Card key={el.id}>
+          <S.Card
+            key={el.id}
+            onClick={scrollBottom}
+            verifyCheck={verifyCheckedRecommendation[i]}
+          >
             <S.ContainerCheckbox>
               <input
                 type="checkbox"

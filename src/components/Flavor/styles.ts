@@ -27,7 +27,7 @@ export const ContainerCard = styled.section`
   margin-top: 3rem;
 `
 
-export const Card = styled.label`
+export const Card = styled.label<{ verifyCheck: boolean }>`
   display: flex;
   flex-direction: row;
   padding: 1.5rem;
@@ -35,6 +35,18 @@ export const Card = styled.label`
   margin-bottom: 2rem;
   box-shadow: -0.6rem -0.6rem 1.6rem 0 #fff, 0.6rem 0.6rem 1.6rem 0 #e0e0ef;
   width: 100%;
+  cursor: pointer;
+  border: 0.2rem solid
+    ${({ verifyCheck }) =>
+      verifyCheck
+        ? s.secondary
+        : `
+#f5f5ff`};
+  transition: border-color 0.2s linear;
+
+  &:hover {
+    border: 0.2rem solid ${s.secondary};
+  }
 
   ${s.break(54)} {
     padding: 1.6rem 2rem;
@@ -158,5 +170,6 @@ export const ContainerCheckbox = styled.div`
   input {
     width: 1.8rem;
     height: 1.8rem;
+    cursor: pointer;
   }
 `

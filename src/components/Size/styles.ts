@@ -26,7 +26,7 @@ export const ContainerSize = styled.section`
   flex-wrap: wrap;
 `
 
-export const Card = styled.div`
+export const Card = styled.div<{ verifyCheck: boolean }>`
   display: flex;
   flex-direction: column;
   padding: 2rem;
@@ -34,6 +34,14 @@ export const Card = styled.div`
   margin-bottom: 2.5rem;
   box-shadow: -0.6rem -0.6rem 1.6rem 0 #fff, 0.6rem 0.6rem 1.6rem 0 #e0e0ef;
   width: 100%;
+  cursor: pointer;
+  border: 0.2rem solid
+    ${({ verifyCheck }) => (verifyCheck ? s.primary : `#f5f5ff`)};
+  transition: border-color 0.2s linear;
+
+  &:hover {
+    border: 0.2rem solid ${s.primary};
+  }
 
   ${s.break(35)} {
     width: calc(50% - 1rem);

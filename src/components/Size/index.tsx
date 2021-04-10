@@ -38,8 +38,15 @@ export const Size = ({ data }: SizeProps) => {
     setSelectedValue(event.target.value)
   }
 
-  const ConvertToPrice = (price: number) => {
-    return useCart(price)
+  const ConvertToPrice = (price: number) => useCart(price)
+
+  const scrollBottom = () => {
+    let i = window.scrollY
+    const int = setInterval(function () {
+      window.scrollTo(0, i)
+      i += 10
+      if (i >= window.innerHeight) clearInterval(int)
+    }, 20)
   }
 
   return (
@@ -47,7 +54,11 @@ export const Size = ({ data }: SizeProps) => {
       <S.TitleComponent>Tamanhos</S.TitleComponent>
       <S.ContainerSize>
         {data[0].sizeAndPrice.map(el => (
-          <S.Card key={el.size}>
+          <S.Card
+            key={el.size}
+            onClick={scrollBottom}
+            verifyCheck={selectedValue === el.size}
+          >
             <S.ContainerRadio>
               <S.RadioContent>
                 <S.RadioLabel>
