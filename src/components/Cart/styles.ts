@@ -12,7 +12,7 @@ export const ContainerCart = styled.div`
   }
 
   img {
-    margin-bottom: 1.3rem;
+    transform: translateY(-0.8rem);
   }
 `
 
