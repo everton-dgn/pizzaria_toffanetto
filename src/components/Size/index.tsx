@@ -1,8 +1,9 @@
-import { ChangeEvent, useContext, useState } from 'react'
+import React, { ChangeEvent, useContext, useState } from 'react'
 import * as S from 'components/Size/styles'
 import { DataContext } from 'hooks/UseContext'
 import { BtnNext } from 'components/BtnNext'
 import { useCart } from 'hooks/UseCart'
+import Image from 'next/image'
 
 interface SizeProps {
   data: [
@@ -29,12 +30,16 @@ export const Size = ({ data }: SizeProps) => {
   const [selectedValue, setSelectedValue] = useState('')
 
   const addCart = (price: number, size: string) => {
-    setSize({price: price, size: size})
+    setSize({ price: price, size: size })
     setCart(price)
   }
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSelectedValue(event.target.value)
+  }
+
+  const ConvertToPrice = (price: number) => {
+    return useCart(price)
   }
 
   return (
@@ -58,9 +63,17 @@ export const Size = ({ data }: SizeProps) => {
                 <S.ContainerInfo>
                   <S.Title>Pizza {el.size}</S.Title>
                   <S.ContentInfo>
-                    <S.SubTitle>({el.slices} Fatias)</S.SubTitle>
+                    <S.SubTitle>
+                      <Image
+                        src="/img/icons/slice-pizza.svg"
+                        alt="Imagem de uma pizza"
+                        width={24}
+                        height={25}
+                      />
+                      ({el.slices} Fatias)
+                    </S.SubTitle>
                   </S.ContentInfo>
-                  <S.Title>{useCart(el.price)}</S.Title>
+                  <S.Title>{ConvertToPrice(el.price)}</S.Title>
                 </S.ContainerInfo>
               </S.RadioContent>
             </S.ContainerRadio>

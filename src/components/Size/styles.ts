@@ -79,6 +79,13 @@ export const SubTitle = styled.h4`
   font-weight: 500;
   margin-bottom: -0.5rem;
   margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  div {
+    margin-right: 1rem;
+  }
 `
 
 export const ContainerRadio = styled.div`
