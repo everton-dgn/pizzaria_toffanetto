@@ -79,9 +79,9 @@ export const FormData = () => {
     axios
       .get(servers[server])
       .then(({ data }) => {
-        const address = data.street || data.address || data.logradouro
+        const state = data.state || data.uf
 
-        if (!address) {
+        if (!state) {
           NotifyError('CEP inválido ou não encontrado.', 'Erro!')
         }
 
