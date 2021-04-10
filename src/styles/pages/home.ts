@@ -2,18 +2,24 @@ import styled from 'styled-components'
 import { s } from 'theme'
 
 export const ContainImg = styled.div`
-  height: 10vw;
-  min-height: 10rem;
-  overflow: hidden;
+  div {
+    position: relative !important;
+    height: 10vw;
+    min-height: 10rem;
+  }
 
   img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: 100% !important;
+    position: relative !important;
   }
 
   ${s.break(102.4)} {
     height: 15rem;
+
+    div {
+      height: 15rem;
+    }
   }
 `
 

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import * as S from 'components/Flavor/styles'
 import { DataContext } from 'hooks/UseContext'
 import { BtnNext } from 'components/BtnNext'
+import Image from 'next/image'
 
 interface FlavorProps {
   data: [
@@ -123,9 +124,12 @@ export const Flavor = ({ data }: FlavorProps) => {
               />
             </S.ContainerCheckbox>
             <S.ContainerImg>
-              <img
+              <Image
                 src={`/api-img/pizzas/${el.img}.jpg`}
-                alt="Imagem de pizza"
+                alt="Imagem de uma pizza"
+                layout="fill"
+                objectFit="cover"
+                quality={80}
               />
             </S.ContainerImg>
             <S.ContainerInfo bonus={el.recommendation}>

@@ -3,14 +3,18 @@ import { TitleSection, CardsSquare } from 'components'
 import axios from 'axios'
 import { c } from 'theme'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import Image from 'next/image'
 
 const Home = ({ dataApi }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <S.ContainImg>
-        <img
+        <Image
           src="/img/headers/background-header.jpg"
           alt="Imagem de uma pizza"
+          layout="fill"
+          objectFit="cover"
+          quality={80}
         />
       </S.ContainImg>
 
@@ -28,7 +32,9 @@ const Home = ({ dataApi }: InferGetStaticPropsType<typeof getStaticProps>) => {
 }
 
 export const getStaticProps: GetStaticProps = async context => {
-  const res = await axios.get('https://raw.githubusercontent.com/everton-dgn/pizzaria_toffanetto/main/public/api/pizzas.json')
+  const res = await axios.get(
+    'https://raw.githubusercontent.com/everton-dgn/pizzaria_toffanetto/main/public/api/pizzas.json'
+  )
 
   const dataApi = res.data[0]
 

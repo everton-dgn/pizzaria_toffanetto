@@ -1,6 +1,7 @@
 import React from 'react'
 import * as S from 'components/CardsSquare/styles'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface CardSquareProps {
   data: [
@@ -22,9 +23,12 @@ export const CardsSquare = ({ data }: CardSquareProps) => {
         {data.map(el => (
           <S.Card key={el.id}>
             <S.ContainerImg>
-              <img
+              <Image
                 src={`/api-img/pizzas/${el.img}.jpg`}
-                alt="Imagem de pizza"
+                alt="Imagem de uma pizza"
+                layout="fill"
+                objectFit="cover"
+                quality={80}
               />
             </S.ContainerImg>
             <S.ContainerInfo bonus={el.recommendation}>

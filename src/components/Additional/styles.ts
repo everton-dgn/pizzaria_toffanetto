@@ -103,10 +103,16 @@ export const BoxImg = styled.div`
   width: 100%;
   height: 18rem;
 
-  img {
+  div {
+    position: relative !important;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 18rem;
+  }
+
+  img {
+    width: 100% !important;
+    height: 100% !important;
+    position: relative !important;
   }
 `
 

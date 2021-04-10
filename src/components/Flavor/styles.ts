@@ -57,10 +57,17 @@ export const ContainerImg = styled.div`
   min-width: 9rem;
   height: 9rem;
 
+  div {
+    position: relative !important;
+    width: 9rem;
+    min-width: 9rem;
+    height: 9rem;
+  }
+
   img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: 100% !important;
+    position: relative !important;
   }
 `
 

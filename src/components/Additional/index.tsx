@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import * as S from 'components/Additional/styles'
 import { DataContext } from 'hooks/UseContext'
 import { useCart } from 'hooks/UseCart'
+import Image from 'next/image'
 
 interface AdditionalProps {
   data: [
@@ -74,6 +75,8 @@ export const Additional = ({ data }: AdditionalProps) => {
     }
   }
 
+  const ConvertNumberToPrice = (param: number) => useCart(param)
+
   return (
     <>
       <S.TitleComponent>Adicionais</S.TitleComponent>
@@ -83,9 +86,12 @@ export const Additional = ({ data }: AdditionalProps) => {
             <S.ContainerAdditional>
               <S.Box>
                 <S.BoxImg>
-                  <img
+                  <Image
                     src={`/api-img/additionals/${el.img}.jpg`}
                     alt={el.name}
+                    layout="fill"
+                    objectFit="cover"
+                    quality={80}
                   />
                 </S.BoxImg>
                 <S.ContainerInfo>
@@ -93,7 +99,7 @@ export const Additional = ({ data }: AdditionalProps) => {
                   <S.ContentInfo>
                     <S.SubTitle>(200g / Porção)</S.SubTitle>
                   </S.ContentInfo>
-                  <S.Title>{useCart(el.price)}</S.Title>
+                  <S.Title>{ConvertNumberToPrice(el.price)}</S.Title>
                 </S.ContainerInfo>
                 <S.AddItem>
                   <S.BtnCount onClick={() => changeRemoveQtd(el.id)}>

@@ -44,6 +44,15 @@ export const ContainerImg = styled.div`
   min-height: 25rem;
   max-height: 25rem;
 
+  div {
+    position: relative !important;
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    min-height: 25rem;
+    max-height: 25rem;
+  }
+
   img {
     object-fit: cover;
     width: 100%;

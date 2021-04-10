@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import * as S from 'components/Cart/styles'
 import { DataContext } from 'hooks/UseContext'
 import { c } from 'theme'
