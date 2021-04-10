@@ -60,7 +60,7 @@ export const FormData = () => {
   const schema = useValidate()
 
   const [selectState, setSelectState] = useState<
-    SetStateAction<{ value: any; label: any }>
+    SetStateAction<{ value: string; label: string }>
   >()
 
   const [loadZipCode, setLoadZipCode] = useState(false)
@@ -71,7 +71,7 @@ export const FormData = () => {
 
     // Lista de servidores
     const servers = [
-      `https://brasilapi.com.br/api/cep/v12/${params}`,
+      `https://brasilapi.com.br/api/cep/v1/${params}`,
       `https://viacep.com.br/ws/${params}/json`,
       `https://ws.apicep.com/cep/${params}.json`
     ]
