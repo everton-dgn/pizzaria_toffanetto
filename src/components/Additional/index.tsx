@@ -31,6 +31,7 @@ export const Additional = ({ data }: AdditionalProps) => {
   } = useContext(DataContext)
 
   const changeRemoveQtd = (id: string, price: number) => {
+    // decrementa a quantidade de cada item e subtrai o seu respectivo preço do carrinho
     switch (id) {
       case 'bacon':
         if (adBacon > 0) {
@@ -62,10 +63,11 @@ export const Additional = ({ data }: AdditionalProps) => {
   }
 
   const changeAddQtd = (id: string, price: number) => {
-    // verifica se já possui 10 itens adicionados e se verdadeiro não incrementa
+    // verifica se já possui 10 itens adicionados e se verdadeiro retorna
     const total = adBacon + adCalabreza + adMussarela + adPalmito
     if (total === 10) return
 
+    // incrementa a quantidade de cada item e soma o seu respectivo preço ao carrinho
     switch (id) {
       case 'bacon':
         setAdBacon(adBacon + 1)
