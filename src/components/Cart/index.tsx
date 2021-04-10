@@ -7,8 +7,9 @@ import Image from 'next/image'
 
 export const Cart = () => {
   const { cart } = useContext(DataContext)
+
   const convertCart = useCart(cart)
-  console.log(cart)
+
   return (
     <>
       <c.Container>
