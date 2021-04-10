@@ -21,6 +21,12 @@ export const Card = styled.div`
   box-shadow: -0.6rem -0.6rem 1.6rem 0 ${s.boxShadowLight},
     0.6rem 0.6rem 1.6rem 0 ${s.boxShadowDark};
   width: 100%;
+  border: 0.2rem solid #f5f5ff;
+  transition: border-color 0.2s linear;
+
+  &:hover {
+    border: 0.2rem solid ${s.secondary};
+  }
 
   ${s.break(35)} {
     flex-direction: column;
