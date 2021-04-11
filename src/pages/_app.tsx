@@ -1,5 +1,4 @@
-// import App from "next/app";
-import type { AppProps /*, AppContext */ } from 'next/app'
+import type { AppProps } from 'next/app'
 import GlobalStyles from 'styles/GlobalStyles'
 import { DataStorage } from 'hooks/UseContext'
 import { HeadPage, Header, Footer } from 'components'
