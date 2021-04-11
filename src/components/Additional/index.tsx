@@ -121,12 +121,14 @@ export const Additional = ({ data }: AdditionalProps) => {
                   <S.BtnCount onClick={() => changeRemoveQtd(el.id, el.price)}>
                     -
                   </S.BtnCount>
+
                   <input
                     type="number"
                     className="number"
                     value={[adBacon, adCalabreza, adMussarela, adPalmito][i]}
                     readOnly
                   />
+
                   <S.BtnCount onClick={() => changeAddQtd(el.id, el.price)}>
                     +
                   </S.BtnCount>
