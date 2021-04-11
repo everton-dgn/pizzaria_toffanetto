@@ -12,6 +12,7 @@ export const Banner = () => {
             width={400}
             height={300}
             objectFit="contain"
+            priority={true}
           />
           <h3>
             Pizzas exageradamente recheadas e saborosas, feitas em forno a lenha
@@ -26,6 +27,7 @@ export const Banner = () => {
             layout="fill"
             objectFit="cover"
             quality={90}
+            priority={true}
           />
         </S.ContainImg>
       </S.ContainerBanner>
