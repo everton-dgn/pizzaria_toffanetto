@@ -22,13 +22,9 @@ export const Nav = styled.nav`
 `
 
 export const Logo = styled.span`
-  color: #fff;
-  font-style: italic;
+  display: flex;
 
-  em {
-    color: #34d399;
-    font-size: 2.2rem;
-    letter-spacing: 0;
-    font-weight: 600;
+  div {
+    position: relative !important;
   }
 `
