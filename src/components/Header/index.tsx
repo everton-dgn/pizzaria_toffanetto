@@ -14,8 +14,8 @@ export const Header = () => {
                   <Image
                     src="/img/logo-x.svg"
                     alt="Pizzaria Toffanetto"
-                    width={200}
-                    height={30}
+                    width={210}
+                    height={50}
                     objectFit="contain"
                   />
                 </S.Logo>
