@@ -3,7 +3,7 @@ import { s } from 'theme'
 
 export const TitleSection = styled.h1`
   width: fit-content;
-  margin: 4rem auto 1.8rem auto;
+  margin: 4rem auto 2.3rem auto;
   text-align: center;
   font-weight: 900;
   color: #7f1d1d;

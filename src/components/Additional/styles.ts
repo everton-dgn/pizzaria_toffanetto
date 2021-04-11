@@ -165,8 +165,18 @@ export const BtnCount = styled.button`
   padding: 0;
   border-radius: 0.6rem;
   min-width: 4rem;
+  transition: background-color 0.2s linear;
 
   &:hover {
     background-color: #3ceaab;
+
+    &:disabled {
+      background-color: #34d399;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 `

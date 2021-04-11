@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import * as S from 'components/Additional/styles'
 import { DataContext } from 'hooks/UseContext'
 import { useCart } from 'hooks/UseCart'
@@ -10,6 +10,8 @@ interface AdditionalProps {
       id: string
       name: string
       price: number
+      qtd: number
+      qtdMax: number
       img: string
     }
   ]
@@ -26,8 +28,12 @@ export const Additional = ({ data }: AdditionalProps) => {
     adPalmito,
     setAdPalmito,
     cart,
-    setCart
+    setCart,
+    additionals,
+    setAdditionals
   } = useContext(DataContext)
+
+  useEffect(() => setAdditionals(data), [])
 
   const changeRemoveQtd = (id: string, price: number) => {
     // decrementa a quantidade de cada item e subtrai o seu respectivo preço do carrinho
@@ -61,7 +67,7 @@ export const Additional = ({ data }: AdditionalProps) => {
     }
   }
 
-  const changeAddQtd = (id: string, price: number) => {
+  /* const changeAddQtd = (id: string, price: number) => {
     // verifica se já possui 10 itens adicionados e se verdadeiro retorna
     const total = adBacon + adCalabreza + adMussarela + adPalmito
     if (total === 10) return
@@ -87,6 +93,13 @@ export const Additional = ({ data }: AdditionalProps) => {
       default:
         break
     }
+  } */
+
+  const changeAddQtd = (qtdAdd: number) => {
+    console.log(qtdAdd)
+    const qtd = additionals
+    qtd[qtdAdd] = qtd + 1
+    setAdditionals(qtd)
   }
 
   const ConvertNumberToPrice = (param: number) => useCart(param)
@@ -125,11 +138,14 @@ export const Additional = ({ data }: AdditionalProps) => {
                   <input
                     type="number"
                     className="number"
-                    value={[adBacon, adCalabreza, adMussarela, adPalmito][i]}
+                    value={additionals[i]?.qtd || 0}
                     readOnly
                   />
 
-                  <S.BtnCount onClick={() => changeAddQtd(el.id, el.price)}>
+                  <S.BtnCount
+                    onClick={() => changeAddQtd(additionals[i])}
+                    disabled={additionals[i]?.qtd === additionals[i]?.qtdMax}
+                  >
                     +
                   </S.BtnCount>
                 </S.AddItem>

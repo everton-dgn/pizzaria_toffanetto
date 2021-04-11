@@ -19,6 +19,7 @@ export const Nav = styled.nav`
   background-color: #7f1d1d;
   height: 100%;
   align-items: center;
+  border-bottom: 0.2rem solid #34d399;
 `
 
 export const Logo = styled.span`

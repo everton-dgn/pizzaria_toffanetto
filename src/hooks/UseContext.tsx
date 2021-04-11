@@ -1,4 +1,4 @@
-import React, { useState, createContext, ReactNode, Dispatch } from 'react'
+import React, { createContext, Dispatch, ReactNode, useState } from 'react'
 
 interface ObjectProvider {
   checked: boolean
@@ -45,6 +45,8 @@ interface ChallengeContextData {
   setAdPalmito: Dispatch<React.SetStateAction<number>>
   formData: FormDataProvider
   setFormData: Dispatch<React.SetStateAction<FormDataProvider>>
+  additionals: any
+  setAdditionals: any
 }
 
 interface DataStorageProps {
@@ -77,6 +79,8 @@ export const DataStorage = ({ children }: DataStorageProps) => {
 
   const [formData, setFormData] = useState({})
 
+  const [additionals, setAdditionals] = useState([])
+
   return (
     <DataContext.Provider
       value={{
@@ -104,7 +108,10 @@ export const DataStorage = ({ children }: DataStorageProps) => {
         setAdPalmito,
 
         formData,
-        setFormData
+        setFormData,
+
+        additionals,
+        setAdditionals
       }}
     >
       {children}
