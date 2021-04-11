@@ -17,92 +17,32 @@ interface AdditionalProps {
   ]
 }
 
-export const Additional = ({ data }: AdditionalProps) => {
-  const {
-    adBacon,
-    setAdBacon,
-    adCalabreza,
-    setAdCalabreza,
-    adMussarela,
-    setAdMussarela,
-    adPalmito,
-    setAdPalmito,
-    cart,
-    setCart,
-    additionals,
-    setAdditionals
-  } = useContext(DataContext)
+interface AdditionalQtdProps {
+  qtd: number
+  price: number
+}
 
+export const Additional = ({ data }: AdditionalProps) => {
+  const { cart, setCart, additionals, setAdditionals } = useContext(DataContext)
+
+  // popula o estado com o objeto additionals da api
   useEffect(() => setAdditionals(data), [])
 
-  const changeRemoveQtd = (id: string, price: number) => {
-    // decrementa a quantidade de cada item e subtrai o seu respectivo preço do carrinho
-    switch (id) {
-      case 'bacon':
-        if (adBacon > 0) {
-          setAdBacon(adBacon - 1)
-          setCart(cart - price)
-        }
-        break
-      case 'calabreza':
-        if (adCalabreza > 0) {
-          setAdCalabreza(adCalabreza - 1)
-          setCart(cart - price)
-        }
-        break
-      case 'mussarela':
-        if (adMussarela > 0) {
-          setAdMussarela(adMussarela - 1)
-          setCart(cart - price)
-        }
-        break
-      case 'palmito':
-        if (adPalmito > 0) {
-          setAdPalmito(adPalmito - 1)
-          setCart(cart - price)
-        }
-        break
-      default:
-        break
-    }
+  const sumQtdAdditionals = (price: number) => {
+    setCart(cart + price)
   }
 
-  /* const changeAddQtd = (id: string, price: number) => {
-    // verifica se já possui 10 itens adicionados e se verdadeiro retorna
-    const total = adBacon + adCalabreza + adMussarela + adPalmito
-    if (total === 10) return
-
-    // incrementa a quantidade de cada item e soma o seu respectivo preço ao carrinho
-    switch (id) {
-      case 'bacon':
-        setAdBacon(adBacon + 1)
-        setCart(cart + price)
-        break
-      case 'calabreza':
-        setAdCalabreza(adCalabreza + 1)
-        setCart(cart + price)
-        break
-      case 'mussarela':
-        setAdMussarela(adMussarela + 1)
-        setCart(cart + price)
-        break
-      case 'palmito':
-        setAdPalmito(adPalmito + 1)
-        setCart(cart + price)
-        break
-      default:
-        break
-    }
-  } */
-
-  const changeAddQtd = (qtdAdd: number) => {
-    console.log(qtdAdd)
-    const qtd = additionals
-    qtd[qtdAdd] = qtd + 1
-    setAdditionals(qtd)
+  const removeAdditional = (additional: AdditionalQtdProps) => {
+    additional.qtd = additional.qtd - 1
+    sumQtdAdditionals(-additional.price)
   }
 
-  const ConvertNumberToPrice = (param: number) => useCart(param)
+  const AddAdditional = (additional: AdditionalQtdProps) => {
+    additional.qtd = additional.qtd + 1
+    sumQtdAdditionals(additional.price)
+  }
+
+  const ConvertNumberToCurrency = (param: number) => useCart(param)
 
   return (
     <>
@@ -127,11 +67,14 @@ export const Additional = ({ data }: AdditionalProps) => {
                   <S.ContentInfo>
                     <S.SubTitle>(200g / Porção)</S.SubTitle>
                   </S.ContentInfo>
-                  <S.Title>{ConvertNumberToPrice(el.price)}</S.Title>
+                  <S.Title>{ConvertNumberToCurrency(el.price)}</S.Title>
                 </S.ContainerInfo>
 
                 <S.AddItem>
-                  <S.BtnCount onClick={() => changeRemoveQtd(el.id, el.price)}>
+                  <S.BtnCount
+                    onClick={() => removeAdditional(additionals[i])}
+                    disabled={additionals[i]?.qtd === 0}
+                  >
                     -
                   </S.BtnCount>
 
@@ -143,7 +86,7 @@ export const Additional = ({ data }: AdditionalProps) => {
                   />
 
                   <S.BtnCount
-                    onClick={() => changeAddQtd(additionals[i])}
+                    onClick={() => AddAdditional(additionals[i])}
                     disabled={additionals[i]?.qtd === additionals[i]?.qtdMax}
                   >
                     +
