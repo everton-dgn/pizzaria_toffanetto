@@ -1,22 +1,13 @@
 import * as S from 'styles/pages/home'
-import { TitleSection, CardsSquare } from 'components'
+import { Banner, TitleSection, CardsSquare } from 'components'
 import axios from 'axios'
 import { c } from 'theme'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import Image from 'next/image'
 
 const Home = ({ dataApi }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
-      <S.ContainImg>
-        <Image
-          src="/img/headers/background-header.jpg"
-          alt="Imagem de uma pizza"
-          layout="fill"
-          objectFit="cover"
-          quality={80}
-        />
-      </S.ContainImg>
+      <Banner />
 
       <TitleSection title="Peça a sua pizza online agora!" />
       <c.Container>

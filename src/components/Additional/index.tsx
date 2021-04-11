@@ -25,7 +25,6 @@ export const Additional = ({ data }: AdditionalProps) => {
     setAdMussarela,
     adPalmito,
     setAdPalmito,
-    // size,
     cart,
     setCart
   } = useContext(DataContext)
@@ -109,6 +108,7 @@ export const Additional = ({ data }: AdditionalProps) => {
                     quality={80}
                   />
                 </S.BoxImg>
+
                 <S.ContainerInfo>
                   <S.Title>{el.name}</S.Title>
                   <S.ContentInfo>
@@ -116,6 +116,7 @@ export const Additional = ({ data }: AdditionalProps) => {
                   </S.ContentInfo>
                   <S.Title>{ConvertNumberToPrice(el.price)}</S.Title>
                 </S.ContainerInfo>
+
                 <S.AddItem>
                   <S.BtnCount onClick={() => changeRemoveQtd(el.id, el.price)}>
                     -
