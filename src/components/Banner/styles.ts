@@ -14,11 +14,11 @@ export const ContainImg = styled.div`
     position: relative !important;
   }
 
-  ${s.break(102.4)} {
-    //height: 15rem;
-    //
-    //div {
-    //  height: 15rem;
-    //}
-  }
+  //${s.break(102.4)} {
+  //height: 15rem;
+  //
+  //div {
+  //  height: 15rem;
+  //}
+  //}
 `
