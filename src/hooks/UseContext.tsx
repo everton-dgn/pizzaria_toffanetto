@@ -22,6 +22,15 @@ interface FormDataProvider {
   }
 }
 
+interface AdditionalProps {
+  id: string
+  name: string
+  price: number
+  qtd: number
+  qtdMax: number
+  img: string
+}
+
 interface ChallengeContextData {
   pizza1: ObjectProvider
   setPizza1: Dispatch<React.SetStateAction<ObjectProvider>>
@@ -35,18 +44,10 @@ interface ChallengeContextData {
   setCart: Dispatch<React.SetStateAction<number>>
   size: { price: number; size: string }
   setSize: Dispatch<React.SetStateAction<{ price: number; size: string }>>
-  adBacon: number
-  setAdBacon: Dispatch<React.SetStateAction<number>>
-  adCalabreza: number
-  setAdCalabreza: Dispatch<React.SetStateAction<number>>
-  adMussarela: number
-  setAdMussarela: Dispatch<React.SetStateAction<number>>
-  adPalmito: number
-  setAdPalmito: Dispatch<React.SetStateAction<number>>
   formData: FormDataProvider
   setFormData: Dispatch<React.SetStateAction<FormDataProvider>>
-  additionals: any
-  setAdditionals: any
+  additionals: AdditionalProps[]
+  setAdditionals: Dispatch<React.SetStateAction<any>>
 }
 
 interface DataStorageProps {
@@ -72,11 +73,6 @@ export const DataStorage = ({ children }: DataStorageProps) => {
   const [cart, setCart] = useState(0)
   const [size, setSize] = useState({ price: 0, size: '' })
 
-  const [adBacon, setAdBacon] = useState(0)
-  const [adCalabreza, setAdCalabreza] = useState(0)
-  const [adMussarela, setAdMussarela] = useState(0)
-  const [adPalmito, setAdPalmito] = useState(0)
-
   const [formData, setFormData] = useState({})
 
   const [additionals, setAdditionals] = useState([])
@@ -97,15 +93,6 @@ export const DataStorage = ({ children }: DataStorageProps) => {
         setCart,
         size,
         setSize,
-
-        adBacon,
-        setAdBacon,
-        adCalabreza,
-        setAdCalabreza,
-        adMussarela,
-        setAdMussarela,
-        adPalmito,
-        setAdPalmito,
 
         formData,
         setFormData,

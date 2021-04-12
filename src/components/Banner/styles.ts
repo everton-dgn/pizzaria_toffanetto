@@ -73,6 +73,11 @@ export const ContainImg = styled.div`
     width: 100% !important;
     height: 100% !important;
     position: relative !important;
+    object-position: 63%;
+
+    ${s.break(60)} {
+      object-position: initial;
+    }
   }
 
   ${s.break(102.4)} {
