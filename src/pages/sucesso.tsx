@@ -12,10 +12,7 @@ const Sucesso = () => {
     pizza2,
     pizza3,
     pizza4,
-    adBacon,
-    adCalabreza,
-    adMussarela,
-    adPalmito,
+    additionals,
     cart,
     formData
   } = useContext(DataContext)
@@ -49,13 +46,11 @@ const Sucesso = () => {
         pizza2.checked ? '• ' + pizza2.size + '%0a' : ''
       }${pizza3.checked ? '• ' + pizza3.size + '%0a' : ''}${
         pizza4.checked ? '• ' + pizza4.size + '%0a' : ''
-      }%0a*Adiconais:*%0a${
-        adBacon !== 0 ? '• ' + adBacon + ' x Bacon' + '%0a' : ''
-      }${adCalabreza !== 0 ? '• ' + adCalabreza + ' x Calabreza' + '%0a' : ''}${
-        adMussarela !== 0 ? '• ' + adMussarela + ' x Mussarela' + '%0a' : ''
-      }${
-        adPalmito !== 0 ? '• ' + adPalmito + ' x Palmito' + '%0a' : ''
-      }%0a*Recomendação%20do%20dia:*%0a${
+      }%0a*Adiconais:*%0a${additionals
+        .filter(el => el.qtd > 0)
+        .map(el => '• ' + el.qtd + ' x ' + el.name + '%0a')
+        .join(',')
+        .replace(/,+/g, '')}%0a*Recomendação%20do%20dia:*%0a${
         verifyRecommendation.includes(true)
           ? '• Sim! 😀. Você selecionou a recomendação do dia e acumulou ➕' +
             `${pizza1.point}` +
@@ -92,10 +87,14 @@ const Sucesso = () => {
                 <br />
                 <S.Title>Adiconais:</S.Title>
                 <ul>
-                  {adBacon !== 0 && <li>• {adBacon} x Bacon</li>}
-                  {adCalabreza !== 0 && <li>• {adCalabreza} x Calabreza</li>}
-                  {adMussarela !== 0 && <li>• {adMussarela} x Mussarela</li>}
-                  {adPalmito !== 0 && <li>• {adPalmito} x Palmito</li>}
+                  {additionals.map(
+                    el =>
+                      el.qtd > 0 && (
+                        <li key={el.name}>
+                          • {el.qtd} x {el.name}
+                        </li>
+                      )
+                  )}
                 </ul>
               </S.ContainerList>
               <S.ContainerList>
