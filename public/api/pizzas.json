@@ -8,22 +8,26 @@
           {
             "size": "Pequena",
             "price": 19.99,
-            "slices": 4
+            "slices": 4,
+            "qtd": 0
           },
           {
             "size": "Média",
             "price": 29.99,
-            "slices": 6
+            "slices": 6,
+            "qtd": 0
           },
           {
             "size": "Grande",
             "price": 39.99,
-            "slices": 8
+            "slices": 8,
+            "qtd": 0
           },
           {
             "size": "Família",
             "price": 49.99,
-            "slices": 12
+            "slices": 12,
+            "qtd": 0
           }
         ],
         "img": "calabreza",
@@ -38,22 +42,26 @@
           {
             "size": "Pequena",
             "price": 19.99,
-            "slices": 4
+            "slices": 4,
+            "qtd": 0
           },
           {
             "size": "Média",
             "price": 29.99,
-            "slices": 6
+            "slices": 6,
+            "qtd": 0
           },
           {
             "size": "Grande",
             "price": 39.99,
-            "slices": 8
+            "slices": 8,
+            "qtd": 0
           },
           {
             "size": "Família",
             "price": 49.99,
-            "slices": 12
+            "slices": 12,
+            "qtd": 0
           }
         ],
         "img": "mussarela",
@@ -68,22 +76,26 @@
           {
             "size": "Pequena",
             "price": 19.99,
-            "slices": 4
+            "slices": 4,
+            "qtd": 0
           },
           {
             "size": "Média",
             "price": 29.99,
-            "slices": 6
+            "slices": 6,
+            "qtd": 0
           },
           {
             "size": "Grande",
             "price": 39.99,
-            "slices": 8
+            "slices": 8,
+            "qtd": 0
           },
           {
             "size": "Família",
             "price": 49.99,
-            "slices": 12
+            "slices": 12,
+            "qtd": 0
           }
         ],
         "img": "napolitana",
@@ -98,22 +110,26 @@
           {
             "size": "Pequena",
             "price": 19.99,
-            "slices": 4
+            "slices": 4,
+            "qtd": 0
           },
           {
             "size": "Média",
             "price": 29.99,
-            "slices": 6
+            "slices": 6,
+            "qtd": 0
           },
           {
             "size": "Grande",
             "price": 39.99,
-            "slices": 8
+            "slices": 8,
+            "qtd": 0
           },
           {
             "size": "Família",
             "price": 49.99,
-            "slices": 12
+            "slices": 12,
+            "qtd": 0
           }
         ],
         "img": "peperone",
