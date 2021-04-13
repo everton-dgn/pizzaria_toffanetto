@@ -36,22 +36,22 @@
     ],
     "sizesAndPrices": [
       {
-        "size": "p",
+        "size": "Pequena",
         "price": 19.99,
         "slices": 4
       },
       {
-        "size": "m",
+        "size": "Média",
         "price": 29.99,
         "slices": 6
       },
       {
-        "size": "g",
+        "size": "Grande",
         "price": 39.99,
         "slices": 8
       },
       {
-        "size": "f",
+        "size": "Família",
         "price": 49.99,
         "slices": 12
       }
