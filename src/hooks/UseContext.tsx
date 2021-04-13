@@ -53,7 +53,7 @@ export const DataStorage = ({ children }: DataStorageProps) => {
 
   const [cart, setCart] = useState(0)
 
-  const [accumulatedPoints, setAccumulatedPoints] = useState([])
+  const [accumulatedPoints, setAccumulatedPoints] = useState(0)
 
   const [formData, setFormData] = useState({})
 

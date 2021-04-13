@@ -52,11 +52,12 @@ export const Flavor = ({ data }: FlavorProps) => {
   }
 
   const punctuation = (points: number) => {
-    setAccumulatedPoints(accumulatedPoints + points)
+    const sumPoints = accumulatedPoints + points
+    setAccumulatedPoints(sumPoints)
   }
 
   const changeFlavorChecked = (i: any, checked: any) => {
-    const defineChecked = [...flavor]
+    const defineChecked = flavor
     defineChecked[i].checked = checked
     setFlavor(defineChecked)
 
@@ -64,6 +65,11 @@ export const Flavor = ({ data }: FlavorProps) => {
 
     if (flavor[i].checked === true && data[i].recommendationDay === true) {
       punctuation(data[i].points)
+    } else if (
+      flavor[i].checked === false &&
+      data[i].recommendationDay === true
+    ) {
+      punctuation(-data[i].points)
     }
   }
 
