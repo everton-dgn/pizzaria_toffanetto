@@ -12,6 +12,7 @@ export const ContainerInfo = styled(c.Box)`
   width: 100%;
   justify-content: center;
   padding: 2rem;
+  background-image: linear-gradient(90deg, #00000052 76%, transparent);
 
   h3 {
     color: #fff;
@@ -19,7 +20,6 @@ export const ContainerInfo = styled(c.Box)`
     font-size: 2rem;
     max-width: 30rem;
     margin-top: 1rem;
-    text-shadow: 0 0 4rem #000, 0 0 3rem #000, 0 0 2rem #000, 0 0 1rem #000;
   }
 
   div {
@@ -28,12 +28,9 @@ export const ContainerInfo = styled(c.Box)`
     max-height: 15rem !important;
   }
 
-  img {
-    filter: drop-shadow(0 0 2rem #000);
-  }
-
   ${s.break(60)} {
     padding: 2rem 2rem 2rem 5vw;
+    background-image: linear-gradient(transparent, transparent);
 
     h3 {
       font-size: 2.5rem;

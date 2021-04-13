@@ -34,7 +34,6 @@ export const Card = styled.div<{ verifyCheck: boolean }>`
   margin-bottom: 2.5rem;
   box-shadow: -0.6rem -0.6rem 1.6rem 0 #fff, 0.6rem 0.6rem 1.6rem 0 #e0e0ef;
   width: 100%;
-  cursor: pointer;
   border: 0.2rem solid
     ${({ verifyCheck }) => (verifyCheck ? s.primary : `#f5f5ff`)};
   transition: border-color 0.2s linear;
@@ -96,14 +95,15 @@ export const SubTitle = styled.h4`
   }
 `
 
-export const ContainerRadio = styled.div`
+export const ContainerRadio = styled.label`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 100%;
+  cursor: pointer;
 `
 
-export const RadioContent = styled.label`
+export const RadioContent = styled.div`
   display: flex;
   flex-direction: column;
   border: 0.2rem solid #34d399;

@@ -11,7 +11,7 @@ interface CardSquareProps {
       ingredients: string
       name: string
       points: string
-      recommendation: string
+      recommendationDay: string
     }
   ]
 }
@@ -31,7 +31,7 @@ export const CardsSquare = ({ data }: CardSquareProps) => {
                 quality={80}
               />
             </S.ContainerImg>
-            <S.ContainerInfo bonus={el.recommendation}>
+            <S.ContainerInfo bonus={el.recommendationDay}>
               <S.Title>PIZZA {el.name}</S.Title>
               <em>*Recomendação do dia</em>
               <S.ContentInfo>

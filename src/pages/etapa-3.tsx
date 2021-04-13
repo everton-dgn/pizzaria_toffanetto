@@ -20,10 +20,10 @@ const Etapa3 = ({
 }
 
 export const getStaticProps: GetStaticProps = async context => {
-  const res = await axios.get(
+  const { data } = await axios.get(
     'https://raw.githubusercontent.com/everton-dgn/pizzaria_toffanetto/main/public/api/additionals.json'
   )
-  const dataApi = res.data[0]
+  const dataApi = data[0]
 
   return {
     props: {

@@ -11,105 +11,59 @@ interface FlavorProps {
       img: string
       ingredients: string
       name: string
-      points: string
-      recommendation: boolean
-      sizeAndPrice: [{ size: number; price: number; slices: number }]
+      points: number
+      recommendationDay: boolean
     }
   ]
 }
 
-interface RecommendedCheckParams {
-  e: any
-  recommendation: boolean
-  id: string
-  points: string
-  name: string
-  size: number
-}
-
 export const Flavor = ({ data }: FlavorProps) => {
   const {
-    pizza1,
-    pizza2,
-    pizza3,
-    pizza4,
-    setPizza1,
-    setPizza2,
-    setPizza3,
-    setPizza4
+    flavor,
+    setFlavor,
+    setAccumulatedPoints,
+    accumulatedPoints
   } = useContext(DataContext)
 
-  const [
-    verifyCheckedRecommendation,
-    setVerifyCheckedRecommendation
-  ] = useState([pizza1.checked, pizza2.checked, pizza3.checked, pizza4.checked])
+  const [verifyChecked, setVerifyChecked] = useState([false])
 
+  // grava o objeto flavor com id e checked da api
   useEffect(() => {
-    setVerifyCheckedRecommendation([
-      pizza1.checked,
-      pizza2.checked,
-      pizza3.checked,
-      pizza4.checked
-    ])
-  }, [pizza1, pizza2, pizza3, pizza4])
+    const flavorItems = data.map(el => {
+      return { id: el.id, checked: false }
+    })
+    setFlavor(flavorItems)
+  }, [])
 
-  const recommendedCheck = ({
-    e,
-    recommendation,
-    id,
-    points,
-    name,
-    size
-  }: RecommendedCheckParams) => {
-    switch (id) {
-      case 'pizza1':
-        setPizza1({
-          checked: e.checked,
-          recommended: recommendation,
-          point: points,
-          name: name,
-          size: size
-        })
-        break
-      case 'pizza2':
-        setPizza2({
-          checked: e.checked,
-          recommended: recommendation,
-          point: points,
-          name: name,
-          size: size
-        })
-        break
-      case 'pizza3':
-        setPizza3({
-          checked: e.checked,
-          recommended: recommendation,
-          point: points,
-          name: name,
-          size: size
-        })
-        break
-      case 'pizza4':
-        setPizza4({
-          checked: e.checked,
-          recommended: recommendation,
-          point: points,
-          name: name,
-          size: size
-        })
-        break
-      default:
-    }
+  const verifyCheckedFlavor = () => {
+    const verify = flavor.map((el: any) => el.checked)
+    setVerifyChecked(verify)
   }
 
   const scrollBottom = () => {
-    if (!verifyCheckedRecommendation.includes(true)) {
+    if (!verifyChecked.includes(true)) {
       let i = window.scrollY
       const int = setInterval(function () {
         window.scrollTo(0, i)
         i += 10
         if (i >= window.innerHeight) clearInterval(int)
       }, 20)
+    }
+  }
+
+  const punctuation = (points: number) => {
+    setAccumulatedPoints(accumulatedPoints + points)
+  }
+
+  const changeFlavorChecked = (i: any, checked: any) => {
+    const defineChecked = [...flavor]
+    defineChecked[i].checked = checked
+    setFlavor(defineChecked)
+
+    verifyCheckedFlavor()
+
+    if (flavor[i].checked === true && data[i].recommendationDay === true) {
+      punctuation(data[i].points)
     }
   }
 
@@ -121,21 +75,12 @@ export const Flavor = ({ data }: FlavorProps) => {
           <S.Card
             key={el.id}
             onClick={scrollBottom}
-            verifyCheck={verifyCheckedRecommendation[i]}
+            verifyCheck={flavor[i]?.checked}
           >
             <S.ContainerCheckbox>
               <input
                 type="checkbox"
-                onClick={e =>
-                  recommendedCheck({
-                    e: e.target,
-                    recommendation: el.recommendation,
-                    id: el.id,
-                    points: el.points,
-                    name: el.name,
-                    size: el.sizeAndPrice[i].size
-                  })
-                }
+                onClick={(e: any) => changeFlavorChecked(i, e.target.checked)}
               />
             </S.ContainerCheckbox>
             <S.ContainerImg>
@@ -147,7 +92,7 @@ export const Flavor = ({ data }: FlavorProps) => {
                 quality={80}
               />
             </S.ContainerImg>
-            <S.ContainerInfo bonus={el.recommendation}>
+            <S.ContainerInfo bonus={el.recommendationDay}>
               <S.Title>
                 <b>PIZZA {el.name}</b> <em>(*Recomendação do dia)</em>
               </S.Title>
@@ -159,9 +104,7 @@ export const Flavor = ({ data }: FlavorProps) => {
           </S.Card>
         ))}
 
-        {verifyCheckedRecommendation.includes(true) && (
-          <BtnNext route={'/etapa-2'} />
-        )}
+        {verifyChecked.includes(true) && <BtnNext route={'/etapa-2'} />}
       </S.ContainerCard>
     </>
   )

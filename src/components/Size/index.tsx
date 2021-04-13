@@ -6,27 +6,30 @@ import { useCart } from 'hooks/UseCart'
 import Image from 'next/image'
 
 interface SizeProps {
-  data: [
-    {
-      id: string
-      img: string
-      ingredients: string
-      name: string
-      points: string
-      recommendation: boolean
-      sizeAndPrice: [
-        {
-          size: string
-          price: number
-          slices: number
-        }
-      ]
-    }
-  ]
+  data: {
+    pizzas: [
+      {
+        id: string
+        img: string
+        ingredients: string
+        name: string
+        points: string
+        recommendationDay: string
+      }
+    ]
+    sizesAndPrices: [
+      {
+        size: string
+        price: number
+        slices: number
+      }
+    ]
+  }
 }
 
 export const Size = ({ data }: SizeProps) => {
   const { setSize, setCart } = useContext(DataContext)
+
   const [selectedValue, setSelectedValue] = useState('')
 
   const addCart = (price: number, size: string) => {
@@ -53,7 +56,7 @@ export const Size = ({ data }: SizeProps) => {
     <>
       <S.TitleComponent>Tamanhos</S.TitleComponent>
       <S.ContainerSize>
-        {data[0].sizeAndPrice.map(el => (
+        {data.sizesAndPrices.map(el => (
           <S.Card
             key={el.size}
             onClick={scrollBottom}

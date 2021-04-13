@@ -2,140 +2,58 @@
   {
     "pizzas": [
       {
-        "id": "pizza1",
+        "id": "calabreza",
         "name": "Calabreza",
-        "sizeAndPrice": [
-          {
-            "size": "Pequena",
-            "price": 19.99,
-            "slices": 4,
-            "qtd": 0
-          },
-          {
-            "size": "Média",
-            "price": 29.99,
-            "slices": 6,
-            "qtd": 0
-          },
-          {
-            "size": "Grande",
-            "price": 39.99,
-            "slices": 8,
-            "qtd": 0
-          },
-          {
-            "size": "Família",
-            "price": 49.99,
-            "slices": 12,
-            "qtd": 0
-          }
-        ],
         "img": "calabreza",
         "ingredients": "Mussarela, calabresa e cebola, orégano.",
-        "recommendation": true,
-        "points": "360"
+        "recommendationDay": true,
+        "points": 300
       },
       {
-        "id": "pizza2",
+        "id": "mussarela",
         "name": "Mussarela",
-        "sizeAndPrice": [
-          {
-            "size": "Pequena",
-            "price": 19.99,
-            "slices": 4,
-            "qtd": 0
-          },
-          {
-            "size": "Média",
-            "price": 29.99,
-            "slices": 6,
-            "qtd": 0
-          },
-          {
-            "size": "Grande",
-            "price": 39.99,
-            "slices": 8,
-            "qtd": 0
-          },
-          {
-            "size": "Família",
-            "price": 49.99,
-            "slices": 12,
-            "qtd": 0
-          }
-        ],
         "img": "mussarela",
         "ingredients": "Queijo mussarela e orégano.",
-        "recommendation": false,
-        "points": "360"
+        "recommendationDay": false,
+        "points": 360
       },
       {
-        "id": "pizza3",
+        "id": "napolitana",
         "name": "Napolitana",
-        "sizeAndPrice": [
-          {
-            "size": "Pequena",
-            "price": 19.99,
-            "slices": 4,
-            "qtd": 0
-          },
-          {
-            "size": "Média",
-            "price": 29.99,
-            "slices": 6,
-            "qtd": 0
-          },
-          {
-            "size": "Grande",
-            "price": 39.99,
-            "slices": 8,
-            "qtd": 0
-          },
-          {
-            "size": "Família",
-            "price": 49.99,
-            "slices": 12,
-            "qtd": 0
-          }
-        ],
         "img": "napolitana",
         "ingredients": "Mussarela, tomate, orégano e parmesão ralado.",
-        "recommendation": false,
-        "points": "360"
+        "recommendationDay": false,
+        "points": 250
       },
       {
-        "id": "pizza4",
+        "id": "peperone",
         "name": "peperone",
-        "sizeAndPrice": [
-          {
-            "size": "Pequena",
-            "price": 19.99,
-            "slices": 4,
-            "qtd": 0
-          },
-          {
-            "size": "Média",
-            "price": 29.99,
-            "slices": 6,
-            "qtd": 0
-          },
-          {
-            "size": "Grande",
-            "price": 39.99,
-            "slices": 8,
-            "qtd": 0
-          },
-          {
-            "size": "Família",
-            "price": 49.99,
-            "slices": 12,
-            "qtd": 0
-          }
-        ],
         "img": "peperone",
         "ingredients": "Mussarela, orégano e pepperoni.",
-        "recommendation": false,
-        "points": "360"
+        "recommendationDay": false,
+        "points": 400
+      }
+    ],
+    "sizesAndPrices": [
+      {
+        "size": "p",
+        "price": 19.99,
+        "slices": 4
+      },
+      {
+        "size": "m",
+        "price": 29.99,
+        "slices": 6
+      },
+      {
+        "size": "g",
+        "price": 39.99,
+        "slices": 8
+      },
+      {
+        "size": "f",
+        "price": 49.99,
+        "slices": 12
       }
     ]
   }

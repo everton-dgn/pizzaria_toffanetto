@@ -17,11 +17,6 @@ interface AdditionalProps {
   ]
 }
 
-interface AdditionalQtdProps {
-  qtd: number
-  price: number
-}
-
 export const Additional = ({ data }: AdditionalProps) => {
   const { cart, setCart, additionals, setAdditionals } = useContext(DataContext)
 
@@ -32,14 +27,18 @@ export const Additional = ({ data }: AdditionalProps) => {
     setCart(cart + price)
   }
 
-  const removeAdditional = (additional: AdditionalQtdProps) => {
-    additional.qtd = additional.qtd - 1
-    sumQtdAdditionals(-additional.price)
+  const removeAdditional = (i: number) => {
+    const changeAdditionals = additionals
+    changeAdditionals[i].qtd = changeAdditionals[i].qtd - 1
+    sumQtdAdditionals(-changeAdditionals[i].price)
   }
 
-  const AddAdditional = (additional: AdditionalQtdProps) => {
-    additional.qtd = additional.qtd + 1
-    sumQtdAdditionals(additional.price)
+  const AddAdditional = (i: number) => {
+    const changeAdditionals = additionals
+    changeAdditionals[i].qtd = changeAdditionals[i].qtd + 1
+    setAdditionals(changeAdditionals)
+
+    sumQtdAdditionals(changeAdditionals[i].price)
   }
 
   const ConvertNumberToCurrency = (param: number) => useCart(param)
@@ -72,7 +71,7 @@ export const Additional = ({ data }: AdditionalProps) => {
 
                 <S.AddItem>
                   <S.BtnCount
-                    onClick={() => removeAdditional(additionals[i])}
+                    onClick={() => removeAdditional(i)}
                     disabled={additionals[i]?.qtd === 0}
                   >
                     -
@@ -86,7 +85,7 @@ export const Additional = ({ data }: AdditionalProps) => {
                   />
 
                   <S.BtnCount
-                    onClick={() => AddAdditional(additionals[i])}
+                    onClick={() => AddAdditional(i)}
                     disabled={additionals[i]?.qtd === additionals[i]?.qtdMax}
                   >
                     +

@@ -7,15 +7,7 @@ import { c } from 'theme'
 import { useCart } from 'hooks/UseCart'
 
 const Sucesso = () => {
-  const {
-    pizza1,
-    pizza2,
-    pizza3,
-    pizza4,
-    additionals,
-    cart,
-    formData
-  } = useContext(DataContext)
+  const { additionals, cart, formData } = useContext(DataContext)
 
   const verifyRecommendation = [
     pizza1.checked && pizza1.recommended,

@@ -12,17 +12,17 @@ const Etapa2 = ({
       <TitleSection title="Selecione o tamanho da pizza" />
       <Cart />
       <c.Container>
-        <Size data={dataApi.pizzas} />
+        <Size data={dataApi} />
       </c.Container>
     </>
   )
 }
 
 export const getStaticProps: GetStaticProps = async context => {
-  const res = await axios.get(
+  const { data } = await axios.get(
     'https://raw.githubusercontent.com/everton-dgn/pizzaria_toffanetto/main/public/api/pizzas.json'
   )
-  const dataApi = res.data[0]
+  const dataApi = data[0]
 
   return {
     props: {
