@@ -13,7 +13,7 @@ interface Props extends SelectProps<OptionTypeBase> {
   id: string
   placeholder: string
   label: string
-  setStateInSelect?: any
+  setStateInSelect?: object
 }
 
 export const Select = ({

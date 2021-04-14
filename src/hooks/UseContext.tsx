@@ -33,9 +33,9 @@ interface ChallengeContextData {
   additionals: AdditionalProps[]
   setAdditionals: Dispatch<React.SetStateAction<any>>
   flavor: any
-  setFlavor: any
-  accumulatedPoints: any
-  setAccumulatedPoints: any
+  setFlavor: Dispatch<React.SetStateAction<any>>
+  accumulatedPoints: number
+  setAccumulatedPoints: Dispatch<React.SetStateAction<number>>
 }
 
 interface DataStorageProps {

@@ -62,6 +62,11 @@ export const ContainerList = styled.div`
   width: 100%;
   margin-bottom: 2rem;
 
+  p,
+  li {
+    word-break: break-word;
+  }
+
   ${s.break(37)} {
     width: calc(50% - 1.5rem);
   }
@@ -91,8 +96,4 @@ export const Title = styled.h1`
   color: #7f1d1d;
   font-size: 1.8rem;
   margin-bottom: 0.3rem;
-`
-
-export const Email = styled.p`
-  word-break: break-all;
 `

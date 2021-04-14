@@ -153,6 +153,7 @@ input[type='number'] {
   -webkit-appearance: textfield;
   background-color: #fff;
   border: 0.2rem solid #222;
+  cursor: default;
 `
 
 export const BtnCount = styled.button`

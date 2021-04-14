@@ -10,7 +10,7 @@ export const ContainerInput = styled.div`
 
 export const WrapperInput = styled.div<{
   error: string | undefined
-  disabledField: any
+  disabledField: boolean | undefined
 }>`
   display: flex;
   flex-direction: column;

@@ -66,7 +66,7 @@ export const FormData = () => {
   const [loadZipCode, setLoadZipCode] = useState(false)
   const [disabledField, setDisabledField] = useState(true)
 
-  const SearchCep = async (params: any, server = 0) => {
+  const SearchCep = async (params: string, server = 0) => {
     setLoadZipCode(true)
 
     // Lista de servidores

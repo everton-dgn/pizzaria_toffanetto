@@ -27,16 +27,16 @@ export const Flavor = ({ data }: FlavorProps) => {
 
   const [verifyChecked, setVerifyChecked] = useState([false])
 
-  // grava o objeto flavor com id e checked da api
+  // grava o objeto flavor com name e checked da api
   useEffect(() => {
     const flavorItems = data.map(el => {
-      return { id: el.id, checked: false }
+      return { name: el.name, checked: false }
     })
     setFlavor(flavorItems)
   }, [])
 
   const verifyCheckedFlavor = () => {
-    const verify = flavor.map((el: any) => el.checked)
+    const verify = flavor.map((el: { checked: boolean }) => el.checked)
     setVerifyChecked(verify)
   }
 
@@ -51,26 +51,21 @@ export const Flavor = ({ data }: FlavorProps) => {
     }
   }
 
-  const punctuation = (points: number) => {
-    const sumPoints = accumulatedPoints + points
-    setAccumulatedPoints(sumPoints)
+  const punctuation = (i: number) => {
+    if (flavor[i].checked === true && data[i].recommendationDay) {
+      setAccumulatedPoints(accumulatedPoints + data[i].points)
+    } else if (flavor[i].checked === false && data[i].recommendationDay) {
+      setAccumulatedPoints(accumulatedPoints - data[i].points)
+    }
   }
 
-  const changeFlavorChecked = (i: any, checked: any) => {
+  const changeFlavorChecked = (i: number, checked: boolean) => {
     const defineChecked = flavor
     defineChecked[i].checked = checked
     setFlavor(defineChecked)
 
     verifyCheckedFlavor()
-
-    if (flavor[i].checked === true && data[i].recommendationDay === true) {
-      punctuation(data[i].points)
-    } else if (
-      flavor[i].checked === false &&
-      data[i].recommendationDay === true
-    ) {
-      punctuation(-data[i].points)
-    }
+    punctuation(i)
   }
 
   return (
