@@ -30,7 +30,15 @@ export const BtnNext = styled.button`
   border-radius: 0.8rem;
   transition: background-color 0.2s linear;
 
+  &:disabled {
+    cursor: not-allowed;
+  }
+
   &:hover {
     background-color: #39ecab;
+
+    &:disabled {
+      background-color: #34d399;
+    }
   }
 `

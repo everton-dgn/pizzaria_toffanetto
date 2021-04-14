@@ -43,25 +43,12 @@ export const Size = ({ data }: SizeProps) => {
 
   const ConvertToPrice = (price: number) => useCart(price)
 
-  const scrollBottom = () => {
-    let i = window.scrollY
-    const int = setInterval(function () {
-      window.scrollTo(0, i)
-      i += 10
-      if (i >= window.innerHeight) clearInterval(int)
-    }, 20)
-  }
-
   return (
     <>
       <S.TitleComponent>Tamanhos</S.TitleComponent>
       <S.ContainerSize>
         {data.sizesAndPrices.map(el => (
-          <S.Card
-            key={el.size}
-            onClick={scrollBottom}
-            verifyCheck={selectedValue === el.size}
-          >
+          <S.Card key={el.size} verifyCheck={selectedValue === el.size}>
             <S.ContainerRadio>
               <S.RadioContent>
                 <S.RadioLabel>
@@ -94,7 +81,7 @@ export const Size = ({ data }: SizeProps) => {
           </S.Card>
         ))}
 
-        {selectedValue && <BtnNext route={'/etapa-3'} />}
+        <BtnNext route={'/etapa-3'} disabled={selectedValue === ''} />
       </S.ContainerSize>
     </>
   )

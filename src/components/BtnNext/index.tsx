@@ -1,21 +1,22 @@
 import React from 'react'
 import * as S from 'components/BtnNext/styles'
-import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 interface Props {
   route: string
   text?: string
+  disabled?: boolean
 }
 
-export const BtnNext = ({ route, text }: Props) => {
+export const BtnNext = ({ route, text, disabled }: Props) => {
+  const router = useRouter()
+
   return (
     <>
       <S.ContainerBtn center={text}>
-        <Link href={route}>
-          <a>
-            <S.BtnNext>{text || 'Avançar'}</S.BtnNext>
-          </a>
-        </Link>
+        <S.BtnNext onClick={() => router.push(route)} disabled={disabled}>
+          {text || 'Avançar'}
+        </S.BtnNext>
       </S.ContainerBtn>
     </>
   )

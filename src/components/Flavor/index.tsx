@@ -25,7 +25,8 @@ export const Flavor = ({ data }: FlavorProps) => {
     accumulatedPoints
   } = useContext(DataContext)
 
-  const [verifyChecked, setVerifyChecked] = useState([false])
+  const [disabledBtn, setDisabledBtn] = useState(true)
+  const [borderCard, setBorderCard] = useState([false])
 
   // grava o objeto flavor com name e checked da api
   useEffect(() => {
@@ -35,22 +36,6 @@ export const Flavor = ({ data }: FlavorProps) => {
     setFlavor(flavorItems)
   }, [])
 
-  const verifyCheckedFlavor = () => {
-    const verify = flavor.map((el: { checked: boolean }) => el.checked)
-    setVerifyChecked(verify)
-  }
-
-  const scrollBottom = () => {
-    if (!verifyChecked.includes(true)) {
-      let i = window.scrollY
-      const int = setInterval(function () {
-        window.scrollTo(0, i)
-        i += 10
-        if (i >= window.innerHeight) clearInterval(int)
-      }, 20)
-    }
-  }
-
   const punctuation = (i: number) => {
     if (flavor[i].checked === true && data[i].recommendationDay) {
       setAccumulatedPoints(accumulatedPoints + data[i].points)
@@ -59,13 +44,25 @@ export const Flavor = ({ data }: FlavorProps) => {
     }
   }
 
+  const handleDisabledBtn = () => {
+    const arrayBoolean = flavor.map((el: { checked: boolean }) => el.checked)
+
+    arrayBoolean.every((el: boolean) => !el)
+      ? setDisabledBtn(true)
+      : setDisabledBtn(false)
+  }
+
+  const handleBorderCard = () => {
+    setBorderCard(flavor.map((el: { checked: boolean }) => el.checked))
+  }
+
   const changeFlavorChecked = (i: number, checked: boolean) => {
     const defineChecked = flavor
     defineChecked[i].checked = checked
     setFlavor(defineChecked)
 
-    verifyCheckedFlavor()
     punctuation(i)
+    handleDisabledBtn()
   }
 
   return (
@@ -75,8 +72,8 @@ export const Flavor = ({ data }: FlavorProps) => {
         {data.map((el, i) => (
           <S.Card
             key={el.id}
-            onClick={scrollBottom}
-            verifyCheck={flavor[i]?.checked}
+            onClick={handleBorderCard}
+            verifyCheck={borderCard[i]}
           >
             <S.ContainerCheckbox>
               <input
@@ -105,7 +102,7 @@ export const Flavor = ({ data }: FlavorProps) => {
           </S.Card>
         ))}
 
-        {verifyChecked.includes(true) && <BtnNext route={'/etapa-2'} />}
+        <BtnNext route={'/etapa-2'} disabled={disabledBtn} />
       </S.ContainerCard>
     </>
   )
