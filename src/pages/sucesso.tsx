@@ -22,13 +22,9 @@ const Sucesso = () => {
 
   const SendZap = async () => {
     await Router.push(
-      `https://api.whatsapp.com/send?phone=55${phone}&text=%0a*DADOS%20DO%20PEDIDO:*%0a%0a*Nome%20Completo:*%0a${name}%0a%0a*E-mail:*%0a${email}%0a%0a*Celular:*%0a${phone}%0a%0a*Endereço:*%0a${
-        address?.street
-      },%20${address?.number}%20-%20${address?.neighborhood}.%0a${
-        address?.city
-      },%20${address?.state}.%20${
-        address?.zipCode
-      }.%0a%0a*Sabor(es):*%0a${flavor
+      `https://api.whatsapp.com/send?phone=55${phone}&text=%0a*DADOS%20DO%20PEDIDO:*%0a%0a*Nome%20Completo:*%0a${name}%0a%0a*E-mail:*%0a${email}%0a%0a*Celular:*%0a${phone}%0a%0a*Endereço:*${form.map(
+        el => `%0a ${el[1]}`
+      )}.%0a%0a*Sabor(es):*%0a${flavor
         .filter((el: { checked: boolean }) => el.checked)
         .map((el: { name: string }) => `• ${el.name}%0a`)
         .join(',')
