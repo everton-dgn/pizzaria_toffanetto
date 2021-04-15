@@ -249,7 +249,9 @@ export const FormData = () => {
                 />
               </Scope>
             </S.ContentForm>
-            <S.BtnSend type="submit">Enviar</S.BtnSend>
+            <S.BtnSend type="submit" disabled={disabledField}>
+              Enviar
+            </S.BtnSend>
           </S.FormFields>
         </S.Card>
       </S.Container>

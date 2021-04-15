@@ -86,8 +86,17 @@ export const BtnSend = styled.button`
   ${s.break(90)} {
     max-width: calc(30% + 2rem);
   }
-  
+
   &:hover {
-    background-color: #38e3a5;
+    background-color: #3ceaab;
+
+    &:disabled {
+      background-color: #34d399;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 `
