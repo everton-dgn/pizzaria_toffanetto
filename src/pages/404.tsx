@@ -1,4 +1,4 @@
-import { Banner, BtnNext, TitleSection } from 'components'
+import { BtnNext, TitleSection } from 'components'
 import * as S from 'styles/pages/404'
 import { c } from 'theme'
 import Image from 'next/image'
@@ -6,7 +6,6 @@ import Image from 'next/image'
 export default function Custom404() {
   return (
     <>
-      <Banner />
       <TitleSection title="Erro 404" />
       <c.Container>
         <S.ContainImg>

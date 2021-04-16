@@ -9,6 +9,7 @@ import { useValidate } from 'hooks/UseValidate'
 import { Toast, NotifyError, NotifySuccess } from 'components/Toast'
 import { toast } from 'react-toastify'
 import axios from 'axios'
+import Cookies from 'js-cookie'
 
 interface FormDataUnform {
   name?: string
@@ -129,6 +130,12 @@ export const FormData = () => {
       toast.dismiss()
       // mostra toast de sucesso
       NotifySuccess('Seus dados foram enviados com sucesso.', 'Sucesso!')
+
+      // gera cookies de acesso a página de sucesso
+      const timeMinutesExpired = new Date(new Date().getTime() + 15 * 60 * 1000)
+      Cookies.set('tokenPageSuccess', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9', {
+        expires: timeMinutesExpired
+      })
 
       await Router.push('/sucesso')
     } catch (err) {

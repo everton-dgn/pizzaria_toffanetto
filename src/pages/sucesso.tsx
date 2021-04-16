@@ -1,10 +1,12 @@
-import { useContext } from 'react'
+import React, { useContext } from 'react'
 import { TitleSection, Steps, Cart } from 'components'
 import * as S from 'styles/pages/success'
-import Router from 'next/router'
+import { useRouter } from 'next/router'
 import { DataContext } from 'hooks/UseContext'
 import { c } from 'theme'
 import { useCart } from 'hooks/UseCart'
+import Cookies from 'js-cookie'
+import Custom404 from './404'
 
 const Sucesso = () => {
   const {
@@ -16,12 +18,17 @@ const Sucesso = () => {
     size
   } = useContext(DataContext)
 
+  const router = useRouter()
+
+  // redireciona para página de erro se o formulário não for enviado
+  if (!Cookies.get('tokenPageSuccess')) return <Custom404 />
+
   const arrayAdditionals = additionals.filter(el => el.qtd > 0)
 
   const form = address !== undefined ? Object.entries(address) : []
 
   const SendZap = async () => {
-    await Router.push(
+    await router.push(
       `https://api.whatsapp.com/send?phone=55${phone}&text=%0a*DADOS%20DO%20PEDIDO:*%0a%0a*Nome%20Completo:*%0a${name}%0a%0a*E-mail:*%0a${email}%0a%0a*Celular:*%0a${phone}%0a%0a*Endereço:*${form.map(
         el => `%0a ${el[1]}`
       )}.%0a%0a*Sabor(es):*%0a${flavor
