@@ -67,6 +67,8 @@ Este projeto tem o objetivo de agilizar o processo do pedido de pizzas, proporci
   
 - [x] Formulário de coleta de dados básicos para entrega de pedido.
   
+- [x] Busca por cep em 3 servidores para autocompletar os campos do endereço.
+  
 - [x] Validação por cookies para páginas do checkout.
   
 - [x] Envio de pedido completo pelo WhatsApp.
