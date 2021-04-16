@@ -1,6 +1,6 @@
 module.exports = {
   images: {
-    deviceSizes: [320, 420, 768, 1024, 1200, 1500, 2000],
+    deviceSizes: [320, 420, 768, 1024, 1200, 1300, 1500, 1700],
     iconSizes: [],
     domains: [],
     path: '/_next/image',

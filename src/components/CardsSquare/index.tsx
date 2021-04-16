@@ -28,7 +28,7 @@ export const CardsSquare = ({ data }: CardSquareProps) => {
                 alt="Imagem de uma pizza"
                 layout="fill"
                 objectFit="cover"
-                quality={80}
+                quality={90}
               />
             </S.ContainerImg>
             <S.ContainerInfo bonus={el.recommendationDay}>

@@ -57,7 +57,7 @@ export const Additional = ({ data }: AdditionalProps) => {
                     alt={el.name}
                     layout="fill"
                     objectFit="cover"
-                    quality={80}
+                    quality={90}
                   />
                 </S.BoxImg>
 
