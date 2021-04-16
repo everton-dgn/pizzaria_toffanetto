@@ -9,7 +9,7 @@ import { useValidate } from 'hooks/UseValidate'
 import { Toast, NotifyError, NotifySuccess } from 'components/Toast'
 import { toast } from 'react-toastify'
 import axios from 'axios'
-import Cookies from 'js-cookie'
+import { useWriteToken } from 'hooks/UseToken'
 
 interface FormDataUnform {
   name?: string
@@ -66,6 +66,11 @@ export const FormData = () => {
 
   const [loadZipCode, setLoadZipCode] = useState(false)
   const [disabledField, setDisabledField] = useState(true)
+
+  // gera cookies de acesso para a página de sucesso
+  const WriteToken = () => {
+    useWriteToken('tokenPageSuccess', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9')
+  }
 
   const SearchCep = async (params: string, server = 0) => {
     setLoadZipCode(true)
@@ -131,11 +136,7 @@ export const FormData = () => {
       // mostra toast de sucesso
       NotifySuccess('Seus dados foram enviados com sucesso.', 'Sucesso!')
 
-      // gera cookies de acesso a página de sucesso
-      const timeMinutesExpired = new Date(new Date().getTime() + 15 * 60 * 1000)
-      Cookies.set('tokenPageSuccess', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9', {
-        expires: timeMinutesExpired
-      })
+      WriteToken()
 
       await Router.push('/sucesso')
     } catch (err) {

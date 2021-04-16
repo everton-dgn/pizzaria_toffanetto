@@ -2,10 +2,14 @@ import { TitleSection, Steps, Cart, Size } from 'components'
 import axios from 'axios'
 import { c } from 'theme'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { useReadToken } from 'hooks/UseToken'
 
 const Etapa2 = ({
   dataApi
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  // redireciona para página inicial se não validar etapa-1
+  useReadToken('tokenPageStep2')
+
   return (
     <>
       <Steps activeStep={[true, true, false, false, false]} />

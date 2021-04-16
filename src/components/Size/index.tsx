@@ -81,7 +81,14 @@ export const Size = ({ data }: SizeProps) => {
           </S.Card>
         ))}
 
-        <BtnNext route={'/etapa-3'} disabled={selectedValue === ''} />
+        <BtnNext
+          route={'/etapa-3'}
+          disabled={selectedValue === ''}
+          token={{
+            name: 'tokenPageStep3',
+            value: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ1'
+          }}
+        />
       </S.ContainerSize>
     </>
   )

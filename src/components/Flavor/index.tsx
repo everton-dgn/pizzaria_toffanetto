@@ -87,7 +87,7 @@ export const Flavor = ({ data }: FlavorProps) => {
                 alt="Imagem de uma pizza"
                 layout="fill"
                 objectFit="cover"
-                quality={80}
+                quality={90}
               />
             </S.ContainerImg>
             <S.ContainerInfo bonus={el.recommendationDay}>
@@ -102,7 +102,14 @@ export const Flavor = ({ data }: FlavorProps) => {
           </S.Card>
         ))}
 
-        <BtnNext route={'/etapa-2'} disabled={disabledBtn} />
+        <BtnNext
+          route={'/etapa-2'}
+          disabled={disabledBtn}
+          token={{
+            name: 'tokenPageStep2',
+            value: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ0'
+          }}
+        />
       </S.ContainerCard>
     </>
   )

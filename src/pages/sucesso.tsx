@@ -6,7 +6,7 @@ import { DataContext } from 'hooks/UseContext'
 import { c } from 'theme'
 import { useCart } from 'hooks/UseCart'
 import Cookies from 'js-cookie'
-import Custom404 from './404'
+import { useReadToken, useRemoveAllTokens } from 'hooks/UseToken'
 
 const Sucesso = () => {
   const {
@@ -20,8 +20,8 @@ const Sucesso = () => {
 
   const router = useRouter()
 
-  // redireciona para página de erro se o formulário não for enviado
-  if (!Cookies.get('tokenPageSuccess')) return <Custom404 />
+  // redireciona para página inicial se o formulário não foi enviado
+  useReadToken('tokenPageSuccess')
 
   const arrayAdditionals = additionals.filter(el => el.qtd > 0)
 
@@ -51,6 +51,9 @@ const Sucesso = () => {
           : 'Não selecionada! 😐'
       }%0a%0a*TOTAL:*%0a${useCart(cart)}%0a`
     )
+
+    Cookies.remove('tokenPageSuccess')
+    useRemoveAllTokens()
   }
 
   return (
