@@ -13,3 +13,18 @@ export const Paragraph = styled.p`
   text-align: center;
   max-width: 80rem;
 `
+
+export const BtnHome = styled.button`
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  background-color: #34d399;
+  padding: 1rem 3rem;
+  margin: 3rem auto 0 auto;
+  font-weight: bold;
+  border-radius: 1rem;
+  transition: background-color 0.2s linear;
+
+  &:hover {
+    background-color: #3ae7a8;
+  }
+`

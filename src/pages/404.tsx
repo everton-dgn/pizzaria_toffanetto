@@ -1,7 +1,8 @@
-import { BtnNext, TitleSection } from 'components'
+import { TitleSection } from 'components'
 import * as S from 'styles/pages/404'
 import { c } from 'theme'
 import Image from 'next/image'
+import Router from 'next/router'
 
 export default function Custom404() {
   return (
@@ -23,7 +24,7 @@ export default function Custom404() {
           <br />
           Caso prefira, clique no botão abaixo e retorne para a página inicial:
         </S.Paragraph>
-        <BtnNext route={'/'} text={'Página Inicial'} />
+        <S.BtnHome onClick={() => Router.push('/')}>Página Inicial</S.BtnHome>
       </c.Container>
     </>
   )
