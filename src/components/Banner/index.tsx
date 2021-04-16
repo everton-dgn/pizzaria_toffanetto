@@ -22,7 +22,7 @@ export const Banner = () => {
 
         <S.ContainImg>
           <Image
-            src="/img/headers/banner-home.jpg"
+            src="/img/banners/banner-home.jpg"
             alt="Bem-vindo(a) à Pizzaria Toffanetto"
             layout="fill"
             objectFit="cover"
