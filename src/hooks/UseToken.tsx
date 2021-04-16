@@ -1,4 +1,3 @@
-import React from 'react'
 import Cookies from 'js-cookie'
 import { useRouter } from 'next/router'
 
@@ -17,7 +16,6 @@ export const useReadToken = (name: string) => {
   const redirect = async () => {
     if (!Cookies.get(name)) {
       await router.push('/')
-      return <div />
     }
   }
   redirect().then(r => r)
@@ -28,7 +26,8 @@ export const useRemoveAllTokens = () => {
     'tokenPageStep2',
     'tokenPageStep3',
     'tokenPageStep4',
-    'tokenPageSuccess'
+    'tokenPageSuccess',
+    'tokenReturnHome'
   ]
 
   listTokens.forEach(el => Cookies.remove(el))

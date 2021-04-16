@@ -6,7 +6,7 @@ import { DataContext } from 'hooks/UseContext'
 import { c } from 'theme'
 import { useCart } from 'hooks/UseCart'
 import Cookies from 'js-cookie'
-import { useReadToken, useRemoveAllTokens } from 'hooks/UseToken'
+import { useReadToken, useRemoveAllTokens, useWriteToken } from 'hooks/UseToken'
 
 const Sucesso = () => {
   const {
@@ -22,12 +22,17 @@ const Sucesso = () => {
 
   // redireciona para página inicial se o formulário não foi enviado
   useReadToken('tokenPageSuccess')
+  // remove todos os tokens caso retorne para essa página
+  const RemoveAllTokens = () => useRemoveAllTokens()
+  Cookies.get('tokenReturnHome') && RemoveAllTokens()
 
   const arrayAdditionals = additionals.filter(el => el.qtd > 0)
 
   const form = address !== undefined ? Object.entries(address) : []
 
   const SendZap = async () => {
+    useWriteToken('tokenReturnHome', 'ofhsn7h5057h68568564go5648g5648g')
+
     await router.push(
       `https://api.whatsapp.com/send?phone=55${phone}&text=%0a*DADOS%20DO%20PEDIDO:*%0a%0a*Nome%20Completo:*%0a${name}%0a%0a*E-mail:*%0a${email}%0a%0a*Celular:*%0a${phone}%0a%0a*Endereço:*${form.map(
         el => `%0a ${el[1]}`
@@ -51,9 +56,6 @@ const Sucesso = () => {
           : 'Não selecionada! 😐'
       }%0a%0a*TOTAL:*%0a${useCart(cart)}%0a`
     )
-
-    Cookies.remove('tokenPageSuccess')
-    useRemoveAllTokens()
   }
 
   return (
