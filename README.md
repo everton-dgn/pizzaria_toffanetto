@@ -61,11 +61,13 @@ Este projeto tem o objetivo de agilizar o processo do pedido de pizzas, proporci
   
 - [x] Cardápio de pizzas com recomendação do dia e adicionais com dados obtidos via api.
   
-- [x] Sistema de pontuação de bônus para pedidos.
+- [x] Sistema de pontuação de bônus para seleção de pedidos com a recomendação do dia.
   
-- [x] Carrinho de pedido para controle do preço total.
+- [x] Carrinho de pedido interativo para controle do preço total.
   
 - [x] Formulário de coleta de dados básicos para entrega de pedido.
+  
+- [x] Validação por cookies para páginas do checkout.
   
 - [x] Envio de pedido completo pelo WhatsApp.
 
