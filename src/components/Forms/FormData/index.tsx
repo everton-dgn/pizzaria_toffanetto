@@ -3,7 +3,7 @@ import * as S from 'components/Forms/FormData/styles'
 import { Input, Select } from 'components'
 import { FormHandles, Scope, SubmitHandler } from '@unform/core'
 import * as Yup from 'yup'
-import Router from 'next/router'
+import { useRouter } from 'next/router'
 import { DataContext } from 'hooks/UseContext'
 import { useValidate } from 'hooks/UseValidate'
 import { Toast, NotifyError, NotifySuccess } from 'components/Toast'
@@ -59,6 +59,7 @@ export const FormData = () => {
   const { setFormData } = useContext(DataContext)
   const formRef = useRef<FormHandles>(null)
   const schema = useValidate()
+  const router = useRouter()
 
   const [selectState, setSelectState] = useState<
     SetStateAction<{ value: string; label: string }>
@@ -138,7 +139,7 @@ export const FormData = () => {
 
       WriteToken()
 
-      await Router.push('/sucesso')
+      await router.push('/sucesso')
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const errorMessages = {}

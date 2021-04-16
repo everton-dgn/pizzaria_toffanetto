@@ -20,9 +20,9 @@ export const BtnNext = ({ route, text, disabled, token }: Props) => {
     useWriteToken(token.name, token.value)
   }
 
-  const handleClick = () => {
+  const handleClick = async () => {
     token !== undefined && WriteToken()
-    router.push(route).then(r => r)
+    await router.push(route)
   }
 
   return (
