@@ -3,6 +3,7 @@ import { c, s } from 'theme'
 
 export const ContainerBanner = styled.div`
   position: relative;
+  min-height: 80vh;
 `
 
 export const ContainerInfo = styled(c.Box)`
@@ -63,7 +64,7 @@ export const ContainerInfo = styled(c.Box)`
 export const ContainImg = styled.div`
   div {
     position: relative !important;
-    height: calc(60vh - 5rem);
+    height: calc(100vh - 5rem);
   }
 
   img {
@@ -74,12 +75,6 @@ export const ContainImg = styled.div`
 
     ${s.break(60)} {
       object-position: initial;
-    }
-  }
-
-  ${s.break(102.4)} {
-    div {
-      height: auto;
     }
   }
 `
