@@ -1,10 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import * as S from 'components/Forms/Select/styles'
-import ReactSelect, {
-  // components,
-  OptionTypeBase,
-  Props as SelectProps
-} from 'react-select'
+import ReactSelect, { OptionTypeBase, Props as SelectProps } from 'react-select'
 import { useField } from '@unform/core'
 import NoSSR from 'react-no-ssr'
 
@@ -75,11 +71,6 @@ export const Select = ({
     }
   }
 
-  // desativa o autocomplete do chrome
-  /*  const Input = ({ autoComplete, ...props }: any) => (
-    <components.Input {...props} autoComplete="dfdfdf" />
-  ) */
-
   return (
     <>
       <S.ContainerInput>
@@ -99,10 +90,6 @@ export const Select = ({
               onBlur={e => changeFocusRemove(e.target)}
               maxMenuHeight={240}
               isDisabled={isDisabled}
-              // searchInput={{ autoComplete: 'dfdfdf' }}
-              // components={{
-              //  Input
-              // }}
             />
           </NoSSR>
 
