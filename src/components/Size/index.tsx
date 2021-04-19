@@ -1,44 +1,38 @@
-import React, { ChangeEvent, useContext, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import * as S from 'components/Size/styles'
 import { DataContext } from 'hooks/UseContext'
 import { BtnNext } from 'components/BtnNext'
 import { useCart } from 'hooks/UseCart'
 import Image from 'next/image'
+import { getStorage, setStorage } from 'utils/HandleSessionStorage'
 
 interface SizeProps {
-  data: {
-    pizzas: [
-      {
-        id: string
-        img: string
-        ingredients: string
-        name: string
-        points: string
-        recommendationDay: string
-      }
-    ]
-    sizesAndPrices: [
-      {
-        size: string
-        price: number
-        slices: number
-      }
-    ]
-  }
+  sizes: [
+    {
+      size: string
+      price: number
+      slices: number
+    }
+  ]
 }
 
-export const Size = ({ data }: SizeProps) => {
-  const { setSize, setCart } = useContext(DataContext)
+export const Size = ({ sizes }: SizeProps) => {
+  const { size, setSize, setCart } = useContext(DataContext)
 
-  const [selectedValue, setSelectedValue] = useState('')
+  useEffect(() => getStorage('size') && setSize(getStorage('size')), [])
 
-  const addCart = (price: number, size: string) => {
-    setSize({ price: price, size: size })
+  const addCart = (price: number) => {
     setCart(price)
+    setStorage('cart', price)
   }
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setSelectedValue(event.target.value)
+  const handleSizeChecked = (price: number, currentSize: string) => {
+    const sizeAndPrice = { price: price, size: currentSize }
+    setSize(sizeAndPrice)
+
+    setStorage('size', sizeAndPrice)
+
+    addCart(price)
   }
 
   const ConvertToPrice = (price: number) => useCart(price)
@@ -47,16 +41,15 @@ export const Size = ({ data }: SizeProps) => {
     <>
       <S.TitleComponent>Tamanhos</S.TitleComponent>
       <S.ContainerSize>
-        {data.sizesAndPrices.map(el => (
-          <S.Card key={el.size} verifyCheck={selectedValue === el.size}>
+        {sizes.map(el => (
+          <S.Card key={el.size} verifyCheck={size.size === el.size}>
             <S.ContainerRadio>
               <S.RadioContent>
                 <S.RadioLabel>
                   <input
                     type="radio"
-                    onClick={() => addCart(el.price, el.size)}
-                    checked={selectedValue === el.size}
-                    onChange={handleChange}
+                    checked={size.size === el.size}
+                    onChange={() => handleSizeChecked(el.price, el.size)}
                     value={el.size}
                     name={el.size}
                   />
@@ -83,7 +76,7 @@ export const Size = ({ data }: SizeProps) => {
 
         <BtnNext
           route={'/etapa-3'}
-          disabled={selectedValue === ''}
+          disabled={!size.size}
           token={{
             name: 'tokenPageStep3',
             value: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ1'

@@ -1,14 +1,17 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import * as S from 'components/Cart/styles'
 import { DataContext } from 'hooks/UseContext'
 import { c } from 'theme'
 import { useCart } from 'hooks/UseCart'
 import Image from 'next/image'
+import { getStorage } from 'utils/HandleSessionStorage'
 
 export const Cart = () => {
-  const { cart } = useContext(DataContext)
+  const { cart, setCart } = useContext(DataContext)
 
   const convertCart = useCart(cart)
+
+  useEffect(() => getStorage('cart') && setCart(getStorage('cart')), [setCart])
 
   return (
     <>

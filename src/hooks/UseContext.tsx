@@ -31,11 +31,9 @@ interface ChallengeContextData {
   formData: FormDataProvider
   setFormData: Dispatch<React.SetStateAction<FormDataProvider>>
   additionals: AdditionalProps[]
-  setAdditionals: Dispatch<React.SetStateAction<any>>
+  setAdditionals: Dispatch<React.SetStateAction<AdditionalProps[]>>
   flavor: any
   setFlavor: Dispatch<React.SetStateAction<any>>
-  accumulatedPoints: number
-  setAccumulatedPoints: Dispatch<React.SetStateAction<number>>
 }
 
 interface DataStorageProps {
@@ -47,13 +45,11 @@ export const DataContext = createContext({} as ChallengeContextData)
 export const DataStorage = ({ children }: DataStorageProps) => {
   const [flavor, setFlavor] = useState([])
 
-  const [additionals, setAdditionals] = useState([])
+  const [additionals, setAdditionals] = useState<AdditionalProps[]>([])
 
   const [size, setSize] = useState({ price: 0, size: '' })
 
   const [cart, setCart] = useState(0)
-
-  const [accumulatedPoints, setAccumulatedPoints] = useState(0)
 
   const [formData, setFormData] = useState({})
 
@@ -72,10 +68,7 @@ export const DataStorage = ({ children }: DataStorageProps) => {
         setAdditionals,
 
         flavor,
-        setFlavor,
-
-        accumulatedPoints,
-        setAccumulatedPoints
+        setFlavor
       }}
     >
       {children}

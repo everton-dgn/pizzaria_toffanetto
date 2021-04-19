@@ -16,7 +16,7 @@ const Etapa2 = ({
       <TitleSection title="Selecione o tamanho da pizza" />
       <Cart />
       <c.Container>
-        <Size data={dataApi} />
+        <Size sizes={dataApi.sizesAndPrices} />
       </c.Container>
     </>
   )

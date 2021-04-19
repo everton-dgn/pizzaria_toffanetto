@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { TitleSection, Steps, Cart } from 'components'
 import * as S from 'styles/pages/success'
 import { useRouter } from 'next/router'
@@ -6,15 +6,20 @@ import { DataContext } from 'hooks/UseContext'
 import { c } from 'theme'
 import { useCart } from 'hooks/UseCart'
 import { useReadToken, useRemoveAllTokens } from 'hooks/UseToken'
+import { getStorage } from 'utils/HandleSessionStorage'
 
 const Sucesso = () => {
   const {
     additionals,
+    setAdditionals,
     cart,
+    setCart,
     formData: { address, email, name, phone },
-    accumulatedPoints,
+    setFormData,
     flavor,
-    size
+    setFlavor,
+    size,
+    setSize
   } = useContext(DataContext)
 
   const router = useRouter()
@@ -22,37 +27,64 @@ const Sucesso = () => {
   // redireciona para página inicial se o formulário não foi enviado
   useReadToken('tokenPageSuccess')
 
-  const arrayAdditionals = additionals.filter(el => el.qtd > 0)
+  useEffect(() => {
+    getStorage('flavor') && setFlavor(getStorage('flavor'))
+    getStorage('size') && setSize(getStorage('size'))
+    getStorage('cart') && setCart(getStorage('cart'))
+    getStorage('additionals') && setAdditionals(getStorage('additionals'))
+    getStorage('form') && setFormData(getStorage('form'))
+  }, [])
+
+  const getPontuation = () => {
+    return flavor.find(
+      (el: { recommendationDay: boolean }) => el.recommendationDay
+    )?.points
+  }
+
+  const arrayAdditionals = additionals.filter(
+    (el: { qtd: number }) => el.qtd > 0
+  )
 
   const form = address !== undefined ? Object.entries(address) : []
 
+  const flavorList = flavor
+    .map((el: { name: string }) => `• ${el.name}%0a`)
+    .join(',')
+    .replace(/,+/g, '')
+
+  const formList = form.map(el => `%0a ${el[1]}`)
+
+  const additionalsList =
+    arrayAdditionals.length !== 0
+      ? '%0a*Adiconais:*%0a' +
+        arrayAdditionals
+          .map(el => `• ${el.qtd} x ${el.name}%0a`)
+          .join(',')
+          .replace(/,+/g, '')
+      : ''
+
+  const pontuationText =
+    getPontuation() > 0
+      ? '• Sim! 😀. Você selecionou a recomendação do dia e acumulou ➕' +
+        `${getPontuation()} pontos para a próxima compra!`
+      : 'Não selecionada! 😐'
+
   const SendZap = async () => {
-    await router.push(
-      `https://api.whatsapp.com/send?phone=55${phone}&text=%0a*DADOS%20DO%20PEDIDO:*%0a%0a*Nome%20Completo:*%0a${name}%0a%0a*E-mail:*%0a${email}%0a%0a*Celular:*%0a${phone}%0a%0a*Endereço:*${form.map(
-        el => `%0a ${el[1]}`
-      )}.%0a%0a*Sabor(es):*%0a${flavor
-        .filter((el: { checked: boolean }) => el.checked)
-        .map((el: { name: string }) => `• ${el.name}%0a`)
-        .join(',')
-        .replace(/,+/g, '')}%0a*Tamanho:*%0a${'• ' + size.size + '%0a'}${
-        arrayAdditionals.length !== 0
-          ? '%0a*Adiconais:*%0a' +
-            arrayAdditionals
-              .map(el => '• ' + el.qtd + ' x ' + el.name + '%0a')
-              .join(',')
-              .replace(/,+/g, '')
-          : ''
-      }%0a*Recomendação%20do%20dia:*%0a${
-        accumulatedPoints > 0
-          ? '• Sim! 😀. Você selecionou a recomendação do dia e acumulou ➕' +
-            `${accumulatedPoints}` +
-            ' pontos para a próxima compra!'
-          : 'Não selecionada! 😐'
-      }%0a%0a*TOTAL:*%0a${useCart(cart)}%0a`
-    )
+    const linkZap =
+      `https://api.whatsapp.com/send?phone=55${phone}&text=%0a` +
+      `*DADOS%20DO%20PEDIDO:*%0a%0a*Nome%20Completo:*%0a${name}%0a%0a` +
+      `*E-mail:*%0a${email}%0a%0a*Celular:*%0a${phone}%0a%0a` +
+      `*Endereço:*${formList}.%0a%0a*Sabor(es):*%0a${flavorList}%0a` +
+      `*Tamanho:*%0a•%20${size.size}%0a${additionalsList}%0a` +
+      `*Recomendação%20do%20dia:*%0a${pontuationText}%0a%0a` +
+      `*TOTAL:*%0a${useCart(cart)}%0a`
+
+    await router.push(linkZap)
 
     // remove todos os tokens caso retorne para essa página após enviar o pedido
     useRemoveAllTokens()
+
+    sessionStorage.clear()
   }
 
   return (
@@ -68,11 +100,9 @@ const Sucesso = () => {
               <S.ContainerList>
                 <S.Title>Sabor(es):</S.Title>
                 <ul>
-                  {flavor
-                    .filter((el: { checked: boolean }) => el.checked)
-                    .map((el: { name: string }) => (
-                      <li key={el.name}>{'• ' + el.name}</li>
-                    ))}
+                  {flavor.map((el: { name: string }) => (
+                    <li key={el.name}>{'• ' + el.name}</li>
+                  ))}
                 </ul>
                 <br />
                 <S.Title>Tamanho:</S.Title>
@@ -109,10 +139,10 @@ const Sucesso = () => {
               </S.ContainerList>
               <S.ContainerList>
                 <S.Title>Recomendação do dia?</S.Title>
-                {accumulatedPoints > 0 ? (
+                {getPontuation() > 0 ? (
                   <p>
                     • Sim! 😀. Você selecionou a recomendação do dia e acumulou
-                    <b>{` +${accumulatedPoints} `}</b>
+                    <b>{` +${getPontuation()} `}</b>
                     pontos para a próxima compra!
                   </p>
                 ) : (

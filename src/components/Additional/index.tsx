@@ -3,6 +3,7 @@ import * as S from 'components/Additional/styles'
 import { DataContext } from 'hooks/UseContext'
 import { useCart } from 'hooks/UseCart'
 import Image from 'next/image'
+import { getStorage, setStorage } from 'utils/HandleSessionStorage'
 
 interface AdditionalProps {
   data: [
@@ -21,11 +22,24 @@ export const Additional = ({ data }: AdditionalProps) => {
   const { cart, setCart, additionals, setAdditionals } = useContext(DataContext)
 
   // popula o estado com o objeto additionals da api
-  useEffect(() => setAdditionals(data), [])
+  useEffect(() => {
+    if (getStorage('additionals')) {
+      setAdditionals(getStorage('additionals'))
+    } else {
+      setAdditionals(data)
+    }
+  }, [])
+
+  useEffect(() => {
+    setStorage('additionals', additionals)
+    setStorage('cart', cart)
+  }, [additionals, cart])
 
   const sumQtdAdditionals = (price: number) => {
     setCart(cart + price)
   }
+
+  const ConvertNumberToCurrency = (param: number) => useCart(param)
 
   const removeAdditional = (i: number) => {
     const changeAdditionals = additionals
@@ -35,13 +49,12 @@ export const Additional = ({ data }: AdditionalProps) => {
 
   const AddAdditional = (i: number) => {
     const changeAdditionals = additionals
+
     changeAdditionals[i].qtd = changeAdditionals[i].qtd + 1
     setAdditionals(changeAdditionals)
 
     sumQtdAdditionals(changeAdditionals[i].price)
   }
-
-  const ConvertNumberToCurrency = (param: number) => useCart(param)
 
   return (
     <>
