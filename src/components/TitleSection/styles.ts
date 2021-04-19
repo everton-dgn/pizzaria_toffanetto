@@ -5,7 +5,7 @@ export const TitleSection = styled.h1`
   width: fit-content;
   margin: 4rem auto 2.3rem auto;
   text-align: center;
-  font-weight: 900;
+  font-weight: 800;
   color: #7f1d1d;
   font-size: ${s.titleMain};
 

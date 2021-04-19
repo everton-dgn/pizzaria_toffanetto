@@ -1,4 +1,3 @@
-import React from 'react'
 import * as S from 'components/CardsSquare/styles'
 import Link from 'next/link'
 import Image from 'next/image'

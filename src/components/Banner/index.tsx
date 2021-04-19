@@ -6,13 +6,11 @@ export const Banner = () => {
     <>
       <S.ContainerBanner>
         <S.ContainerInfo>
-          <Image
+          <img
             src="/img/logo-y.svg"
             alt="Pizzaria Toffanetto"
-            width={400}
-            height={300}
-            objectFit="contain"
-            priority={true}
+            width="590"
+            height="300"
           />
           <h3>
             Pizzas exageradamente recheadas e saborosas, feitas em forno a lenha

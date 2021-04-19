@@ -21,7 +21,7 @@ export const ContainerBtn = styled.div<{ center?: string }>`
 
 export const BtnNext = styled.button`
   font-size: 1.7rem;
-  font-weight: bold;
+  font-weight: 800;
   text-transform: uppercase;
   background-color: #34d399;
   width: 100%;

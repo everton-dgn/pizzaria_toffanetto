@@ -4,7 +4,7 @@ import { Form } from '@unform/web'
 
 export const TitleComponent = styled.h1`
   color: #7f1d1d;
-  font-weight: bold;
+  font-weight: 800;
   font-size: 2rem;
   margin-bottom: 3rem;
   width: fit-content;
@@ -79,7 +79,7 @@ export const BtnSend = styled.button`
   max-width: 37rem;
   padding: 1.5rem 7rem;
   margin: 1.6rem auto 0 auto;
-  font-weight: bold;
+  font-weight: 800;
   border-radius: 1rem;
   transition: background-color 0.2s linear;
 

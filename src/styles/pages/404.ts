@@ -20,7 +20,7 @@ export const BtnHome = styled.button`
   background-color: #34d399;
   padding: 1rem 3rem;
   margin: 3rem auto 0 auto;
-  font-weight: bold;
+  font-weight: 800;
   border-radius: 1rem;
   transition: background-color 0.2s linear;
 

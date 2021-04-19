@@ -28,16 +28,16 @@ export const Logo = styled.span`
   div {
     position: relative !important;
     overflow: visible !important;
-
-    &:hover img {
-      filter: drop-shadow(0 0 0.5rem #ababab);
-      transition: filter 0.3s linear;
-    }
   }
 
   img {
     filter: drop-shadow(0 0 0.5rem #000);
     transition: filter 0.3s linear;
     padding: 0 2rem !important;
+
+    &:hover {
+      filter: drop-shadow(0 0 0.5rem #ababab);
+      transition: filter 0.3s linear;
+    }
   }
 `

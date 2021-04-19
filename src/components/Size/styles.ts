@@ -3,7 +3,7 @@ import { s } from 'theme'
 
 export const TitleComponent = styled.h1`
   color: #7f1d1d;
-  font-weight: 900;
+  font-weight: 800;
   font-size: 2.2rem;
   margin-bottom: 3rem;
   width: fit-content;
@@ -72,7 +72,7 @@ export const ContentInfo = styled.div`
 export const Title = styled.h3`
   display: flex;
   flex-direction: row;
-  font-weight: bold;
+  font-weight: 800;
   color: #7f1d1d;
   font-size: 2rem;
   text-transform: uppercase;

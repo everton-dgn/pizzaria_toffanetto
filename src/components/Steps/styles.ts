@@ -41,7 +41,7 @@ export const Step = styled.div<{ actived: boolean }>`
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  font-weight: 900;
+  font-weight: 800;
   z-index: 10;
   border-radius: 50%;
   width: 4rem;

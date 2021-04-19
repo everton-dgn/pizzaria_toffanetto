@@ -12,11 +12,30 @@ export default class MyDocument extends Document {
     return (
       <Html lang="pt-BR">
         <Head>
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <meta
+            name="description"
+            content="Este projeto tem o objetivo de agilizar o processo do pedido de pizzas, proporcionando uma experiência melhor para o cliente."
+          />
+          <meta
+            name="keywords"
+            content="pizzaria, delivery, everton, everton toffanetto, next, nextjs, react"
+          />
+          <meta name="author" content="Éverton Toffanetto" />
+          <meta name="copyright" content="© Éverton Toffanetto" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="canonical"
+            href="https://pizzaria-toffanetto.vercel.app/"
+          />
+          <link rel="manifest" href="/manifest.json" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;800&display=swap"
             rel="stylesheet"
           />
+          <link rel="apple-touch-icon" href="/icon-apple.png" />
           <link rel="icon" href="/favicon.ico" />
+          <meta name="theme-color" content="#ffffff" />
         </Head>
         <body>
           <Main />

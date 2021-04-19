@@ -1,6 +1,5 @@
 import * as S from 'components/Header/styles'
 import Link from 'next/link'
-import Image from 'next/image'
 
 export const Header = () => {
   return (
@@ -11,12 +10,11 @@ export const Header = () => {
             <Link href="/">
               <a>
                 <S.Logo>
-                  <Image
+                  <img
                     src="/img/logo-x.svg"
                     alt="Pizzaria Toffanetto"
-                    width={210}
-                    height={50}
-                    objectFit="contain"
+                    width="240"
+                    height="50"
                   />
                 </S.Logo>
               </a>

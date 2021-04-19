@@ -1,4 +1,3 @@
-import React from 'react'
 import * as S from 'components/BtnNext/styles'
 import { useRouter } from 'next/router'
 import { useWriteToken } from 'hooks/UseToken'

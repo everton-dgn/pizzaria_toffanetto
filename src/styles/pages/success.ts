@@ -12,7 +12,7 @@ export const Zap = styled(Whatsapp)`
 
 export const TitleComponent = styled.h1`
   color: #7f1d1d;
-  font-weight: bold;
+  font-weight: 800;
   font-size: 2rem;
   margin-bottom: 3rem;
   width: fit-content;
@@ -82,7 +82,7 @@ export const BtnSend = styled.button`
   background-color: #34d399;
   padding: 1rem 3rem;
   margin: 3rem auto 0 auto;
-  font-weight: bold;
+  font-weight: 800;
   border-radius: 1rem;
   transition: background-color 0.2s linear;
 
@@ -92,7 +92,7 @@ export const BtnSend = styled.button`
 `
 
 export const Title = styled.h1`
-  font-weight: bold;
+  font-weight: 800;
   color: #7f1d1d;
   font-size: 1.8rem;
   margin-bottom: 0.3rem;

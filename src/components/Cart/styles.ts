@@ -29,7 +29,7 @@ export const Cart = styled.h1`
 
   b {
     color: #7f1d1d;
-    font-weight: 700;
+    font-weight: 600;
     margin-left: 0.5rem;
   }
 `

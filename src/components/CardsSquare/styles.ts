@@ -99,7 +99,6 @@ export const ContainerInfo = styled.div<{ bonus: string }>`
       css`
         display: flex;
         color: ${s.primary};
-        font-weight: 500;
       `};
   }
 
@@ -114,8 +113,8 @@ export const ContentInfo = styled.div`
   flex-direction: column;
 `
 
-export const Title = styled.h3`
-  font-weight: bold;
+export const Title = styled.h2`
+  font-weight: 800;
   color: ${s.primary};
   font-size: 2rem;
   text-transform: uppercase;
@@ -134,10 +133,10 @@ export const Title = styled.h3`
   }
 `
 
-export const SubTitle = styled.h4`
-  color: ${s.secondary};
+export const SubTitle = styled.h3`
+  color: #222;
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
 `
@@ -151,7 +150,7 @@ export const ButtonCard = styled.button`
   background-color: ${s.secondary};
   width: 100%;
   padding: 1.3rem 1.2rem;
-  font-weight: bold;
+  font-weight: 800;
   border-radius: 1rem;
   font-size: 1.6rem;
   transition: background-color 0.2s linear;

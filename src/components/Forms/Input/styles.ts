@@ -76,7 +76,7 @@ export const WrapperInput = styled.div<{ error: string | undefined }>`
 
     &:focus + label,
     &:not(:placeholder-shown) + label {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       color: ${({ error }) =>
         error !== undefined ? s.errorColor : s.textLabel};
       margin-top: -1.8rem;
@@ -87,7 +87,7 @@ export const WrapperInput = styled.div<{ error: string | undefined }>`
 
     &:-webkit-autofill:focus + label,
     &:-webkit-autofill:not(:placeholder-shown) + label {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       color: ${({ error }) =>
         error !== undefined ? s.errorColor : s.textLabel};
       margin-top: -1.8rem;
@@ -113,7 +113,7 @@ export const MsgError = styled.small<{ error: string | undefined }>`
   display: flex;
   color: ${s.errorColor};
   justify-content: flex-end;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   height: 1.3rem;
   visibility: ${({ error }) => (error !== undefined ? 'visible' : 'hidden')};
 `

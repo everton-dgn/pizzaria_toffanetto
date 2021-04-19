@@ -17,16 +17,15 @@ export const ContainerInfo = styled(c.Box)`
 
   h3 {
     color: #fff;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 2rem;
     max-width: 30rem;
     margin-top: 1rem;
   }
 
-  div {
-    min-width: auto !important;
-    max-width: 30rem !important;
-    max-height: 15rem !important;
+  img {
+    max-width: 30rem;
+    height: fit-content;
   }
 
   ${s.break(60)} {
@@ -38,10 +37,8 @@ export const ContainerInfo = styled(c.Box)`
       margin-top: 2rem;
       max-width: 50rem;
     }
-
-    div {
-      max-width: 43rem !important;
-      max-height: 20rem !important;
+    img {
+      max-width: 50rem;
     }
   }
 
@@ -54,9 +51,8 @@ export const ContainerInfo = styled(c.Box)`
       max-width: 60rem;
     }
 
-    div {
-      max-width: 60rem !important;
-      max-height: initial !important;
+    img {
+      max-width: 60rem;
     }
   }
 `

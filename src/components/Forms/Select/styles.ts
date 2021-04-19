@@ -67,7 +67,7 @@ export const WrapperInput = styled.div<{
   }
 
   .elevationLabel + #label {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     color: ${({ error }) => (error !== undefined ? s.errorColor : s.textLabel)};
     cursor: default;
     z-index: 2;
@@ -107,7 +107,7 @@ export const MsgError = styled.small<{ error: string | undefined }>`
   display: flex;
   color: ${s.errorColor};
   justify-content: flex-end;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   height: 1.3rem;
   visibility: ${({ error }) => (error !== undefined ? 'visible' : 'hidden')};
 `

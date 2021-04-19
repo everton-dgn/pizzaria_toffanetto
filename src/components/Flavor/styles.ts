@@ -3,7 +3,7 @@ import { s } from 'theme'
 
 export const TitleComponent = styled.h1`
   color: #7f1d1d;
-  font-weight: 900;
+  font-weight: 800;
   font-size: 2.2rem;
   margin-bottom: 1.6rem;
   width: fit-content;
@@ -101,8 +101,7 @@ export const ContainerInfo = styled.div<{ bonus: boolean }>`
   em {
     display: none;
     color: #7f1d1d;
-    font-weight: 500;
-    font-size: 1rem;
+    font-size: 1.2rem;
     ${({ bonus }) =>
       bonus &&
       css`
@@ -120,11 +119,11 @@ export const ContentInfo = styled.div`
   flex-direction: column;
 `
 
-export const Title = styled.h3`
+export const Title = styled.h2`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  font-weight: bold;
+  font-weight: 800;
   color: #7f1d1d;
   font-size: 1.5rem;
   text-transform: uppercase;
@@ -140,10 +139,10 @@ export const Title = styled.h3`
   }
 `
 
-export const SubTitle = styled.h4`
-  color: #34d399;
+export const SubTitle = styled.h3`
+  color: #222;
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0;
 
   ${s.break(54)} {

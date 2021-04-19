@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import { TitleSection, Steps, Cart } from 'components'
 import * as S from 'styles/pages/success'
 import { useRouter } from 'next/router'
