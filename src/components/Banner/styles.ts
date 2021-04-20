@@ -28,9 +28,8 @@ export const ContainerInfo = styled(c.Box)`
     height: fit-content;
   }
 
-  ${s.break(60)} {
+  ${s.break(40)} {
     padding: 2rem 2rem 2rem 5vw;
-    background-image: linear-gradient(transparent, transparent);
 
     h3 {
       font-size: 2.5rem;
@@ -44,6 +43,7 @@ export const ContainerInfo = styled(c.Box)`
 
   ${s.break(102.4)} {
     padding: 2rem 2rem 2rem 10vw;
+    background-image: linear-gradient(transparent, transparent);
 
     h3 {
       font-size: 3rem;

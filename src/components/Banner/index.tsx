@@ -11,7 +11,7 @@ export const Banner = () => {
       <S.ContainerBanner>
         <S.ContainerInfo>
           <img
-            src="/img/logo-y.svg"
+            src="/img/logo-y.png"
             alt="Pizzaria Toffanetto"
             width="590"
             height="300"

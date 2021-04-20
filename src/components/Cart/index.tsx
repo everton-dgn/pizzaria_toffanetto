@@ -3,7 +3,6 @@ import * as S from 'components/Cart/styles'
 import { DataContext } from 'hooks/UseContext'
 import { c } from 'theme'
 import { useCart } from 'hooks/UseCart'
-import Image from 'next/image'
 import { getStorage } from 'utils/HandleSessionStorage'
 
 export const Cart = () => {
@@ -18,18 +17,18 @@ export const Cart = () => {
       <c.Container>
         <S.ContainerCart>
           {cart === 0 ? (
-            <Image
+            <img
               src="/img/icons/cart.svg"
               alt="Imagem de uma pizza"
-              width={80}
-              height={50}
+              width="80"
+              height="50"
             />
           ) : (
-            <Image
+            <img
               src="/img/icons/cart-full.svg"
               alt="Imagem de uma pizza"
-              width={80}
-              height={50}
+              width="80"
+              height="50"
             />
           )}
           <S.Cart>
