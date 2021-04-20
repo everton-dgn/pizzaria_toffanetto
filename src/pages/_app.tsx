@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app'
 import GlobalStyles from 'styles/GlobalStyles'
 import { DataStorage } from 'hooks/UseContext'
-import { HeadPage, Header, Footer } from 'components'
+import * as C from 'components'
 import NProgress from 'nprogress'
 import Router from 'next/router'
 import 'styles/loading.css'
@@ -14,10 +14,11 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <DataStorage>
-        <HeadPage />
-        <Header />
+        <C.HeadPage />
+        <C.Header />
         <Component {...pageProps} />
-        <Footer />
+        <C.Footer />
+        <C.PopupInstallPwa />
       </DataStorage>
       <GlobalStyles />
     </>

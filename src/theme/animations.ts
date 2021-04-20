@@ -24,12 +24,12 @@ export default {
 
   moveUp: keyframes`
     0% {
-      transform: translateY(0);
-      opacity: 1;
+      transform: translateY(3rem);
+      opacity: 0;
     }
     100% {
-      transform: translateY(-15rem);
-      opacity: 0;
+      transform: translateY(0);
+      opacity: 1;
     }
   `,
 
