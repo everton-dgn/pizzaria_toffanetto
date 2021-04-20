@@ -19,7 +19,7 @@ interface FlavorProps {
 }
 
 export const Flavor = ({ data }: FlavorProps) => {
-  const { flavor, setFlavor } = useContext(DataContext)
+  const { flavor, setFlavor, hasNetwork } = useContext(DataContext)
 
   // verifica se existe algum valor no sessionStorage, se true, grava no state flavor
   useEffect(() => getStorage('flavor') && setFlavor(getStorage('flavor')), [])
@@ -61,13 +61,20 @@ export const Flavor = ({ data }: FlavorProps) => {
                 />
               </S.ContainerCheckbox>
               <S.ContainerImg>
-                <Image
-                  src={`/api-img/pizzas/${el.img}.jpg`}
-                  alt="Imagem de uma pizza"
-                  layout="fill"
-                  objectFit="cover"
-                  quality={90}
-                />
+                {hasNetwork ? (
+                  <Image
+                    src={`/api-img/pizzas/${el.img}.jpg`}
+                    alt="Imagem de uma pizza"
+                    layout="fill"
+                    objectFit="cover"
+                    quality={90}
+                  />
+                ) : (
+                  <img
+                    src={`/api-img/pizzas/${el.img}.jpg`}
+                    alt="Imagem de uma pizza"
+                  />
+                )}
               </S.ContainerImg>
               <S.ContainerInfo bonus={el.recommendationDay}>
                 <S.Title>

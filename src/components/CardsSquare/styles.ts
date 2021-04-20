@@ -28,13 +28,13 @@ export const Card = styled.div`
     border: 0.2rem solid ${s.secondary};
   }
 
-  ${s.break(35)} {
+  ${s.break(40)} {
     flex-direction: column;
     width: calc(50% - 1.3rem);
     margin-bottom: 2.5rem;
   }
 
-  ${s.break(113.5)} {
+  ${s.break(75)} {
     flex-direction: row;
     width: calc(50% - 2rem);
     margin-bottom: 3.5rem;
@@ -65,7 +65,7 @@ export const ContainerImg = styled.div`
     height: 100%;
   }
 
-  ${s.break(113.5)} {
+  ${s.break(75)} {
     min-width: 25rem;
   }
 
@@ -102,7 +102,7 @@ export const ContainerInfo = styled.div<{ bonus: string }>`
       `};
   }
 
-  ${s.break(113.5)} {
+  ${s.break(75)} {
     margin-left: 2rem;
     margin-top: 0;
   }

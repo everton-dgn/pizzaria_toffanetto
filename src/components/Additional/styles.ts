@@ -42,11 +42,11 @@ export const Card = styled.div`
     border: 0.2rem solid ${s.primary};
   }
 
-  ${s.break(55.2)} {
+  ${s.break(35)} {
     width: calc(50% - 1rem);
   }
 
-  ${s.break(108.2)} {
+  ${s.break(75)} {
     width: calc(25% - 2rem);
   }
 
@@ -119,6 +119,7 @@ export const BoxImg = styled.div`
     width: 100% !important;
     height: 100% !important;
     position: relative !important;
+    object-fit: cover;
   }
 `
 

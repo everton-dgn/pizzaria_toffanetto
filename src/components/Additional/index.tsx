@@ -19,7 +19,9 @@ interface AdditionalProps {
 }
 
 export const Additional = ({ data }: AdditionalProps) => {
-  const { cart, setCart, additionals, setAdditionals } = useContext(DataContext)
+  const { hasNetwork, cart, setCart, additionals, setAdditionals } = useContext(
+    DataContext
+  )
 
   // popula o estado com o objeto additionals da api
   useEffect(() => {
@@ -65,13 +67,20 @@ export const Additional = ({ data }: AdditionalProps) => {
             <S.ContainerAdditional>
               <S.Box>
                 <S.BoxImg>
-                  <Image
-                    src={`/api-img/additionals/${el.img}.jpg`}
-                    alt={el.name}
-                    layout="fill"
-                    objectFit="cover"
-                    quality={90}
-                  />
+                  {hasNetwork ? (
+                    <Image
+                      src={`/api-img/additionals/${el.img}.jpg`}
+                      alt={el.name}
+                      layout="fill"
+                      objectFit="cover"
+                      quality={90}
+                    />
+                  ) : (
+                    <img
+                      src={`/api-img/additionals/${el.img}.jpg`}
+                      alt={el.name}
+                    />
+                  )}
                 </S.BoxImg>
 
                 <S.ContainerInfo>

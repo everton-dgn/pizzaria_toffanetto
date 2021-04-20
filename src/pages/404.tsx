@@ -3,19 +3,32 @@ import * as S from 'styles/pages/404'
 import { c } from 'theme'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useContext } from 'react'
+import { DataContext } from 'hooks/UseContext'
 
 const Custom404 = () => {
+  const { hasNetwork } = useContext(DataContext)
+
   return (
     <>
       <TitleSection title="Erro 404" />
       <c.Container>
         <S.ContainImg>
-          <Image
-            src="/img/not-found.svg"
-            alt="Erro 404"
-            width={400}
-            height={400}
-          />
+          {hasNetwork ? (
+            <Image
+              src="/img/not-found.svg"
+              alt="Erro 404"
+              width={400}
+              height={400}
+            />
+          ) : (
+            <img
+              src="/img/not-found.svg"
+              alt="Erro 404"
+              width="400"
+              height="400"
+            />
+          )}
         </S.ContainImg>
 
         <S.Paragraph>

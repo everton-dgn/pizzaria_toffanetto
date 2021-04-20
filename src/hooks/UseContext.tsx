@@ -1,4 +1,10 @@
-import React, { createContext, Dispatch, ReactNode, useState } from 'react'
+import React, {
+  createContext,
+  Dispatch,
+  ReactNode,
+  useEffect,
+  useState
+} from 'react'
 
 interface FormDataProvider {
   name?: string
@@ -34,6 +40,8 @@ interface ChallengeContextData {
   setAdditionals: Dispatch<React.SetStateAction<AdditionalProps[]>>
   flavor: any
   setFlavor: Dispatch<React.SetStateAction<any>>
+  hasNetwork: boolean
+  setHasNetwork: Dispatch<React.SetStateAction<boolean>>
 }
 
 interface DataStorageProps {
@@ -53,6 +61,18 @@ export const DataStorage = ({ children }: DataStorageProps) => {
 
   const [formData, setFormData] = useState({})
 
+  const [hasNetwork, setHasNetwork] = useState(true)
+
+  useEffect(() => {
+    window.addEventListener('load', () => {
+      setHasNetwork(navigator.onLine)
+
+      window.addEventListener('online', () => setHasNetwork(true))
+
+      window.addEventListener('offline', () => setHasNetwork(false))
+    })
+  }, [])
+
   return (
     <DataContext.Provider
       value={{
@@ -68,7 +88,10 @@ export const DataStorage = ({ children }: DataStorageProps) => {
         setAdditionals,
 
         flavor,
-        setFlavor
+        setFlavor,
+
+        hasNetwork,
+        setHasNetwork
       }}
     >
       {children}

@@ -3,6 +3,11 @@ import styled from 'styled-components'
 export const ContainImg = styled.div`
   display: flex;
   justify-content: center;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 `
 
 export const Paragraph = styled.p`
@@ -17,7 +22,7 @@ export const Paragraph = styled.p`
 export const NavLink = styled.a`
   width: min-content;
   height: min-content;
-  margin: 1.5rem auto 0 auto;
+  margin: 1.5rem auto 3rem auto;
 `
 
 export const BtnHome = styled.button`

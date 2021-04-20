@@ -1,7 +1,11 @@
 import * as S from 'components/Banner/styles'
 import Image from 'next/image'
+import { useContext } from 'react'
+import { DataContext } from 'hooks/UseContext'
 
 export const Banner = () => {
+  const { hasNetwork } = useContext(DataContext)
+
   return (
     <>
       <S.ContainerBanner>
@@ -19,14 +23,21 @@ export const Banner = () => {
         </S.ContainerInfo>
 
         <S.ContainImg>
-          <Image
-            src="/img/banners/banner-home.jpg"
-            alt="Bem-vindo(a) à Pizzaria Toffanetto"
-            layout="fill"
-            objectFit="cover"
-            quality={90}
-            priority={true}
-          />
+          {hasNetwork ? (
+            <Image
+              src="/img/banners/banner-home.jpg"
+              alt="Bem-vindo(a) à Pizzaria Toffanetto"
+              layout="fill"
+              objectFit="cover"
+              quality={90}
+              priority={true}
+            />
+          ) : (
+            <img
+              src="/img/banners/banner-home.jpg"
+              alt="Bem-vindo(a) à Pizzaria Toffanetto"
+            />
+          )}
         </S.ContainImg>
       </S.ContainerBanner>
     </>

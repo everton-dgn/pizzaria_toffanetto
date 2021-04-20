@@ -91,7 +91,7 @@ export const SubTitle = styled.h4`
   align-items: center;
   justify-content: center;
 
-  div {
+  img {
     margin-right: 1rem;
   }
 `

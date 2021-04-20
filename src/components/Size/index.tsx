@@ -3,7 +3,6 @@ import * as S from 'components/Size/styles'
 import { DataContext } from 'hooks/UseContext'
 import { BtnNext } from 'components/BtnNext'
 import { useCart } from 'hooks/UseCart'
-import Image from 'next/image'
 import { getStorage, setStorage } from 'utils/HandleSessionStorage'
 
 interface SizeProps {
@@ -58,11 +57,11 @@ export const Size = ({ sizes }: SizeProps) => {
                   <S.Title>Pizza {el.size}</S.Title>
                   <S.ContentInfo>
                     <S.SubTitle>
-                      <Image
+                      <img
                         src="/img/icons/slice-pizza.svg"
                         alt="Imagem de uma pizza"
-                        width={24}
-                        height={25}
+                        width="24"
+                        height="25"
                       />
                       ({el.slices} Fatias)
                     </S.SubTitle>

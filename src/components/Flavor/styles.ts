@@ -80,6 +80,7 @@ export const ContainerImg = styled.div`
     width: 100% !important;
     height: 100% !important;
     position: relative !important;
+    object-fit: cover;
   }
 `
 
