@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react'
 import * as S from 'components/Flavor/styles'
 import { DataContext } from 'hooks/UseContext'
-import { BtnNext } from 'components/BtnNext'
+import * as C from 'components/BtnNext'
 import Image from 'next/image'
 import { getStorage, setStorage } from 'utils/HandleSessionStorage'
 
@@ -82,7 +82,7 @@ export const Flavor = ({ data }: FlavorProps) => {
           )
         })}
 
-        <BtnNext
+        <C.BtnNext
           route={'/etapa-2'}
           disabled={flavor.length === 0}
           token={{

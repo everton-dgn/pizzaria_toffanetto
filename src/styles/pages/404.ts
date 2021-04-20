@@ -14,14 +14,20 @@ export const Paragraph = styled.p`
   max-width: 80rem;
 `
 
+export const NavLink = styled.a`
+  width: min-content;
+  height: min-content;
+  margin: 1.5rem auto 0 auto;
+`
+
 export const BtnHome = styled.button`
   font-size: 1.8rem;
   text-transform: uppercase;
   background-color: #34d399;
-  padding: 1rem 3rem;
-  margin: 3rem auto 0 auto;
+  padding: 1.7rem 4rem;
   font-weight: 800;
   border-radius: 1rem;
+  white-space: nowrap;
   transition: background-color 0.2s linear;
 
   &:hover {

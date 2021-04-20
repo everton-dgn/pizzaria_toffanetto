@@ -1,5 +1,4 @@
 import Cookies from 'js-cookie'
-import { useRouter } from 'next/router'
 
 export const useWriteToken = (name: string, value: string) => {
   // token expira em 1h
@@ -11,11 +10,9 @@ export const useWriteToken = (name: string, value: string) => {
 }
 
 export const useReadToken = (name: string) => {
-  const router = useRouter()
-
   const redirect = async () => {
     if (!Cookies.get(name)) {
-      await router.push('/')
+      window.location.href = '/'
     }
   }
   redirect().then(r => r)

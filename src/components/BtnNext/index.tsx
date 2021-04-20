@@ -1,6 +1,6 @@
 import * as S from 'components/BtnNext/styles'
-import { useRouter } from 'next/router'
 import { useWriteToken } from 'hooks/UseToken'
+import Link from 'next/link'
 
 interface Props {
   route: string
@@ -13,23 +13,22 @@ interface Props {
 }
 
 export const BtnNext = ({ route, text, disabled, token }: Props) => {
-  const router = useRouter()
-
   const WriteToken = () => {
     useWriteToken(token.name, token.value)
   }
 
-  const handleClick = async () => {
+  const handleClick = () => {
     token !== undefined && WriteToken()
-    await router.push(route)
   }
 
   return (
     <>
       <S.ContainerBtn center={text}>
-        <S.BtnNext onClick={handleClick} disabled={disabled}>
-          {text || 'Avançar'}
-        </S.BtnNext>
+        <Link href={route}>
+          <a onClick={handleClick}>
+            <S.BtnNext disabled={disabled}>{text || 'Avançar'}</S.BtnNext>
+          </a>
+        </Link>
       </S.ContainerBtn>
     </>
   )

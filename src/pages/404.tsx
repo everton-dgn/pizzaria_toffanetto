@@ -2,10 +2,9 @@ import { TitleSection } from 'components'
 import * as S from 'styles/pages/404'
 import { c } from 'theme'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
+import Link from 'next/link'
 
-export default function Custom404() {
-  const router = useRouter()
+const Custom404 = () => {
   return (
     <>
       <TitleSection title="Erro 404" />
@@ -25,8 +24,14 @@ export default function Custom404() {
           <br />
           Caso prefira, clique no botão abaixo e retorne para a página inicial:
         </S.Paragraph>
-        <S.BtnHome onClick={() => router.push('/')}>Página Inicial</S.BtnHome>
+        <Link href="/" passHref>
+          <S.NavLink>
+            <S.BtnHome>Página Inicial</S.BtnHome>
+          </S.NavLink>
+        </Link>
       </c.Container>
     </>
   )
 }
+
+export default Custom404
