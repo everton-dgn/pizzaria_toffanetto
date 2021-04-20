@@ -14,12 +14,11 @@ export const PopupInstallPwa = () => {
       // Atualizar a interface e notifica o usuário de que pode instalar o PWA
       setIsActive(true)
     })
-  })
+  }, [])
 
   const closePopup = () => setIsActive(false)
 
   const handleInstallPwa = () => {
-    // Ocultar a opção de instalação fornecida pelo aplicativo
     closePopup()
 
     // Mostra o prompt de instalação
