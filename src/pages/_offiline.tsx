@@ -4,23 +4,24 @@ import { c } from 'theme'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 
-export default function Custom404() {
+// eslint-disable-next-line react/display-name
+export default () => {
   const router = useRouter()
   return (
     <>
-      <TitleSection title="Erro 404" />
+      <TitleSection title="Você está Offiline!" />
       <c.Container>
         <S.ContainImg>
           <Image
             src="/img/not-found.svg"
-            alt="Erro 404"
+            alt="Offiline"
             width={400}
             height={400}
           />
         </S.ContainImg>
 
         <S.Paragraph>
-          Página não encontrada! Por favor, verifique a url acessada.
+          Sem conexão com a internet! Por favor, verifique a sua internet.
           <br />
           <br />
           Caso prefira, clique no botão abaixo e retorne para a página inicial:

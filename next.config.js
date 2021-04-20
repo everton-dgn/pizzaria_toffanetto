@@ -3,6 +3,7 @@ const runtimeCaching = require('next-pwa/cache')
 const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = withPWA({
+  future: { webpack5: true },
   pwa: {
     dest: 'public',
     runtimeCaching,
