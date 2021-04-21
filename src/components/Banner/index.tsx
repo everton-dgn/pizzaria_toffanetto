@@ -13,8 +13,8 @@ export const Banner = () => {
           <img
             src="/img/logo-y.png"
             alt="Pizzaria Toffanetto"
-            width="590"
-            height="300"
+            width="885"
+            height="410"
           />
           <h3>
             Pizzas exageradamente recheadas e saborosas, feitas em forno a lenha
