@@ -10,7 +10,7 @@ export const Footer = styled.div`
 `
 
 export const ContainerFooter = styled(c.Container)`
-  padding: 1.5rem 0;
+  padding: 1.5rem;
   color: #fff;
   justify-content: center;
   flex-direction: row;
