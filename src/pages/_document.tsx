@@ -33,6 +33,10 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;800&display=swap"
             as="style"
           />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;800&display=swap"
+          />
           <link rel="apple-touch-icon" href="/icon-apple.png" />
           <link rel="icon" href="/favicon.ico" />
           {/* pwa */}
