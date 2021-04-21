@@ -18,6 +18,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <C.Header />
         <Component {...pageProps} />
         <C.Footer />
+        <C.CookieWarning />
         <C.PopupInstallPwa />
       </DataStorage>
       <GlobalStyles />
