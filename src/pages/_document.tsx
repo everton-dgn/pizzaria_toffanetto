@@ -29,8 +29,9 @@ export default class MyDocument extends Document {
           />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;800&display=swap"
             rel="preload"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;800&display=swap"
+            as="font"
           />
           <link rel="apple-touch-icon" href="/icon-apple.png" />
           <link rel="icon" href="/favicon.ico" />
