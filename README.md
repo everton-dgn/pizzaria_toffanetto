@@ -57,7 +57,7 @@ Este projeto tem o objetivo de agilizar o processo do pedido de pizzas, proporci
 
 # :triangular_flag_on_post: Features
 
-- [x] 100% offiline first.
+- [x] Funciona offiline após o primeiro carregamento online das páginas.
   
 - [x] PWA instalável.
   
