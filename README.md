@@ -57,6 +57,12 @@ Este projeto tem o objetivo de agilizar o processo do pedido de pizzas, proporci
 
 # :triangular_flag_on_post: Features
 
+- [x] 100% offiline first.
+  
+- [x] PWA instalável.
+  
+- [x] Persistência de todos os dados da aplicação.
+  
 - [x] Layout responsivo em qualquer resolução de tela ou dispositivo.
   
 - [x] Cardápio de pizzas com recomendação do dia e adicionais com dados obtidos via api.
