@@ -24,8 +24,14 @@ export const ContainerInfo = styled(c.Box)`
   }
 
   img {
-    max-width: 30rem;
+    max-width: 25rem;
     height: fit-content;
+  }
+
+  ${s.break(23)} {
+    img {
+      max-width: 30rem;
+    }
   }
 
   ${s.break(40)} {
