@@ -27,10 +27,34 @@ export default class MyDocument extends Document {
             rel="canonical"
             href="https://pizzaria-toffanetto.vercel.app/"
           />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          {/* <link rel="preconnect" href="https://fonts.gstatic.com" /> */}
+          {/* <link */}
+          {/*  href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;800&display=swap" */}
+          {/*  rel="stylesheet" */}
+          {/* /> */}
           <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;800&display=swap"
-            rel="stylesheet"
+            rel="preload"
+            href="/fonts/Poppins-SemiBold.ttf"
+            as="font"
+            type="font/ttf"
+            // @ts-ignore
+            crossOrigin
+          />
+          <link
+            rel="preload"
+            href="/fonts/Poppins-ExtraBold.ttf"
+            as="font"
+            type="font/ttf"
+            // @ts-ignore
+            crossOrigin
+          />
+          <link
+            rel="preload"
+            href="/fonts/Poppins-Medium.ttf"
+            as="font"
+            type="font/ttf"
+            // @ts-ignore
+            crossOrigin
           />
           <link rel="apple-touch-icon" href="/icon-apple.png" />
           <link rel="icon" href="/favicon.ico" />
