@@ -19,6 +19,7 @@ export const Content = styled(c.Container)`
   p {
     font-size: 1.4rem;
     margin: 0 2rem 1rem 2rem;
+    text-align: center;
   }
 
   button {
@@ -48,6 +49,12 @@ export const Content = styled(c.Container)`
 
     button {
       max-width: 25rem;
+    }
+  }
+
+  ${s.break(100)} {
+    p {
+      text-align: left;
     }
   }
 `
