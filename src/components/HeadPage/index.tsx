@@ -8,7 +8,7 @@ export const HeadPage = ({ title = 'Pizzaria Toffanetto' }) => {
         name="viewport"
         content="minimum-scale=1, initial-scale=1, width=device-width"
       />
-      <title>{title}</title>
+      <title>{'Pizzaria Toffanetto - ' + title}</title>
     </Head>
   )
 }

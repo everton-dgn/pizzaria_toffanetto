@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react'
 import * as S from 'components/Size/styles'
 import { DataContext } from 'hooks/UseContext'
-import { BtnNext } from 'components/BtnNext'
+import * as C from 'components'
 import { useCart } from 'hooks/UseCart'
 import { getStorage, setStorage } from 'utils/HandleSessionStorage'
 
@@ -73,7 +73,7 @@ export const Size = ({ sizes }: SizeProps) => {
           </S.Card>
         ))}
 
-        <BtnNext
+        <C.BtnNext
           route={'/etapa-3'}
           disabled={!size.size}
           token={{

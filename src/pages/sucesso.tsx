@@ -1,11 +1,11 @@
 import { useContext, useEffect } from 'react'
-import { Cart, Steps, TitleSection } from 'components'
 import * as S from 'styles/pages/success'
 import { DataContext } from 'hooks/UseContext'
 import { c } from 'theme'
 import { useCart } from 'hooks/UseCart'
 import { useReadToken, useRemoveAllTokens } from 'hooks/UseToken'
 import { getStorage } from 'utils/HandleSessionStorage'
+import * as C from 'components'
 
 const Sucesso = () => {
   const {
@@ -84,9 +84,10 @@ const Sucesso = () => {
 
   return (
     <>
-      <Steps activeStep={[true, true, true, true, true]} />
-      <TitleSection title="Confirmar Envio do pedido" />
-      <Cart />
+      <C.HeadPage title="Checkout Concluído" />
+      <C.Steps activeStep={[true, true, true, true, true]} />
+      <C.TitleSection title="Confirmar Envio do pedido" />
+      <C.Cart />
       <c.Container>
         <S.TitleComponent>Resumo do Pedido</S.TitleComponent>
         <S.ContainerSuccess>

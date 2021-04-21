@@ -1,12 +1,11 @@
 import { useRef, useContext, useState, SetStateAction, useEffect } from 'react'
 import * as S from 'components/Forms/FormData/styles'
-import { Input, Select } from 'components'
+import * as C from 'components'
 import { FormHandles, Scope, SubmitHandler } from '@unform/core'
 import * as Yup from 'yup'
 import { useRouter } from 'next/router'
 import { DataContext } from 'hooks/UseContext'
 import { useValidate } from 'hooks/UseValidate'
-import { Toast, NotifyError, NotifySuccess } from 'components/Toast'
 import { toast } from 'react-toastify'
 import axios from 'axios'
 import { useWriteToken } from 'hooks/UseToken'
@@ -119,7 +118,7 @@ export const FormData = () => {
         const state = data.state || data.uf
 
         if (!state) {
-          NotifyError('CEP inválido ou não encontrado.', 'Erro!')
+          C.NotifyError('CEP inválido ou não encontrado.', 'Erro!')
         }
 
         formRef.current?.setFieldValue(
@@ -143,7 +142,7 @@ export const FormData = () => {
         if (servers[server + 1]) {
           SearchCep(params, server + 1)
         } else {
-          NotifyError('CEP inválido ou não encontrado.', 'Erro!')
+          C.NotifyError('CEP inválido ou não encontrado.', 'Erro!')
         }
       })
       .finally(() => {
@@ -166,7 +165,7 @@ export const FormData = () => {
       // remove toast ativo
       toast.dismiss()
       // mostra toast de sucesso
-      NotifySuccess('Seus dados foram enviados com sucesso.', 'Sucesso!')
+      C.NotifySuccess('Seus dados foram enviados com sucesso.', 'Sucesso!')
 
       WriteToken()
 
@@ -183,20 +182,23 @@ export const FormData = () => {
         formRef.current?.setErrors(errorMessages)
 
         // mostra toast de erro
-        NotifyError('Corrija o preenchimento dos campos em destaque.', 'Erro!')
+        C.NotifyError(
+          'Corrija o preenchimento dos campos em destaque.',
+          'Erro!'
+        )
       }
     }
   }
 
   return (
     <>
-      <Toast />
+      <C.Toast />
       <S.TitleComponent>Dados do Cliente</S.TitleComponent>
       <S.Container>
         <S.Card>
           <S.FormFields ref={formRef} onSubmit={handleSubmit}>
             <S.ContentForm>
-              <Input
+              <C.Input
                 name="name"
                 id="name"
                 label="Nome Completo"
@@ -206,7 +208,7 @@ export const FormData = () => {
                 mask=""
               />
 
-              <Input
+              <C.Input
                 name="email"
                 id="email"
                 label="E-mail"
@@ -215,7 +217,7 @@ export const FormData = () => {
                 mask=""
               />
 
-              <Input
+              <C.Input
                 name="phone"
                 id="phone"
                 label="(DDD) + Celular"
@@ -225,7 +227,7 @@ export const FormData = () => {
               />
 
               <Scope path="address">
-                <Input
+                <C.Input
                   name="zipCode"
                   id="zipCode"
                   label="CEP"
@@ -236,7 +238,7 @@ export const FormData = () => {
                   load={loadZipCode}
                 />
 
-                <Input
+                <C.Input
                   name="street"
                   id="street"
                   label="Rua"
@@ -247,7 +249,7 @@ export const FormData = () => {
                   disabled={disabledField}
                 />
 
-                <Input
+                <C.Input
                   name="number"
                   id="number"
                   label="Número"
@@ -256,7 +258,7 @@ export const FormData = () => {
                   mask="9999999999"
                 />
 
-                <Input
+                <C.Input
                   name="neighborhood"
                   id="neighborhood"
                   label="Bairro"
@@ -267,7 +269,7 @@ export const FormData = () => {
                   disabled={disabledField}
                 />
 
-                <Input
+                <C.Input
                   name="city"
                   id="city"
                   label="Cidade"
@@ -278,7 +280,7 @@ export const FormData = () => {
                   disabled={disabledField}
                 />
 
-                <Select
+                <C.Select
                   name="state"
                   id="state"
                   label="Estado"

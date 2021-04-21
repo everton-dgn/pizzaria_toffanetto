@@ -1,18 +1,19 @@
 import axios from 'axios'
-import { TitleSection, Steps, Cart, Flavor } from 'components'
 import { c } from 'theme'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import * as C from 'components'
 
 const Etapa1 = ({
   dataApi
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
-      <Steps activeStep={[true, false, false, false, false]} />
-      <TitleSection title="Selecione o sabor da pizza" />
-      <Cart />
+      <C.HeadPage title="Checkout 1/4" />
+      <C.Steps activeStep={[true, false, false, false, false]} />
+      <C.TitleSection title="Selecione o sabor da pizza" />
+      <C.Cart />
       <c.Container>
-        <Flavor data={dataApi.pizzas} />
+        <C.Flavor data={dataApi.pizzas} />
       </c.Container>
     </>
   )

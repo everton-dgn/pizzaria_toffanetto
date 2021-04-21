@@ -1,8 +1,8 @@
-import { TitleSection, Steps, Cart, Additional, BtnNext } from 'components'
 import axios from 'axios'
 import { c } from 'theme'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { useReadToken } from 'hooks/UseToken'
+import * as C from 'components'
 
 const Etapa3 = ({
   dataApi
@@ -12,12 +12,13 @@ const Etapa3 = ({
 
   return (
     <>
-      <Steps activeStep={[true, true, true, false, false]} />
-      <TitleSection title="Selecione adicionais para a pizza" />
-      <Cart />
+      <C.HeadPage title="Checkout 3/4" />
+      <C.Steps activeStep={[true, true, true, false, false]} />
+      <C.TitleSection title="Selecione adicionais para a pizza" />
+      <C.Cart />
       <c.Container>
-        <Additional data={dataApi.additionals} />
-        <BtnNext
+        <C.Additional data={dataApi.additionals} />
+        <C.BtnNext
           route={'/etapa-4'}
           token={{
             name: 'tokenPageStep4',

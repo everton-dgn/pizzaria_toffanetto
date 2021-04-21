@@ -1,6 +1,6 @@
-import { TitleSection, Steps, Cart, FormData } from 'components'
 import { c } from 'theme'
 import { useReadToken } from 'hooks/UseToken'
+import * as C from 'components'
 
 export const Etapa4 = () => {
   // redireciona para página inicial se não validar etapa-3
@@ -8,11 +8,12 @@ export const Etapa4 = () => {
 
   return (
     <>
-      <Steps activeStep={[true, true, true, true, false]} />
-      <TitleSection title="Preencha com seus dados" />
-      <Cart />
+      <C.HeadPage title="Checkout 4/4" />
+      <C.Steps activeStep={[true, true, true, true, false]} />
+      <C.TitleSection title="Preencha com seus dados" />
+      <C.Cart />
       <c.Container>
-        <FormData />
+        <C.FormData />
       </c.Container>
     </>
   )

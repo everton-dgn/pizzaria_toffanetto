@@ -1,17 +1,18 @@
-import { TitleSection } from 'components'
 import * as S from 'styles/pages/404'
 import { c } from 'theme'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useContext } from 'react'
 import { DataContext } from 'hooks/UseContext'
+import * as C from 'components'
 
 const Custom404 = () => {
   const { hasNetwork } = useContext(DataContext)
 
   return (
     <>
-      <TitleSection title="Erro 404" />
+      <C.HeadPage title="Página de Erro" />
+      <C.TitleSection title="Erro 404" />
       <c.Container>
         <S.ContainImg>
           {hasNetwork ? (

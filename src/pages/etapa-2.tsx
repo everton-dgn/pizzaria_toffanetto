@@ -1,8 +1,8 @@
-import { TitleSection, Steps, Cart, Size } from 'components'
 import axios from 'axios'
 import { c } from 'theme'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { useReadToken } from 'hooks/UseToken'
+import * as C from 'components'
 
 const Etapa2 = ({
   dataApi
@@ -12,11 +12,12 @@ const Etapa2 = ({
 
   return (
     <>
-      <Steps activeStep={[true, true, false, false, false]} />
-      <TitleSection title="Selecione o tamanho da pizza" />
-      <Cart />
+      <C.HeadPage title="Checkout 2/4" />
+      <C.Steps activeStep={[true, true, false, false, false]} />
+      <C.TitleSection title="Selecione o tamanho da pizza" />
+      <C.Cart />
       <c.Container>
-        <Size sizes={dataApi.sizesAndPrices} />
+        <C.Size sizes={dataApi.sizesAndPrices} />
       </c.Container>
     </>
   )
