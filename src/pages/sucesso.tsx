@@ -67,6 +67,7 @@ const Sucesso = () => {
       : 'Não selecionada! 😐'
 
   const SendZap = () => {
+    // não exceder 2.083 caracteres na url! (valores atuais possíveis de serem gerados são menores que 1000)
     window.location.href =
       `https://api.whatsapp.com/send?phone=55${phone}&text=%0a` +
       `*DADOS%20DO%20PEDIDO:*%0a%0a*Nome%20Completo:*%0a${name}%0a%0a` +
