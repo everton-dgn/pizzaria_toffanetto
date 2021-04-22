@@ -3,12 +3,13 @@ import { c } from 'theme'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { readToken } from 'utils/HandleToken'
 import * as C from 'components'
+import { useEffect } from 'react'
 
 const Etapa2 = ({
   dataApi
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // redireciona para página inicial se não validar etapa-1
-  readToken('tokenPageStep2')
+  useEffect(() => readToken('tokenPageStep2'), [])
 
   return (
     <>

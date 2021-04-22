@@ -22,7 +22,7 @@ const Sucesso = () => {
   } = useContext(DataContext)
 
   // redireciona para página inicial se o formulário não foi enviado
-  readToken('tokenPageSuccess')
+  useEffect(() => readToken('tokenPageSuccess'))
 
   useEffect(() => {
     getStorage('flavor') && setFlavor(getStorage('flavor'))
