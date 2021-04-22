@@ -1,10 +1,10 @@
 import { c } from 'theme'
-import { useReadToken } from 'hooks/UseToken'
+import { readToken } from 'utils/HandleToken'
 import * as C from 'components'
 
 export const Etapa4 = () => {
   // redireciona para página inicial se não validar etapa-3
-  useReadToken('tokenPageStep4')
+  readToken('tokenPageStep4')
 
   return (
     <>

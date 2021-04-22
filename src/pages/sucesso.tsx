@@ -3,7 +3,7 @@ import * as S from 'styles/pages/success'
 import { DataContext } from 'hooks/UseContext'
 import { c } from 'theme'
 import { useCart } from 'hooks/UseCart'
-import { useReadToken, useRemoveAllTokens } from 'hooks/UseToken'
+import { readToken, removeAllTokens } from 'utils/HandleToken'
 import { getStorage } from 'utils/HandleSessionStorage'
 import * as C from 'components'
 
@@ -22,7 +22,7 @@ const Sucesso = () => {
   } = useContext(DataContext)
 
   // redireciona para página inicial se o formulário não foi enviado
-  useReadToken('tokenPageSuccess')
+  readToken('tokenPageSuccess')
 
   useEffect(() => {
     getStorage('flavor') && setFlavor(getStorage('flavor'))
@@ -77,7 +77,7 @@ const Sucesso = () => {
       `*TOTAL:*%0a${useCart(cart)}%0a`
 
     // remove todos os tokens caso retorne para essa página após enviar o pedido
-    useRemoveAllTokens()
+    removeAllTokens()
 
     sessionStorage.clear()
   }

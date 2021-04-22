@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie'
 
-export const useWriteToken = (name: string, value: string) => {
+export const writeToken = (name: string, value: string) => {
   // token expira em 1h
   const timeMinutesExpired = new Date(new Date().getTime() + 60 * 60 * 1000)
 
@@ -9,7 +9,7 @@ export const useWriteToken = (name: string, value: string) => {
   })
 }
 
-export const useReadToken = (name: string) => {
+export const readToken = (name: string) => {
   const redirect = async () => {
     if (!Cookies.get(name)) {
       window.location.href = '/'
@@ -18,7 +18,7 @@ export const useReadToken = (name: string) => {
   redirect().then(r => r)
 }
 
-export const useRemoveAllTokens = () => {
+export const removeAllTokens = () => {
   const listTokens = [
     'tokenPageStep2',
     'tokenPageStep3',

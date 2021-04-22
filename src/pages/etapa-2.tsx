@@ -1,14 +1,14 @@
 import axios from 'axios'
 import { c } from 'theme'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { useReadToken } from 'hooks/UseToken'
+import { readToken } from 'utils/HandleToken'
 import * as C from 'components'
 
 const Etapa2 = ({
   dataApi
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // redireciona para página inicial se não validar etapa-1
-  useReadToken('tokenPageStep2')
+  readToken('tokenPageStep2')
 
   return (
     <>

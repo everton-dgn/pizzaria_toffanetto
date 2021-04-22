@@ -8,7 +8,7 @@ import { DataContext } from 'hooks/UseContext'
 import { useValidate } from 'hooks/UseValidate'
 import { toast } from 'react-toastify'
 import axios from 'axios'
-import { useWriteToken } from 'hooks/UseToken'
+import { writeToken } from 'utils/HandleToken'
 import { getStorage, setStorage } from 'utils/HandleSessionStorage'
 
 interface FormDataUnform {
@@ -99,7 +99,7 @@ export const FormData = () => {
 
   // gera cookies de acesso para a página de sucesso
   const WriteToken = () => {
-    useWriteToken('tokenPageSuccess', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9')
+    writeToken('tokenPageSuccess', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9')
   }
 
   async function SearchCep(params: string, server = 0) {
