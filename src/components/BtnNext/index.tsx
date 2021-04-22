@@ -6,7 +6,7 @@ interface Props {
   route: string
   text?: string
   disabled?: boolean
-  token: {
+  token?: {
     name: string
     value: string
   }

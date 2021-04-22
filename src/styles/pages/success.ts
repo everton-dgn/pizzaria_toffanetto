@@ -34,7 +34,7 @@ export const Card = styled.div`
   flex-wrap: wrap;
   padding: 3rem;
   border-radius: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   width: 100%;
   box-shadow: -0.6rem -0.6rem 1.6rem 0 #fff, 0.6rem 0.6rem 1.6rem 0 #e0e0ef;
 `
@@ -81,7 +81,7 @@ export const BtnSend = styled.button`
   text-transform: uppercase;
   background-color: #34d399;
   padding: 1rem 3rem;
-  margin: 3rem auto 0 auto;
+  margin: 1.5rem auto 0 auto;
   font-weight: 800;
   border-radius: 1rem;
   transition: background-color 0.2s linear;
@@ -96,4 +96,18 @@ export const Title = styled.h1`
   color: #7f1d1d;
   font-size: 1.8rem;
   margin-bottom: 0.3rem;
+`
+
+export const WrapperBtn = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  margin: 2rem 0 3rem 0;
+
+  ${s.break(25)} {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
 `

@@ -152,6 +152,9 @@ const Sucesso = () => {
             </S.BtnSend>
           </S.Card>
         </S.ContainerSuccess>
+        <S.WrapperBtn>
+          <C.BtnNext text="Voltar" route={'/etapa-4'} />
+        </S.WrapperBtn>
       </c.Container>
     </>
   )

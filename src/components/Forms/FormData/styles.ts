@@ -32,7 +32,7 @@ export const Card = styled.div`
   flex-wrap: wrap;
   padding: 3rem 2rem;
   border-radius: 1rem;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   width: 100%;
   box-shadow: -0.6rem -0.6rem 1.6rem 0 #fff, 0.6rem 0.6rem 1.6rem 0 #e0e0ef;
 `

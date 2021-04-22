@@ -1,6 +1,7 @@
 import { c } from 'theme'
 import { readToken } from 'utils/HandleToken'
 import * as C from 'components'
+import * as S from 'styles/pages/etapa-4'
 
 export const Etapa4 = () => {
   // redireciona para página inicial se não validar etapa-3
@@ -14,6 +15,9 @@ export const Etapa4 = () => {
       <C.Cart />
       <c.Container>
         <C.FormData />
+        <S.WrapperBtn>
+          <C.BtnNext text="Voltar" route={'/etapa-3'} />
+        </S.WrapperBtn>
       </c.Container>
     </>
   )

@@ -3,6 +3,7 @@ import { c } from 'theme'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { readToken } from 'utils/HandleToken'
 import * as C from 'components'
+import * as S from 'styles/pages/etapa-3'
 
 const Etapa3 = ({
   dataApi
@@ -18,13 +19,17 @@ const Etapa3 = ({
       <C.Cart />
       <c.Container>
         <C.Additional data={dataApi.additionals} />
-        <C.BtnNext
-          route={'/etapa-4'}
-          token={{
-            name: 'tokenPageStep4',
-            value: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ2'
-          }}
-        />
+        <S.WrapperBtn>
+          <C.BtnNext text="Voltar" route={'/etapa-2'} />
+          <S.Space />
+          <C.BtnNext
+            route={'/etapa-4'}
+            token={{
+              name: 'tokenPageStep4',
+              value: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ2'
+            }}
+          />
+        </S.WrapperBtn>
       </c.Container>
     </>
   )

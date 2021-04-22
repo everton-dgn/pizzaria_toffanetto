@@ -89,14 +89,18 @@ export const Flavor = ({ data }: FlavorProps) => {
           )
         })}
 
-        <C.BtnNext
-          route={'/etapa-2'}
-          disabled={flavor.length === 0}
-          token={{
-            name: 'tokenPageStep2',
-            value: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ0'
-          }}
-        />
+        <S.WrapperBtn>
+          <C.BtnNext text="Voltar" route={'/'} />
+          <S.Space />
+          <C.BtnNext
+            route={'/etapa-2'}
+            disabled={flavor.length === 0}
+            token={{
+              name: 'tokenPageStep2',
+              value: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ0'
+            }}
+          />
+        </S.WrapperBtn>
       </S.ContainerCard>
     </>
   )

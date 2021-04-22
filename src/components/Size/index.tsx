@@ -73,14 +73,18 @@ export const Size = ({ sizes }: SizeProps) => {
           </S.Card>
         ))}
 
-        <C.BtnNext
-          route={'/etapa-3'}
-          disabled={!size.size}
-          token={{
-            name: 'tokenPageStep3',
-            value: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ1'
-          }}
-        />
+        <S.WrapperBtn>
+          <C.BtnNext text="Voltar" route={'/etapa-1'} />
+          <S.Space />
+          <C.BtnNext
+            route={'/etapa-3'}
+            disabled={!size.size}
+            token={{
+              name: 'tokenPageStep3',
+              value: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ1'
+            }}
+          />
+        </S.WrapperBtn>
       </S.ContainerSize>
     </>
   )
