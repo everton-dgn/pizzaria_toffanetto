@@ -1,11 +1,17 @@
 import * as S from 'components/Steps/styles'
-import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 interface StepsProps {
   activeStep: boolean[]
 }
 
 export const Steps = ({ activeStep }: StepsProps) => {
+  const router = useRouter()
+
+  const redirectRouter = (routerLink: string, step: number) => {
+    activeStep[step] && router.push(routerLink).then(r => r)
+  }
+
   return (
     <>
       <S.ContainerSteps>
@@ -17,35 +23,39 @@ export const Steps = ({ activeStep }: StepsProps) => {
 
         <S.ContainerRounded>
           <div>
-            <Link href={activeStep[4] ? '/sucesso' : '/etapa-1'} passHref>
-              <S.Step actived={activeStep[0]}>
-                {activeStep[4] ? <S.Checked /> : '1'}
-              </S.Step>
-            </Link>
+            <S.Step
+              actived={activeStep[0]}
+              onClick={() => redirectRouter('/etapa-1', 0)}
+            >
+              {activeStep[4] ? <S.Checked /> : '1'}
+            </S.Step>
           </div>
 
           <div>
-            <Link href={activeStep[4] ? '/sucesso' : '/etapa-2'} passHref>
-              <S.Step actived={activeStep[1]}>
-                {activeStep[4] ? <S.Checked /> : '2'}
-              </S.Step>
-            </Link>
+            <S.Step
+              actived={activeStep[1]}
+              onClick={() => redirectRouter('/etapa-2', 1)}
+            >
+              {activeStep[4] ? <S.Checked /> : '2'}
+            </S.Step>
           </div>
 
           <div>
-            <Link href={activeStep[4] ? '/sucesso' : '/etapa-3'} passHref>
-              <S.Step actived={activeStep[2]}>
-                {activeStep[4] ? <S.Checked /> : '3'}
-              </S.Step>
-            </Link>
+            <S.Step
+              actived={activeStep[2]}
+              onClick={() => redirectRouter('/etapa-3', 2)}
+            >
+              {activeStep[4] ? <S.Checked /> : '3'}
+            </S.Step>
           </div>
 
           <div>
-            <Link href={activeStep[4] ? '/sucesso' : '/etapa-4'} passHref>
-              <S.Step actived={activeStep[3]}>
-                {activeStep[4] ? <S.Checked /> : '4'}
-              </S.Step>
-            </Link>
+            <S.Step
+              actived={activeStep[3]}
+              onClick={() => redirectRouter('/etapa-4', 3)}
+            >
+              {activeStep[4] ? <S.Checked /> : '4'}
+            </S.Step>
           </div>
         </S.ContainerRounded>
       </S.ContainerSteps>

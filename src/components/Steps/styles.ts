@@ -36,7 +36,7 @@ export const ContainerRounded = styled.div`
   margin-bottom: 0.6rem;
 `
 
-export const Step = styled.a<{ actived: boolean }>`
+export const Step = styled.span<{ actived: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
