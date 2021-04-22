@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Check2 } from '@styled-icons/bootstrap'
 import { c } from 'theme'
 
@@ -36,7 +36,7 @@ export const ContainerRounded = styled.div`
   margin-bottom: 0.6rem;
 `
 
-export const Step = styled.div<{ actived: boolean }>`
+export const Step = styled.a<{ actived: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,4 +47,15 @@ export const Step = styled.div<{ actived: boolean }>`
   width: 4rem;
   height: 4rem;
   background-color: ${props => (props.actived ? '#34d399' : '#e6e4f1')};
+  cursor: ${props => (props.actived ? 'pointer' : 'not-allowed')};
+  ${props =>
+    props.actived &&
+    css`
+      transition: transform, background-color, 0.3s linear;
+
+      &:hover {
+        transform: scale(1.1);
+        background-color: #39ecab;
+      }
+    `}
 `

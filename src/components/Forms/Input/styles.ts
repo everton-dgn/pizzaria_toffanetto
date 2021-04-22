@@ -99,7 +99,7 @@ export const WrapperInput = styled.div<{ error: string | undefined }>`
     &:disabled {
       background-color: #e7e7f6;
       box-shadow: none;
-      cursor: no-drop;
+      cursor: not-allowed;
       border-color: transparent;
 
       &:hover {
