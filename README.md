@@ -63,13 +63,15 @@ Este projeto tem o objetivo de agilizar o processo do pedido de pizzas, proporci
   
 - [x] Persistência de todos os dados da aplicação.
   
+- [x] Navegação de telas por steps no checkout.
+  
 - [x] Layout responsivo em qualquer resolução de tela ou dispositivo.
   
 - [x] Cardápio de pizzas com recomendação do dia e adicionais com dados obtidos via api.
   
 - [x] Sistema de pontuação de bônus para seleção de pedidos com a recomendação do dia.
   
-- [x] Carrinho de pedido interativo para controle do preço total.
+- [x] Carrinho de pedido com interação do mascote ao adicionar algum valor.
   
 - [x] Formulário de coleta de dados básicos para entrega de pedido.
   
