@@ -1,10 +1,14 @@
 import styled from 'styled-components'
+import { s } from 'theme'
 
 export const ContainerCart = styled.div`
   margin-left: auto;
   color: #222;
   margin-bottom: 0.2rem;
   display: flex;
+  transform: translate3d(-200%, 0, 0);
+  animation: ${s.moveIn('0', '0', '0')} 0.4s ease-in-out forwards,
+    ${s.fadeIn} 0.2s linear;
 
   & > div {
     display: flex !important;

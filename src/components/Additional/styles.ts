@@ -7,6 +7,7 @@ export const TitleComponent = styled.h1`
   font-size: 2.2rem;
   margin-bottom: 2rem;
   width: fit-content;
+  animation: ${s.zoom} 0.4s ease-in-out, ${s.fadeIn} 0.2s linear;
 
   &:after {
     content: '';
@@ -37,6 +38,27 @@ export const Card = styled.div`
   width: 100%;
   border: 0.2rem solid #f5f5ff;
   transition: border-color 0.2s linear;
+  opacity: 0;
+
+  &:nth-child(1) {
+    animation: ${s.zoom} 0.4s ease-in-out, ${s.fadeIn} 0.1s linear forwards;
+    animation-delay: 100ms;
+  }
+
+  &:nth-child(2) {
+    animation: ${s.zoom} 0.4s ease-in-out, ${s.fadeIn} 0.1s linear forwards;
+    animation-delay: 300ms;
+  }
+
+  &:nth-child(3) {
+    animation: ${s.zoom} 0.4s ease-in-out, ${s.fadeIn} 0.1s linear forwards;
+    animation-delay: 500ms;
+  }
+
+  &:nth-child(4) {
+    animation: ${s.zoom} 0.4s ease-in-out, ${s.fadeIn} 0.1s linear forwards;
+    animation-delay: 700ms;
+  }
 
   &:hover {
     border: 0.2rem solid ${s.primary};

@@ -43,11 +43,8 @@ export default {
   `,
 
   moveIn: (string1: string, string2: string, string3: string) => keyframes`
-    0% {
+    to {
       transform: translate3d(${string1}, ${string2}, ${string3});
-    }
-    100% {
-      transform: translate3d(0, 0, 0);
     }
   `,
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { c } from 'theme'
+import { c, s } from 'theme'
 
 export const Footer = styled.div`
   width: 100%;
@@ -14,6 +14,7 @@ export const ContainerFooter = styled(c.Container)`
   color: #fff;
   justify-content: center;
   flex-direction: row;
+  animation: ${s.zoom} 0.4s ease-in-out, ${s.fadeIn} 0.2s linear;
 
   em {
     color: yellow;

@@ -8,6 +8,7 @@ export const TitleComponent = styled.h1`
   font-size: 2rem;
   margin-bottom: 3rem;
   width: fit-content;
+  animation: ${s.zoom} 0.4s ease-in-out, ${s.fadeIn} 0.2s linear;
 
   &:after {
     content: '';
@@ -52,6 +53,7 @@ export const ContentForm = styled.div`
 
   div {
     grid-column: span 12;
+    animation: ${s.zoom} 0.4s ease-in-out;
   }
 
   p {
@@ -82,6 +84,7 @@ export const BtnSend = styled.button`
   font-weight: 800;
   border-radius: 1rem;
   transition: background-color 0.2s linear;
+  animation: ${s.zoom} 0.4s ease-in-out;
 
   ${s.break(90)} {
     max-width: calc(30% + 2rem);

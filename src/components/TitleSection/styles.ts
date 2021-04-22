@@ -8,6 +8,7 @@ export const TitleSection = styled.h1`
   font-weight: 800;
   color: #7f1d1d;
   font-size: ${s.titleMain};
+  animation: ${s.zoom} 0.4s ease-in-out, ${s.fadeIn} 0.2s linear;
 
   &:after {
     content: '';

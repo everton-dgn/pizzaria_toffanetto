@@ -21,6 +21,9 @@ export const ContainerInfo = styled(c.Box)`
     font-size: 2rem;
     max-width: 30rem;
     margin-top: 1rem;
+    transform: translate3d(0, 200%, 0);
+    animation: ${s.moveIn('0', '0', '0')} 0.5s ease-in-out forwards,
+      ${s.fadeIn} 0.3s linear;
   }
 
   img {
@@ -29,6 +32,9 @@ export const ContainerInfo = styled(c.Box)`
     max-height: 40vh;
     object-fit: contain;
     object-position: left;
+    transform: translate3d(150%, 0, 0);
+    animation: ${s.moveIn('0', '0', '0')} 0.5s ease-in-out forwards,
+      ${s.fadeIn} 0.3s linear;
   }
 
   ${s.break(23)} {

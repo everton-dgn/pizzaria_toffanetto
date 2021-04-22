@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { c } from 'theme'
+import { c, s } from 'theme'
 
 export const ContainerCenter = styled(c.Container)`
   align-items: center;
@@ -24,6 +24,7 @@ export const Nav = styled.nav`
 
 export const Logo = styled.span`
   display: flex;
+  animation: ${s.zoom} 0.4s ease-in, ${s.fadeIn}, 0.2s linear;
 
   div {
     position: relative !important;

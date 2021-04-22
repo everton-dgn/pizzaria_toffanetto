@@ -7,6 +7,7 @@ export const ContainerBtn = styled.div<{ center?: string }>`
   justify-content: center;
   width: 100%;
   max-width: 100%;
+  animation: ${s.moveUp} 0.4s ease-in-out;
 
   ${({ center }) =>
     center === undefined &&

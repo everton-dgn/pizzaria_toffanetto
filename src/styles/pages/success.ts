@@ -16,6 +16,7 @@ export const TitleComponent = styled.h1`
   font-size: 2rem;
   margin-bottom: 3rem;
   width: fit-content;
+  animation: ${s.zoom} 0.4s ease-in-out, ${s.fadeIn} 0.2s linear;
 
   &:after {
     content: '';
@@ -61,6 +62,27 @@ export const ContainerList = styled.div`
   padding: 1rem;
   width: 100%;
   margin-bottom: 2rem;
+  opacity: 0;
+
+  &:nth-child(1) {
+    animation: ${s.zoom} 0.4s ease-in-out, ${s.fadeIn} 0.1s linear forwards;
+    animation-delay: 100ms;
+  }
+
+  &:nth-child(2) {
+    animation: ${s.zoom} 0.4s ease-in-out, ${s.fadeIn} 0.1s linear forwards;
+    animation-delay: 300ms;
+  }
+
+  &:nth-child(3) {
+    animation: ${s.zoom} 0.4s ease-in-out, ${s.fadeIn} 0.1s linear forwards;
+    animation-delay: 500ms;
+  }
+
+  &:nth-child(4) {
+    animation: ${s.zoom} 0.4s ease-in-out, ${s.fadeIn} 0.1s linear forwards;
+    animation-delay: 700ms;
+  }
 
   p,
   li {
@@ -85,6 +107,7 @@ export const BtnSend = styled.button`
   font-weight: 800;
   border-radius: 1rem;
   transition: background-color 0.2s linear;
+  animation: ${s.zoom} 0.6s ease-in-out, ${s.fadeIn} 0.2s linear;
 
   &:hover {
     background-color: #3ae7a8;

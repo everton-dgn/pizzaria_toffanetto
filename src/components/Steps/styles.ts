@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { Check2 } from '@styled-icons/bootstrap'
-import { c } from 'theme'
+import { c, s } from 'theme'
 
 export const Checked = styled(Check2)`
   color: #374151;
@@ -27,6 +27,7 @@ export const LineStep = styled.div<{ actived: boolean }>`
   flex: 1;
   height: 0.4rem;
   background-color: ${({ actived }) => (actived ? '#7f1d1d' : '#e6e4f1')};
+  animation: ${s.zoom} 0.3s ease-in;
 `
 
 export const ContainerRounded = styled.div`
@@ -58,4 +59,5 @@ export const Step = styled.span<{ actived: boolean }>`
         background-color: #39ecab;
       }
     `}
+  animation: ${s.zoom} 0.3s ease-in;
 `
