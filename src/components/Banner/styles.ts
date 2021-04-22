@@ -26,6 +26,9 @@ export const ContainerInfo = styled(c.Box)`
   img {
     max-width: 25rem;
     height: fit-content;
+    max-height: 40vh;
+    object-fit: contain;
+    object-position: left;
   }
 
   ${s.break(23)} {
@@ -38,7 +41,7 @@ export const ContainerInfo = styled(c.Box)`
     padding: 2rem 2rem 2rem 5vw;
 
     h3 {
-      font-size: 2.5rem;
+      font-size: Calc(1.5rem + 1.3vh);
       margin-top: 2rem;
       max-width: 50rem;
     }
