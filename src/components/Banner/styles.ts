@@ -22,8 +22,10 @@ export const ContainerInfo = styled(c.Box)`
     max-width: 30rem;
     margin-top: 1rem;
     transform: translate3d(0, 200%, 0);
-    animation: ${s.moveIn('0', '0', '0')} 0.5s ease-in-out forwards,
-      ${s.fadeIn} 0.3s linear;
+    opacity: 0;
+    animation: ${s.moveIn('0', '0', '0')} 0.6s ease-in-out forwards,
+      ${s.fadeIn} 0.3s linear forwards;
+    animation-delay: 300ms;
   }
 
   img {
@@ -33,8 +35,10 @@ export const ContainerInfo = styled(c.Box)`
     object-fit: contain;
     object-position: left;
     transform: translate3d(150%, 0, 0);
-    animation: ${s.moveIn('0', '0', '0')} 0.5s ease-in-out forwards,
-      ${s.fadeIn} 0.3s linear;
+    opacity: 0;
+    animation: ${s.moveIn('0', '0', '0')} 0.6s ease-in-out forwards,
+      ${s.fadeIn} 0.3s linear forwards;
+    animation-delay: 300ms;
   }
 
   ${s.break(23)} {
