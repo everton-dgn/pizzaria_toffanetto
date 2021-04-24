@@ -110,8 +110,8 @@ export const WrapperInput = styled.div<{ error: string | undefined }>`
   }
 `
 
-export const ContainerOptions = styled.div`
-  display: flex;
+export const ContainerOptions = styled.div<{ show: boolean }>`
+  display: ${({ show }) => (show ? 'flex' : 'none')};
   flex-direction: column;
   overflow-y: auto;
   max-height: 24rem;
@@ -128,14 +128,21 @@ export const ContainerOptions = styled.div`
   opacity: 0;
   animation: ${s.moveIn('0', '0', '0')} 0.2s ease-in-out forwards,
     ${s.fadeIn} 0.2s ease-in-out forwards;
+`
 
-  div {
-    padding: 0.5rem 2rem;
+export const Option = styled.div<{ highlight: boolean }>`
+  padding: 0.5rem 2rem;
+  ${({ highlight }) => highlight && 'background-color: #fff;'}
 
-    &:hover {
-      background-color: #ffffffeb;
-    }
+  &:hover {
+    background-color: #ffffffeb;
   }
+`
+
+export const NotFound = styled.div<{ show: boolean }>`
+  padding: 0.5rem 2rem;
+  text-align: center;
+  ${({ show }) => !show && 'display: none;'}
 `
 
 export const MsgError = styled.small<{ error: string | undefined }>`

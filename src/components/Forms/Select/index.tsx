@@ -178,19 +178,22 @@ export const Select = ({
             />
           </S.ContainerICons>
 
-          {showOption && (
-            <S.ContainerOptions>
-              {listOption !== undefined &&
-                listOption.map(el => (
-                  <div key={el.label} onClick={() => selectOption(el.value)}>
-                    {el.label}
-                  </div>
-                ))}
-              {listOption?.length === 0 && (
-                <div>Nenhum resultado encontrado!</div>
-              )}
-            </S.ContainerOptions>
-          )}
+          <S.ContainerOptions show={showOption}>
+            {listOption !== undefined &&
+              listOption.map(el => (
+                <S.Option
+                  key={el.label}
+                  onClick={() => selectOption(el.value)}
+                  highlight={valueOption.toUpperCase() === el.value}
+                >
+                  {el.label}
+                </S.Option>
+              ))}
+
+            <S.NotFound show={listOption?.length === 0}>
+              Nenhum resultado encontrado!
+            </S.NotFound>
+          </S.ContainerOptions>
         </S.WrapperInput>
         <S.MsgError error={error}>{error && error}</S.MsgError>
       </S.ContainerInput>
