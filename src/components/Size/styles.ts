@@ -134,13 +134,26 @@ export const RadioContent = styled.div`
   width: 100%;
 `
 
-export const RadioLabel = styled.div`
+export const RadioLabel = styled.div<{ verifyCheck: boolean }>`
   margin: -0.5rem auto 0 auto;
 
   input {
     width: 1.8rem;
     height: 1.8rem;
     cursor: pointer;
+    display: none;
+  }
+
+  img {
+    object-fit: contain;
+  }
+
+  & img:nth-child(1) {
+    ${({ verifyCheck }) => verifyCheck && 'display: none;'}
+  }
+
+  & img:nth-child(2) {
+    ${({ verifyCheck }) => !verifyCheck && 'display: none;'}
   }
 `
 

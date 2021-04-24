@@ -184,7 +184,7 @@ export const Text = styled.p`
   }
 `
 
-export const ContainerCheckbox = styled.div`
+export const ContainerCheckbox = styled.div<{ verifyCheck: boolean }>`
   display: flex;
   height: fit-content;
   margin: auto 0.5rem auto -1rem;
@@ -193,6 +193,15 @@ export const ContainerCheckbox = styled.div`
     width: 1.8rem;
     height: 1.8rem;
     cursor: pointer;
+    display: none;
+  }
+
+  & img:nth-child(1) {
+    ${({ verifyCheck }) => verifyCheck && 'display: none;'}
+  }
+
+  & img:nth-child(2) {
+    ${({ verifyCheck }) => !verifyCheck && 'display: none;'}
   }
 `
 

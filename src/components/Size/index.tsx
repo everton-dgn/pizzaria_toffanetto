@@ -44,7 +44,19 @@ export const Size = ({ sizes }: SizeProps) => {
           <S.Card key={el.size} verifyCheck={size.size === el.size}>
             <S.ContainerRadio>
               <S.RadioContent>
-                <S.RadioLabel>
+                <S.RadioLabel verifyCheck={size.size === el.size}>
+                  <img
+                    src="/img/icons/radio.svg"
+                    width="18"
+                    height="18"
+                    alt="Checkbox"
+                  />
+                  <img
+                    src="/img/icons/radio-checked.svg"
+                    width="18"
+                    height="18"
+                    alt="Checkbox"
+                  />
                   <input
                     type="radio"
                     checked={size.size === el.size}

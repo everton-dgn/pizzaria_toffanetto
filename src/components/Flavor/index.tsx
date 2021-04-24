@@ -53,7 +53,19 @@ export const Flavor = ({ data }: FlavorProps) => {
           const checked = !!getFlavorById(el.id, flavor)
           return (
             <S.Card key={el.id} verifyCheck={checked}>
-              <S.ContainerCheckbox>
+              <S.ContainerCheckbox verifyCheck={checked}>
+                <img
+                  src="/img/icons/checkbox.svg"
+                  width="18"
+                  height="17"
+                  alt="Checkbox"
+                />
+                <img
+                  src="/img/icons/checkbox-checked.svg"
+                  width="18"
+                  height="18"
+                  alt="Checkbox"
+                />
                 <input
                   type="checkbox"
                   onClick={() => changeFlavorChecked(el.id)}
