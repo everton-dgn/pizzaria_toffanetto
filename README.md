@@ -49,6 +49,8 @@ Este projeto tem o objetivo de agilizar o processo do pedido de pizzas, proporci
 
 💅 Styled-Components
 
+📱 PWA
+
 ✅ Lints — ESlint/Prettier/EditorConfig
 
 <br />
@@ -65,21 +67,21 @@ Este projeto tem o objetivo de agilizar o processo do pedido de pizzas, proporci
   
 - [x] Navegação de telas por steps no checkout.
   
-- [x] Layout responsivo em qualquer resolução de tela ou dispositivo.
+- [x] Layout responsivo testado em Google Chrome, Microsoft Edge e Firefox (mobile - android e desktop - windows).
   
 - [x] Cardápio de pizzas com recomendação do dia e adicionais com dados obtidos via api.
   
 - [x] Sistema de pontuação de bônus para seleção de pedidos com a recomendação do dia.
   
-- [x] Carrinho de pedido com interação do mascote ao adicionar algum valor.
+- [x] Carrinho de pedido com interação do mascote ao escolher o tamanho da pizza.
   
-- [x] Formulário de coleta de dados básicos para entrega de pedido.
+- [x] Formulário de coleta de dados para geração do pedido de pedido.
   
-- [x] Busca por cep em 3 servidores para autocompletar os campos do endereço.
+- [x] Busca por cep em até 3 servidores para autocompletar os campos do endereço.
   
-- [x] Validação por cookies para páginas do checkout.
+- [x] Validação por cookies nas páginas do checkout para não pular etapas.
   
-- [x] Envio de pedido completo pelo WhatsApp.
+- [x] Envio de pedido formatado e completo pelo WhatsApp.
 
 <br />
 
