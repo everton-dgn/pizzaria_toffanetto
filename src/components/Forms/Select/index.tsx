@@ -134,9 +134,6 @@ export const Select = ({
   const showOptionsAndFocus = () => {
     // mostra dropdown
     setShowOption(true)
-    // coloca o focus no input
-    // @ts-ignore
-    selectRef.current.focus()
     // popula options
     setListOption(options)
   }
