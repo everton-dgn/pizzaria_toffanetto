@@ -79,6 +79,8 @@ export const Select = ({
     setShowOption(false)
     // popula options
     setListOption(options)
+    // ao remover o mouse do input ou dropdown, limpa o valor digitado se não corresponder a uma option
+    verifyValue()
   }
 
   // grava option escolhida ao clicar
@@ -116,8 +118,8 @@ export const Select = ({
 
   // detecta alterações nos valores do input ao digitar
   const searchText = (e: string) => {
-    // grava valor digitado no input
-    setValueOption(e)
+    // grava valor digitado no input e transforma texto em caixa alta
+    setValueOption(e.toUpperCase())
     // filtra options ao digitar
     filterDataOptions(e)
   }
@@ -160,7 +162,6 @@ export const Select = ({
             maskPlaceholder={null}
             value={valueOption}
             onClick={() => showDropdownOptions()}
-            onBlur={() => verifyValue()}
             onChange={e => searchText(e.target.value)}
           />
           <label htmlFor={id}>{placeholder}</label>
