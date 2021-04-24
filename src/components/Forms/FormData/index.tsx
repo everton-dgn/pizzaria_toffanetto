@@ -285,7 +285,7 @@ export const FormData = () => {
                   mask=""
                   options={statesOptions}
                   setStateInSelect={selectState}
-                  disabled={disabledField}
+                  disabledField={disabledField}
                 />
               </Scope>
             </S.ContentForm>

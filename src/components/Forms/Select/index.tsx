@@ -14,6 +14,7 @@ interface Props extends InputProps {
   load?: boolean
   setStateInSelect?: string
   options: { value: string; label: string }[]
+  disabledField: boolean
 }
 
 export const Select = ({
@@ -25,6 +26,7 @@ export const Select = ({
   load,
   setStateInSelect,
   options,
+  disabledField,
   ...rest
 }: Props) => {
   const [showOption, setShowOption] = useState(false)
@@ -149,6 +151,7 @@ export const Select = ({
           {/* input fake para desabilitar autocomplete */}
           <S.InputHidden type="text" name={name} />
           <ReactInputMask
+            disabled={disabledField}
             autoComplete="new-password"
             name={name}
             id={id}
@@ -167,10 +170,12 @@ export const Select = ({
 
           <S.ContainerICons>
             <S.IconClose
-              onClick={() => clearSelect()}
+              onClick={() => !disabledField && clearSelect()}
               showIcon={!!valueOption}
             />
-            <S.IconArrowDown onClick={() => showOptionsAndFocus()} />
+            <S.IconArrowDown
+              onClick={() => !disabledField && showOptionsAndFocus()}
+            />
           </S.ContainerICons>
 
           {showOption && (
