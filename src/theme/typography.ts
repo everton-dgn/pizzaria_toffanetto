@@ -13,7 +13,6 @@ export default {
   textSmallCard: '1.2rem',
   textCart: '2.2rem',
   textStep: '2rem',
-
   textBtn: '1.8rem',
   textBtnNext: '1.7rem',
   textBtnPwa: '1.7rem',
