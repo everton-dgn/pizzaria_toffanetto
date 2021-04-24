@@ -33,7 +33,10 @@ export const useValidate = () => {
         .min(3, 'Mínimo de 3 caracteres.')
         .max(50, 'Máximo de 50 caracteres')
         .required('Preenchimento obrigatório!'),
-      state: Yup.string().required('Preenchimento obrigatório!').ensure()
+      state: Yup.string()
+        .min(2, 'Opção inválida.')
+        .max(2, 'Opção inválida.')
+        .required('Preenchimento obrigatório!')
     })
   })
 }

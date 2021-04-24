@@ -1,4 +1,4 @@
-import { useRef, useContext, useState, SetStateAction, useEffect } from 'react'
+import { useRef, useContext, useState, useEffect } from 'react'
 import * as S from 'components/Forms/FormData/styles'
 import * as C from 'components'
 import { FormHandles, Scope, SubmitHandler } from '@unform/core'
@@ -61,9 +61,7 @@ export const FormData = () => {
   const schema = useValidate()
   const router = useRouter()
 
-  const [selectState, setSelectState] = useState<
-    SetStateAction<{ value: string; label: string }>
-  >()
+  const [selectState, setSelectState] = useState('')
 
   const [loadZipCode, setLoadZipCode] = useState(false)
   const [disabledField, setDisabledField] = useState(true)
@@ -94,6 +92,7 @@ export const FormData = () => {
         'address.city',
         getStorage('form').address.city
       )
+      setSelectState(getStorage('form').address.state)
     }
   }, [])
 
@@ -133,10 +132,7 @@ export const FormData = () => {
           'address.city',
           data.city || data.localidade
         )
-        setSelectState({
-          value: data.state || data.uf,
-          label: data.state || data.uf
-        })
+        setSelectState(data.state || data.uf)
       })
       .catch(() => {
         if (servers[server + 1]) {
@@ -284,10 +280,12 @@ export const FormData = () => {
                   name="state"
                   id="state"
                   label="Estado"
+                  type="text"
                   placeholder="Estado"
+                  mask=""
                   options={statesOptions}
                   setStateInSelect={selectState}
-                  isDisabled={disabledField}
+                  disabled={disabledField}
                 />
               </Scope>
             </S.ContentForm>

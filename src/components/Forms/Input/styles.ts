@@ -35,6 +35,7 @@ export const WrapperInput = styled.div<{ error: string | undefined }>`
     cursor: unset;
     z-index: 0;
     transition: all 0.2s linear;
+    animation: ${s.zoom} 0.4s ease-in-out;
   }
 
   input {
@@ -79,7 +80,7 @@ export const WrapperInput = styled.div<{ error: string | undefined }>`
       font-size: 1.2rem;
       color: ${({ error }) =>
         error !== undefined ? s.errorColor : s.textLabel};
-      margin-top: -1.8rem;
+      margin-top: -1.9rem;
       margin-left: 0;
       cursor: default;
       z-index: 2;
@@ -90,7 +91,7 @@ export const WrapperInput = styled.div<{ error: string | undefined }>`
       font-size: 1.2rem;
       color: ${({ error }) =>
         error !== undefined ? s.errorColor : s.textLabel};
-      margin-top: -1.8rem;
+      margin-top: -1.9rem;
       margin-left: 0;
       cursor: default;
       z-index: 2;

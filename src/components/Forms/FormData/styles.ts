@@ -53,6 +53,9 @@ export const ContentForm = styled.div`
 
   div {
     grid-column: span 12;
+  }
+
+  input {
     animation: ${s.zoom} 0.4s ease-in-out;
   }
 
