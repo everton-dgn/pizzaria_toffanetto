@@ -102,7 +102,6 @@ export const Title = styled.h3`
 `
 
 export const SubTitle = styled.h4`
-  color: #34d399;
   font-size: 1.8rem;
   font-weight: 500;
   margin-bottom: 0.9rem;
