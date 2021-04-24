@@ -49,9 +49,8 @@ export const Additional = ({ data }: AdditionalProps) => {
     sumQtdAdditionals(-changeAdditionals[i].price)
   }
 
-  const AddAdditional = (i: number) => {
+  const addAdditional = (i: number) => {
     const changeAdditionals = additionals
-
     changeAdditionals[i].qtd = changeAdditionals[i].qtd + 1
     setAdditionals(changeAdditionals)
 
@@ -107,7 +106,7 @@ export const Additional = ({ data }: AdditionalProps) => {
                   />
 
                   <S.BtnCount
-                    onClick={() => AddAdditional(i)}
+                    onClick={() => addAdditional(i)}
                     disabled={additionals[i]?.qtd === additionals[i]?.qtdMax}
                   >
                     +
