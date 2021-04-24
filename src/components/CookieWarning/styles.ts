@@ -9,6 +9,8 @@ export const ContainerWarning = styled(c.Box)`
   bottom: 0;
   left: 0;
   box-shadow: 0 0 2.4rem #00000054;
+  animation: ${s.fadeIn} 0.4s ease-in-out;
+  animation-delay: 1s;
 `
 
 export const Content = styled(c.Container)`
