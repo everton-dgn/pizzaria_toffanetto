@@ -126,7 +126,7 @@ export const WrapperBtn = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 2rem 0 3rem 0;
 
   ${s.break(25)} {
