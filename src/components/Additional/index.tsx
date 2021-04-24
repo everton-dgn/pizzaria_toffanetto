@@ -100,7 +100,6 @@ export const Additional = ({ data }: AdditionalProps) => {
 
                   <input
                     type="number"
-                    className="number"
                     value={additionals[i]?.qtd || 0}
                     readOnly
                   />

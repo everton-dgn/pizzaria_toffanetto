@@ -16,9 +16,9 @@ export const ContainerInfo = styled(c.Box)`
   background-image: linear-gradient(90deg, #00000052 76%, transparent);
 
   h3 {
-    color: #fff;
+    color: ${s.light};
     font-weight: 500;
-    font-size: 2rem;
+    font-size: ${s.textTitleCard};
     max-width: 30rem;
     margin-top: 1rem;
     transform: translate3d(0, 200%, 0);
@@ -65,7 +65,7 @@ export const ContainerInfo = styled(c.Box)`
     background-image: linear-gradient(transparent, transparent);
 
     h3 {
-      font-size: 3rem;
+      font-size: ${s.textTitleBanner};
       margin-top: 2.5rem;
       max-width: 60rem;
     }

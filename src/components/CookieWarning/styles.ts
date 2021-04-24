@@ -5,7 +5,7 @@ export const ContainerWarning = styled(c.Box)`
   padding: 1rem 0 0 0;
   position: fixed;
   z-index: 1000;
-  background-color: #fff;
+  background-color: ${s.light};
   bottom: 0;
   left: 0;
   box-shadow: 0 0 2.4rem #00000054;
@@ -17,16 +17,16 @@ export const Content = styled(c.Container)`
   padding: 0;
 
   p {
-    font-size: 1.4rem;
+    font-size: ${s.textCard};
     margin: 0 2rem 1rem 2rem;
     text-align: center;
   }
 
   button {
-    font-size: 1.7rem;
+    font-size: ${s.textBtn};
     font-weight: 600;
     text-transform: uppercase;
-    background-color: #34d399;
+    background-color: ${s.secondary};
     width: calc(100% - 4rem);
     max-width: 45rem;
     padding: 1rem 0;
@@ -35,7 +35,7 @@ export const Content = styled(c.Container)`
     transition: background-color 0.2s linear;
 
     &:hover {
-      background-color: #39ecab;
+      background-color: ${s.secondaryHover};
     }
   }
 
@@ -44,7 +44,7 @@ export const Content = styled(c.Container)`
     flex-wrap: wrap;
 
     p {
-      font-size: 1.8rem;
+      font-size: ${s.textBtn};
     }
 
     button {

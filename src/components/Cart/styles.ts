@@ -3,7 +3,7 @@ import { s } from 'theme'
 
 export const ContainerCart = styled.div`
   margin-left: auto;
-  color: #222;
+  color: ${s.dark};
   margin-bottom: 0.2rem;
   display: flex;
   transform: translate3d(-200%, 0, 0);
@@ -22,17 +22,17 @@ export const ContainerCart = styled.div`
 
 export const Cart = styled.h1`
   text-align: right;
-  font-size: 2.2rem;
+  font-size: ${s.textCart};
   font-weight: 600;
-  color: #7f1d1d;
-  border: 0.2rem solid #34d399;
+  color: ${s.primary};
+  border: 0.2rem solid ${s.secondary};
   border-radius: 1rem;
   padding: 1rem;
   width: fit-content;
   margin: 0 0 1.6rem 1rem;
 
   b {
-    color: #222;
+    color: ${s.dark};
     font-weight: 600;
     margin-left: 0.5rem;
   }

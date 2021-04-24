@@ -30,10 +30,10 @@ export const ContainerBtn = styled.div<{ center?: string }>`
 `
 
 export const BtnNext = styled.button`
-  font-size: 1.7rem;
+  font-size: ${s.textBtnNext};
   font-weight: 800;
   text-transform: uppercase;
-  background-color: #34d399;
+  background-color: ${s.secondary};
   width: 100%;
   padding: 1.4rem 0;
   border-radius: 0.8rem;
@@ -44,10 +44,10 @@ export const BtnNext = styled.button`
   }
 
   &:hover {
-    background-color: #39ecab;
+    background-color: ${s.secondaryHover};
 
     &:disabled {
-      background-color: #34d399;
+      background-color: ${s.secondary};
     }
   }
 `

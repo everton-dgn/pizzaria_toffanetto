@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { s } from 'theme'
 
 export const ContainImg = styled.div`
   display: flex;
@@ -11,7 +12,7 @@ export const ContainImg = styled.div`
 `
 
 export const Paragraph = styled.p`
-  font-size: 2rem;
+  font-size: ${s.textTitleParagraph};
   width: 100%;
   margin: 0 auto 2rem auto;
   padding-bottom: 1rem;
@@ -26,9 +27,9 @@ export const NavLink = styled.a`
 `
 
 export const BtnHome = styled.button`
-  font-size: 1.8rem;
+  font-size: ${s.textBtn};
   text-transform: uppercase;
-  background-color: #34d399;
+  background-color: ${s.secondary};
   padding: 1.7rem 4rem;
   font-weight: 800;
   border-radius: 1rem;
@@ -36,6 +37,6 @@ export const BtnHome = styled.button`
   transition: background-color 0.2s linear;
 
   &:hover {
-    background-color: #3ae7a8;
+    background-color: ${s.secondaryHover};
   }
 `

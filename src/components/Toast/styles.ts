@@ -5,33 +5,32 @@ import { ToastContainer } from 'react-toastify'
 
 export const ToastAlertContainer = styled(ToastContainer)`
   .Toastify__toast--error {
-    background-color: #fff;
-    //border-left: 0.5rem solid ${s.bgError};
+    background-color: ${s.light};
+    //border-left: 0.5rem solid ${s.error};
 
     b {
-      color: ${s.textErrorColor};
+      color: ${s.error};
     }
 
     .Toastify__progress-bar {
-      background: ${s.bgError};
+      background: ${s.error};
     }
   }
 
   .Toastify__toast--success {
-    background-color: #fff;
-    //border-left: 0.5rem solid ${s.bgSuccess};
+    background-color: ${s.light};
+    //border-left: 0.5rem solid ${s.secondary};
 
     b {
-      color: ${s.textSecondary};
+      color: ${s.secondary};
     }
 
     .Toastify__progress-bar {
-      background: ${s.bgSuccess};
+      background: ${s.secondary};
     }
   }
 
   .Toastify__progress-bar {
-    //background: ${s.bgProgressBar};
     height: 0.4rem;
   }
 
@@ -39,12 +38,12 @@ export const ToastAlertContainer = styled(ToastContainer)`
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    color: #374151;
+    color: ${s.darkGrey};
 
     b {
       margin-right: 0.5rem;
       font-weight: 600;
-      font-size: 1.8rem;
+      font-size: ${s.textSubtitleCard};
       text-transform: uppercase;
     }
   }
@@ -54,7 +53,7 @@ export const IconError = styled(ExclamationTriangle)`
   height: 2rem;
   margin-right: 1rem;
   margin-top: 0.2rem;
-  color: ${s.errorColor};
+  color: ${s.error};
 `
 
 export const IconSuccess = styled(CheckCircleFill)`
@@ -62,5 +61,5 @@ export const IconSuccess = styled(CheckCircleFill)`
   height: 2rem;
   margin-right: 1rem;
   margin-top: 0.2rem;
-  color: ${s.textSecondary};
+  color: ${s.secondary};
 `

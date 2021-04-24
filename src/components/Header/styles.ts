@@ -16,10 +16,10 @@ export const ContainerFluid = styled.div`
 export const Nav = styled.nav`
   display: flex;
   width: 100%;
-  background-color: #7f1d1d;
+  background-color: ${s.primary};
   height: 100%;
   align-items: center;
-  border-bottom: 0.2rem solid #34d399;
+  border-bottom: 0.2rem solid ${s.secondary};
 `
 
 export const Logo = styled.span`

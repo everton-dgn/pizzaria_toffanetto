@@ -36,8 +36,8 @@ export default createGlobalStyle`
   body,
   html,
   #__next {
-    background-color: #f5f5ff;
-    color: #374151;
+    background-color: ${s.bgDefault};
+    color: ${s.darkGrey};
   }
 
   body, #root, input, select, textarea, button {
@@ -72,12 +72,12 @@ export default createGlobalStyle`
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #7f1d1d;
+    background-color: ${s.primary};
     border-radius: 2rem;
   }
 
   :root {
-    scrollbar-color: #7f1d1d #f5f5ff !important;
+    scrollbar-color: ${s.primary} ${s.bgDefault} !important;
     scrollbar-width: 0.7rem !important;
   }
 `

@@ -3,7 +3,6 @@ import { Whatsapp } from '@styled-icons/bootstrap'
 import { s } from 'theme'
 
 export const Zap = styled(Whatsapp)`
-  //color: #374151;
   width: 3rem;
   height: 3rem;
   margin-bottom: 0.3rem;
@@ -11,9 +10,9 @@ export const Zap = styled(Whatsapp)`
 `
 
 export const TitleComponent = styled.h1`
-  color: #7f1d1d;
+  color: ${s.primary};
   font-weight: 800;
-  font-size: 2rem;
+  font-size: ${s.textTitleCard};
   margin-bottom: 3rem;
   width: fit-content;
   animation: ${s.zoom} 0.4s ease-in-out, ${s.fadeIn} 0.2s linear;
@@ -23,7 +22,7 @@ export const TitleComponent = styled.h1`
     display: block;
     height: 0.5rem;
     width: 30%;
-    background-color: #34d399;
+    background-color: ${s.secondary};
     margin-top: 0.5rem;
     border-radius: 1rem;
   }
@@ -37,7 +36,8 @@ export const Card = styled.div`
   border-radius: 1rem;
   margin-bottom: 2rem;
   width: 100%;
-  box-shadow: -0.6rem -0.6rem 1.6rem 0 #fff, 0.6rem 0.6rem 1.6rem 0 #e0e0ef;
+  box-shadow: -0.6rem -0.6rem 1.6rem 0 ${s.light},
+    0.6rem 0.6rem 1.6rem 0 ${s.boxShadowDark};
 `
 
 export const CardContent = styled.div`
@@ -57,7 +57,7 @@ export const ContainerSuccess = styled.section`
 export const ContainerList = styled.div`
   display: flex;
   flex-direction: column;
-  border: 0.2rem solid #34d399;
+  border: 0.2rem solid ${s.secondary};
   border-radius: 1rem;
   padding: 1rem;
   width: 100%;
@@ -99,9 +99,9 @@ export const ContainerList = styled.div`
 `
 
 export const BtnSend = styled.button`
-  font-size: 1.8rem;
+  font-size: ${s.textBtn};
   text-transform: uppercase;
-  background-color: #34d399;
+  background-color: ${s.secondary};
   padding: 1rem 3rem;
   margin: 1.5rem auto 0 auto;
   font-weight: 800;
@@ -110,14 +110,14 @@ export const BtnSend = styled.button`
   animation: ${s.zoom} 0.6s ease-in-out, ${s.fadeIn} 0.2s linear;
 
   &:hover {
-    background-color: #3ae7a8;
+    background-color: ${s.secondaryHover};
   }
 `
 
 export const Title = styled.h1`
   font-weight: 800;
-  color: #7f1d1d;
-  font-size: 1.8rem;
+  color: ${s.primary};
+  font-size: ${s.textSubtitleCard};
   margin-bottom: 0.3rem;
 `
 

@@ -2,9 +2,9 @@ import styled, { css } from 'styled-components'
 import { s } from 'theme'
 
 export const TitleComponent = styled.h1`
-  color: #7f1d1d;
+  color: ${s.primary};
   font-weight: 800;
-  font-size: 2.2rem;
+  font-size: ${s.textTitleSection};
   margin-bottom: 1.6rem;
   width: fit-content;
   animation: ${s.zoom} 0.4s ease-in-out, ${s.fadeIn} 0.2s linear;
@@ -14,7 +14,7 @@ export const TitleComponent = styled.h1`
     display: block;
     height: 0.5rem;
     width: 30%;
-    background-color: #34d399;
+    background-color: ${s.secondary};
     margin-top: 0.5rem;
     border-radius: 1rem;
   }
@@ -34,15 +34,12 @@ export const Card = styled.label<{ verifyCheck: boolean }>`
   padding: 1.5rem;
   border-radius: 1rem;
   margin-bottom: 2rem;
-  box-shadow: -0.6rem -0.6rem 1.6rem 0 #fff, 0.6rem 0.6rem 1.6rem 0 #e0e0ef;
+  box-shadow: -0.6rem -0.6rem 1.6rem 0 ${s.light},
+    0.6rem 0.6rem 1.6rem 0 ${s.boxShadowDark};
   width: 100%;
   cursor: pointer;
   border: 0.2rem solid
-    ${({ verifyCheck }) =>
-      verifyCheck
-        ? s.secondary
-        : `
-#f5f5ff`};
+    ${({ verifyCheck }) => (verifyCheck ? s.secondary : s.bgDefault)};
   transition: border-color 0.2s linear;
   opacity: 0;
 
@@ -116,15 +113,15 @@ export const ContainerInfo = styled.div<{ bonus: boolean }>`
   ${({ bonus }) =>
     bonus &&
     css`
-      border: 0.2rem solid #7f1d1d;
+      border: 0.2rem solid ${s.primary};
       border-radius: 0.8rem;
       padding: 0.1rem 0.5rem 0.5rem 0.5rem;
     `};
 
   em {
     display: none;
-    color: #7f1d1d;
-    font-size: 1.2rem;
+    color: ${s.primary};
+    font-size: ${s.textSmallCard};
     ${({ bonus }) =>
       bonus &&
       css`
@@ -133,7 +130,7 @@ export const ContainerInfo = styled.div<{ bonus: boolean }>`
   }
 
   ${s.break(54)} {
-    font-size: 1.2rem;
+    font-size: ${s.textSmallCard};
   }
 `
 
@@ -147,8 +144,8 @@ export const Title = styled.h2`
   flex-wrap: wrap;
   flex-direction: row;
   font-weight: 800;
-  color: #7f1d1d;
-  font-size: 1.5rem;
+  color: ${s.primary};
+  font-size: ${s.textSmallTitle};
   text-transform: uppercase;
   margin: 0;
   align-items: baseline;
@@ -158,28 +155,28 @@ export const Title = styled.h2`
   }
 
   ${s.break(54)} {
-    font-size: 1.8rem;
+    font-size: ${s.textSubtitleCard};
   }
 `
 
 export const SubTitle = styled.h3`
-  color: #222;
-  font-size: 1.2rem;
+  color: ${s.dark};
+  font-size: ${s.textSmallCard};
   font-weight: 600;
   margin: 0;
 
   ${s.break(54)} {
-    font-size: 1.4rem;
+    font-size: ${s.textCard};
   }
 `
 
 export const Text = styled.p`
-  font-size: 1.3rem;
+  font-size: ${s.textSmallP};
   margin: 0;
   line-height: 1.2;
 
   ${s.break(54)} {
-    font-size: 1.5rem;
+    font-size: ${s.textSmallTitle};
     line-height: 1.5;
   }
 `

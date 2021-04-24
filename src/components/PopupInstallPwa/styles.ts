@@ -5,7 +5,7 @@ import { s } from 'theme'
 export const Close = styled(XCircle)`
   width: 2.6rem;
   height: 2.6rem;
-  color: #fff;
+  color: ${s.light};
 `
 
 export const ContainerPopup = styled.div`
@@ -24,7 +24,7 @@ export const ContainerPopup = styled.div`
     display: flex;
     width: 3rem;
     height: 3rem;
-    background-color: #f44336;
+    background-color: ${s.error};
     position: absolute;
     border-radius: 50%;
     right: -0.6rem;
@@ -38,7 +38,7 @@ export const ContainerPopup = styled.div`
   & > div {
     position: relative;
     margin: 7rem 2rem;
-    background-color: #fff;
+    background-color: ${s.light};
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
@@ -49,15 +49,15 @@ export const ContainerPopup = styled.div`
   }
 
   p {
-    font-size: 1.8rem;
+    font-size: ${s.textSubtitleCard};
     margin: 1rem 0;
   }
 
   button {
-    font-size: 1.7rem;
+    font-size: ${s.textBtnPwa};
     font-weight: 800;
     text-transform: uppercase;
-    background-color: #34d399;
+    background-color: ${s.secondary};
     width: 100%;
     padding: 1.4rem 0;
     border-radius: 0.8rem;
@@ -65,7 +65,7 @@ export const ContainerPopup = styled.div`
     transition: background-color 0.2s linear;
 
     &:hover {
-      background-color: #39ecab;
+      background-color: ${s.secondaryHover};
     }
   }
 `

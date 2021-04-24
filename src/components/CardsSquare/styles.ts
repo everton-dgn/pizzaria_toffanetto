@@ -18,10 +18,10 @@ export const Card = styled.div`
   padding: 2.5rem;
   border-radius: 1rem;
   margin-bottom: 2.5rem;
-  box-shadow: -0.6rem -0.6rem 1.6rem 0 ${s.boxShadowLight},
+  box-shadow: -0.6rem -0.6rem 1.6rem 0 ${s.light},
     0.6rem 0.6rem 1.6rem 0 ${s.boxShadowDark};
   width: 100%;
-  border: 0.2rem solid #f5f5ff;
+  border: 0.2rem solid ${s.bgDefault};
   transition: border-color 0.2s linear;
 
   &:hover {
@@ -93,7 +93,7 @@ export const ContainerInfo = styled.div<{ bonus: string }>`
   em {
     margin-top: 0.5rem;
     display: none;
-    font-size: 1.4rem;
+    font-size: ${s.textCard};
     ${({ bonus }) =>
       bonus &&
       css`
@@ -116,7 +116,7 @@ export const ContentInfo = styled.div`
 export const Title = styled.h2`
   font-weight: 800;
   color: ${s.primary};
-  font-size: 2rem;
+  font-size: ${s.textTitleCard};
   text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 0;
@@ -134,25 +134,25 @@ export const Title = styled.h2`
 `
 
 export const SubTitle = styled.h3`
-  color: #222;
-  font-size: 1.6rem;
+  color: ${s.dark};
+  font-size: ${s.textPCard};
   font-weight: 600;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
 `
 
 export const Text = styled.p`
-  font-size: 1.6rem;
+  font-size: ${s.textPCard};
   margin-top: 0;
 `
 
 export const ButtonCard = styled.button`
   background-color: ${s.secondary};
   width: 100%;
-  padding: 1.3rem 1.2rem;
+  padding: 1.3rem 0;
   font-weight: 800;
   border-radius: 1rem;
-  font-size: 1.6rem;
+  font-size: ${s.textBtnCard};
   transition: background-color 0.2s linear;
 
   &:hover {

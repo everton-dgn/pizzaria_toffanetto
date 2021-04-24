@@ -2,9 +2,9 @@ import styled from 'styled-components'
 import { s } from 'theme'
 
 export const TitleComponent = styled.h1`
-  color: #7f1d1d;
+  color: ${s.primary};
   font-weight: 800;
-  font-size: 2.2rem;
+  font-size: ${s.textTitleSection};
   margin-bottom: 3rem;
   width: fit-content;
   animation: ${s.zoom} 0.4s ease-in-out, ${s.fadeIn} 0.2s linear;
@@ -14,7 +14,7 @@ export const TitleComponent = styled.h1`
     display: block;
     height: 0.5rem;
     width: 30%;
-    background-color: #34d399;
+    background-color: ${s.secondary};
     margin-top: 0.5rem;
     border-radius: 1rem;
   }
@@ -33,11 +33,12 @@ export const Card = styled.label<{ verifyCheck: boolean }>`
   padding: 2rem;
   border-radius: 1rem;
   margin-bottom: 2.5rem;
-  box-shadow: -0.6rem -0.6rem 1.6rem 0 #fff, 0.6rem 0.6rem 1.6rem 0 #e0e0ef;
+  box-shadow: -0.6rem -0.6rem 1.6rem 0 ${s.light},
+    0.6rem 0.6rem 1.6rem 0 ${s.boxShadowDark};
   width: 100%;
   cursor: pointer;
   border: 0.2rem solid
-    ${({ verifyCheck }) => (verifyCheck ? s.primary : `#f5f5ff`)};
+    ${({ verifyCheck }) => (verifyCheck ? s.primary : s.bgDefault)};
   transition: border-color 0.2s linear;
   opacity: 0;
 
@@ -95,8 +96,8 @@ export const Title = styled.h3`
   display: flex;
   flex-direction: row;
   font-weight: 800;
-  color: #7f1d1d;
-  font-size: 2rem;
+  color: ${s.primary};
+  font-size: ${s.textTitleCard};
   text-transform: uppercase;
   margin: 1rem 0 0 0;
   justify-content: center;
@@ -104,7 +105,7 @@ export const Title = styled.h3`
 `
 
 export const SubTitle = styled.h4`
-  font-size: 1.7rem;
+  font-size: ${s.textSmallSubtitle};
   font-weight: 500;
   margin-bottom: -0.5rem;
   margin-top: 1rem;
@@ -127,7 +128,7 @@ export const ContainerRadio = styled.div`
 export const RadioContent = styled.div`
   display: flex;
   flex-direction: column;
-  border: 0.2rem solid #34d399;
+  border: 0.2rem solid ${s.secondary};
   border-radius: 1rem;
   padding: 1.5rem 2rem;
   width: 100%;

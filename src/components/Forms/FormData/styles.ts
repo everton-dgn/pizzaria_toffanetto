@@ -3,9 +3,9 @@ import { s } from 'theme'
 import { Form } from '@unform/web'
 
 export const TitleComponent = styled.h1`
-  color: #7f1d1d;
+  color: ${s.primary};
   font-weight: 800;
-  font-size: 2rem;
+  font-size: ${s.textTitleCard};
   margin-bottom: 3rem;
   width: fit-content;
   animation: ${s.zoom} 0.4s ease-in-out, ${s.fadeIn} 0.2s linear;
@@ -15,7 +15,7 @@ export const TitleComponent = styled.h1`
     display: block;
     height: 0.5rem;
     width: 30%;
-    background-color: #34d399;
+    background-color: ${s.secondary};
     margin-top: 0.5rem;
     border-radius: 1rem;
   }
@@ -35,7 +35,8 @@ export const Card = styled.div`
   border-radius: 1rem;
   margin-bottom: 2rem;
   width: 100%;
-  box-shadow: -0.6rem -0.6rem 1.6rem 0 #fff, 0.6rem 0.6rem 1.6rem 0 #e0e0ef;
+  box-shadow: -0.6rem -0.6rem 1.6rem 0 ${s.light},
+    0.6rem 0.6rem 1.6rem 0 ${s.boxShadowDark};
 `
 
 export const FormFields = styled(Form)`
@@ -77,9 +78,9 @@ export const ContentForm = styled.div`
 `
 
 export const BtnSend = styled.button`
-  font-size: 1.8rem;
+  font-size: ${s.textBtn};
   text-transform: uppercase;
-  background-color: #34d399;
+  background-color: ${s.secondary};
   width: 100%;
   max-width: 37rem;
   padding: 1.5rem 7rem;
@@ -94,10 +95,10 @@ export const BtnSend = styled.button`
   }
 
   &:hover {
-    background-color: #3ceaab;
+    background-color: ${s.secondaryHover};
 
     &:disabled {
-      background-color: #34d399;
+      background-color: ${s.secondary};
     }
   }
 
