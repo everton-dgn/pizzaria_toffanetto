@@ -34,8 +34,7 @@ export const Logo = styled.span`
     padding: 0 2rem !important;
     object-fit: contain;
     opacity: 0;
-    animation: ${s.zoom} 0.4s ease-in, ${s.fadeIn},
-      ${s.fadeIn} 0.3s linear forwards;
+    animation: ${s.fadeIn} 0.4s ease-in, ${s.fadeIn} 0.3s linear forwards;
     animation-delay: 300ms;
   }
 `
