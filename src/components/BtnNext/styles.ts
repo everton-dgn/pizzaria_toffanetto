@@ -20,7 +20,7 @@ export const ContainerBtn = styled.div<{ center?: string }>`
     max-width: 100%;
   }
 
-  ${s.break(25)} {
+  ${s.break(35)} {
     max-width: 30rem;
 
     a {
