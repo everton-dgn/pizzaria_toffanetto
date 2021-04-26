@@ -27,7 +27,7 @@
 
 <br />
 
-[comment]: <> (### Veja o [vídeo de demonstração]&#40;https://www.youtube.com/v=qPCAX0j91EM&#41;.)
+### Veja o [vídeo de demonstração](https://youtu.be/w6OagSLW28I).
 
 <br />
 
