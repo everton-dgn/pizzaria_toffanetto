@@ -30,7 +30,7 @@ const Sucesso = () => {
     getStorage('cart') && setCart(getStorage('cart'))
     getStorage('additionals') && setAdditionals(getStorage('additionals'))
     getStorage('form') && setFormData(getStorage('form'))
-  }, [])
+  }, [setAdditionals, setCart, setFlavor, setFormData, setSize])
 
   const getPontuation = () => {
     return flavor.find(
