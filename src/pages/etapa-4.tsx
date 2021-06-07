@@ -2,11 +2,11 @@ import { c } from 'theme'
 import { readToken } from 'utils/HandleToken'
 import * as C from 'components'
 import * as S from 'styles/pages/etapa-4'
-import { useEffect } from 'react'
 
 export const Etapa4 = () => {
-  // redireciona para página inicial se não validar etapa-3
-  useEffect(() => readToken('tokenPageStep4'))
+  if (!readToken('tokenPageStep4') && typeof window !== 'undefined') {
+    return (window.location.href = '/')
+  }
 
   return (
     <>

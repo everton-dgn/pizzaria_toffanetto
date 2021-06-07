@@ -1,15 +1,15 @@
 import axios from 'axios'
 import { c } from 'theme'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { readToken } from 'utils/HandleToken'
 import * as C from 'components'
-import { useEffect } from 'react'
+import { readToken } from 'utils/HandleToken'
 
 const Etapa2 = ({
   dataApi
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  // redireciona para página inicial se não validar etapa-1
-  useEffect(() => readToken('tokenPageStep2'), [])
+  if (!readToken('tokenPageStep2') && typeof window !== 'undefined') {
+    return (window.location.href = '/')
+  }
 
   return (
     <>
@@ -24,7 +24,7 @@ const Etapa2 = ({
   )
 }
 
-export const getStaticProps: GetStaticProps = async context => {
+export const getStaticProps: GetStaticProps = async ctx => {
   const { data } = await axios.get(
     'https://raw.githubusercontent.com/everton-dgn/pizzaria_toffanetto/main/public/api/pizzas.json'
   )

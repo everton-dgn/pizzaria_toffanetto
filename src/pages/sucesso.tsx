@@ -21,9 +21,11 @@ const Sucesso = () => {
     setSize
   } = useContext(DataContext)
 
-  // redireciona para página inicial se o formulário não foi enviado
-  useEffect(() => readToken('tokenPageSuccess'))
+  if (!readToken('tokenPageSuccess') && typeof window !== 'undefined') {
+    return (window.location.href = '/')
+  }
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     getStorage('flavor') && setFlavor(getStorage('flavor'))
     getStorage('size') && setSize(getStorage('size'))

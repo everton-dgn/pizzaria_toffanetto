@@ -10,12 +10,7 @@ export const writeToken = (name: string, value: string) => {
 }
 
 export const readToken = (name: string) => {
-  const redirect = async () => {
-    if (!Cookies.get(name)) {
-      window.location.href = '/'
-    }
-  }
-  redirect().then(r => r)
+  return Cookies.get(name)
 }
 
 export const removeAllTokens = () => {

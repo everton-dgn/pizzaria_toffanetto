@@ -4,13 +4,13 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { readToken } from 'utils/HandleToken'
 import * as C from 'components'
 import * as S from 'styles/pages/etapa-3'
-import { useEffect } from 'react'
 
 const Etapa3 = ({
   dataApi
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  // redireciona para página inicial se não validar etapa-2
-  useEffect(() => readToken('tokenPageStep3'), [])
+  if (!readToken('tokenPageStep3') && typeof window !== 'undefined') {
+    return (window.location.href = '/')
+  }
 
   return (
     <>
@@ -36,7 +36,7 @@ const Etapa3 = ({
   )
 }
 
-export const getStaticProps: GetStaticProps = async context => {
+export const getStaticProps: GetStaticProps = async ctx => {
   const { data } = await axios.get(
     'https://raw.githubusercontent.com/everton-dgn/pizzaria_toffanetto/main/public/api/additionals.json'
   )
