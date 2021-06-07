@@ -16,7 +16,9 @@ const Home = ({ dataApi }: InferGetStaticPropsType<typeof getStaticProps>) => {
           dia você acumula pontos para a próxima compra. Quantos mais pontos
           você acumular, maior será o desconto na próxima compra.
         </S.Paragraph>
-        <C.CardsSquare data={dataApi.pizzas} />
+        <C.ContainerCardControlRender minHeight={67.8}>
+          <C.CardsSquare data={dataApi.pizzas} />
+        </C.ContainerCardControlRender>
       </c.Container>
     </>
   )
