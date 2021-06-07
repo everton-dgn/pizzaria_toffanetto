@@ -1,8 +1,10 @@
+import dynamic from 'next/dynamic'
+
 export { Footer } from 'components/Footer'
 export { Header } from 'components/Header'
 export { HeadPage } from 'components/HeadPage'
 export { TitleSection } from 'components/TitleSection'
-export { CardsSquare } from 'components/CardsSquare'
+export const CardsSquare = dynamic(() => import('components/CardsSquare'))
 export { BtnNext } from 'components/BtnNext'
 export { Additional } from 'components/Additional'
 export { Cart } from 'components/Cart'
@@ -16,3 +18,4 @@ export { Select } from 'components/Forms/Select'
 export { Banner } from 'components/Banner'
 export { PopupInstallPwa } from 'components/PopupInstallPwa'
 export { CookieWarning } from 'components/CookieWarning'
+export { ContainerCardControlRender } from 'components/ContainerCardControlRender'

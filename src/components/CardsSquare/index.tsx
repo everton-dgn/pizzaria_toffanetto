@@ -17,7 +17,7 @@ interface CardSquareProps {
   ]
 }
 
-export const CardsSquare = ({ data }: CardSquareProps) => {
+const CardsSquare = ({ data }: CardSquareProps) => {
   const { hasNetwork } = useContext(DataContext)
 
   return (
@@ -60,3 +60,5 @@ export const CardsSquare = ({ data }: CardSquareProps) => {
     </>
   )
 }
+
+export default CardsSquare
