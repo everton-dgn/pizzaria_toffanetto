@@ -30,7 +30,6 @@ export const Banner = () => {
               layout="fill"
               objectFit="cover"
               quality={90}
-              
             />
           ) : (
             <img
