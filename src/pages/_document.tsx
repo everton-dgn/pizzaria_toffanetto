@@ -23,7 +23,10 @@ export default class MyDocument extends Document {
           />
           <meta name="author" content="Éverton Toffanetto" />
           <meta name="copyright" content="© Éverton Toffanetto" />
-          <link rel="canonical" href="https://pizzaria-toffanetto.vercel.app" />
+          <link
+            rel="canonical"
+            href="https://pizzaria-toffanetto.querocriarsite.com"
+          />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             rel="preload"
@@ -44,7 +47,7 @@ export default class MyDocument extends Document {
           <meta property="og:locale" content="pt_BR" />
           <meta
             property="og:url"
-            content="https://pizzaria-toffanetto.vercel.app"
+            content="https://pizzaria-toffanetto.querocriarsite.com"
           />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="Pizzaria Toffanetto" />
@@ -54,11 +57,11 @@ export default class MyDocument extends Document {
           />
           <meta
             property="og:image"
-            content="https://pizzaria-toffanetto.vercel.app/img/logo-og.jpg"
+            content="https://pizzaria-toffanetto.querocriarsite.com/img/logo-og.jpg"
           />
           <meta
             property="og:image:secure_url"
-            content="https://pizzaria-toffanetto.vercel.app/img/logo-og.jpg"
+            content="https://pizzaria-toffanetto.querocriarsite.com/img/logo-og.jpg"
           />
           <meta property="og:image:type" content="image/jpeg" />
           <meta property="og:image:width" content="512" />
