@@ -39,7 +39,7 @@ export const Select = ({
 
   useEffect(() => {
     valueOption.length === 0 && setListOption(options)
-  }, [valueOption])
+  }, [options, valueOption])
 
   useEffect(() => {
     setStateInSelect && setValueOption(setStateInSelect)

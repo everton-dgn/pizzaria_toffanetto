@@ -19,9 +19,8 @@ interface AdditionalProps {
 }
 
 export const Additional = ({ data }: AdditionalProps) => {
-  const { hasNetwork, cart, setCart, additionals, setAdditionals } = useContext(
-    DataContext
-  )
+  const { hasNetwork, cart, setCart, additionals, setAdditionals } =
+    useContext(DataContext)
 
   // popula o estado com o objeto additionals da api
   useEffect(() => {
@@ -30,7 +29,7 @@ export const Additional = ({ data }: AdditionalProps) => {
     } else {
       setAdditionals(data)
     }
-  }, [])
+  }, [data, setAdditionals])
 
   useEffect(() => {
     setStorage('additionals', additionals)

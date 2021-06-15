@@ -38,7 +38,7 @@ export const Input = ({
     if (name === 'zipCode' && updateZipCode.length === 8) {
       onKeyPress(updateZipCode)
     }
-  }, [updateZipCode, fieldName, registerField])
+  }, [updateZipCode, fieldName, registerField, name, onKeyPress])
 
   const clearField = () => {
     if (error !== undefined) clearError()

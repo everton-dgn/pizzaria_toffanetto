@@ -1,4 +1,4 @@
-import { useRef, useContext, useState, useEffect } from 'react'
+import { useRef, useContext, useState, useEffect, useCallback } from 'react'
 import * as S from 'components/Forms/FormData/styles'
 import * as C from 'components'
 import { FormHandles, Scope, SubmitHandler } from '@unform/core'
@@ -66,42 +66,7 @@ export const FormData = () => {
   const [loadZipCode, setLoadZipCode] = useState(false)
   const [disabledField, setDisabledField] = useState(true)
 
-  useEffect(() => {
-    if (getStorage('form')) {
-      formRef.current?.setFieldValue('name', getStorage('form').name)
-      formRef.current?.setFieldValue('email', getStorage('form').email)
-      formRef.current?.setFieldValue('phone', getStorage('form').phone)
-      formRef.current?.setFieldValue(
-        'address.zipCode',
-        getStorage('form').address.zipCode
-      )
-      SearchCep(getStorage('form').address.zipCode).then(r => r)
-      formRef.current?.setFieldValue(
-        'address.street',
-        getStorage('form').address.street
-      )
-      formRef.current?.setFieldValue(
-        'address.number',
-        getStorage('form').address.number
-      )
-      formRef.current?.setFieldValue(
-        'address.neighborhood',
-        getStorage('form').address.neighborhood
-      )
-      formRef.current?.setFieldValue(
-        'address.city',
-        getStorage('form').address.city
-      )
-      setSelectState(getStorage('form').address.state)
-    }
-  }, [])
-
-  // gera cookies de acesso para a página de sucesso
-  const WriteToken = () => {
-    writeToken('tokenPageSuccess', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9')
-  }
-
-  async function SearchCep(params: string, server = 0) {
+  const SearchCep = useCallback(async (params: string, server = 0) => {
     setLoadZipCode(true)
 
     // Lista de servidores
@@ -145,6 +110,41 @@ export const FormData = () => {
         setLoadZipCode(false)
         setDisabledField(false)
       })
+  }, [])
+
+  useEffect(() => {
+    if (getStorage('form')) {
+      formRef.current?.setFieldValue('name', getStorage('form').name)
+      formRef.current?.setFieldValue('email', getStorage('form').email)
+      formRef.current?.setFieldValue('phone', getStorage('form').phone)
+      formRef.current?.setFieldValue(
+        'address.zipCode',
+        getStorage('form').address.zipCode
+      )
+      SearchCep(getStorage('form').address.zipCode).then(r => r)
+      formRef.current?.setFieldValue(
+        'address.street',
+        getStorage('form').address.street
+      )
+      formRef.current?.setFieldValue(
+        'address.number',
+        getStorage('form').address.number
+      )
+      formRef.current?.setFieldValue(
+        'address.neighborhood',
+        getStorage('form').address.neighborhood
+      )
+      formRef.current?.setFieldValue(
+        'address.city',
+        getStorage('form').address.city
+      )
+      setSelectState(getStorage('form').address.state)
+    }
+  }, [SearchCep])
+
+  // gera cookies de acesso para a página de sucesso
+  const WriteToken = () => {
+    writeToken('tokenPageSuccess', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9')
   }
 
   const handleSubmit: SubmitHandler<FormDataUnform> = async data => {

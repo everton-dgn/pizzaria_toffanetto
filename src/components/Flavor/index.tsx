@@ -22,7 +22,10 @@ export const Flavor = ({ data }: FlavorProps) => {
   const { flavor, setFlavor, hasNetwork } = useContext(DataContext)
 
   // verifica se existe algum valor no sessionStorage, se true, grava no state flavor
-  useEffect(() => getStorage('flavor') && setFlavor(getStorage('flavor')), [])
+  useEffect(
+    () => getStorage('flavor') && setFlavor(getStorage('flavor')),
+    [setFlavor]
+  )
 
   // toda vez que alterar o state flavor grava seu valor no sessionStorage
   useEffect(() => setStorage('flavor', flavor), [flavor])

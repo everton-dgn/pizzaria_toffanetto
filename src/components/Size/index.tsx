@@ -18,7 +18,7 @@ interface SizeProps {
 export const Size = ({ sizes }: SizeProps) => {
   const { size, setSize, setCart } = useContext(DataContext)
 
-  useEffect(() => getStorage('size') && setSize(getStorage('size')), [])
+  useEffect(() => getStorage('size') && setSize(getStorage('size')), [setSize])
 
   const addCart = (price: number) => {
     setCart(price)

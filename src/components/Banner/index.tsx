@@ -23,7 +23,7 @@ export const Banner = () => {
         </S.ContainerInfo>
 
         <S.ContainImg>
-            {hasNetwork ? (
+          {hasNetwork ? (
             <Image
               src="/img/banners/banner-home.jpg"
               alt="Bem-vindo(a) à Pizzaria Toffanetto"
@@ -37,7 +37,7 @@ export const Banner = () => {
               src="/img/banners/banner-home.jpg"
               alt="Bem-vindo(a) à Pizzaria Toffanetto"
             />
-            )}
+          )}
         </S.ContainImg>
       </S.ContainerBanner>
     </>
