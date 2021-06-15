@@ -29,8 +29,7 @@ export const Content = styled(c.Container)`
     font-size: ${s.textBtn};
     font-weight: 600;
     text-transform: uppercase;
-    background-color: ${s.primary};
-    color: #fff;
+    background-color: ${s.secondary};
     width: calc(100% - 4rem);
     max-width: 45rem;
     padding: 1rem 0;
@@ -39,7 +38,7 @@ export const Content = styled(c.Container)`
     transition: background-color 0.2s linear;
 
     &:hover {
-      background-color: ${s.error};
+      background-color: ${s.secondaryHover};
     }
   }
 
