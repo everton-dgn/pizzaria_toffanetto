@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "next:lint": "next lint"
   },
   "dependencies": {
     "@styled-icons/bootstrap": "^10.29.0",
@@ -25,14 +26,14 @@
   },
   "devDependencies": {
     "@types/js-cookie": "^2.2.6",
-    "@types/node": "^14.14.35",
+    "@types/node": "^15.12.2",
     "@types/nprogress": "^0.2.0",
     "@types/react": "^17.0.3",
     "@types/react-input-mask": "^3.0.0",
     "@types/styled-components": "^5.1.9",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
-    "babel-plugin-inline-react-svg": "^1.1.1",
+    "babel-plugin-inline-react-svg": "^2.0.1",
     "babel-plugin-styled-components": "^1.12.0",
     "eslint": "^7.22.0",
     "eslint-config-next": "^11.0.0",
@@ -41,7 +42,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.2.1",
