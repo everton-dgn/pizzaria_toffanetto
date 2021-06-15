@@ -26,6 +26,7 @@ export const Content = styled(c.Container)`
   }
 
   button {
+    border: 0.15rem solid #7f1d1d;
     font-size: ${s.textBtn};
     font-weight: 600;
     text-transform: uppercase;
