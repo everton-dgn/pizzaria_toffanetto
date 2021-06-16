@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { useContext } from 'react'
 import { DataContext } from 'hooks/UseContext'
 import * as C from 'components'
-import Erro404 from '../../public/img/not-found.svg'
 
 const Custom404 = () => {
   const { hasNetwork } = useContext(DataContext)
@@ -17,7 +16,12 @@ const Custom404 = () => {
       <c.Container>
         <S.ContainImg>
           {hasNetwork ? (
-            <Image src={Erro404} alt="Erro 404" width={400} height={400} />
+            <Image
+              src="/img/not-found.svg"
+              alt="Erro 404"
+              width={400}
+              height={400}
+            />
           ) : (
             <img
               src="/img/not-found.svg"
