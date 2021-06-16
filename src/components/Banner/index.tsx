@@ -2,6 +2,7 @@ import * as S from 'components/Banner/styles'
 import Image from 'next/image'
 import { useContext } from 'react'
 import { DataContext } from 'hooks/UseContext'
+import bannerHome from '../../../public/img/banners/banner-home.jpg'
 
 export const Banner = () => {
   const { hasNetwork } = useContext(DataContext)
@@ -25,7 +26,7 @@ export const Banner = () => {
         <S.ContainImg>
           {hasNetwork ? (
             <Image
-              src="/img/banners/banner-home.jpg"
+              src={bannerHome}
               alt="Bem-vindo(a) à Pizzaria Toffanetto"
               layout="fill"
               objectFit="cover"
