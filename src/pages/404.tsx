@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useContext } from 'react'
 import { DataContext } from 'hooks/UseContext'
 import * as C from 'components'
-import Erro404 from '../../../public/img/not-found.svg'
+import Erro404 from '../../public/img/not-found.svg'
 
 const Custom404 = () => {
   const { hasNetwork } = useContext(DataContext)
