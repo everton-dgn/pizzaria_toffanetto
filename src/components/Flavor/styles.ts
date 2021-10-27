@@ -87,8 +87,9 @@ export const ContainerImg = styled.div`
   width: 9rem;
   min-width: 9rem;
   height: 9rem;
+  position: relative;
 
-  div {
+  span {
     position: relative !important;
     width: 9rem;
     min-width: 9rem;

@@ -130,9 +130,9 @@ export const BoxImg = styled.div`
   border-radius: 1rem;
   width: 100%;
   height: 18rem;
+  position: relative;
 
-  div {
-    position: relative !important;
+  span {
     width: 100%;
     height: 18rem;
   }

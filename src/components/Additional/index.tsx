@@ -72,6 +72,7 @@ export const Additional = ({ data }: AdditionalProps) => {
                       layout="fill"
                       objectFit="cover"
                       quality={90}
+                      priority={true}
                     />
                   ) : (
                     <img

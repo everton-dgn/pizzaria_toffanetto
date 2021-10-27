@@ -83,6 +83,7 @@ export const Flavor = ({ data }: FlavorProps) => {
                     layout="fill"
                     objectFit="cover"
                     quality={90}
+                    priority={true}
                   />
                 ) : (
                   <img

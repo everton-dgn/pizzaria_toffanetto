@@ -79,6 +79,7 @@ export const ContainerInfo = styled(c.Box)`
 export const ContainImg = styled.div`
   height: calc(100vh - 5rem);
   width: 100%;
+  position: relative;
 
   div {
     position: relative !important;

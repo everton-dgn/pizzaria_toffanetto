@@ -49,8 +49,9 @@ export const ContainerImg = styled.div`
   height: 100%;
   min-height: 25rem;
   max-height: 25rem;
+  position: relative;
 
-  div {
+  span {
     position: relative !important;
     width: 100%;
     min-width: 100%;
