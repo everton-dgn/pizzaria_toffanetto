@@ -6,6 +6,6 @@ export const getStorage = (key: string) => {
   const verify = sessionStorage.getItem(key)
 
   if (verify) {
-    return JSON.parse(<string>sessionStorage.getItem(key))
+    return JSON.parse(sessionStorage.getItem(key) as string)
   }
 }
