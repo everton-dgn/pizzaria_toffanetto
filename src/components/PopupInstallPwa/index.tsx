@@ -9,7 +9,7 @@ export const PopupInstallPwa = () => {
     window.addEventListener('beforeinstallprompt', e => {
       // Impedir que o mini-infobar apareça no celular
       e.preventDefault()
-      // Armazena o evento para que possa ser acionado mais tarde.
+      // Armazena o evento para poder ser acionado mais tarde.
       setDeferredPrompt(e)
       // Atualizar a interface e notifica o usuário de que pode instalar o PWA
       setIsActive(true)

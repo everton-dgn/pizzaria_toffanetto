@@ -24,7 +24,7 @@ const Home = ({ dataApi }: InferGetStaticPropsType<typeof getStaticProps>) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async ctx => {
+export const getStaticProps: GetStaticProps = async () => {
   const { data } = await axios.get(
     'https://raw.githubusercontent.com/everton-dgn/pizzaria_toffanetto/main/public/api/pizzas.json'
   )
