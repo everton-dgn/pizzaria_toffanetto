@@ -12,7 +12,7 @@ Router.events.on('routeChangeError', () => NProgress.done())
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <>
+    <C.ErrorBoundary>
       <DataStorage>
         <C.HeadPage />
         <C.Header />
@@ -22,7 +22,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <C.PopupInstallPwa />
       </DataStorage>
       <GlobalStyles />
-    </>
+    </C.ErrorBoundary>
   )
 }
 
