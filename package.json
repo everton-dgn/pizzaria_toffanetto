@@ -7,7 +7,7 @@
   "description": "Este projeto tem o objetivo de agilizar o processo do pedido de pizzas, proporcionando uma experiência melhor para o cliente.",
   "repository": "https://github.com/everton-dgn/pizzaria_toffanetto",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --experimental-https",
     "start": "next start",
     "build": "next build",
     "lint": "eslint --cache src --ext ts,tsx --max-warnings=0",
