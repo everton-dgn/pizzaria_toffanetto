@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /checkout/
+
+# Host
+Host: https://pizzaria-toffanetto.querocriarsite.com
+
+# Sitemaps
+Sitemap: https://pizzaria-toffanetto.querocriarsite.com/sitemap.xml

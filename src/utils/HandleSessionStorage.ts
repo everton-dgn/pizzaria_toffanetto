@@ -3,9 +3,9 @@ export const setStorage = (key: string, value: any) => {
 }
 
 export const getStorage = (key: string) => {
-  const verify = sessionStorage.getItem(key)
+  const verify = sessionStorage.getItem(key) || undefined
 
   if (verify) {
-    return JSON.parse(sessionStorage.getItem(key) as string)
+    return JSON.parse(verify)
   }
 }

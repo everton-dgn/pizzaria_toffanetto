@@ -1,7 +1,9 @@
+'use client'
+
 import React, {
   createContext,
-  Dispatch,
-  ReactNode,
+  type Dispatch,
+  type ReactNode,
   useEffect,
   useState
 } from 'react'
@@ -48,7 +50,9 @@ interface DataStorageProps {
   children: ReactNode
 }
 
-export const DataContext = createContext({} as ChallengeContextData)
+export const DataContext = createContext<
+  ChallengeContextData | Record<string, unknown>
+>({})
 
 export const DataStorage = ({ children }: DataStorageProps) => {
   const [flavor, setFlavor] = useState([])

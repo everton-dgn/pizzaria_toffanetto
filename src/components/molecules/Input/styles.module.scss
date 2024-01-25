@@ -1,0 +1,143 @@
+@use 'src/theme' as T;
+
+.loadCep {
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+  min-height: 20px;
+  position: absolute;
+  z-index: 100;
+  right: 0;
+  color: T.$color-light-grey;
+  margin-right: 10px;
+  margin-top: 14px;
+  animation: rotate 0.8s linear infinite;
+
+  @include T.animation-rotate;
+}
+
+.containerInput {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.wrapperInput {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  label {
+    position: absolute;
+    font-size: T.$font-size-15;
+    margin: 1.4rem 1.4rem 1.3rem 1.5rem;
+    border-radius: 0.4rem;
+    background-color: T.$color-bg-default;
+    cursor: unset;
+    z-index: 0;
+    transition: all 0.2s linear;
+    animation: zoom 0.4s ease-in-out;
+
+    @include T.animation-zoom;
+  }
+
+  input {
+    appearance: none;
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    border-radius: 1rem;
+    box-shadow:
+      inset -0.3rem -0.3rem 0.9rem 0 T.$color-light,
+      inset 0.3rem 0.3rem 0.9rem 0 T.$color-box-shadow-dark;
+    border: 1.5px solid transparent;
+    outline: none;
+    padding: 1.3rem 1.4rem;
+    background-color: T.$color-bg-default;
+    font-size: T.$font-size-15;
+    z-index: 1;
+    transition: all 0.2s ease-in-out;
+
+    &::placeholder {
+      font-size: T.$font-size-15;
+      color: T.$color-light-grey;
+    }
+
+    &:required:invalid + label:before {
+      content: '*';
+    }
+
+    &:hover {
+      border: 1.5px solid T.$color-light;
+    }
+
+    &:focus {
+      border: 1.5px solid T.$color-secondary;
+    }
+
+    &:focus + label,
+    &:not(:placeholder-shown) + label {
+      font-size: T.$font-size-12;
+      margin-top: -1.9rem;
+      margin-left: 0;
+      cursor: default;
+      z-index: 2;
+      color: T.$color-dark-grey;
+    }
+
+    &:-webkit-autofill:focus + label,
+    &:-webkit-autofill:not(:placeholder-shown) + label {
+      font-size: T.$font-size-12;
+      margin-top: -1.9rem;
+      margin-left: 0;
+      cursor: default;
+      z-index: 2;
+      color: T.$color-dark-grey;
+    }
+
+    &:disabled {
+      background-color: T.$color-disabled;
+      box-shadow: none;
+      cursor: not-allowed;
+      border-color: transparent;
+
+      &:hover {
+        border-color: transparent;
+      }
+    }
+  }
+}
+
+.error {
+  input {
+    &::placeholder {
+      color: T.$color-error;
+    }
+
+    &:hover {
+      border: 1.5px solid T.$color-error;
+    }
+
+    &:focus {
+      border: 1.5px solid T.$color-error;
+    }
+
+    &:focus + label,
+    &:not(:placeholder-shown) + label {
+      color: T.$color-error;
+    }
+
+    &:-webkit-autofill:focus + label,
+    &:-webkit-autofill:not(:placeholder-shown) + label {
+      color: T.$color-error;
+    }
+  }
+}
+
+.msgError {
+  display: flex;
+  color: T.$color-error;
+  justify-content: flex-end;
+  font-size: T.$font-size-12;
+  height: 1.3rem;
+}

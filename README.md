@@ -47,11 +47,9 @@ Este projeto tem o objetivo de agilizar o processo do pedido de pizzas, proporci
 
 🔥 TypeScript
 
-💅 Styled-Components
+💅 SASS
 
-📱 PWA
-
-✅ Lints — ESlint/Prettier/EditorConfig
+🚩 Lints: Husky, ESlint, Stylelint, Commitlint, Lint-Staged, Prettier and Typecheck
 
 <br />
 
@@ -59,29 +57,23 @@ Este projeto tem o objetivo de agilizar o processo do pedido de pizzas, proporci
 
 # :triangular_flag_on_post: Features
 
-- [x] Funciona offline após o primeiro carregamento online das páginas.
-  
-- [x] PWA instalável.
-  
 - [x] Persistência de todos os dados da aplicação.
   
 - [x] Navegação de telas por steps no checkout.
   
 - [x] Layout responsivo testado em Google Chrome, Microsoft Edge e Firefox (mobile - android e desktop - windows).
   
-- [x] Cardápio de pizzas com recomendação do dia e adicionais com dados obtidos via api.
+- [x] Cardápio de pizzas com recomendação do dia e adicionais.
   
 - [x] Sistema de pontuação de bônus para seleção de pedidos com a recomendação do dia.
   
 - [x] Carrinho de pedido com interação do mascote ao escolher o tamanho da pizza.
   
-- [x] Formulário de coleta de dados para geração do pedido de pedido.
+- [x] Formulário de coleta de dados para geração do pedido.
   
 - [x] Busca por cep em até 3 servidores para autocompletar os campos do endereço.
   
-- [x] Validação por cookies nas páginas do checkout para não pular etapas.
-  
-- [x] Envio de pedido formatado e completo pelo WhatsApp.
+- [x] Envio de pedido completo e formatado pelo WhatsApp.
 
 <br />
 
@@ -145,6 +137,6 @@ yarn start
 
 # :closed_book: Autor
 
-Feito por [Éverton Toffanetto](https://querocriarsite.com).
+Feito por [Éverton Toffanetto](https://www.linkedin.com/in/everton-toffanetto/).
 
 ### :link: LinkedIn: https://www.linkedin.com/in/everton-toffanetto/

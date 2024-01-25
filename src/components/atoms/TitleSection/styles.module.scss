@@ -1,0 +1,35 @@
+@use 'src/theme' as T;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.titleSection {
+  width: fit-content;
+  margin: 4rem auto 2.3rem auto;
+  text-align: center;
+  font-weight: 700;
+  color: T.$color-primary;
+  font-size: T.$font-size-30;
+  animation:
+    zoom 0.4s ease-in-out,
+    fade-in 0.2s linear;
+
+  @include T.animation-zoom;
+  @include T.animation-fade-in;
+
+  &::after {
+    content: '';
+    display: block;
+    height: 0.5rem;
+    width: 30%;
+    background-color: T.$color-secondary;
+    margin: 2rem auto 0 auto;
+    border-radius: 1rem;
+  }
+}

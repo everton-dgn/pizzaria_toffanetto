@@ -1,0 +1,41 @@
+@use 'src/theme' as T;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  padding: T.$spacing-16;
+  position: fixed;
+  text-align: center;
+  z-index: T.$z-index-elevation;
+  background-color: T.$color-bg-default;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 24px #00000054;
+  margin: 0 auto;
+  gap: T.$spacing-16;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  animation:
+    visibility 0.1s 3s linear forwards,
+    move-up 0.4s 3s ease-in-out forwards;
+
+  @include T.animation-visibility;
+  @include T.animation-move-up;
+
+  @include T.breakpoint-min('custom', 480px) {
+    flex-flow: row nowrap;
+    padding: T.$spacing-16 T.$spacing-24;
+    gap: T.$spacing-20;
+    border-radius: T.$border-radius-8;
+    text-align: left;
+  }
+}
+
+.text {
+  font-size: T.$font-size-16;
+  text-align: center;
+}

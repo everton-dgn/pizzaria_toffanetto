@@ -1,5 +1,11 @@
 {
+  "id": "pizzaria-toffanetto",
+  "version": "1.0.0",
+  "lang": "pt-BR",
+  "author": "Éverton Toffanetto",
   "name": "Pizzaria Toffanetto",
+  "description": "Este projeto tem o objetivo de agilizar o processo do pedido de pizzas, proporcionando uma experiência melhor para o cliente.",
+  "categories": ["comida", "delivery", "pizzaria"],
   "short_name": "Pizzaria Toffanetto",
   "theme_color": "#7f1d1d",
   "background_color": "#7f1d1d",
@@ -75,6 +81,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "description": "Projeto Pizzaria Toffanetto"
+  ]
 }

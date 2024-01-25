@@ -1,0 +1,31 @@
+@use 'src/theme' as T;
+
+.footer {
+  width: 100%;
+  bottom: 0;
+  background-color: T.$color-primary;
+  padding: 3rem 0;
+  margin-top: auto;
+}
+
+.containerFooter {
+  display: flex;
+  width: 100%;
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+  color: T.$color-light;
+  justify-content: center;
+  flex-direction: row;
+  animation:
+    zoom 0.4s ease-in-out,
+    fade-in 0.2s linear;
+
+  @include T.animation-zoom;
+  @include T.animation-fade-in;
+
+  em {
+    color: yellow;
+    margin-left: 0.5rem;
+  }
+}

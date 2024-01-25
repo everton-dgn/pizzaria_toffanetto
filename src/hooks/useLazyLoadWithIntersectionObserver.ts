@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useState } from 'react'
+import { type RefObject, useEffect, useState } from 'react'
 
 export const useLazyLoadWithIntersectionObserver = (
   ref: RefObject<HTMLDivElement>,
@@ -25,7 +25,6 @@ export const useLazyLoadWithIntersectionObserver = (
       const observer = new IntersectionObserver(callBackObserver, options)
       !!ref.current && observer.observe(ref.current)
     } catch (e) {
-      console.log(e)
       setShowComponent(true)
     }
   }, [distancePXWindowCallComponent, ref])

@@ -1,0 +1,78 @@
+@use 'src/theme' as T;
+
+.containerPopup {
+  position: fixed;
+  display: flex;
+  max-width: 400px;
+  width: calc(100% - #{T.$spacing-16} * 2);
+  height: fit-content;
+  right: 0;
+  margin: 0 T.$spacing-16;
+  left: auto;
+  top: 60px;
+  gap: T.$spacing-8;
+  z-index: T.$z-index-elevation;
+  border-radius: T.$border-radius-16;
+  flex-direction: column;
+  background-color: T.$color-light;
+  box-shadow: 0 0 24px #00000054;
+  padding: T.$spacing-20 T.$spacing-20 T.$spacing-28;
+  visibility: hidden;
+  animation:
+    visibility 0.1s 4s linear forwards,
+    move-up 0.4s 4s ease-in forwards;
+
+  @include T.animation-visibility;
+  @include T.animation-move-up;
+
+  @include T.breakpoint-min('custom', 500px) {
+    max-width: 400px;
+  }
+}
+
+.button_close {
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  min-width: 38px;
+  height: 38px;
+  min-height: 38px;
+  cursor: pointer;
+  border-radius: T.$border-radius-4 T.$border-radius-16 T.$border-radius-4
+    T.$border-radius-4;
+  border: 0;
+  background-color: transparent;
+}
+
+.icon_close {
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+  min-height: 20px;
+  fill: T.$color-dark-grey;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  & > img {
+    margin-right: 10px;
+    max-width: 72%;
+    object-fit: contain;
+  }
+}
+
+.text {
+  margin: 10px 0;
+  font-size: T.$font-size-18;
+  font-weight: T.$font-weight-600;
+  text-align: center;
+}
