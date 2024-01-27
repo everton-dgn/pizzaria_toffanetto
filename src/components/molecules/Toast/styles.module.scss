@@ -58,7 +58,7 @@
   min-height: 20px;
 
   &--success {
-    fill: T.$color-green;
+    fill: T.$color-success;
   }
 
   &--error {
@@ -124,7 +124,7 @@
   @include T.animation-progress;
 
   &--success {
-    background-color: T.$color-green;
+    background-color: T.$color-success;
   }
 
   &--error {
