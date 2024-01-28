@@ -3,13 +3,8 @@ import type { ReactNode } from 'react'
 
 import quicksand from 'theme/fontFamily'
 
-import {
-  CookieWarning,
-  PopupInstallPwa,
-  Toast,
-  TopBar
-} from 'components/molecules'
-import { Footer } from 'components/organisms'
+import { CookieWarning, PopupInstallPwa, Toast } from 'components/molecules'
+import { Footer, TopBar } from 'components/organisms'
 import { MainProvider } from 'providers/mainProvider'
 
 import 'theme/reset.scss'
