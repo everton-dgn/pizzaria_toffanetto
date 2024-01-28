@@ -80,7 +80,6 @@
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: flex-end;
-  margin-top: T.$spacing-4;
 }
 
 .message_price {
@@ -96,6 +95,17 @@
 
     b {
       font-size: T.$font-size-16;
+    }
+  }
+}
+
+.icon_button {
+  @include T.breakpoint-max('desktop') {
+    > svg {
+      width: 12px;
+      min-width: 12px;
+      height: 12px;
+      min-height: 12px;
     }
   }
 }
