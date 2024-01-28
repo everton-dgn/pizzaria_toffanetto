@@ -8,12 +8,10 @@ import { Button } from 'components/atoms'
 
 import { DataContext } from 'hooks/UseContext'
 
-import type { DailyPizzaOptionsList } from 'infra/services/pizzas/types'
-
 import S from './styles.module.scss'
 
 interface CardSquareProps {
-  data: DailyPizzaOptionsList
+  data: any
 }
 
 const CardsSquare = ({ data }: CardSquareProps) => {
@@ -22,7 +20,7 @@ const CardsSquare = ({ data }: CardSquareProps) => {
 
   return (
     <div className={S.containerCards}>
-      {data?.map(el => (
+      {data?.map((el: any) => (
         <div className={S.card} key={el.id}>
           <div className={S.containerImg}>
             {hasNetwork ? (

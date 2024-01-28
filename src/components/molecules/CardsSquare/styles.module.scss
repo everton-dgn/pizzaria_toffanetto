@@ -14,13 +14,13 @@
 .card {
   display: flex;
   flex-direction: column;
+  width: 100%;
   padding: 2.5rem;
   border-radius: T.$border-radius-16;
   margin-bottom: 2.5rem;
   box-shadow:
     -0.6rem -0.6rem 1.6rem 0 T.$color-light,
     0.6rem 0.6rem 1.6rem 0 T.$color-box-shadow-dark;
-  width: 100%;
   border: 0.2rem solid T.$color-bg-default;
   transition: border-color 0.2s linear;
 
