@@ -24,7 +24,7 @@ export const CookieWarning = () => {
     <>
       {isActive && (
         <div className={S.container}>
-          <p>
+          <p className={S.text}>
             Ao navegar neste site, você aceita os cookies que usamos para
             melhorar a sua experiência.
           </p>
