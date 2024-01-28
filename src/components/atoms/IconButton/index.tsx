@@ -7,7 +7,7 @@ import S from './styles.module.scss'
 import type { IconButtonProps } from './types'
 
 export const IconButton = ({
-  children,
+  icon,
   className,
   ariaLabel,
   size = 'medium',
@@ -18,6 +18,6 @@ export const IconButton = ({
     aria-label={ariaLabel}
     {...props}
   >
-    {children}
+    {icon}
   </button>
 )
