@@ -15,7 +15,7 @@ export const Banner = () => {
       <div className={S.containerBanner}>
         <div className={S.containerInfo}>
           <img
-            src="/img/logo-y.png"
+            src="/img/logos/logo-vertical.png"
             alt="Pizzaria Toffanetto"
             width="885"
             height="410"

@@ -78,7 +78,7 @@ export const PopupInstallPwa = () => {
               alt="Pizzaria Toffanetto"
             />
             <img
-              src="/img/logo-popup-pwa.png"
+              src="/img/logos/logo-popup-pwa.png"
               alt="Pizzaria Toffanetto"
               width="257"
               height="40"
