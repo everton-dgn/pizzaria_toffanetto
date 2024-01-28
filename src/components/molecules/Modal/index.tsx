@@ -49,7 +49,6 @@ const Modal = forwardRef<ModalHandle, ModalProps>((props, ref) => {
         className={clsx(S.container, className)}
         style={{ padding: fullscreenMobile ? 0 : '16px' }}
         ref={modalRef}
-        aria-labelledby="modal-title"
       >
         <div
           className={clsx(
@@ -70,7 +69,7 @@ const Modal = forwardRef<ModalHandle, ModalProps>((props, ref) => {
             minHeight: fullscreenMobile ? '100%' : 'fit-content'
           }}
           role="dialog"
-          aria-labelledby="Modal"
+          aria-labelledby={title}
           aria-modal={true}
         >
           <div className={S.wrapper_close_button}>

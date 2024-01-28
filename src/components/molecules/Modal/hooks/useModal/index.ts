@@ -77,13 +77,11 @@ export const useModal = ({
           firstElementModal.focus()
         }
 
-        /* istanbul ignore if  */
         if (hasFocusableElementsModal && isFirstElementActiveAndShiftKey) {
           e.preventDefault()
           lastElementModal.focus()
         }
 
-        /* istanbul ignore if  */
         if (!hasFocusableElementsModal) e.preventDefault()
       }
     }
