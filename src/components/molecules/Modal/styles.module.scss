@@ -7,6 +7,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  backdrop-filter: blur(2px);
   z-index: T.$z-index-overlay;
 
   @include T.breakpoint-min('tablet') {
@@ -27,14 +28,12 @@
   visibility: visible;
   opacity: 0.6;
   background-color: T.$color-dark;
-  filter: blur(0.5);
 }
 
 .hidden_overlay {
   visibility: hidden;
   opacity: 0;
   background-color: transparent;
-  filter: blur(0);
 }
 
 .modal {
