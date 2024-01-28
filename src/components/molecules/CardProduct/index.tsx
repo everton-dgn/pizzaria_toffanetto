@@ -60,10 +60,14 @@ export const CardProduct = ({
           </p>
           <Button
             label="Adicionar"
+          <IconButton
+            ariaLabel="Visualizar item"
             size="small"
-            leftIcon={<IconPlus />}
             onClick={handleRedirect}
           />
+            className={S.icon_button}
+            <IconPlus />
+          </IconButton>
         </div>
       </div>
     </div>
