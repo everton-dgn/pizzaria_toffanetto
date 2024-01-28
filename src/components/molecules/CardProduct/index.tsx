@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { FaPlus as IconPlus } from 'react-icons/fa6'
 
 import { Button } from 'components/atoms'
+import { IconButton } from 'components/atoms'
 
 import { converterNumberToCurrency } from 'data/formatters'
 import { queryParamsFormatter } from 'data/formatters/queryParamsFormatter'
@@ -58,16 +59,13 @@ export const CardProduct = ({
             {MESSAGE_PRICE(hasFixedPrice)}
             <b>{formattedCurrency}</b>
           </p>
-          <Button
-            label="Adicionar"
           <IconButton
             ariaLabel="Visualizar item"
             size="small"
             onClick={handleRedirect}
-          />
             className={S.icon_button}
-            <IconPlus />
-          </IconButton>
+            icon={<IconPlus />}
+          />
         </div>
       </div>
     </div>
