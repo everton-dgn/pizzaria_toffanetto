@@ -1,0 +1,29 @@
+@use 'src/theme' as T;
+
+.container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  height: 50px;
+  position: sticky;
+  top: 0;
+  z-index: T.$z-index-header;
+  background-color: T.$color-primary;
+  border-bottom: 2px solid T.$color-secondary;
+}
+
+.nav {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: T.$container-max-width;
+  padding: 0 T.$spacing-16;
+  margin: 0 auto;
+  height: 100%;
+
+  @include T.breakpoint-min('tablet') {
+    padding: 0 T.$spacing-24;
+  }
+}
