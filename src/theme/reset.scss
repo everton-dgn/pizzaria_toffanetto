@@ -44,7 +44,7 @@ body {
   min-height: 100vh;
   justify-content: flex-start;
   background-color: T.$color-bg-default;
-  color: T.$color-dark-grey;
+  color: T.$color-dark;
   isolation: isolate;
 }
 
@@ -122,17 +122,17 @@ mark {
 
 ::-webkit-scrollbar,
 scrollbar-width {
-  width: 16px !important;
+  width: 12px !important;
   background-color: T.$color-bg-default;
 }
 
 ::-webkit-scrollbar-thumb {
-  border: 3px solid T.$color-bg-default;
+  border: 1px solid T.$color-bg-default;
   border-radius: 20px;
-  background-color: T.$color-primary;
+  background-color: T.$color-light-grey;
 }
 
 :root {
-  scrollbar-color: T.$color-primary T.$color-bg-default !important;
-  scrollbar-width: 16px !important;
+  scrollbar-color: T.$color-light-grey T.$color-bg-default !important;
+  scrollbar-width: 12px !important;
 }
