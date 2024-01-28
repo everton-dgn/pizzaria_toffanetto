@@ -1,0 +1,101 @@
+@use 'src/theme' as T;
+
+.container {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: T.$spacing-8;
+  gap: T.$spacing-8;
+  border-radius: T.$border-radius-8;
+  box-shadow:
+    -6px -6px 16px 0 T.$color-light,
+    6px 6px 16px 0 T.$color-box-shadow-dark;
+  border: 2px solid T.$color-bg-default;
+
+  @include T.breakpoint-min('desktop') {
+    padding: T.$spacing-16;
+    gap: T.$spacing-16;
+  }
+}
+
+.image {
+  width: 73px;
+  min-width: 73px;
+  height: 73px;
+  min-height: 73px;
+  border-radius: T.$border-radius-8;
+  background-size: cover;
+  background-position: center;
+
+  @include T.breakpoint-min('desktop') {
+    width: 132px;
+    min-width: 132px;
+    height: 132px;
+    min-height: 132px;
+  }
+}
+
+.wrapper_info {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  width: 100%;
+  gap: T.$spacing-4 T.$spacing-8;
+}
+
+.title {
+  width: fit-content;
+  font-size: T.$font-size-14;
+  font-weight: T.$font-weight-700;
+  text-transform: uppercase;
+  color: T.$color-primary;
+
+  @include T.breakpoint-min('desktop') {
+    font-size: T.$font-size-18;
+  }
+}
+
+.description {
+  display: -webkit-box;
+  width: 100%;
+  font-size: T.$font-size-12;
+  font-weight: T.$font-weight-500;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+
+  @include T.breakpoint-min('tablet') {
+    -webkit-line-clamp: 2;
+  }
+
+  @include T.breakpoint-min('desktop') {
+    -webkit-line-clamp: 3;
+    font-size: T.$font-size-14;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: T.$spacing-4;
+}
+
+.message_price {
+  font-size: T.$font-size-12;
+
+  b {
+    font-size: T.$font-size-12;
+    font-weight: T.$font-weight-600;
+  }
+
+  @include T.breakpoint-min('desktop') {
+    font-size: T.$font-size-14;
+
+    b {
+      font-size: T.$font-size-16;
+    }
+  }
+}
