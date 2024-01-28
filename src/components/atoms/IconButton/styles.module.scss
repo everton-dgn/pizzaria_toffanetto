@@ -1,0 +1,44 @@
+@use 'src/theme' as T;
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  background-color: T.$color-secondary;
+  border-radius: T.$border-radius-8;
+  transition: all 0.15s linear;
+
+  &:not(:active) {
+    transform: translate3d(0, 0, 0);
+    box-shadow: 0 4px 16px #aeaebed4;
+  }
+
+  &:hover:not(:disabled) {
+    box-shadow: 0 5px 18px 0 #aeaebed4;
+    transform: translate3d(0, -1.5px, 0);
+    background-color: T.$color-secondary-hover;
+  }
+
+  &:active:not(:disabled) {
+    box-shadow: 0 1px 3px 0 #aeaebed4;
+    transform: translate3d(0, +1.5px, 0);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: T.$color-secondary;
+    box-shadow: 0 4px 16px #aeaebed4;
+  }
+}
+
+.button_size {
+  &--small {
+    padding: T.$spacing-8;
+  }
+
+  &--medium {
+    padding: T.$spacing-12;
+  }
+}

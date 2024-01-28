@@ -1,4 +1,6 @@
 export { Button } from './Button'
+export { CartButton } from './CartButton'
+export { IconButton } from './IconButton'
 export { ContainerCardControlRender } from './ContainerCardControlRender'
 export { ErrorBoundary } from './ErrorBoundary'
 export { TitleSection } from './TitleSection'
