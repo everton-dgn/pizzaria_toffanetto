@@ -1,6 +1,6 @@
 import { httpClient } from 'libs'
 
-import { errorApi } from 'data'
+import { errorApi } from 'data/errorApi'
 import { type ErrorApi } from 'data/errorApi/types'
 
 import { type GetHttpClientType } from './types'
