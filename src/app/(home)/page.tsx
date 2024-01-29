@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { CardProduct } from 'components/molecules'
 import { Banner } from 'components/organisms'
 
-import { availableProductsFindAll } from 'infra/services/availableProducts/findAll'
+import { availableProductsFindAll } from 'infra/services/availableProducts'
 
 import S from './styles.module.scss'
 
