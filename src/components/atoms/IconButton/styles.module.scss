@@ -44,10 +44,21 @@
 }
 
 .transparent {
-  background-color: transparent;
-  box-shadow: none !important;
+  background-color: transparent !important;
+
+  &:not(:active) {
+    box-shadow: none !important;
+  }
 
   &:hover:not(:disabled) {
-    background-color: T.$color-bg-default;
+    box-shadow: 0 4px 14px #aeaebe96 !important;
+  }
+
+  &:active:not(:disabled) {
+    box-shadow: 0 0 1px 0 #AEAEBEC7 !important;
+  }
+
+  &:disabled {
+    box-shadow: none !important;
   }
 }
