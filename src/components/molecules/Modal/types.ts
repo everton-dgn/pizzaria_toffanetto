@@ -11,4 +11,6 @@ export interface ModalProps {
   fullscreenMobile?: boolean
   maxWidth?: number
   title?: string
+  titleHeader?: string
+  isCloseButton?: boolean
 }

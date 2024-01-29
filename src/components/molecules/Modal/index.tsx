@@ -3,9 +3,10 @@
 import { forwardRef, memo, useImperativeHandle } from 'react'
 
 import { clsx } from 'clsx'
-import { MdClose as IconClose } from 'react-icons/md'
+import { CgClose as IconClose } from 'react-icons/cg'
+import { HiOutlineChevronLeft as IconBack } from 'react-icons/hi'
 
-import { Portal } from 'components/atoms'
+import { IconButton, Portal } from 'components/atoms'
 
 import { useModal } from './hooks/useModal'
 
@@ -22,6 +23,8 @@ const Modal = forwardRef<ModalHandle, ModalProps>((props, ref) => {
     children,
     maxWidth = 787,
     fullscreenMobile,
+    isCloseButton = true,
+    titleHeader,
     className
   } = props
 
@@ -72,18 +75,33 @@ const Modal = forwardRef<ModalHandle, ModalProps>((props, ref) => {
           aria-labelledby={title}
           aria-modal={true}
         >
-          <div className={S.wrapper_close_button}>
-            <button
-              onClick={changeStateComponent}
-              ref={btnCloseModalRef}
-              aria-label="Fechar Modal"
-              className={S.button_close}
-            >
-              <IconClose className={S.icon_close} />
-            </button>
+          <div className={S.header}>
+            {!isCloseButton && (
+              <IconButton
+                ref={btnCloseModalRef}
+                onClick={changeStateComponent}
+                ariaLabel="Voltar"
+                icon={<IconBack color="#374151" size={24} />}
+                className={clsx(S.icon_button_header, S.icon_left)}
+                isTransparent
+                size="small"
+              />
+            )}
+            {titleHeader && <h2 className={S.title_header}>{titleHeader}</h2>}
+            {isCloseButton && (
+              <IconButton
+                ref={btnCloseModalRef}
+                onClick={changeStateComponent}
+                ariaLabel="Fechar Modal"
+                icon={<IconClose color="#374151" size={24} />}
+                className={clsx(S.icon_button_header, S.icon_right)}
+                isTransparent
+                size="small"
+              />
+            )}
           </div>
           <div className={S.content}>
-            {title && <h2 className={S.title}>{title}</h2>}
+            {title}
             {description && <p className={S.description}>{description}</p>}
             {children}
           </div>
