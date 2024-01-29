@@ -1,0 +1,1 @@
+export { productFindById } from './findById'
