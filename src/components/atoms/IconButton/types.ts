@@ -5,4 +5,5 @@ export interface IconButtonProps
   ariaLabel: string
   icon: ReactNode
   size?: 'small' | 'medium'
+  isTransparent?: boolean
 }

@@ -42,3 +42,12 @@
     padding: T.$spacing-12;
   }
 }
+
+.transparent {
+  background-color: transparent;
+  box-shadow: none !important;
+
+  &:hover:not(:disabled) {
+    background-color: T.$color-bg-default;
+  }
+}
