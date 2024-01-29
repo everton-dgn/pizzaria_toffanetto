@@ -1,17 +1,22 @@
 'use client'
 
 import Image from 'next/image'
+import { useRef } from 'react'
 
 import { FaPlus as IconPlus } from 'react-icons/fa6'
 
-import { Button } from 'components/atoms'
 import { IconButton } from 'components/atoms'
+import Modal from 'components/molecules/Modal'
+import { OrderCreationModal } from 'components/organisms'
+
+import { PRODUCT_WITHOUT_IMAGE } from 'constants/imagesDefault'
 
 import { converterNumberToCurrency } from 'data/formatters'
 import { queryParamsFormatter } from 'data/formatters/queryParamsFormatter'
 
 import S from './styles.module.scss'
 
+import type { ModalHandle } from '../Modal/types'
 import type { CardProductProps } from './types'
 
 const MESSAGE_PRICE = (hasFixedPrice: boolean) => {
@@ -27,6 +32,7 @@ export const CardProduct = ({
   hasFixedPrice,
   category
 }: CardProductProps) => {
+  const modalRef = useRef<ModalHandle>(null)
   const formattedCurrency = converterNumberToCurrency({
     value: price,
     setsCurrencySymbol: true
@@ -40,12 +46,22 @@ export const CardProduct = ({
     }
     const queryParams = `?${queryParamsFormatter(query)}`
     window.history.replaceState(null, '', queryParams)
+    modalRef?.current?.toggleVisibility()
   }
 
   return (
     <div className={S.container}>
+      <Modal
+        ref={modalRef}
+        fullscreenMobile
+        maxWidth={600}
+        titleHeader="Monte o seu Pedido"
+        isCloseButton={false}
+      >
+        <OrderCreationModal id={id} />
+      </Modal>
       <Image
-        src={img}
+        src={img || PRODUCT_WITHOUT_IMAGE}
         alt="title"
         width={143}
         height={143}

@@ -23,8 +23,7 @@
   height: 73px;
   min-height: 73px;
   border-radius: T.$border-radius-8;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
 
   @include T.breakpoint-min('desktop') {
     width: 132px;
