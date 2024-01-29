@@ -1,0 +1,47 @@
+@use 'src/theme' as T;
+
+.image_banner {
+  display: flex;
+  width: 100%;
+  max-height: 317px;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 600/317;
+  margin-bottom: T.$spacing-12;
+}
+
+.wrapper_info {
+  display: flex;
+  flex-direction: column;
+  gap: T.$spacing-16;
+  padding: T.$spacing-8 T.$spacing-16;
+
+  @include T.breakpoint-min('tablet') {
+    padding: T.$spacing-12 T.$spacing-24;
+  }
+}
+
+.product_title {
+  width: fit-content;
+  font-size: T.$font-size-20;
+  font-weight: T.$font-weight-700;
+  text-transform: uppercase;
+  color: T.$color-primary;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 30%;
+    height: 4px;
+    background-color: T.$color-secondary;
+    border-radius: 4px;
+    margin-top: 8px;
+  }
+}
+
+.product_description {
+  font-size: T.$font-size-16;
+  font-weight: T.$font-weight-500;
+  color: T.$color-dark-grey;
+  padding-bottom: T.$spacing-12;
+}
