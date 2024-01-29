@@ -2,7 +2,7 @@ export type ProductItems = {
   id: string
   product: string
   description: string
-  img: string
+  img?: string
   price: number
   hasFixedPrice: boolean
 }
