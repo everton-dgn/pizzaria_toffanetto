@@ -29,6 +29,10 @@ export interface EdgeFlavor extends OptionBase {
   options: Array<{ id: string; name: string; price: number }>
 }
 
+export interface Additional extends OptionBase {
+  options: Array<{ id: string; name: string; price: number }>
+}
+
 export type ProductType = {
   id: string
   product: string
@@ -37,6 +41,7 @@ export type ProductType = {
   size?: Size
   flavor?: Flavor
   edgeFlavor?: EdgeFlavor
+  additional?: Additional
   comments?: OptionBase
 }
 
