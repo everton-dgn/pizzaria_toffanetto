@@ -35,6 +35,14 @@ const items: ProductList = [
     img: '/img/drinks/guarana-antarctica-1l.webp',
     hasFixedPrice: true,
     price: 6
+  },
+  {
+    id: 'okojk5oorterercbvmm',
+    product: 'Suco de Laranja 300mL',
+    description: 'Copo de 300mL',
+    img: '',
+    hasFixedPrice: true,
+    price: 8
   }
 ]
 
