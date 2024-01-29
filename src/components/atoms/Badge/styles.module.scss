@@ -1,0 +1,31 @@
+@use 'src/theme' as T;
+
+.badge {
+  display: flex;
+  flex-wrap: nowrap;
+  width: fit-content;
+  height: fit-content;
+  white-space: nowrap;
+  padding: 1px 6px;
+  font-size: T.$font-size-12;
+  font-weight: T.$font-weight-600;
+  text-transform: uppercase;
+  color: T.$color-dark;
+  border-radius: T.$border-radius-20;
+}
+
+.badge_colors {
+  &--green {
+    background-color: T.$color-secondary;
+  }
+
+  &--gray {
+    background-color: T.$color-gray;
+    color: T.$color-light;
+  }
+
+  &--red {
+    background-color: T.$color-cherry;
+    color: T.$color-light;
+  }
+}
