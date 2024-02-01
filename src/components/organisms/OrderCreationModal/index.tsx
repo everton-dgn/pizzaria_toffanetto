@@ -9,7 +9,12 @@ import type { ProductOptions } from 'infra/services/product/types'
 
 import S from './styles.module.scss'
 
-import { HeaderProduct, SectionProduct } from './components'
+import {
+  HeaderProduct,
+  SizeRadioButtonGroup,
+  SectionProduct,
+  FlavorQuantitySelectorGroup
+} from './components'
 import type { OrderCreationModalProps } from './types'
 
 export const OrderCreationModal = ({ id }: OrderCreationModalProps) => {
@@ -18,7 +23,6 @@ export const OrderCreationModal = ({ id }: OrderCreationModalProps) => {
 
   const getProductFindById = async () => {
     // TODO: injetar serviço como prop no componente
-    // TODO: iconbutton transparente em vez de cor por sombra na interação
     const { data, error } = await productFindById(id)
     if (error) return toast.error(error)
     data && setProduct(data)
@@ -45,7 +49,17 @@ export const OrderCreationModal = ({ id }: OrderCreationModalProps) => {
           isDone={false}
           description={product.size.description}
         >
-          exemplo
+          <SizeRadioButtonGroup options={product.size.options} />
+        </SectionProduct>
+      )}
+      {!!product?.flavor && (
+        <SectionProduct
+          title={product.flavor.title}
+          isRequired={product.flavor.isRequired}
+          isDone={false}
+          description={product.flavor.description}
+        >
+          <FlavorQuantitySelectorGroup options={product.flavor.options} />
         </SectionProduct>
       )}
     </div>
