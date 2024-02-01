@@ -60,13 +60,15 @@ export const CardProduct = ({
       >
         <OrderCreationModal id={id} />
       </Modal>
-      <Image
-        src={img || PRODUCT_WITHOUT_IMAGE}
-        alt="title"
-        width={143}
-        height={143}
-        className={S.image}
-      />
+      <div className={S.wrapper_thumbnail}>
+        <Image
+          className={S.thumbnail}
+          src={img || PRODUCT_WITHOUT_IMAGE}
+          alt="title"
+          sizes="132px"
+          fill
+        />
+      </div>
       <div className={S.wrapper_info}>
         <h3 className={S.title}>{product}</h3>
         <p className={S.description}>{description}</p>
@@ -81,6 +83,7 @@ export const CardProduct = ({
             onClick={handleRedirect}
             className={S.icon_button}
             icon={<IconPlus />}
+            isCircle
           />
         </div>
       </div>

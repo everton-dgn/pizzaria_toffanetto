@@ -17,13 +17,14 @@
   }
 }
 
-.image {
+.wrapper_thumbnail {
+  position: relative;
   width: 73px;
   min-width: 73px;
   height: 73px;
   min-height: 73px;
   border-radius: T.$border-radius-8;
-  object-fit: cover;
+  overflow: hidden;
 
   @include T.breakpoint-min('desktop') {
     width: 132px;
@@ -31,6 +32,10 @@
     height: 132px;
     min-height: 132px;
   }
+}
+
+.thumbnail {
+  object-fit: cover;
 }
 
 .wrapper_info {
