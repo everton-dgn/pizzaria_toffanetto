@@ -1,0 +1,16 @@
+@use 'src/theme' as T;
+
+.container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: T.$spacing-16;
+}
+
+.price {
+  font-size: T.$font-size-14;
+  font-weight: T.$font-weight-600;
+  color: T.$color-dark;
+  white-space: nowrap;
+}
