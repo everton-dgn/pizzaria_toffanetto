@@ -1,5 +1,6 @@
 import type { ProductOptions } from 'infra/services/product/types'
 
+import { flavor } from './flavor'
 import { size } from './size'
 
 export const product: ProductOptions = {
@@ -8,5 +9,6 @@ export const product: ProductOptions = {
   description:
     'Mussarela, molho especial, alho, azeitona, pimentão, milho, cebola, ervilha, orégano, tomate, azeite, pepperoni, pimenta-do-reino e catupiri.',
   img: '/img/pizzas/traditionalPizzas/calabresa.jpg',
-  size
+  size,
+  flavor
 }

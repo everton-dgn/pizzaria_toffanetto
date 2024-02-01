@@ -8,37 +8,37 @@ export const size: Size = {
   options: [
     {
       id: 'o3434o90j03jin34u',
-      name: 'Mini',
+      name: 'Mini - 4 fatias',
+      value: 'mini',
       price: 19,
-      slices: 4,
       quantityOfFlavors: 1
     },
     {
       id: '0134m3190n31eef23',
-      name: 'Pequena',
+      name: 'Pequena - 4 fatias',
+      value: 'small',
       price: 29,
-      slices: 4,
       quantityOfFlavors: 2
     },
     {
       id: 'dfn093nrubusubssd',
-      name: 'Média',
+      name: 'Média - 6 fatias',
+      value: 'medium',
       price: 39,
-      slices: 6,
       quantityOfFlavors: 3
     },
     {
       id: 'didfn89033478343g',
-      name: 'Grande',
+      name: 'Grande - 8 fatias',
+      value: 'big',
       price: 49,
-      slices: 8,
       quantityOfFlavors: 4
     },
     {
       id: '0i6ttgsdun3434344',
-      name: 'Família',
+      name: 'Família - 12 fatias',
+      value: 'family',
       price: 59,
-      slices: 12,
       quantityOfFlavors: 4
     }
   ]
