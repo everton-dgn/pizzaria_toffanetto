@@ -10,6 +10,8 @@ import { TitleSection } from 'components/atoms'
 
 import { DataContext } from 'hooks/UseContext'
 
+import 'theme/reset.scss'
+import 'theme/components/index.scss'
 import S from './styles.module.scss'
 
 type ErrorProps = {
