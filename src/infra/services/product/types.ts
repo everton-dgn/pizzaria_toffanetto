@@ -4,15 +4,15 @@ type OptionBase = {
   isRequired: boolean
 }
 
-type SizeName = 'Mini' | 'Pequena' | 'Média' | 'Grande' | 'Família'
+export type SizeValues = 'mini' | 'small' | 'medium' | 'big' | 'family'
 
 export interface Size extends OptionBase {
   options: Array<{
     id: string
-    name: SizeName
-    slices: 4 | 6 | 8 | 12
-    quantityOfFlavors: 1 | 2 | 3 | 4
+    name: string
     price: number
+    value: SizeValues
+    quantityOfFlavors: 1 | 2 | 3 | 4
   }>
 }
 
@@ -20,8 +20,8 @@ export interface Flavor extends OptionBase {
   options: Array<{
     id: string
     name: string
+    sizePricing: Record<SizeValues, number>
     description: string
-    price: number
   }>
 }
 
