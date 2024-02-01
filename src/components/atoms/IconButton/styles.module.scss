@@ -55,10 +55,14 @@
   }
 
   &:active:not(:disabled) {
-    box-shadow: 0 0 1px 0 #AEAEBEC7 !important;
+    box-shadow: 0 0 1px 0 #aeaebec7 !important;
   }
 
   &:disabled {
     box-shadow: none !important;
   }
+}
+
+.circle {
+  border-radius: 50%;
 }

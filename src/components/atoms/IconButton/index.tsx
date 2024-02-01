@@ -10,7 +10,15 @@ import type { IconButtonProps } from './types'
 
 export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
   (
-    { icon, className, ariaLabel, size = 'medium', isTransparent, ...props },
+    {
+      icon,
+      className,
+      ariaLabel,
+      size = 'medium',
+      isTransparent,
+      isCircle,
+      ...props
+    },
     ref
   ) => (
     <button
@@ -19,6 +27,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
         S.button,
         S[`button_size--${size}`],
         isTransparent && S.transparent,
+        isCircle && S.circle,
         className
       )}
       aria-label={ariaLabel}

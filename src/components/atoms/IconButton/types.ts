@@ -6,4 +6,5 @@ export interface IconButtonProps
   icon: ReactNode
   size?: 'small' | 'medium'
   isTransparent?: boolean
+  isCircle?: boolean
 }
