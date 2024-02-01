@@ -1,0 +1,42 @@
+@use 'src/theme' as T;
+
+.container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: T.$spacing-16;
+}
+
+.price {
+  padding-right: 3px;
+  font-size: T.$font-size-14;
+  font-weight: T.$font-weight-600;
+  color: T.$color-dark;
+  white-space: nowrap;
+}
+
+.flavor {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.flavor_title {
+  font-size: T.$font-size-14;
+  font-weight: T.$font-weight-700;
+  color: T.$color-primary;
+  text-transform: uppercase;
+}
+
+.flavor_description {
+  font-size: T.$font-size-14;
+}
+
+.wrapper_quantity_price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: right;
+  gap: T.$spacing-12;
+}
