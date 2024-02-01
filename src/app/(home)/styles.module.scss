@@ -3,14 +3,18 @@
 .container {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: T.$container-max-width;
+  width: min(
+    100% - #{T.$spacing-32},
+    #{T.$container-max-width} - #{T.$spacing-32}
+  );
   margin: T.$spacing-48 auto;
-  padding: 0 T.$spacing-16;
   gap: T.$spacing-48;
 
   @include T.breakpoint-min('tablet') {
-    padding: 0 T.$spacing-24;
+    width: min(
+      100% - #{T.$spacing-48},
+      #{T.$container-max-width} - #{T.$spacing-48}
+    );
   }
 }
 

@@ -96,7 +96,7 @@
     }
 
     &:disabled {
-      background-color: T.$color-disabled;
+      background-color: T.$color-ultra-light-grey;
       box-shadow: none;
       cursor: not-allowed;
       border-color: transparent;
