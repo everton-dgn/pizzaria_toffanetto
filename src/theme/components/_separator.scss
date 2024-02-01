@@ -1,0 +1,17 @@
+@use 'src/theme' as T;
+
+@mixin separator {
+  border-width: 0;
+  background-color: T.$color-box-shadow-dark;
+  border-radius: T.$border-radius-4;
+}
+
+.separator-x {
+  @include separator;
+  height: 1px;
+}
+
+.separator-y {
+  @include separator;
+  width: 1px;
+}
