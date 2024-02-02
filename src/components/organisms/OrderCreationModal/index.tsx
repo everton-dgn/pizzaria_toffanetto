@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react'
 
+import { Textarea } from 'components/molecules'
+
 import { useToast } from 'hooks'
 
 import { productFindById } from 'infra/services/product'
@@ -14,8 +16,7 @@ import {
   SizeRadioButtonGroup,
   SectionProduct,
   FlavorQuantitySelectorGroup,
-  RadioButtonGroup,
-  OrderComment
+  RadioButtonGroup
 } from './components'
 import type { OrderCreationModalProps } from './types'
 
@@ -97,7 +98,11 @@ export const OrderCreationModal = ({ id }: OrderCreationModalProps) => {
           isDone={false}
           description={product.orderComment.description}
         >
-          <OrderComment />
+          <Textarea
+            placeholder="Adicione um comentário"
+            rows={3}
+            maxLength={400}
+          />
         </SectionProduct>
       )}
     </div>
