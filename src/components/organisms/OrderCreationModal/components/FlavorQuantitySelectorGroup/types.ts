@@ -1,7 +1,13 @@
-import type { Flavor, SizeValues } from 'infra/services/product/types'
+import type { Flavor } from 'infra/services/product/types'
 
 export type FlavorQuantitySelectorGroupProps = {
   options: Flavor['options']
 }
 
-export type SelectedValueType = SizeValues | null
+export type FlavorQuantityType = {
+  id: string
+  product: string
+  quantity: number
+}
+
+export type OnIncreaseProps = { id: string; product: string }

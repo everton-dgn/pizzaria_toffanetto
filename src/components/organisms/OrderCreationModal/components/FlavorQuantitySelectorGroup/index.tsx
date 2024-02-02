@@ -8,19 +8,47 @@ import { converterNumberToCurrency } from 'data/formatters'
 
 import S from './styles.module.scss'
 
-import type { FlavorQuantitySelectorGroupProps } from './types'
+import type {
+  FlavorQuantitySelectorGroupProps,
+  FlavorQuantityType,
+  OnIncreaseProps
+} from './types'
 
 export const FlavorQuantitySelectorGroup = ({
   options
 }: FlavorQuantitySelectorGroupProps) => {
-  const [quantity, setQuantity] = useState(0)
+  const [flavorQuantity, setFlavorQuantity] = useState<FlavorQuantityType[]>([])
 
-  const onDecrease = () => {
-    if (quantity > 0) setQuantity(quantity => quantity - 1)
+  const onDecrease = (id: string) => {
+    setFlavorQuantity(currentFlavor => {
+      const updatedFlavor = currentFlavor.map(flavor => {
+        if (flavor.id === id && flavor.quantity > 0) {
+          return { ...flavor, quantity: flavor.quantity - 1 }
+        }
+        return flavor
+      })
+      return updatedFlavor.filter(flavor => flavor.quantity > 0)
+    })
   }
 
-  const onIncrease = () => {
-    setQuantity(quantity => quantity + 1)
+  const onIncrease = ({ id, product }: OnIncreaseProps) => {
+    setFlavorQuantity(currentFlavor => {
+      const flavorExists = currentFlavor.some(flavor => flavor.id === id)
+      if (flavorExists) {
+        return currentFlavor.map(flavor =>
+          flavor.id === id
+            ? { ...flavor, quantity: flavor.quantity + 1 }
+            : flavor
+        )
+      } else {
+        return [...currentFlavor, { id, product, quantity: 1 }]
+      }
+    })
+  }
+
+  const calcQuantityById = (id: string) => {
+    const quantity = flavorQuantity.find(flavor => flavor.id === id)?.quantity
+    return quantity ?? 0
   }
 
   const sizeStore = 'mini' // TODO: pegar da store
@@ -42,9 +70,11 @@ export const FlavorQuantitySelectorGroup = ({
               </div>
               <div className={S.wrapper_quantity_price}>
                 <QuantityCounterButton
-                  quantity={quantity}
-                  onDecrease={onDecrease}
-                  onIncrease={onIncrease}
+                  quantity={calcQuantityById(option.id)}
+                  onDecrease={() => onDecrease(option.id)}
+                  onIncrease={() =>
+                    onIncrease({ id: option.id, product: option.name })
+                  }
                   isContractible
                 />
                 <p className={S.price}>{formattedPrice}</p>
