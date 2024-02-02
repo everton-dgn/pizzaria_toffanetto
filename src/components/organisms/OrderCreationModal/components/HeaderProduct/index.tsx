@@ -1,7 +1,5 @@
 import Image from 'next/image'
 
-import { PRODUCT_WITHOUT_IMAGE } from 'constants/imagesDefault'
-
 import S from './styles.module.scss'
 
 import type { HeaderProductProps } from './types'
@@ -15,7 +13,7 @@ export const HeaderProduct = ({
     {!!img && (
       <div className={S.wrapper_thumbnail}>
         <Image
-          src={img || PRODUCT_WITHOUT_IMAGE}
+          src={img}
           alt={product}
           className={S.thumbnail}
           sizes="600px"
