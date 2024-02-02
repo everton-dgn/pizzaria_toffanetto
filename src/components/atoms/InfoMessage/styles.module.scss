@@ -1,0 +1,76 @@
+@use 'src/theme' as T;
+
+.variant {
+  &--error {
+    color: T.$color-error;
+
+    path {
+      fill: T.$color-error;
+    }
+  }
+
+  &--info {
+    color: T.$color-info;
+
+    path {
+      fill: T.$color-info;
+    }
+  }
+
+  &--success {
+    color: T.$color-success;
+    fill: T.$color-success;
+  }
+
+  &--warning {
+    color: T.$color-warning;
+    fill: T.$color-warning;
+  }
+}
+
+.message {
+  font-weight: T.$font-weight-600;
+}
+
+.size {
+  &--small {
+    gap: T.$spacing-4;
+
+    svg {
+      width: 16px;
+      min-width: 16px;
+      height: 16px;
+      min-height: 16px;
+    }
+
+    .message {
+      font-size: T.$font-size-12;
+    }
+  }
+
+  &--medium {
+    gap: T.$spacing-8;
+
+    svg {
+      width: 20px;
+      min-width: 20px;
+      height: 20px;
+      min-height: 20px;
+    }
+
+    .message {
+      font-size: T.$font-size-14;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: T.$spacing-4;
+  background: none;
+
+  svg {
+    align-self: flex-start;
+  }
+}
