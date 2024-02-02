@@ -12,16 +12,18 @@ export const HeaderProduct = ({
   description
 }: HeaderProductProps) => (
   <>
-    <div className={S.wrapper_thumbnail}>
-      <Image
-        src={img || PRODUCT_WITHOUT_IMAGE}
-        alt={product}
-        className={S.thumbnail}
-        sizes="600px"
-        fill
-        priority
-      />
-    </div>
+    {!!img && (
+      <div className={S.wrapper_thumbnail}>
+        <Image
+          src={img || PRODUCT_WITHOUT_IMAGE}
+          alt={product}
+          className={S.thumbnail}
+          sizes="600px"
+          fill
+          priority
+        />
+      </div>
+    )}
     <section className={S.wrapper_info}>
       <h2 className={S.product_title}>{product}</h2>
       <p className={S.product_description}>{description}</p>
