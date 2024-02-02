@@ -1,5 +1,6 @@
 export { HeaderProduct } from './HeaderProduct'
 export { SectionProduct } from './SectionProduct'
 export { SizeRadioButtonGroup } from './SizeRadioButtonGroup'
-export { EdgeFlavorRadioButtonGroup } from './EdgeFlavorRadioButtonGroup'
+export { RadioButtonGroup } from './RadioButtonGroup'
 export { FlavorQuantitySelectorGroup } from './FlavorQuantitySelectorGroup'
+export { OrderComment } from './OrderComment'

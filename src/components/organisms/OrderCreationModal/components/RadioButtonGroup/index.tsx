@@ -8,11 +8,12 @@ import { converterNumberToCurrency } from 'data/formatters'
 
 import S from './styles.module.scss'
 
-import type { EdgeFlavorRadioButtonGroupProps } from './types'
+import type { RadioButtonGroupProps } from './types'
 
-export const EdgeFlavorRadioButtonGroup = ({
-  options
-}: EdgeFlavorRadioButtonGroupProps) => {
+export const RadioButtonGroup = ({
+  options,
+  optionNameId
+}: RadioButtonGroupProps) => {
   const [selectedRadioButtonGroupValue, setSelectedRadioButtonGroupValue] =
     useState('')
 
@@ -29,7 +30,7 @@ export const EdgeFlavorRadioButtonGroup = ({
             <div className={S.container}>
               <LabeledRadioButton
                 label={option.name}
-                name="edgeFlavor"
+                name={optionNameId}
                 selectedValue={selectedRadioButtonGroupValue}
                 setSelectedValue={setSelectedRadioButtonGroupValue}
                 value={option.id}

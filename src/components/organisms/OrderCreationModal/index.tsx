@@ -14,7 +14,8 @@ import {
   SizeRadioButtonGroup,
   SectionProduct,
   FlavorQuantitySelectorGroup,
-  EdgeFlavorRadioButtonGroup
+  RadioButtonGroup,
+  OrderComment
 } from './components'
 import type { OrderCreationModalProps } from './types'
 
@@ -70,7 +71,33 @@ export const OrderCreationModal = ({ id }: OrderCreationModalProps) => {
           isDone={false}
           description={product.edgeFlavor.description}
         >
-          <EdgeFlavorRadioButtonGroup options={product.edgeFlavor.options} />
+          <RadioButtonGroup
+            options={product.edgeFlavor.options}
+            optionNameId="edgeFlavor"
+          />
+        </SectionProduct>
+      )}
+      {!!product?.additional && (
+        <SectionProduct
+          title={product.additional.title}
+          isRequired={product.additional.isRequired}
+          isDone={false}
+          description={product.additional.description}
+        >
+          <RadioButtonGroup
+            options={product.additional.options}
+            optionNameId="additional"
+          />
+        </SectionProduct>
+      )}
+      {!!product?.orderComment && (
+        <SectionProduct
+          title={product.orderComment.title}
+          isRequired={product.orderComment.isRequired}
+          isDone={false}
+          description={product.orderComment.description}
+        >
+          <OrderComment />
         </SectionProduct>
       )}
     </div>
