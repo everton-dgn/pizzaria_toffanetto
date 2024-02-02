@@ -33,6 +33,8 @@ export interface Additional extends OptionBase {
   options: Array<{ id: string; name: string; price: number }>
 }
 
+export interface OrderComment extends OptionBase {}
+
 export type ProductType = {
   id: string
   product: string
@@ -42,7 +44,7 @@ export type ProductType = {
   flavor?: Flavor
   edgeFlavor?: EdgeFlavor
   additional?: Additional
-  comments?: OptionBase
+  orderComment?: OrderComment
 }
 
 export type ProductOptions = ProductType | null
