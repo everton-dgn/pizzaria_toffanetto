@@ -1,7 +1,9 @@
 import type { ProductOptions } from 'infra/services/product/types'
 
+import { additional } from './additional'
 import { edgeFlavor } from './edgeFlavor'
 import { flavor } from './flavor'
+import { orderComment } from './orderComment'
 import { size } from './size'
 
 export const product: ProductOptions = {
@@ -12,5 +14,7 @@ export const product: ProductOptions = {
   img: '/img/pizzas/traditionalPizzas/calabresa.jpg',
   size,
   flavor,
-  edgeFlavor
+  edgeFlavor,
+  additional,
+  orderComment
 }

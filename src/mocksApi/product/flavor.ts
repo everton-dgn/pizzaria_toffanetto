@@ -17,7 +17,7 @@ const sizePricingSweetPizza = {
 }
 
 export const flavor: Flavor = {
-  title: 'Personalizar Sabores',
+  title: 'Personalize os Sabores',
   description: 'Escolha sabores adicionais para sua pizza.',
   isRequired: false,
   options: [
