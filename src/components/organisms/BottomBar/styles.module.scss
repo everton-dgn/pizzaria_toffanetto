@@ -1,43 +1,67 @@
 @use 'src/theme' as T;
 
 .container {
+  position: fixed;
   display: flex;
   width: 100%;
   flex-direction: column;
   height: 50px;
-  position: sticky;
-  top: 0;
+  padding: T.$spacing-8;
+  bottom: 0;
+  left: 0;
+  right: 0;
   z-index: T.$z-index-bottom-bar;
   background-color: T.$color-light;
+  opacity: 0;
+  visibility: hidden;
+  animation:
+    visibility 0.5s linear forwards,
+    move-up 0.5s ease-in-out forwards;
+
+  @include T.animation-visibility;
+  @include T.animation-move-up;
 
   @include T.breakpoint-min('tablet') {
     display: none;
   }
 }
 
-.nav {
+.wrapper {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: space-between;
-  width: min(
-    100% - #{T.$spacing-32},
-    #{T.$container-max-width} - #{T.$spacing-32}
-  );
-  margin-inline: auto;
+  justify-content: space-around;
+  width: 100%;
   height: 100%;
 
-  @include T.breakpoint-min('tablet') {
-    width: min(
-      100% - #{T.$spacing-48},
-      #{T.$container-max-width} - #{T.$spacing-48}
-    );
+  li,
+  li > a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    min-width: 70px;
+    height: fit-content;
+  }
+
+  li > a > span {
+    font-size: T.$font-size-12;
+    font-weight: T.$font-weight-600;
+    color: T.$color-dark-grey;
+    letter-spacing: 0.3px;
+  }
+
+  li > a > svg {
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    min-height: 20px;
+    color: T.$color-gray;
   }
 }
 
-.wrapper_right {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  gap: T.$spacing-24;
+.active {
+  > svg {
+    color: T.$color-green !important;
+  }
 }
