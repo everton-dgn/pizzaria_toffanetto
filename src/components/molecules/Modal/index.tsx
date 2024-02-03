@@ -14,7 +14,7 @@ import S from './styles.module.scss'
 
 import type { ModalHandle, ModalProps } from './types'
 
-const timeMilSecToRemoveComponent = 200
+const TIME_TO_REMOVE_COMPONENT = 200
 
 const Modal = forwardRef<ModalHandle, ModalProps>((props, ref) => {
   const {
@@ -29,84 +29,86 @@ const Modal = forwardRef<ModalHandle, ModalProps>((props, ref) => {
   } = props
 
   const {
-    changeStateComponent,
-    isRenderComponent,
+    showComponent,
+    hideComponent,
+    isComponentRendered,
     modalRef,
     isVisible,
     btnCloseModalRef
   } = useModal({
-    timeMilSecToRemoveComponent
+    timeToRemoveComponent: TIME_TO_REMOVE_COMPONENT
   })
 
   useImperativeHandle(ref, () => ({
-    toggleVisibility: () => {
-      changeStateComponent()
-    }
+    show: showComponent,
+    hidden: hideComponent
   }))
 
-  if (!isRenderComponent) return null
+  if (!isComponentRendered) return null
 
   return (
     <Portal>
-      <div
-        className={clsx(S.container, className)}
-        style={{ padding: fullscreenMobile ? 0 : '16px' }}
-        ref={modalRef}
-      >
+      {isComponentRendered && (
         <div
-          className={clsx(
-            S.overlay,
-            isVisible ? S.show_overlay : S.hidden_overlay
-          )}
-          style={{
-            transition: `${timeMilSecToRemoveComponent}ms cubic-bezier(0.4, 0, 0.2, 1)`
-          }}
-          onClick={changeStateComponent}
-        />
-        <div
-          className={clsx(S.modal, isVisible ? S.show_modal : S.hidden_modal)}
-          style={{
-            maxWidth: `${maxWidth}px`,
-            borderRadius: fullscreenMobile ? 0 : '16px',
-            height: fullscreenMobile ? 'max-content' : 'fit-content',
-            minHeight: fullscreenMobile ? '100%' : 'fit-content'
-          }}
-          role="dialog"
-          aria-labelledby={title}
-          aria-modal={true}
+          className={clsx(S.container, className)}
+          style={{ padding: fullscreenMobile ? 0 : '16px' }}
+          ref={modalRef}
         >
-          <div className={S.header}>
-            {!isCloseButton && (
-              <IconButton
-                ref={btnCloseModalRef}
-                onClick={changeStateComponent}
-                ariaLabel="Voltar"
-                icon={<IconBack color="#374151" size={24} />}
-                className={clsx(S.icon_button_header, S.icon_left)}
-                isTransparent
-                size="small"
-              />
+          <div
+            className={clsx(
+              S.overlay,
+              isVisible ? S.show_overlay : S.hidden_overlay
             )}
-            {titleHeader && <h2 className={S.title_header}>{titleHeader}</h2>}
-            {isCloseButton && (
-              <IconButton
-                ref={btnCloseModalRef}
-                onClick={changeStateComponent}
-                ariaLabel="Fechar Modal"
-                icon={<IconClose color="#374151" size={24} />}
-                className={clsx(S.icon_button_header, S.icon_right)}
-                isTransparent
-                size="small"
-              />
-            )}
-          </div>
-          <div className={S.content}>
-            {title}
-            {description && <p className={S.description}>{description}</p>}
-            {children}
+            style={{
+              transition: `${TIME_TO_REMOVE_COMPONENT}ms cubic-bezier(0.4, 0, 0.2, 1)`
+            }}
+            onClick={hideComponent}
+          />
+          <div
+            className={clsx(S.modal, isVisible ? S.show_modal : S.hidden_modal)}
+            style={{
+              maxWidth: `${maxWidth}px`,
+              borderRadius: fullscreenMobile ? 0 : '16px',
+              height: fullscreenMobile ? 'max-content' : 'fit-content',
+              minHeight: fullscreenMobile ? '100%' : 'fit-content'
+            }}
+            role="dialog"
+            aria-labelledby={title}
+            aria-modal={true}
+          >
+            <div className={S.header}>
+              {!isCloseButton && (
+                <IconButton
+                  ref={btnCloseModalRef}
+                  onClick={hideComponent}
+                  ariaLabel="Voltar"
+                  icon={<IconBack color="#374151" size={24} />}
+                  className={clsx(S.icon_button_header, S.icon_left)}
+                  isTransparent
+                  size="small"
+                />
+              )}
+              {titleHeader && <h2 className={S.title_header}>{titleHeader}</h2>}
+              {isCloseButton && (
+                <IconButton
+                  ref={btnCloseModalRef}
+                  onClick={hideComponent}
+                  ariaLabel="Fechar Modal"
+                  icon={<IconClose color="#374151" size={24} />}
+                  className={clsx(S.icon_button_header, S.icon_right)}
+                  isTransparent
+                  size="small"
+                />
+              )}
+            </div>
+            <div className={S.content}>
+              {title}
+              {description && <p className={S.description}>{description}</p>}
+              {children}
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </Portal>
   )
 })

@@ -2,13 +2,9 @@ import { useEffect, useRef } from 'react'
 
 import { useAnimationRender, useToggleScrollbar } from 'hooks'
 
-import { type UseModalReturnType } from './types'
-
-export const useModal = ({
-  timeMilSecToRemoveComponent = 0
-}): UseModalReturnType => {
-  const { isRenderComponent, changeStateComponent, isVisible } =
-    useAnimationRender({ timeMilSecToRemoveComponent })
+export const useModal = ({ timeToRemoveComponent = 0 }) => {
+  const { isComponentRendered, isVisible, showComponent, hideComponent } =
+    useAnimationRender({ timeToRemoveComponent })
   const modalRef = useRef<HTMLDivElement>(null)
   const btnCloseModalRef = useRef<HTMLButtonElement>(null)
   const lastFocusedElementRef = useRef<HTMLElement | null>(null)
@@ -25,25 +21,25 @@ export const useModal = ({
   useEffect(() => {
     const returnsFocusToLastFocusedElement = setTimeout(() => {
       if (!isVisible) lastFocusedElement?.focus()
-    }, timeMilSecToRemoveComponent)
+    }, timeToRemoveComponent)
 
     return () => {
       clearTimeout(returnsFocusToLastFocusedElement)
     }
-  }, [isVisible, lastFocusedElement, timeMilSecToRemoveComponent])
+  }, [isVisible, lastFocusedElement, timeToRemoveComponent])
 
   useEffect(() => {
     if (isVisible) {
       const addFocusFirstElementModal = setTimeout(
         () => btnCloseModalRef.current?.focus(),
-        timeMilSecToRemoveComponent
+        timeToRemoveComponent
       )
 
       return () => {
         clearTimeout(addFocusFirstElementModal)
       }
     }
-  }, [isVisible, timeMilSecToRemoveComponent])
+  }, [isVisible, timeToRemoveComponent])
 
   // eslint-disable-next-line sonarjs/cognitive-complexity
   useEffect(() => {
@@ -55,7 +51,7 @@ export const useModal = ({
       const isPressEsc = e.key === 'Escape'
       const isPressTab = e.key === 'Tab'
 
-      if (isPressEsc) changeStateComponent()
+      if (isPressEsc) hideComponent()
 
       if (isPressTab && modal) {
         const focusableElementsModal = modal.querySelectorAll(
@@ -93,12 +89,13 @@ export const useModal = ({
     return () => {
       document.removeEventListener('keydown', handleKeyDown)
     }
-  }, [isVisible, changeStateComponent, modal])
+  }, [hideComponent, isVisible, modal])
 
   return {
-    isRenderComponent,
-    changeStateComponent,
+    isComponentRendered,
     isVisible,
+    showComponent,
+    hideComponent,
     modalRef,
     btnCloseModalRef
   }

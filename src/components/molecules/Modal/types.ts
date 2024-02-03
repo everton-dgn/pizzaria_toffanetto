@@ -1,7 +1,8 @@
 import { type ReactNode } from 'react'
 
 export interface ModalHandle {
-  toggleVisibility: () => void
+  show: () => void
+  hidden: () => void
 }
 
 export interface ModalProps {

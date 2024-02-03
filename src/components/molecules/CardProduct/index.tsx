@@ -46,7 +46,7 @@ export const CardProduct = ({
     }
     const queryParams = `?${queryParamsFormatter(query)}`
     window.history.replaceState(null, '', queryParams)
-    modalRef?.current?.toggleVisibility()
+    modalRef?.current?.show()
   }
 
   return (
