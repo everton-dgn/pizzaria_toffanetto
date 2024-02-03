@@ -1,43 +1,33 @@
 import { useCallback, useEffect, useState } from 'react'
 
-import { type UseAnimationRenderType } from './types'
-
 export const useAnimationRender = ({
-  timeMilSecToRemoveComponent = 0,
+  timeToRemoveComponent = 0,
   defaultRendered = false
-}): UseAnimationRenderType => {
-  const [isRenderComponent, setIsRenderComponent] = useState(false)
-  const [isVisible, setIsVisible] = useState(false)
+}) => {
+  const [isComponentRendered, setIsComponentRendered] =
+    useState(defaultRendered)
+  const [isVisible, setIsVisible] = useState(defaultRendered)
 
   useEffect(() => {
-    if (defaultRendered) {
-      setIsRenderComponent(defaultRendered)
-      setIsVisible(defaultRendered)
-    }
-  }, [defaultRendered])
+    if (isComponentRendered) setIsVisible(true)
+  }, [isComponentRendered])
 
-  useEffect(
-    function changeComponentVisibility() {
-      isRenderComponent && setIsVisible(true)
-    },
-    [isRenderComponent]
-  )
+  const showComponent = useCallback(() => {
+    setIsComponentRendered(true)
+  }, [])
 
-  const changeVisibility = useCallback(() => {
+  const hideComponent = useCallback(() => {
     setIsVisible(false)
-    setTimeout(() => {
-      setIsRenderComponent(false)
-    }, timeMilSecToRemoveComponent)
-  }, [timeMilSecToRemoveComponent])
-
-  const changeStateComponent = useCallback(() => {
-    setIsRenderComponent(true)
-    isRenderComponent && changeVisibility()
-  }, [changeVisibility, isRenderComponent])
+    const timeoutId = setTimeout(() => {
+      setIsComponentRendered(false)
+    }, timeToRemoveComponent)
+    return () => clearTimeout(timeoutId)
+  }, [timeToRemoveComponent])
 
   return {
-    isRenderComponent,
+    isComponentRendered,
     isVisible,
-    changeStateComponent
+    showComponent,
+    hideComponent
   }
 }
