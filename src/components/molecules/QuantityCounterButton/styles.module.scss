@@ -50,6 +50,11 @@
   &:disabled {
     cursor: not-allowed;
   }
+
+  &:focus-visible {
+    outline: 4px solid T.$color-focus;
+    outline-offset: -3px;
+  }
 }
 
 .icon {
