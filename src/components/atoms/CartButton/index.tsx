@@ -1,5 +1,7 @@
 import { clsx } from 'clsx'
 
+import { converterNumberToCurrency } from 'data/formatters'
+
 import S from './styles.module.scss'
 
 import type { CartButtonProps } from './types'
@@ -10,23 +12,24 @@ const getCartImageUrlByItemCount = (amount: number) => {
   return '/img/cart/carrinho-cheio.webp'
 }
 
-export const CartButton = ({ className }: CartButtonProps) => {
-  const quantityOfItems: number = 0
+const cartValue = 0
 
-  return (
-    <button
-      className={clsx(S.button, className)}
-      aria-label="Abrir carrinho de compras"
-    >
-      <img
-        src={getCartImageUrlByItemCount(0)}
-        alt="Carrinho de compras"
-        fetchPriority="high"
-        className={S.image}
-        width="144px"
-        height="100px"
-      />
-      {quantityOfItems} {quantityOfItems === 1 ? 'item' : 'itens'}
-    </button>
-  )
-}
+export const CartButton = ({ className }: CartButtonProps) => (
+  <button
+    className={clsx(S.button, className)}
+    aria-label="Abrir carrinho de compras"
+  >
+    <img
+      src={getCartImageUrlByItemCount(0)}
+      alt="Carrinho de compras"
+      fetchPriority="high"
+      className={S.image}
+      width="144px"
+      height="100px"
+    />
+    {converterNumberToCurrency({
+      value: cartValue || 0,
+      setsCurrencySymbol: true
+    })}
+  </button>
+)

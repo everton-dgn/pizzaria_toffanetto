@@ -12,11 +12,11 @@ import type { ProductOptions } from 'infra/services/product/types'
 import S from './styles.module.scss'
 
 import {
-  HeaderProduct,
-  SizeRadioButtonGroup,
-  SectionProduct,
   FlavorQuantitySelectorGroup,
-  RadioButtonGroup
+  HeaderProduct,
+  RadioButtonGroup,
+  SectionProduct,
+  SizeRadioButtonGroup
 } from './components'
 import type { OrderCreationModalProps } from './types'
 
