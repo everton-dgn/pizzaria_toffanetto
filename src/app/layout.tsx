@@ -4,7 +4,7 @@ import type { ReactNode } from 'react'
 import quicksand from 'theme/fontFamily'
 
 import { CookieWarning, PopupInstallPwa, Toast } from 'components/molecules'
-import { Footer, TopBar } from 'components/organisms'
+import { BottomBar, Footer, TopBar } from 'components/organisms'
 import { MainProvider } from 'providers/mainProvider'
 
 import 'theme/reset.scss'
@@ -29,6 +29,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => (
         <TopBar />
         {children}
         <Footer />
+        <BottomBar />
         <Toast />
         <CookieWarning />
         <PopupInstallPwa />
