@@ -1,5 +1,6 @@
 export { PopupInstallPwa } from './PopupInstallPwa'
 export { default as Toast } from './Toast'
+export { default as Modal } from './Modal'
 export { CookieWarning } from './CookieWarning'
 export { Additional } from './Additional'
 export { default as CardsSquare } from './CardsSquare'

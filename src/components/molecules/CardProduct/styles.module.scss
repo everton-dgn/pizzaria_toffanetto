@@ -113,3 +113,18 @@
     }
   }
 }
+
+.footer_modal {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: T.$spacing-16;
+  padding: T.$spacing-12 T.$spacing-16;
+  box-shadow: T.$box-shadow-sm;
+
+  @include T.breakpoint-min('tablet') {
+    padding: T.$spacing-12 T.$spacing-24;
+  }
+}

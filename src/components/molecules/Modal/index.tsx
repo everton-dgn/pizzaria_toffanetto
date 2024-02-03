@@ -25,6 +25,7 @@ const Modal = forwardRef<ModalHandle, ModalProps>((props, ref) => {
     fullscreenMobile,
     isCloseButton = true,
     titleHeader,
+    footer,
     className
   } = props
 
@@ -105,6 +106,7 @@ const Modal = forwardRef<ModalHandle, ModalProps>((props, ref) => {
             {description && <p className={S.description}>{description}</p>}
             {children}
           </div>
+          {footer && <div className={S.footer}>{footer}</div>}
         </div>
       </div>
     </Portal>

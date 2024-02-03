@@ -5,8 +5,8 @@ import { useRef } from 'react'
 
 import { FaPlus as IconPlus } from 'react-icons/fa6'
 
-import { IconButton } from 'components/atoms'
-import Modal from 'components/molecules/Modal'
+import { CartButton, IconButton } from 'components/atoms'
+import { Modal, QuantityCounterButton } from 'components/molecules'
 import { OrderCreationModal } from 'components/organisms'
 
 import { PRODUCT_WITHOUT_IMAGE } from 'constants/imagesDefault'
@@ -57,6 +57,16 @@ export const CardProduct = ({
         maxWidth={600}
         titleHeader="Monte o seu Pedido"
         isCloseButton={false}
+        footer={
+          <div className={S.footer_modal}>
+            <QuantityCounterButton
+              quantity={0}
+              onDecrease={() => ({})}
+              onIncrease={() => ({})}
+            />
+            <CartButton />
+          </div>
+        }
       >
         <OrderCreationModal id={id} />
       </Modal>

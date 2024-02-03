@@ -14,4 +14,5 @@ export interface ModalProps {
   title?: string
   titleHeader?: string
   isCloseButton?: boolean
+  footer?: ReactNode
 }
