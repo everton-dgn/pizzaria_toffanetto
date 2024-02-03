@@ -46,6 +46,10 @@ body {
   background-color: T.$color-bg-default;
   color: T.$color-dark;
   isolation: isolate;
+
+  @include T.breakpoint-max('tablet') {
+    padding-bottom: 50px;
+  }
 }
 
 p,
