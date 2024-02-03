@@ -64,7 +64,7 @@ export const CardProduct = ({
               onDecrease={() => ({})}
               onIncrease={() => ({})}
             />
-            <CartButton />
+            <CartButton label="Adicionar" />
           </div>
         }
       >
