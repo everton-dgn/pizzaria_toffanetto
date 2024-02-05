@@ -19,7 +19,6 @@
 
   &:hover:not(:disabled) {
     transform: translate3d(0, -1.5px, 0);
-    background-color: T.$color-secondary-hover;
   }
 
   &:active:not(:disabled) {

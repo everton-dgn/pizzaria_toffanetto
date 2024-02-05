@@ -201,8 +201,6 @@
   transition: background-color 0.2s linear;
 
   &:hover {
-    background-color: T.$color-secondary-hover;
-
     &:disabled {
       background-color: T.$color-secondary;
     }

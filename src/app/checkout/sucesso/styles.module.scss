@@ -150,10 +150,6 @@
 
   @include T.animation-zoom;
   @include T.animation-fade-in;
-
-  &:hover {
-    background-color: T.$color-secondary-hover;
-  }
 }
 
 .title {

@@ -38,8 +38,4 @@
   white-space: nowrap;
   margin: 1.5rem auto 3rem auto;
   transition: background-color 0.2s linear;
-
-  &:hover {
-    background-color: T.$color-secondary-hover;
-  }
 }

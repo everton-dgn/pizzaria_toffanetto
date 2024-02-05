@@ -9,10 +9,9 @@
   min-width: 90px;
   height: 32px;
   min-height: 32px;
-  border: 1px solid T.$color-secondary;
+  border: 1px solid T.$color-light;
   border-radius: T.$border-radius-60;
   background-color: T.$color-light;
-  overflow: hidden;
 }
 
 .quantity {
@@ -22,7 +21,7 @@
   align-items: center;
   height: 100%;
   text-align: center;
-  font-size: T.$font-size-14;
+  font-size: T.$font-size-16;
   font-weight: 600;
 }
 
@@ -34,26 +33,20 @@
   height: 30px;
   min-height: 30px;
   border-radius: T.$border-radius-circle;
-  background-color: T.$color-light;
+  background-color: T.$color-ultra-light;
   cursor: pointer;
-  transition: all 0.15s ease-in-out;
+  transition: background-color 0.2s linear;
 
   &:hover:not(:disabled) {
-    transform: translate3d(0, -1.5px, 0);
+    background-color: T.$color-ultra-light-grey;
   }
 
   &:active:not(:disabled) {
-    transform: translate3d(0, 0, 0);
-    background-color: T.$color-ultra-light-grey;
+    background-color: T.$color-ultra-light;
   }
 
   &:disabled {
     cursor: not-allowed;
-  }
-
-  &:focus-visible {
-    outline: 4px solid T.$color-focus;
-    outline-offset: -3px;
   }
 }
 
