@@ -11,7 +11,7 @@
   left: 0;
   right: 0;
   z-index: T.$z-index-bottom-bar;
-  background-color: T.$color-light;
+  background-color: T.$color-card;
   box-shadow: T.$box-shadow-bottom-bar;
   opacity: 0;
   visibility: hidden;
@@ -41,7 +41,6 @@
     flex-direction: column;
     align-items: center;
     width: fit-content;
-    min-width: 70px;
     height: fit-content;
   }
 

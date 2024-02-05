@@ -7,6 +7,13 @@
   aspect-ratio: 600/317;
 }
 
+.icon_button_favorite {
+  position: absolute;
+  top: T.$spacing-8;
+  right: T.$spacing-8;
+  z-index: T.$z-index-base;
+}
+
 .thumbnail {
   object-fit: cover;
 }

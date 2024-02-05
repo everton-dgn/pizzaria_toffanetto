@@ -1,5 +1,7 @@
 import Image from 'next/image'
 
+import { FavoriteButton } from 'components/atoms'
+
 import S from './styles.module.scss'
 
 import type { HeaderProductProps } from './types'
@@ -12,6 +14,7 @@ export const HeaderProduct = ({
   <>
     {!!img && (
       <div className={S.wrapper_thumbnail}>
+        <FavoriteButton className={S.icon_button_favorite} />
         <Image
           src={img}
           alt={product}

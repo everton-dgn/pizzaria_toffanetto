@@ -11,6 +11,7 @@ import {
   HiOutlineClipboardList as IconOrders,
   HiOutlineUser as IconProfile
 } from 'react-icons/hi'
+import { RiHeart3Line as IconFavorite } from 'react-icons/ri'
 
 import { NAV_LINKS } from 'constants/navLinks'
 
@@ -20,6 +21,7 @@ const icons: Record<string, ReactElement> = {
   home: <IconHome />,
   search: <IconSearch />,
   orders: <IconOrders />,
+  favorite: <IconFavorite />,
   profile: <IconProfile />
 }
 
