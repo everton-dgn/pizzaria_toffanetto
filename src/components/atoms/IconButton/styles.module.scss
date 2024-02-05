@@ -65,3 +65,28 @@
 .circle {
   border-radius: 50%;
 }
+
+.box_shadow {
+  box-shadow: none !important;
+
+  &:not(:active) {
+    box-shadow: none !important;
+  }
+
+  &:hover:not(:disabled) {
+    box-shadow: none !important;
+    background-color: T.$color-card !important;
+  }
+
+  &:active:not(:disabled) {
+    box-shadow: none !important;
+  }
+
+  &:disabled {
+    box-shadow: none !important;
+  }
+}
+
+.transform {
+  transform: none !important;
+}

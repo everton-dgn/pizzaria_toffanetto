@@ -17,6 +17,8 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
       size = 'medium',
       isTransparent,
       isCircle,
+      isDisableBoxShadow = false,
+      isDisableTransform = false,
       ...props
     },
     ref
@@ -28,6 +30,8 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
         S[`button_size--${size}`],
         isTransparent && S.transparent,
         isCircle && S.circle,
+        isDisableBoxShadow && S.box_shadow,
+        isDisableTransform && S.transform,
         className
       )}
       aria-label={ariaLabel}

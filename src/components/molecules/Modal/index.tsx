@@ -85,6 +85,8 @@ const Modal = forwardRef<ModalHandle, ModalProps>((props, ref) => {
                 icon={<IconBack color="#374151" size={24} />}
                 className={clsx(S.icon_button_header, S.icon_left)}
                 isTransparent
+                isDisableTransform
+                isDisableBoxShadow
                 size="small"
               />
             )}
@@ -97,6 +99,8 @@ const Modal = forwardRef<ModalHandle, ModalProps>((props, ref) => {
                 icon={<IconClose color="#374151" size={24} />}
                 className={clsx(S.icon_button_header, S.icon_right)}
                 isTransparent
+                isDisableTransform
+                isDisableBoxShadow
                 size="small"
               />
             )}

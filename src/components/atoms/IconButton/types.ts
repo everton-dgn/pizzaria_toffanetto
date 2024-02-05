@@ -7,4 +7,6 @@ export interface IconButtonProps
   size?: 'small' | 'medium'
   isTransparent?: boolean
   isCircle?: boolean
+  isDisableBoxShadow?: boolean
+  isDisableTransform?: boolean
 }
