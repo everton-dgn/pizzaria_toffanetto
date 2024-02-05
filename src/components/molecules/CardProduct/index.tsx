@@ -19,14 +19,9 @@ import S from './styles.module.scss'
 import type { ModalHandle } from '../Modal/types'
 import type { CardProductProps } from './types'
 
-const MESSAGE_PRICE = (hasFixedPrice: boolean) => {
-  return hasFixedPrice ? 'Apenas ' : 'A partir de '
-}
-
 export const CardProduct = ({
   id,
   img,
-  description,
   product,
   price,
   hasFixedPrice,
@@ -81,10 +76,9 @@ export const CardProduct = ({
       </div>
       <div className={S.wrapper_info}>
         <h3 className={S.title}>{product}</h3>
-        <p className={S.description}>{description}</p>
         <div className={S.footer}>
           <p className={S.message_price}>
-            {MESSAGE_PRICE(hasFixedPrice)}
+            {!hasFixedPrice && 'A partir de '}
             <b>{formattedCurrency}</b>
           </p>
           <IconButton
