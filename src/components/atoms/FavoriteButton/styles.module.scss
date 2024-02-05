@@ -1,9 +1,6 @@
 @use 'src/theme' as T;
 
 .button {
-  //> svg {
-  //  color: T.$color-light-grey;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,11 +10,6 @@
   min-height: 32px;
   background-color: T.$color-light;
   border-radius: T.$border-radius-circle;
-
-  label {
-    cursor: pointer;
-    height: 28px;
-  }
 
   svg {
     cursor: pointer;
@@ -37,7 +29,7 @@
     }
   }
 
-  .checkbox:checked + label svg {
+  .checked {
     .heart {
       transform: scale(0.2);
       fill: #e2264d;
@@ -266,8 +258,4 @@
       transform: scale(1);
     }
   }
-}
-
-.checkbox {
-  display: none;
 }
