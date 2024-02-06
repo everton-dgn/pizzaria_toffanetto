@@ -58,12 +58,12 @@
   @include T.animation-move-in(0, 0, 0);
   @include T.animation-fade-in-blur;
 
-  @include T.breakpoint-min('custom', 400px) {
+  @include T.breakpoint-min('custom', 500px) {
     max-width: 400px;
   }
 
   @include T.breakpoint-min('desktop') {
-    max-width: 600px;
+    max-width: 560px;
   }
 }
 
