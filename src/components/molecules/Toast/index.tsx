@@ -11,7 +11,7 @@ import {
   MdWarningAmber as IconWarning
 } from 'react-icons/md'
 
-import useGlobalToast from 'infra/store/toast'
+import { useGlobalToast } from 'infra/store/toast'
 
 import S from './styles.module.scss'
 

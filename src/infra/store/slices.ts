@@ -1,1 +1,1 @@
-export { default as toast } from './toast/slice'
+export { toast } from './toast/slice'

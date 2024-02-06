@@ -1,7 +1,7 @@
-import toast from './slice'
+import { toast } from './slice'
 import { type ToastListItems } from './types'
 
-const useGlobalToast = () => {
+export const useGlobalToast = () => {
   const stateToast = {
     ...toast.get(),
     setToastList: (options: ToastListItems) => {
@@ -29,5 +29,3 @@ const useGlobalToast = () => {
 
   return { stateToast }
 }
-
-export default useGlobalToast

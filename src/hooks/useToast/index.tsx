@@ -3,7 +3,7 @@ import { useCallback } from 'react'
 // eslint-disable-next-line import/named
 import { v4 as uuidv4 } from 'uuid'
 
-import useGlobalToast from 'infra/store/toast'
+import { useGlobalToast } from 'infra/store/toast'
 
 import { type Status } from './types'
 
