@@ -1,6 +1,6 @@
 import { configureObservablePersistence } from '@legendapp/state/persist'
-import { ObservablePersistLocalStorage } from '@legendapp/state/persist-plugins/local-storage'
+import { ObservablePersistIndexedDB } from '@legendapp/state/persist-plugins/indexeddb'
 
 configureObservablePersistence({
-  pluginLocal: ObservablePersistLocalStorage
+  pluginLocal: ObservablePersistIndexedDB
 })
