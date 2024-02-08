@@ -1,8 +1,10 @@
-import { type TextareaHTMLAttributes } from 'react'
+import { type ChangeEvent, type TextareaHTMLAttributes } from 'react'
 
-export type TextareaProps = {
-  error?: string
+export interface TextareaProps
+  extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+  onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void
+  value: string
   id?: string
   label?: string
   rows?: number
-} & TextareaHTMLAttributes<HTMLTextAreaElement>
+}
