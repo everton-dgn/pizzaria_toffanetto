@@ -9,7 +9,7 @@ export const LabeledRadioButton = ({
   name,
   value,
   selectedValue,
-  setSelectedValue,
+  onChange,
   disabled
 }: LabeledRadioButtonProps) => (
   <label className={clsx(S.label, disabled && S.disabled)}>
@@ -18,7 +18,7 @@ export const LabeledRadioButton = ({
       name={name}
       className={S.input}
       disabled={disabled}
-      onChange={e => setSelectedValue(e?.target?.value)}
+      onChange={e => onChange(e.target.value)}
       checked={value === selectedValue}
       value={value}
     />

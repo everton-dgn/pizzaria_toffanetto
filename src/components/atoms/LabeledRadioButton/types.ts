@@ -3,6 +3,6 @@ export type LabeledRadioButtonProps = {
   label?: string
   value: string | number
   selectedValue: string | number | boolean | null | undefined
-  setSelectedValue: (value: any) => void
+  onChange: (value: any) => void
   disabled?: boolean
 }
