@@ -4,19 +4,19 @@ type OptionBase = {
   isRequired: boolean
 }
 
-export type SizeValues = 'mini' | 'small' | 'medium' | 'big' | 'family'
+type SizeValues = 'mini' | 'small' | 'medium' | 'big' | 'family'
 
-export interface Size extends OptionBase {
+interface Size extends OptionBase {
   options: Array<{
     id: string
-    name: string
+    name: SizeValues
     price: number
-    value: SizeValues
+    label: string
     quantityOfFlavors: 1 | 2 | 3 | 4
   }>
 }
 
-export interface Flavor extends OptionBase {
+interface Flavor extends OptionBase {
   options: Array<{
     id: string
     name: string
@@ -25,17 +25,17 @@ export interface Flavor extends OptionBase {
   }>
 }
 
-export interface EdgeFlavor extends OptionBase {
+interface EdgeFlavor extends OptionBase {
   options: Array<{ id: string; name: string; price: number }>
 }
 
-export interface Additional extends OptionBase {
+interface Additional extends OptionBase {
   options: Array<{ id: string; name: string; price: number }>
 }
 
-export interface OrderComment extends OptionBase {}
+type OrderComment = OptionBase
 
-export type ProductType = {
+type ProductType = {
   id: string
   product: string
   description: string
@@ -47,9 +47,9 @@ export type ProductType = {
   orderComment?: OrderComment
 }
 
-export type ProductOptions = ProductType | null
+type ProductOptions = ProductType | null
 
-export type ProductFindByIdType = {
+type ProductFindByIdType = {
   data: ProductOptions
   error: string
 }

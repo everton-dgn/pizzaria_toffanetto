@@ -2,8 +2,6 @@ import { mockProductFindById } from 'mocksApi/product'
 
 import { getHttpClient } from 'infra/http/getHttpClient'
 
-import type { ProductFindByIdType, ProductOptions } from './types'
-
 const ENDPOINT = (id: string) => `/product/${id}`
 
 export const productFindById = async (

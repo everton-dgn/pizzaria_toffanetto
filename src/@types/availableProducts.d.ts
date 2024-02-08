@@ -1,4 +1,4 @@
-export type ProductItems = {
+type ProductItems = {
   id: string
   product: string
   description: string
@@ -7,17 +7,17 @@ export type ProductItems = {
   hasFixedPrice: boolean
 }
 
-export type ProductList = ProductItems[]
+type ProductList = ProductItems[]
 
-export type ProductCategory = {
+type ProductCategory = {
   id: string
   category: string
   items: ProductList
 }
 
-export type AvailableProducts = ProductCategory[] | null
+type AvailableProducts = ProductCategory[] | null
 
-export interface AvailableProductsFindAllType {
+type AvailableProductsFindAllType = {
   data: AvailableProducts
   error: string
 }
