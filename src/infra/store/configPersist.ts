@@ -1,6 +1,15 @@
-import { configureObservablePersistence } from '@legendapp/state/persist'
-import { ObservablePersistIndexedDB } from '@legendapp/state/persist-plugins/indexeddb'
+import {
+  configureObservablePersistence,
+  persistObservable
+} from '@legendapp/state/persist'
+import { ObservablePersistLocalStorage } from '@legendapp/state/persist-plugins/local-storage'
+
+import { cart } from './slices'
 
 configureObservablePersistence({
-  pluginLocal: ObservablePersistIndexedDB
+  pluginLocal: ObservablePersistLocalStorage
+})
+
+persistObservable(cart, {
+  local: 'cart'
 })
