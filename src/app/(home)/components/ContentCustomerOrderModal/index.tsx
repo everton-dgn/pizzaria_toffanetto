@@ -17,9 +17,9 @@ import {
   RadioButtonGroup,
   SectionProduct
 } from './components'
-import type { OrderCreationModalProps } from './types'
 
-export const OrderCreationModal = ({ id }: OrderCreationModalProps) => {
+const id = '1'
+export const ContentCustomerOrderModal = () => {
   const [product, setProduct] = useState<ProductOptions>(null)
   const { stateCustomerOrder } = useCustomerOrder()
   const toast = useToast()

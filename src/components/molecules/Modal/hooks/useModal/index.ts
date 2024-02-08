@@ -1,8 +1,14 @@
-import { useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 
 import { useAnimationRender, useToggleScrollbar } from 'hooks'
 
-export const useModal = ({ timeToRemoveComponent = 0 }) => {
+import { useModalById } from 'infra/store/modalById'
+
+const FOCUSABLE_ELEMENTS =
+  'a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"]), iframe, audio[controls], video[controls], [contenteditable="true"]'
+
+export const useModal = ({ id = '', timeToRemoveComponent = 0 }) => {
+  const { stateModalById } = useModalById()
   const { isComponentRendered, isVisible, showComponent, hideComponent } =
     useAnimationRender({ timeToRemoveComponent })
   const modalRef = useRef<HTMLDivElement>(null)
@@ -11,6 +17,11 @@ export const useModal = ({ timeToRemoveComponent = 0 }) => {
   const lastFocusedElement = lastFocusedElementRef.current
   const modal = modalRef.current
   useToggleScrollbar(isVisible)
+
+  useEffect(() => {
+    if (stateModalById.id === id) return showComponent()
+    return () => stateModalById.setShowModal('')
+  }, [id, showComponent, stateModalById])
 
   useEffect(() => {
     if (isVisible) {
@@ -54,9 +65,8 @@ export const useModal = ({ timeToRemoveComponent = 0 }) => {
       if (isPressEsc) hideComponent()
 
       if (isPressTab && modal) {
-        const focusableElementsModal = modal.querySelectorAll(
-          'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select'
-        )
+        const focusableElementsModal =
+          modal.querySelectorAll(FOCUSABLE_ELEMENTS)
         const firstElementModal = focusableElementsModal[0] as HTMLElement
         const lastElementModal = focusableElementsModal[
           focusableElementsModal.length - 1
@@ -91,11 +101,16 @@ export const useModal = ({ timeToRemoveComponent = 0 }) => {
     }
   }, [hideComponent, isVisible, modal])
 
+  const handleHiddenComponent = useCallback(() => {
+    hideComponent()
+    stateModalById.setShowModal('')
+  }, [hideComponent, stateModalById])
+
   return {
     isComponentRendered,
     isVisible,
     showComponent,
-    hideComponent,
+    handleHiddenComponent,
     modalRef,
     btnCloseModalRef
   }

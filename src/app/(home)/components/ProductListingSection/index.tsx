@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import { memo } from 'react'
 
 import { CardProduct } from 'components/molecules'
 
@@ -27,4 +28,4 @@ const ProductListingSection = async () => {
   )
 }
 
-export default ProductListingSection
+export default memo(ProductListingSection)

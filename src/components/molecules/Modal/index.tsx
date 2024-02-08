@@ -1,6 +1,6 @@
 'use client'
 
-import { forwardRef, memo, useImperativeHandle } from 'react'
+import { memo } from 'react'
 
 import { clsx } from 'clsx'
 import { CgClose as IconClose } from 'react-icons/cg'
@@ -12,38 +12,32 @@ import { useModal } from './hooks/useModal'
 
 import S from './styles.module.scss'
 
-import type { ModalHandle, ModalProps } from './types'
+import type { ModalProps } from './types'
 
 const TIME_TO_REMOVE_COMPONENT = 200
 
-const Modal = forwardRef<ModalHandle, ModalProps>((props, ref) => {
+const Modal = ({
+  title,
+  description,
+  children,
+  maxWidth = 787,
+  fullscreenMobile,
+  isCloseButton = true,
+  titleHeader,
+  footer,
+  className,
+  id
+}: ModalProps) => {
   const {
-    title,
-    description,
-    children,
-    maxWidth = 787,
-    fullscreenMobile,
-    isCloseButton = true,
-    titleHeader,
-    footer,
-    className
-  } = props
-
-  const {
-    showComponent,
-    hideComponent,
+    handleHiddenComponent,
     isComponentRendered,
     modalRef,
     isVisible,
     btnCloseModalRef
   } = useModal({
+    id,
     timeToRemoveComponent: TIME_TO_REMOVE_COMPONENT
   })
-
-  useImperativeHandle(ref, () => ({
-    show: showComponent,
-    hidden: hideComponent
-  }))
 
   if (!isComponentRendered) return null
 
@@ -62,7 +56,7 @@ const Modal = forwardRef<ModalHandle, ModalProps>((props, ref) => {
           style={{
             transition: `${TIME_TO_REMOVE_COMPONENT}ms cubic-bezier(0.4, 0, 0.2, 1)`
           }}
-          onClick={hideComponent}
+          onClick={handleHiddenComponent}
         />
         <div
           className={clsx(S.modal, isVisible ? S.show_modal : S.hidden_modal)}
@@ -80,7 +74,7 @@ const Modal = forwardRef<ModalHandle, ModalProps>((props, ref) => {
             {!isCloseButton && (
               <IconButton
                 ref={btnCloseModalRef}
-                onClick={hideComponent}
+                onClick={handleHiddenComponent}
                 ariaLabel="Voltar"
                 icon={<IconBack color="#374151" size={24} />}
                 className={clsx(S.icon_button_header, S.icon_left)}
@@ -94,7 +88,7 @@ const Modal = forwardRef<ModalHandle, ModalProps>((props, ref) => {
             {isCloseButton && (
               <IconButton
                 ref={btnCloseModalRef}
-                onClick={hideComponent}
+                onClick={handleHiddenComponent}
                 ariaLabel="Fechar Modal"
                 icon={<IconClose color="#374151" size={24} />}
                 className={clsx(S.icon_button_header, S.icon_right)}
@@ -115,6 +109,6 @@ const Modal = forwardRef<ModalHandle, ModalProps>((props, ref) => {
       </div>
     </Portal>
   )
-})
+}
 
 export default memo(Modal)

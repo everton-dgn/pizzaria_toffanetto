@@ -1,11 +1,7 @@
 import { type ReactNode } from 'react'
 
-export interface ModalHandle {
-  show: () => void
-  hidden: () => void
-}
-
 export interface ModalProps {
+  id: string
   children?: ReactNode
   className?: string
   description?: ReactNode
