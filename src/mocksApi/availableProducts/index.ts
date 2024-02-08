@@ -1,5 +1,3 @@
-import type { AvailableProducts } from 'infra/services/availableProducts/types'
-
 import { availableProducts } from './mock'
 
 export const mockAvailableProductsFindAll = {

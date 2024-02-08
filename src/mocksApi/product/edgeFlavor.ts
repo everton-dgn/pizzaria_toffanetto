@@ -1,5 +1,3 @@
-import type { EdgeFlavor } from 'infra/services/product/types'
-
 export const edgeFlavor: EdgeFlavor = {
   title: 'Selecione uma Borda',
   description: 'Escolha uma opção de recheio para a borda.',

@@ -1,5 +1,3 @@
-import type { Additional } from 'infra/services/product/types'
-
 export const additional: Additional = {
   title: 'Selecione um adicional',
   description: 'Escolha uma porção adicional de recheio para a sua pizza.',

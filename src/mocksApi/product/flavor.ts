@@ -1,5 +1,3 @@
-import type { Flavor } from 'infra/services/product/types'
-
 const sizePricingTraditionalPizza = {
   mini: 19,
   small: 29,

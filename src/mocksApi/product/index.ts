@@ -1,5 +1,3 @@
-import type { ProductOptions } from 'infra/services/product/types'
-
 import { product } from './mock'
 
 export const mockProductFindById = {

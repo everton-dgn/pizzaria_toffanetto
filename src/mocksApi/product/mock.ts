@@ -1,5 +1,3 @@
-import type { ProductOptions } from 'infra/services/product/types'
-
 import { additional } from './additional'
 import { edgeFlavor } from './edgeFlavor'
 import { flavor } from './flavor'

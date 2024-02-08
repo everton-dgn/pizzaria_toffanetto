@@ -1,8 +1,3 @@
-import type {
-  ProductCategory,
-  ProductList
-} from 'infra/services/availableProducts/types'
-
 const items: ProductList = [
   {
     id: 'wodfkfwojknduojn24',
