@@ -7,7 +7,7 @@ import { Textarea } from 'components/molecules'
 import { useToast } from 'hooks'
 
 import { productFindById } from 'infra/services/product'
-import type { ProductOptions } from 'infra/services/product/types'
+import { useCustomerOrder } from 'infra/store/customerOrder'
 
 import S from './styles.module.scss'
 
@@ -15,13 +15,13 @@ import {
   FlavorQuantitySelectorGroup,
   HeaderProduct,
   RadioButtonGroup,
-  SectionProduct,
-  SizeRadioButtonGroup
+  SectionProduct
 } from './components'
 import type { OrderCreationModalProps } from './types'
 
 export const OrderCreationModal = ({ id }: OrderCreationModalProps) => {
   const [product, setProduct] = useState<ProductOptions>(null)
+  const { stateCustomerOrder } = useCustomerOrder()
   const toast = useToast()
 
   const getProductFindById = async () => {
@@ -52,10 +52,15 @@ export const OrderCreationModal = ({ id }: OrderCreationModalProps) => {
           isDone={false}
           description={product.size.description}
         >
-          <SizeRadioButtonGroup options={product.size.options} />
+          <RadioButtonGroup
+            options={product.size.options}
+            optionNameId="size"
+            selectedRadioButtonGroupValue={stateCustomerOrder.sizeOptions?.id}
+            setSelectedRadioButtonGroupValue={stateCustomerOrder.setSizeOptions}
+          />
         </SectionProduct>
       )}
-      {!!product?.flavor && (
+      {!!product?.flavor && stateCustomerOrder.sizeOptions?.id && (
         <SectionProduct
           title={product.flavor.title}
           isRequired={product.flavor.isRequired}
@@ -75,6 +80,12 @@ export const OrderCreationModal = ({ id }: OrderCreationModalProps) => {
           <RadioButtonGroup
             options={product.edgeFlavor.options}
             optionNameId="edgeFlavor"
+            selectedRadioButtonGroupValue={
+              stateCustomerOrder.edgeFlavorOptions?.id
+            }
+            setSelectedRadioButtonGroupValue={
+              stateCustomerOrder.setEdgeFlavorOptions
+            }
           />
         </SectionProduct>
       )}
@@ -88,6 +99,12 @@ export const OrderCreationModal = ({ id }: OrderCreationModalProps) => {
           <RadioButtonGroup
             options={product.additional.options}
             optionNameId="additional"
+            selectedRadioButtonGroupValue={
+              stateCustomerOrder.additionalOptions?.id
+            }
+            setSelectedRadioButtonGroupValue={
+              stateCustomerOrder.setAdditionalOptions
+            }
           />
         </SectionProduct>
       )}
@@ -102,6 +119,8 @@ export const OrderCreationModal = ({ id }: OrderCreationModalProps) => {
             placeholder="Adicione um comentário"
             rows={3}
             maxLength={400}
+            onChange={e => stateCustomerOrder.setOrderComment(e.target.value)}
+            value={stateCustomerOrder.orderComment ?? ''}
           />
         </SectionProduct>
       )}

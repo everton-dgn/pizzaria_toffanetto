@@ -1,5 +1,4 @@
 export { HeaderProduct } from './HeaderProduct'
 export { SectionProduct } from './SectionProduct'
-export { SizeRadioButtonGroup } from './SizeRadioButtonGroup'
 export { RadioButtonGroup } from './RadioButtonGroup'
 export { FlavorQuantitySelectorGroup } from './FlavorQuantitySelectorGroup'
