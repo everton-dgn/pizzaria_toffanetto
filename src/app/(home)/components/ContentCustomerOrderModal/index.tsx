@@ -1,12 +1,9 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { memo } from 'react'
 
 import { Textarea } from 'components/molecules'
 
-import { useToast } from 'hooks'
-
-import { productFindById } from 'infra/services/product'
 import { useCustomerOrder } from 'infra/store/customerOrder'
 
 import S from './styles.module.scss'
@@ -17,24 +14,12 @@ import {
   RadioButtonGroup,
   SectionProduct
 } from './components'
+import type { ContentCustomerOrderModalProps } from './types'
 
-const id = '1'
-export const ContentCustomerOrderModal = () => {
-  const [product, setProduct] = useState<ProductOptions>(null)
+const ContentCustomerOrderModal = ({
+  product
+}: ContentCustomerOrderModalProps) => {
   const { stateCustomerOrder } = useCustomerOrder()
-  const toast = useToast()
-
-  const getProductFindById = async () => {
-    // TODO: injetar serviço como prop no componente
-    const { data, error } = await productFindById(id)
-    if (error) return toast.error(error)
-    data && setProduct(data)
-  }
-
-  useEffect(() => {
-    getProductFindById()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
 
   return (
     <div className={S.container}>
@@ -127,3 +112,5 @@ export const ContentCustomerOrderModal = () => {
     </div>
   )
 }
+
+export default memo(ContentCustomerOrderModal)

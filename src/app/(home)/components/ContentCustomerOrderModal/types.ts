@@ -1,3 +1,3 @@
-export type OrderCreationModalProps = {
-  id: string
+export type ContentCustomerOrderModalProps = {
+  product: ProductOptions
 }
