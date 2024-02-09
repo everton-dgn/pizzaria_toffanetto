@@ -2,9 +2,7 @@
 
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import { useContext, useEffect } from 'react'
-
-import { DataContext } from 'hooks/UseContext'
+import { useEffect } from 'react'
 
 import S from 'app/styles.module.scss'
 
@@ -16,7 +14,6 @@ export const Error = ({
   reset: () => void
 }) => {
   const { push } = useRouter()
-  const { hasNetwork } = useContext(DataContext)
 
   useEffect(() => {
     // eslint-disable-next-line no-console
@@ -28,23 +25,13 @@ export const Error = ({
       <h1>Erro 404</h1>
       <div className={S.container}>
         <div className={S.containImg}>
-          {hasNetwork ? (
-            <Image
-              src="/img/not-found.svg"
-              alt="Erro 404"
-              width={400}
-              height={400}
-              priority
-            />
-          ) : (
-            <img
-              src="/img/not-found.svg"
-              alt="Erro 404"
-              width="400"
-              height="400"
-              fetchPriority="high"
-            />
-          )}
+          <Image
+            src="/img/not-found.svg"
+            alt="Erro 404"
+            width={400}
+            height={400}
+            priority
+          />
         </div>
 
         <p className={S.paragraph}>

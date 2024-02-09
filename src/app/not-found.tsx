@@ -2,38 +2,24 @@
 
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import { useContext } from 'react'
-
-import { DataContext } from 'hooks/UseContext'
 
 import S from 'app/styles.module.scss'
 
 const NotFound = () => {
   const { push } = useRouter()
-  const { hasNetwork } = useContext(DataContext)
 
   return (
     <>
       <h1>Erro 404</h1>
       <div className={S.container}>
         <div className={S.containImg}>
-          {hasNetwork ? (
-            <Image
-              src="/img/not-found.svg"
-              alt="Erro 404"
-              width={400}
-              height={400}
-              priority
-            />
-          ) : (
-            <img
-              src="/img/not-found.svg"
-              alt="Erro 404"
-              width="400"
-              height="400"
-              fetchPriority="high"
-            />
-          )}
+          <Image
+            src="/img/not-found.svg"
+            alt="Erro 404"
+            width={400}
+            height={400}
+            priority
+          />
         </div>
 
         <p className={S.paragraph}>

@@ -2,11 +2,8 @@
 
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import { useContext } from 'react'
 
 import quicksand from 'theme/fontFamily'
-
-import { DataContext } from 'hooks/UseContext'
 
 import 'theme/reset.scss'
 import 'theme/components/index.scss'
@@ -19,7 +16,6 @@ type ErrorProps = {
 
 const GlobalError = ({ error, reset }: ErrorProps) => {
   const { push } = useRouter()
-  const { hasNetwork } = useContext(DataContext)
   // eslint-disable-next-line no-console
   console.log(error, reset)
 
@@ -45,21 +41,12 @@ const GlobalError = ({ error, reset }: ErrorProps) => {
         <h1>Erro 404</h1>
         <div className={S.container}>
           <div className={S.containImg}>
-            {hasNetwork ? (
-              <Image
-                src="/img/not-found.svg"
-                alt="Erro 404"
-                width={400}
-                height={400}
-              />
-            ) : (
-              <img
-                src="/img/not-found.svg"
-                alt="Erro 404"
-                width="400"
-                height="400"
-              />
-            )}
+            <Image
+              src="/img/not-found.svg"
+              alt="Erro 404"
+              width={400}
+              height={400}
+            />
           </div>
 
           <p className={S.paragraph}>
