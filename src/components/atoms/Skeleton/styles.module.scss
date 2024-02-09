@@ -1,0 +1,18 @@
+@use 'src/theme' as T;
+
+@keyframes animation-color {
+  0%,
+  50%,
+  100% {
+    background-color: T.$color-box-shadow-dark;
+  }
+
+  25%,
+  75% {
+    background-color: T.$color-ultra-light;
+  }
+}
+
+.container {
+  animation: animation-color 5000ms ease-in-out infinite;
+}
