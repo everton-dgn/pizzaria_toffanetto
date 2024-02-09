@@ -4,8 +4,6 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useContext, useEffect } from 'react'
 
-import { TitleSection } from 'components/atoms'
-
 import { DataContext } from 'hooks/UseContext'
 
 import S from 'app/styles.module.scss'
@@ -27,7 +25,7 @@ export const Error = ({
 
   return (
     <>
-      <TitleSection title="Erro 404" />
+      <h1>Erro 404</h1>
       <div className={S.container}>
         <div className={S.containImg}>
           {hasNetwork ? (

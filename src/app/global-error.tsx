@@ -6,8 +6,6 @@ import { useContext } from 'react'
 
 import quicksand from 'theme/fontFamily'
 
-import { TitleSection } from 'components/atoms'
-
 import { DataContext } from 'hooks/UseContext'
 
 import 'theme/reset.scss'
@@ -44,7 +42,7 @@ const GlobalError = ({ error, reset }: ErrorProps) => {
         {/* <Error reset={reset} /> */}
         {/* <p>{error.message}</p> */}
 
-        <TitleSection title="Erro 404" />
+        <h1>Erro 404</h1>
         <div className={S.container}>
           <div className={S.containImg}>
             {hasNetwork ? (
