@@ -20,7 +20,7 @@
   top: 0;
   z-index: T.$z-index-base;
 
-  @include T.breakpoint-min('tablet') {
+  @include T.break-tablet {
     padding: T.$spacing-12 T.$spacing-24;
   }
 }
@@ -40,7 +40,7 @@
   text-transform: uppercase;
   color: T.$color-primary;
 
-  @include T.breakpoint-min('tablet') {
+  @include T.break-tablet {
     font-size: T.$font-size-18;
   }
 }
@@ -58,7 +58,7 @@
   padding: T.$spacing-12 T.$spacing-16;
   gap: T.$spacing-12;
 
-  @include T.breakpoint-min('tablet') {
+  @include T.break-tablet {
     padding: T.$spacing-12 T.$spacing-24;
   }
 }

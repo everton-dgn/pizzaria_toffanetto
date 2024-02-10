@@ -6,7 +6,7 @@
   height: 36px;
   min-height: 36px;
 
-  @include T.breakpoint-min('tablet') {
+  @include T.break-tablet {
     width: 203px;
     min-width: 203px;
     height: 30px;

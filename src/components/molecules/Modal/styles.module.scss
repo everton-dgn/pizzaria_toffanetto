@@ -10,7 +10,7 @@
   backdrop-filter: blur(2px);
   z-index: T.$z-index-overlay;
 
-  @include T.breakpoint-min('tablet') {
+  @include T.break-tablet {
     padding: T.$spacing-16 !important;
   }
 }
@@ -47,7 +47,7 @@
   z-index: T.$z-index-modal;
   transition: all 0.3s cubic-bezier(0, 0.55, 0.45, 1);
 
-  @include T.breakpoint-min('tablet') {
+  @include T.break-tablet {
     border-radius: T.$border-radius-16 !important;
     height: fit-content !important;
     min-height: fit-content !important;
@@ -58,7 +58,7 @@
   visibility: visible;
   transform: translateY(0);
 
-  @include T.breakpoint-min('tablet') {
+  @include T.break-tablet {
     opacity: 1;
   }
 }
@@ -67,7 +67,7 @@
   visibility: hidden;
   transform: translateY(100%);
 
-  @include T.breakpoint-min('tablet') {
+  @include T.break-tablet {
     opacity: 0.6;
   }
 }
@@ -85,7 +85,7 @@
   height: 100%;
   overflow-y: auto;
 
-  @include T.breakpoint-min('tablet') {
+  @include T.break-tablet {
     max-height: 80vh;
   }
 }
@@ -94,7 +94,7 @@
   margin-top: T.$spacing-8;
   font-size: T.$font-size-16;
 
-  @include T.breakpoint-min('tablet') {
+  @include T.break-tablet {
     margin-top: T.$spacing-16;
   }
 }

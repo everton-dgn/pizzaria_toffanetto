@@ -25,7 +25,7 @@
   @include T.animation-visibility;
   @include T.animation-move-up;
 
-  @include T.breakpoint-min('custom', 500px) {
+  @include T.break-custom(500px) {
     max-width: 400px;
   }
 }

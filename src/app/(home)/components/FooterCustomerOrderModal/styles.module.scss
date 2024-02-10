@@ -11,7 +11,7 @@
   border-top: 1px solid T.$color-box-shadow-dark;
   box-shadow: T.$box-shadow-sm;
 
-  @include T.breakpoint-min('tablet') {
+  @include T.break-tablet {
     padding: T.$spacing-12 T.$spacing-24;
   }
 }

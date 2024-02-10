@@ -47,7 +47,7 @@ body {
   color: T.$color-dark;
   isolation: isolate;
 
-  @include T.breakpoint-max('tablet') {
+  @include T.break-tablet-max {
     padding-bottom: 50px;
   }
 }

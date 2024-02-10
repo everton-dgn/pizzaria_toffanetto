@@ -61,7 +61,7 @@
     font-weight: T.$font-weight-600;
   }
 
-  @include T.breakpoint-min('desktop') {
+  @include T.break-desktop {
     font-size: T.$font-size-14;
 
     b {
@@ -91,7 +91,7 @@
   border-top: 1px solid T.$color-box-shadow-dark;
   box-shadow: T.$box-shadow-sm;
 
-  @include T.breakpoint-min('tablet') {
+  @include T.break-tablet {
     padding: T.$spacing-12 T.$spacing-24;
   }
 }

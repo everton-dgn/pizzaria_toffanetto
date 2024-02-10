@@ -12,7 +12,7 @@
   margin-left: 16px;
   z-index: T.$z-index-always-on-top;
 
-  @include T.breakpoint-min('custom', 420px) {
+  @include T.break-custom(420px) {
     max-width: 320px;
   }
 }

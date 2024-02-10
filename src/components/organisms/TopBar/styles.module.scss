@@ -24,7 +24,7 @@
   margin-inline: auto;
   height: 100%;
 
-  @include T.breakpoint-min('tablet') {
+  @include T.break-tablet {
     width: min(
       100% - #{T.$spacing-48},
       #{T.$container-max-width} - #{T.$spacing-48}

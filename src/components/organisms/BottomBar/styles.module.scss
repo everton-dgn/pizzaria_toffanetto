@@ -22,7 +22,7 @@
   @include T.animation-visibility;
   @include T.animation-move-up;
 
-  @include T.breakpoint-min('tablet') {
+  @include T.break-tablet {
     display: none;
   }
 }

@@ -17,7 +17,7 @@
     height: 100%;
     background-image: linear-gradient(90deg, #000000b2 76%, #00000078);
 
-    @include T.breakpoint-min('custom', 800px) {
+    @include T.break-custom(800px) {
       background-image: linear-gradient(90deg, #0000007a 76%, transparent);
     }
   }
@@ -34,7 +34,7 @@
   height: 100%;
   justify-content: center;
 
-  @include T.breakpoint-min('tablet') {
+  @include T.break-tablet {
     width: min(
       100% - #{T.$spacing-48},
       #{T.$container-max-width} - #{T.$spacing-48}
@@ -58,11 +58,11 @@
   @include T.animation-move-in(0, 0, 0);
   @include T.animation-fade-in-blur;
 
-  @include T.breakpoint-min('custom', 500px) {
+  @include T.break-custom(500px) {
     max-width: 400px;
   }
 
-  @include T.breakpoint-min('desktop') {
+  @include T.break-desktop {
     max-width: 560px;
   }
 }
@@ -84,13 +84,13 @@
   @include T.animation-move-in(0, 0, 0);
   @include T.animation-fade-in-blur;
 
-  @include T.breakpoint-min('custom', 500px) {
+  @include T.break-custom(500px) {
     max-width: 500px;
     margin-top: T.$spacing-20;
     font-size: Calc(15px + 1.3vh);
   }
 
-  @include T.breakpoint-min('desktop') {
+  @include T.break-desktop {
     max-width: 600px;
     margin-top: T.$spacing-24;
     font-size: T.$font-size-30;
@@ -107,7 +107,7 @@
   object-fit: cover;
   object-position: 67%;
 
-  @include T.breakpoint-min('desktop') {
+  @include T.break-desktop {
     object-position: center;
   }
 }

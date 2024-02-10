@@ -70,13 +70,13 @@
     margin-top: 0;
   }
 
-  @include T.breakpoint-min('custom', 600px) {
+  @include T.break-custom(600px) {
     div {
       grid-column: span 6;
     }
   }
 
-  @include T.breakpoint-min('custom', 1000px) {
+  @include T.break-custom(1000px) {
     div {
       grid-column: span 4;
     }
@@ -101,7 +101,7 @@
 
   @include T.animation-zoom;
 
-  @include T.breakpoint-min('custom', 900px) {
+  @include T.break-custom(900px) {
     max-width: calc(30% + 2rem);
   }
 

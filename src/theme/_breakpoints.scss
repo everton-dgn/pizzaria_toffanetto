@@ -1,32 +1,38 @@
-$breakpoints: (
-  tablet: 600px,
-  desktop: 1024px
-);
+$tablet: 600px;
+$desktop: 1024px;
 
-@mixin breakpoint-max($breakpoint-name, $custom-width: null) {
-  $breakpoint-value: null;
-
-  @if $breakpoint-name == 'custom' and $custom-width {
-    $breakpoint-value: $custom-width;
-  } @else {
-    $breakpoint-value: map-get($breakpoints, $breakpoint-name);
-  }
-
-  @media (max-width: $breakpoint-value) {
+@mixin break-custom($width) {
+  @media (min-width: $width) {
     @content;
   }
 }
 
-@mixin breakpoint-min($breakpoint-name, $custom-width: null) {
-  $breakpoint-value: null;
-
-  @if $breakpoint-name == 'custom' and $custom-width {
-    $breakpoint-value: $custom-width;
-  } @else {
-    $breakpoint-value: map-get($breakpoints, $breakpoint-name);
+@mixin break-tablet {
+  @media (min-width: $tablet) {
+    @content;
   }
+}
 
-  @media (min-width: $breakpoint-value) {
+@mixin break-desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin break-custom-max($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin break-tablet-max {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin break-desktop-max {
+  @media (max-width: $desktop) {
     @content;
   }
 }
