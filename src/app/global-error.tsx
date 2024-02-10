@@ -5,8 +5,7 @@ import { useRouter } from 'next/navigation'
 
 import quicksand from 'theme/fontFamily'
 
-import 'theme/reset.scss'
-import 'theme/components/index.scss'
+import 'theme/main.scss'
 import S from './styles.module.scss'
 
 type ErrorProps = {

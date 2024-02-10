@@ -1,0 +1,55 @@
+@use 'src/theme' as T;
+
+.container-col {
+  display: flex;
+  flex-direction: column;
+  width: min(
+    100% - #{T.$spacing-32},
+    #{T.$container-max-width} - #{T.$spacing-32}
+  );
+
+  @include T.breakpoint-min('tablet') {
+    width: min(
+      100% - #{T.$spacing-48},
+      #{T.$container-max-width} - #{T.$spacing-48}
+    );
+  }
+}
+
+.container-row {
+  display: flex;
+  flex-flow: row wrap;
+  width: min(
+    100% - #{T.$spacing-32},
+    #{T.$container-max-width} - #{T.$spacing-32}
+  );
+
+  @include T.breakpoint-min('tablet') {
+    width: min(
+      100% - #{T.$spacing-48},
+      #{T.$container-max-width} - #{T.$spacing-48}
+    );
+  }
+}
+
+.full-container-col {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.full-container-row {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+.flex-row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
