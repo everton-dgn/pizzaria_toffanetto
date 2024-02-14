@@ -1,8 +1,7 @@
 @use 'src/theme' as T;
 
-.container-col {
+%container-width {
   display: flex;
-  flex-direction: column;
   width: min(
     100% - #{T.$spacing-32},
     #{T.$container-max-width} - #{T.$spacing-32}
@@ -14,42 +13,46 @@
       #{T.$container-max-width} - #{T.$spacing-48}
     );
   }
+}
+
+.container-col {
+  flex-direction: column;
+
+  @extend %container-width;
 }
 
 .container-row {
-  display: flex;
   flex-flow: row wrap;
-  width: min(
-    100% - #{T.$spacing-32},
-    #{T.$container-max-width} - #{T.$spacing-32}
-  );
 
-  @include T.break-tablet {
-    width: min(
-      100% - #{T.$spacing-48},
-      #{T.$container-max-width} - #{T.$spacing-48}
-    );
-  }
+  @extend %container-width;
 }
 
-.full-container-col {
+%row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+%col {
   display: flex;
   flex-direction: column;
-  width: 100%;
 }
 
-.full-container-row {
-  display: flex;
-  flex-flow: row wrap;
+.full-w-col {
   width: 100%;
+
+  @extend %col;
+}
+
+.full-w-row {
+  width: 100%;
+
+  @extend %row;
 }
 
 .flex-row {
-  display: flex;
-  flex-flow: row wrap;
+  @extend %row;
 }
 
 .flex-column {
-  display: flex;
-  flex-direction: column;
+  @extend %col;
 }
