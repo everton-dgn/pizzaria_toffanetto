@@ -1,0 +1,9 @@
+@for $i from 1 through 12 {
+  .columns-#{$i} {
+    columns: $i;
+  }
+}
+
+.columns-auto {
+  columns: auto;
+}

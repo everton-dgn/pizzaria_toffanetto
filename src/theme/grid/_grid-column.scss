@@ -1,0 +1,31 @@
+.col-auto {
+  grid-column: auto;
+}
+
+@for $i from 1 through 12 {
+  .col-span-#{$i} {
+    grid-column: span #{$i} / span #{$i};
+  }
+}
+
+.col-span-full {
+  grid-column: 1 / -1;
+}
+
+@for $i from 1 through 13 {
+  .col-start-#{$i} {
+    grid-column-start: #{$i};
+  }
+
+  .col-end-#{$i} {
+    grid-column-end: #{$i};
+  }
+}
+
+.col-start-auto {
+  grid-column-start: auto;
+}
+
+.col-end-auto {
+  grid-column-end: auto;
+}

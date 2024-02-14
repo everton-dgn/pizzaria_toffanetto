@@ -1,8 +1,55 @@
 // utilities
 @use './reset';
 
-// layouts
-@use './layouts/flex';
-
 // components
 @use './components/separator';
+
+// flex
+@use './flex/container-flex';
+@use './flex/flex';
+@use './flex/flex-utilities';
+
+// grid
+@use './grid/grid-template-columns';
+@use './grid/grid-column';
+@use './grid/grid-template-rows';
+@use './grid/grid-row';
+@use './grid/grid-auto-flow';
+@use './grid/grid-auto-columns';
+@use './grid/grid-auto-rows';
+
+// justify
+@use './justify/justify-content';
+@use './justify/justify-items';
+@use './justify/justify-self';
+
+// align
+@use './align/align-content';
+@use './align/align-items';
+@use './align/align-self';
+
+// text
+@use './text/text-color';
+@use './text/font-weight';
+@use './text/font-size';
+@use './text/text-others';
+@use './text/text-align';
+
+// background
+@use './background/bg-color';
+
+// line
+@use './line/line-clamp';
+@use './line/line-height';
+
+// utilities
+@use './utilities/order';
+@use './utilities/display';
+@use './utilities/width';
+@use './utilities/height';
+@use './utilities/list';
+
+// others
+@use './spacing';
+@use './columns';
+@use './place-content';

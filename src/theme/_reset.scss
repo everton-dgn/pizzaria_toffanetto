@@ -43,7 +43,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   justify-content: flex-start;
-  background-color: T.$color-bg-default;
+  background-color: T.$color-soft-white-blue;
   color: T.$color-dark;
   isolation: isolate;
 
@@ -127,16 +127,16 @@ mark {
 ::-webkit-scrollbar,
 scrollbar-width {
   width: 12px !important;
-  background-color: T.$color-bg-default;
+  background-color: T.$color-soft-white-blue;
 }
 
 ::-webkit-scrollbar-thumb {
-  border: 1px solid T.$color-bg-default;
+  border: 1px solid T.$color-soft-white-blue;
   border-radius: 20px;
   background-color: T.$color-grey-light;
 }
 
 :root {
-  scrollbar-color: T.$color-grey-light T.$color-bg-default !important;
+  scrollbar-color: T.$color-grey-light T.$color-soft-white-blue !important;
   scrollbar-width: 12px !important;
 }

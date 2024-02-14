@@ -1,0 +1,19 @@
+@use '../variables/colors' as T;
+
+$text-colors: (
+  primary: T.$color-primary,
+  grey: T.$color-grey,
+  grey-dark: T.$color-grey-dark,
+  dark: T.$color-dark,
+  white: T.$color-white,
+  success: T.$color-success,
+  warning: T.$color-warning,
+  info: T.$color-info,
+  error: T.$color-error
+);
+
+@each $name, $color in $text-colors {
+  .text-#{$name} {
+    color: $color;
+  }
+}

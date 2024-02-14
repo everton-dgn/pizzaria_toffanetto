@@ -1,0 +1,32 @@
+@use '../variables/colors' as T;
+
+$bg-colors: (
+  primary: T.$color-primary,
+  primary-dark-translucent: T.$color-primary-dark-translucent,
+  secondary: T.$color-secondary,
+  dark: T.$color-dark,
+  dark-translucency: T.$color-dark-translucency,
+  white: T.$color-white,
+  ultra-light: T.$color-ultra-light,
+  neutral-light-lavender: T.$color-neutral-light-lavender,
+  light-blue-hint: T.$color-light-blue-hint,
+  soft-white-blue: T.$color-soft-white-blue,
+  green: T.$color-green,
+  cherry: T.$color-cherry,
+  grey-dark: T.$color-grey-dark,
+  grey: T.$color-grey,
+  grey-light: T.$color-grey-light,
+  grey-ultra-light: T.$color-grey-ultra-light,
+  error: T.$color-error,
+  success: T.$color-success,
+  warning: T.$color-warning,
+  info: T.$color-info,
+  focus: T.$color-focus,
+  transparent: T.$color-transparent
+);
+
+@each $name, $color in $bg-colors {
+  .bg-#{$name} {
+    background-color: $color;
+  }
+}

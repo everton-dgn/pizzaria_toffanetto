@@ -1,0 +1,17 @@
+@for $i from 1 through 12 {
+  .order-#{$i} {
+    order: $i;
+  }
+}
+
+.order-first {
+  order: -9999;
+}
+
+.order-last {
+  order: 9999;
+}
+
+.order-none {
+  order: 0;
+}

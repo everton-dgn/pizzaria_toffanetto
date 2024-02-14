@@ -1,0 +1,13 @@
+@use '../variables/fonts' as T;
+
+.weight-500 {
+  font-weight: T.$font-weight-500;
+}
+
+.weight-600 {
+  font-weight: T.$font-weight-600;
+}
+
+.weight-700 {
+  font-weight: T.$font-weight-700;
+}

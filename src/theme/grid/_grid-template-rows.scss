@@ -1,0 +1,13 @@
+@for $i from 1 through 12 {
+  .grid-rows-#{$i} {
+    grid-template-rows: repeat(#{$i}, minmax(0, 1fr));
+  }
+}
+
+.grid-rows-none {
+  grid-template-rows: none;
+}
+
+.grid-rows-subgrid {
+  grid-template-rows: subgrid;
+}

@@ -1,0 +1,19 @@
+@mixin line-clamp($lines) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+}
+
+@for $i from 1 through 6 {
+  .line-clamp-#{$i} {
+    @include line-clamp($i);
+  }
+}
+
+.line-clamp-none {
+  overflow: visible;
+  display: block;
+  -webkit-box-orient: horizontal;
+  -webkit-line-clamp: none;
+}
