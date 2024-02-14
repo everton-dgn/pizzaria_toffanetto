@@ -51,7 +51,9 @@ tsconfig.tsbuildinfo
 certificates
 
 # pwa
+**/public/swe-worker-*.js
 **/public/workbox-*.js
+**/public/workbox-*.map
 **/public/sw.js
 **/public/sw.js.map
 **/public/fallback-*.js
