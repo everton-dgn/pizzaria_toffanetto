@@ -7,7 +7,7 @@
   gap: T.$spacing-16;
   border-radius: T.$border-radius-20;
   box-shadow: T.$box-shadow-card;
-  background-color: T.$color-card;
+  background-color: T.$color-bg-light-blue-hint;
 }
 
 .wrapper_thumbnail {
@@ -72,7 +72,7 @@
 
 .icon_button {
   > svg {
-    color: T.$color-light;
+    color: T.$color-white;
     width: 12px;
     min-width: 12px;
     height: 12px;
@@ -88,7 +88,7 @@
   width: 100%;
   gap: T.$spacing-16;
   padding: T.$spacing-12 T.$spacing-16;
-  border-top: 1px solid T.$color-box-shadow-dark;
+  border-top: 1px solid T.$color-neutral-light-lavender;
   box-shadow: T.$box-shadow-sm;
 
   @include T.break-tablet {

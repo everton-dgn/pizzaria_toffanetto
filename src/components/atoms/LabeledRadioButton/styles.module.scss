@@ -20,15 +20,15 @@
   cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
-  border: 2px solid T.$color-light;
-  background-color: T.$color-ultra-light-grey;
+  border: 2px solid T.$color-white;
+  background-color: T.$color-grey-ultra-light;
   border-radius: T.$border-radius-circle;
-  outline: 1px solid T.$color-gray !important;
+  outline: 1px solid T.$color-grey !important;
   transition: all 0.1s linear;
 
   &:hover:not(:disabled):not(:checked) {
     outline-color: T.$color-primary !important;
-    background-color: T.$color-ultra-light-primary;
+    background-color: T.$color-primary-dark-translucent;
   }
 
   &:checked {
@@ -44,7 +44,7 @@
   }
 
   &:focus-visible {
-    outline: 4px solid T.$color-ultra-light-primary !important;
+    outline: 4px solid T.$color-primary-dark-translucent !important;
   }
 }
 
@@ -53,8 +53,8 @@
   opacity: 0.6;
 
   .input {
-    background-color: T.$color-ultra-light-grey;
-    border-color: T.$color-light;
+    background-color: T.$color-grey-ultra-light;
+    border-color: T.$color-white;
     cursor: not-allowed;
   }
 }

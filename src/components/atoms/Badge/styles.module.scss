@@ -20,12 +20,12 @@
   }
 
   &--gray {
-    background-color: T.$color-gray;
-    color: T.$color-light;
+    background-color: T.$color-grey;
+    color: T.$color-white;
   }
 
   &--red {
     background-color: T.$color-cherry;
-    color: T.$color-light;
+    color: T.$color-white;
   }
 }

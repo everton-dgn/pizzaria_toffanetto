@@ -15,8 +15,8 @@
   background-color: T.$color-bg-default;
   padding: T.$spacing-8 T.$spacing-16;
   gap: T.$spacing-4;
-  border-top: 1px solid T.$color-light;
-  border-bottom: 1px solid T.$color-light;
+  border-top: 1px solid T.$color-white;
+  border-bottom: 1px solid T.$color-white;
   top: 0;
   z-index: T.$z-index-base;
 
@@ -48,7 +48,7 @@
 .section_description {
   font-size: T.$font-size-12;
   font-weight: T.$font-weight-600;
-  color: T.$color-dark-grey;
+  color: T.$color-grey-dark;
 }
 
 .section_content {

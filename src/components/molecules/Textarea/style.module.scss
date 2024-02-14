@@ -11,24 +11,24 @@
   display: flex;
   width: 100%;
   resize: none;
-  border: 1px solid T.$color-light-grey;
+  border: 1px solid T.$color-grey-light;
   font-size: T.$font-size-16;
   font-weight: T.$font-weight-600;
   border-radius: T.$border-radius-8;
   padding: T.$spacing-8 T.$spacing-16;
-  color: T.$color-dark-grey;
+  color: T.$color-grey-dark;
 
   &::placeholder {
-    color: T.$color-light-grey;
+    color: T.$color-grey-light;
     font-weight: T.$font-weight-500;
   }
 
   &:hover {
-    border: 1px solid T.$color-dark-grey;
+    border: 1px solid T.$color-grey-dark;
   }
 
   &:focus {
-    border: 1px solid T.$color-light-grey;
+    border: 1px solid T.$color-grey-light;
     outline-color: T.$color-secondary;
     outline-width: 1.5px;
     outline-offset: -2px;
@@ -43,7 +43,7 @@
 .label {
   font-size: T.$font-size-12;
   font-weight: T.$font-weight-600;
-  color: T.$color-dark-grey;
+  color: T.$color-grey-dark;
 }
 
 .footer {
@@ -58,7 +58,7 @@
   font-weight: T.$font-weight-600;
   white-space: nowrap;
   margin-left: auto;
-  color: T.$color-gray;
+  color: T.$color-grey;
 }
 
 .error_color {

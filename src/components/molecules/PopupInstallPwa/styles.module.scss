@@ -14,7 +14,7 @@
   z-index: T.$z-index-elevation;
   border-radius: T.$border-radius-16;
   flex-direction: column;
-  background-color: T.$color-light;
+  background-color: T.$color-white;
   box-shadow: 0 0 24px #00000054;
   padding: T.$spacing-20 T.$spacing-20 T.$spacing-28;
   visibility: hidden;
@@ -53,7 +53,7 @@
   min-width: 20px;
   height: 20px;
   min-height: 20px;
-  fill: T.$color-dark-grey;
+  fill: T.$color-grey-dark;
 }
 
 .wrapper {

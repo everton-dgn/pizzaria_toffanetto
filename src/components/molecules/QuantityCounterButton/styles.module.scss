@@ -9,9 +9,9 @@
   min-width: 90px;
   height: 32px;
   min-height: 32px;
-  border: 1px solid T.$color-light;
+  border: 1px solid T.$color-white;
   border-radius: T.$border-radius-60;
-  background-color: T.$color-light;
+  background-color: T.$color-white;
 }
 
 .quantity {
@@ -38,7 +38,7 @@
   transition: background-color 0.2s linear;
 
   &:hover:not(:disabled) {
-    background-color: T.$color-ultra-light-grey;
+    background-color: T.$color-grey-ultra-light;
   }
 
   &:active:not(:disabled) {

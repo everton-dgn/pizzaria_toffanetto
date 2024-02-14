@@ -133,10 +133,10 @@ scrollbar-width {
 ::-webkit-scrollbar-thumb {
   border: 1px solid T.$color-bg-default;
   border-radius: 20px;
-  background-color: T.$color-light-grey;
+  background-color: T.$color-grey-light;
 }
 
 :root {
-  scrollbar-color: T.$color-light-grey T.$color-bg-default !important;
+  scrollbar-color: T.$color-grey-light T.$color-bg-default !important;
   scrollbar-width: 12px !important;
 }

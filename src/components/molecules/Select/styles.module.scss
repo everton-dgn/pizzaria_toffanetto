@@ -13,7 +13,7 @@
   position: relative;
 
   label {
-    color: T.$color-light-grey;
+    color: T.$color-grey-light;
     position: absolute;
     font-size: T.$font-size-15;
     margin: 1.4rem 1.4rem 1.3rem 1.5rem;
@@ -33,24 +33,24 @@
     -webkit-appearance: textfield;
     border-radius: 1rem;
     box-shadow:
-      inset -0.3rem -0.3rem 0.9rem 0 T.$color-light,
-      inset 0.3rem 0.3rem 0.9rem 0 T.$color-box-shadow-dark;
+      inset -0.3rem -0.3rem 0.9rem 0 T.$color-white,
+      inset 0.3rem 0.3rem 0.9rem 0 T.$color-neutral-light-lavender;
     border: 1.5px solid transparent;
     outline: none;
     padding: 1.3rem 1.4rem;
     background-color: T.$color-bg-default;
     font-size: T.$font-size-15;
     z-index: 1;
-    color: T.$color-dark-grey;
+    color: T.$color-grey-dark;
     transition: all 0.2s ease-in-out;
 
     &::placeholder {
       font-size: T.$font-size-15;
-      color: T.$color-light-grey;
+      color: T.$color-grey-light;
     }
 
     &:hover {
-      border: 1.5px solid T.$color-light;
+      border: 1.5px solid T.$color-white;
     }
 
     &:focus {
@@ -64,7 +64,7 @@
     &:focus + label,
     &:not(:placeholder-shown) + label {
       font-size: T.$font-size-12;
-      color: T.$color-dark-grey;
+      color: T.$color-grey-dark;
       margin-top: -1.9rem;
       margin-left: 0;
       cursor: default;
@@ -74,7 +74,7 @@
     &:-webkit-autofill:focus + label,
     &:-webkit-autofill:not(:placeholder-shown) + label {
       font-size: T.$font-size-12;
-      color: T.$color-dark-grey;
+      color: T.$color-grey-dark;
       margin-top: -1.8rem;
       margin-left: 0;
       cursor: default;
@@ -82,7 +82,7 @@
     }
 
     &:disabled {
-      background-color: T.$color-ultra-light-grey;
+      background-color: T.$color-grey-ultra-light;
       box-shadow: none;
       cursor: not-allowed;
       border-color: transparent;
@@ -155,12 +155,12 @@
   padding: 0.5rem 2rem;
 
   &:hover {
-    background-color: T.$color-light;
+    background-color: T.$color-white;
   }
 }
 
 .highlight {
-  background-color: T.$color-light;
+  background-color: T.$color-white;
 }
 
 .notFound {
@@ -197,7 +197,7 @@
 .iconClose {
   width: 3rem;
   height: 2.5rem;
-  color: T.$color-light-grey;
+  color: T.$color-grey-light;
   cursor: pointer;
 }
 
@@ -208,7 +208,7 @@
 .iconArrowDown {
   width: 3rem;
   height: 2rem;
-  color: T.$color-light-grey;
+  color: T.$color-grey-light;
   cursor: pointer;
   border-left: 0.1rem solid #ddd;
 }

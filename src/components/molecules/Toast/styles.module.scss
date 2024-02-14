@@ -23,7 +23,7 @@
   position: relative;
   width: 100%;
   height: fit-content;
-  background-color: T.$color-light;
+  background-color: T.$color-white;
   padding: T.$spacing-8 T.$spacing-8 T.$spacing-12 T.$spacing-8;
   margin-bottom: T.$spacing-12;
   border-radius: T.$border-radius-8;
@@ -96,7 +96,7 @@
   min-width: 20px;
   height: 20px;
   min-height: 20px;
-  fill: T.$color-dark-grey;
+  fill: T.$color-grey-dark;
 }
 
 .wrapper_text {
@@ -108,7 +108,7 @@
 .description {
   font-size: T.$font-size-14;
   font-weight: T.$font-weight-600;
-  color: T.$color-dark-grey;
+  color: T.$color-grey-dark;
   padding-right: 20px;
 }
 
