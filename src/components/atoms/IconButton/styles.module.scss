@@ -75,7 +75,7 @@
 
   &:hover:not(:disabled) {
     box-shadow: none !important;
-    background-color: T.$color-bg-light-blue-hint !important;
+    background-color: T.$color-light-blue-hint !important;
   }
 
   &:active:not(:disabled) {
