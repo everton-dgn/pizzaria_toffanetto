@@ -37,22 +37,22 @@
   flex-direction: column;
 }
 
-.full-w-col {
+.col-full {
   width: 100%;
 
   @extend %col;
 }
 
-.full-w-row {
+.row-full {
   width: 100%;
 
   @extend %row;
 }
 
-.flex-row {
+.row {
   @extend %row;
 }
 
-.flex-column {
+.col {
   @extend %col;
 }
