@@ -1,0 +1,18 @@
+@use './variables/zIndex' as T;
+
+$z-indexes: (
+  z-bottom-bar: T.$z-index-bottom-bar,
+  z-header: T.$z-index-header,
+  z-overlay: T.$z-index-overlay,
+  z-modal: T.$z-index-modal,
+  z-always-on-top: T.$z-index-always-on-top,
+  z-sidebar: T.$z-index-sidebar,
+  z-elevation: T.$z-index-elevation,
+  z-base: T.$z-index-base
+);
+
+@each $name, $value in $z-indexes {
+  .#{$name} {
+    z-index: $value;
+  }
+}

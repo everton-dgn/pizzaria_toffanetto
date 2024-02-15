@@ -1,0 +1,21 @@
+@use '../variables/colors' as T;
+
+.border-none {
+  border: 0;
+}
+
+.border-error {
+  border: 1.5px solid T.$color-error;
+}
+
+.border-white {
+  border: 2px solid T.$color-white;
+}
+
+.border-secondary {
+  border: 1.5px solid T.$color-secondary;
+}
+
+.border-grey-light {
+  border: 1px solid T.$color-grey-light;
+}

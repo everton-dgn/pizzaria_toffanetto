@@ -32,11 +32,16 @@
 @use './text/text-color';
 @use './text/font-weight';
 @use './text/font-size';
-@use './text/text-others';
 @use './text/text-align';
+@use './text/text-utilities';
 
 // background
 @use './background/bg-color';
+@use './background/bg-utilities';
+
+// border
+@use './border/rounded';
+@use './border/border';
 
 // line
 @use './line/line-clamp';
@@ -48,8 +53,18 @@
 @use './utilities/width';
 @use './utilities/height';
 @use './utilities/list';
+@use './utilities/backdrop-blur';
+@use './utilities/backdrop-opacity';
+@use './utilities/cursor';
+@use './utilities/scroll';
+@use './utilities/overflow';
 
 // others
 @use './spacing';
 @use './columns';
 @use './place-content';
+@use './shadow';
+@use './opacity';
+@use './fill-color';
+@use './size';
+@use './z-index';

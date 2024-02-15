@@ -1,0 +1,5 @@
+@for $i from 0 through 20 {
+  .backdrop-opacity-#{5 * $i} {
+    backdrop-filter: opacity($i * 0.05);
+  }
+}
