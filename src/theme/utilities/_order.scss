@@ -1,35 +1,47 @@
+@use '../variables/breakpoints' as T;
+
 @for $i from 1 through 12 {
   .order-#{$i} {
     order: $i;
   }
+
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:order-#{$i} {
+      order: $i;
+    }
+  }
 }
 
-.order-first {
-  order: -9999;
-}
+$order-specials: (
+  first: -9999,
+  last: 9999,
+  none: 0
+);
 
-.order-last {
-  order: 9999;
-}
+@each $name, $value in $order-specials {
+  .order-#{$name} {
+    order: $value;
+  }
 
-.order-none {
-  order: 0;
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:order-#{$name} {
+      order: $value;
+    }
+  }
 }
 
 // user-select
 
-.select-none {
-  user-select: none;
-}
+$select-types: (none, text, all, auto);
 
-.select-text {
-  user-select: text;
-}
+@each $type in $select-types {
+  .select-#{$type} {
+    user-select: $type;
+  }
 
-.select-all {
-  user-select: all;
-}
-
-.select-auto {
-  user-select: auto;
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:select-#{$type} {
+      user-select: $type;
+    }
+  }
 }

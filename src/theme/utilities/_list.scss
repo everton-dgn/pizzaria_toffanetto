@@ -1,23 +1,33 @@
+@use '../variables/breakpoints' as T;
+
 // list-style-position
 
-.list-inside {
-  list-style-position: inside;
-}
+$list-positions: (inside, outside);
 
-.list-outside {
-  list-style-position: outside;
+@each $position in $list-positions {
+  .list-#{$position} {
+    list-style-position: $position;
+  }
+
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:list-#{$position} {
+      list-style-position: $position;
+    }
+  }
 }
 
 // list-style-type
 
-.list-none {
-  list-style-type: none;
-}
+$list-types: (none, disc, decimal);
 
-.list-disc {
-  list-style-type: disc;
-}
+@each $type in $list-types {
+  .list-#{$type} {
+    list-style-type: $type;
+  }
 
-.list-decimal {
-  list-style-type: decimal;
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:list-#{$type} {
+      list-style-type: $type;
+    }
+  }
 }

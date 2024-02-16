@@ -1,109 +1,127 @@
+@use '../variables/breakpoints' as T;
+
 // background-attachment
 
-.bg-fixed {
-  background-attachment: fixed;
+$background-attachments: (fixed, local, scroll);
+
+@each $attachment in $background-attachments {
+  .bg-#{$attachment} {
+    background-attachment: $attachment;
+  }
 }
 
-.bg-local {
-  background-attachment: local;
-}
-
-.bg-scroll {
-  background-attachment: scroll;
+@each $breakpoint, $_ in T.$breakpoints {
+  @each $attachment in $background-attachments {
+    @include T.breakpoint($breakpoint) {
+      .#{$breakpoint}:bg-#{$attachment} {
+        background-attachment: $attachment;
+      }
+    }
+  }
 }
 
 // background-clip
 
-.bg-clip-border {
-  background-clip: border-box;
+$background-clips: (
+  border: border-box,
+  padding: padding-box,
+  content: content-box,
+  text: text
+);
+
+@each $clip-name, $clip-value in $background-clips {
+  .bg-clip-#{$clip-name} {
+    background-clip: $clip-value;
+  }
 }
 
-.bg-clip-padding {
-  background-clip: padding-box;
-}
-
-.bg-clip-content {
-  background-clip: content-box;
-}
-
-.bg-clip-text {
-  background-clip: text;
+@each $breakpoint, $_ in T.$breakpoints {
+  @each $clip-name, $clip-value in $background-clips {
+    @include T.breakpoint($breakpoint) {
+      .#{$breakpoint}:bg-clip-#{$clip-name} {
+        background-clip: $clip-value;
+      }
+    }
+  }
 }
 
 // background-position
 
-.bg-bottom {
-  background-position: bottom;
+$background-positions: (
+  bottom: bottom,
+  center: center,
+  left: left,
+  left-bottom: left bottom,
+  left-top: left top,
+  right: right,
+  right-bottom: right bottom,
+  right-top: right top,
+  top: top
+);
+
+@each $position-name, $position-value in $background-positions {
+  .bg-#{$position-name} {
+    background-position: $position-value;
+  }
 }
 
-.bg-center {
-  background-position: center;
-}
-
-.bg-left {
-  background-position: left;
-}
-
-.bg-left-bottom {
-  background-position: left bottom;
-}
-
-.bg-left-top {
-  background-position: left top;
-}
-
-.bg-right {
-  background-position: right;
-}
-
-.bg-right-bottom {
-  background-position: right bottom;
-}
-
-.bg-right-top {
-  background-position: right top;
-}
-
-.bg-top {
-  background-position: top;
+@each $breakpoint, $_ in T.$breakpoints {
+  @each $position-name, $position-value in $background-positions {
+    @include T.breakpoint($breakpoint) {
+      .#{$breakpoint}:bg-#{$position-name} {
+        background-position: $position-value;
+      }
+    }
+  }
 }
 
 // background-repeat
 
-.bg-repeat {
-  background-repeat: repeat;
+$background-repeats: (
+  repeat: repeat,
+  no-repeat: no-repeat,
+  repeat-x: repeat-x,
+  repeat-y: repeat-y,
+  repeat-round: round,
+  repeat-space: space
+);
+
+@each $repeat-name, $repeat-value in $background-repeats {
+  .bg-#{$repeat-name} {
+    background-repeat: $repeat-value;
+  }
 }
 
-.bg-no-repeat {
-  background-repeat: no-repeat;
-}
-
-.bg-repeat-x {
-  background-repeat: repeat-x;
-}
-
-.bg-repeat-y {
-  background-repeat: repeat-y;
-}
-
-.bg-repeat-round {
-  background-repeat: round;
-}
-
-.bg-repeat-space {
-  background-repeat: space;
+@each $breakpoint, $_ in T.$breakpoints {
+  @each $repeat-name, $repeat-value in $background-repeats {
+    @include T.breakpoint($breakpoint) {
+      .#{$breakpoint}:bg-#{$repeat-name} {
+        background-repeat: $repeat-value;
+      }
+    }
+  }
 }
 
 // background-size
 
-.bg-auto {
-  background-size: auto;
+$background-sizes: (
+  auto: auto,
+  cover: cover,
+  contain: contain
+);
+
+@each $size-name, $size-value in $background-sizes {
+  .bg-#{$size-name} {
+    background-size: $size-value;
+  }
 }
 
-.bg-cover {
-  background-size: cover;
-}
-
-.bg-contain {
-  background-size: contain;
+@each $breakpoint, $_ in T.$breakpoints {
+  @each $size-name, $size-value in $background-sizes {
+    @include T.breakpoint($breakpoint) {
+      .#{$breakpoint}:bg-#{$size-name} {
+        background-size: $size-value;
+      }
+    }
+  }
 }

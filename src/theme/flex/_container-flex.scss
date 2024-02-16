@@ -1,16 +1,18 @@
-@use 'src/theme' as T;
+@use '../variables/spacings' as sp;
+@use '../variables/grids' as grids;
+@use '../variables/breakpoints' as T;
 
-%container-width {
+@mixin container-width {
   display: flex;
   width: min(
-    100% - #{T.$spacing-32},
-    #{T.$container-max-width} - #{T.$spacing-32}
+    100% - #{sp.$spacing-32},
+    #{grids.$container-max-width} - #{sp.$spacing-32}
   );
 
   @include T.break-tablet {
     width: min(
-      100% - #{T.$spacing-48},
-      #{T.$container-max-width} - #{T.$spacing-48}
+      100% - #{sp.$spacing-48},
+      #{grids.$container-max-width} - #{sp.$spacing-48}
     );
   }
 }
@@ -18,41 +20,57 @@
 .container-col {
   flex-direction: column;
 
-  @extend %container-width;
+  @include container-width;
 }
 
 .container-row {
   flex-flow: row wrap;
 
-  @extend %container-width;
+  @include container-width;
 }
 
-%row {
+.col-full {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.row-full {
   display: flex;
   flex-flow: row wrap;
+  width: 100%;
 }
 
-%col {
+.col {
   display: flex;
   flex-direction: column;
 }
 
-.col-full {
-  width: 100%;
-
-  @extend %col;
-}
-
-.row-full {
-  width: 100%;
-
-  @extend %row;
-}
-
 .row {
-  @extend %row;
+  display: flex;
+  flex-flow: row wrap;
 }
 
-.col {
-  @extend %col;
+@each $breakpoint, $_ in T.$breakpoints {
+  .#{$breakpoint}:col-full {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .#{$breakpoint}:row-full {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+  }
+
+  .#{$breakpoint}:col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .#{$breakpoint}:row {
+    display: flex;
+    flex-flow: row wrap;
+  }
 }

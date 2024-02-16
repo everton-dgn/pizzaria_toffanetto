@@ -1,69 +1,60 @@
+@use '../variables/breakpoints' as T;
+
 // scroll-snap-align
 
-.snap-start {
-  scroll-snap-align: start;
-}
+$scroll-snap-align-values: (start, end, center, none);
 
-.snap-end {
-  scroll-snap-align: end;
-}
+@each $value in $scroll-snap-align-values {
+  .snap-#{$value} {
+    scroll-snap-align: $value;
+  }
 
-.snap-center {
-  scroll-snap-align: center;
-}
-
-.snap-align-none {
-  scroll-snap-align: none;
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:snap-#{$value} {
+      scroll-snap-align: $value;
+    }
+  }
 }
 
 // scroll-snap-stop
 
-.snap-normal {
-  scroll-snap-stop: normal;
-}
+$scroll-snap-stop-values: (normal, always);
 
-.snap-always {
-  scroll-snap-stop: always;
+@each $value in $scroll-snap-stop-values {
+  .snap-#{$value} {
+    scroll-snap-stop: $value;
+  }
+
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:snap-#{$value} {
+      scroll-snap-stop: $value;
+    }
+  }
 }
 
 // touch-action
 
-.touch-auto {
-  touch-action: auto;
-}
+$touch-action-values: (
+  auto,
+  none,
+  pan-x,
+  pan-left,
+  pan-right,
+  pan-y,
+  pan-up,
+  pan-down,
+  pinch-zoom,
+  manipulation
+);
 
-.touch-none {
-  touch-action: none;
-}
+@each $value in $touch-action-values {
+  .touch-#{$value} {
+    touch-action: $value;
+  }
 
-.touch-pan-x {
-  touch-action: pan-x;
-}
-
-.touch-pan-left {
-  touch-action: pan-left;
-}
-
-.touch-pan-right {
-  touch-action: pan-right;
-}
-
-.touch-pan-y {
-  touch-action: pan-y;
-}
-
-.touch-pan-up {
-  touch-action: pan-up;
-}
-
-.touch-pan-down {
-  touch-action: pan-down;
-}
-
-.touch-pinch-zoom {
-  touch-action: pinch-zoom;
-}
-
-.touch-manipulation {
-  touch-action: manipulation;
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:touch-#{$value} {
+      touch-action: $value;
+    }
+  }
 }

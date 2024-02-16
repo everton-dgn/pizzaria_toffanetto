@@ -1,15 +1,20 @@
-.ji-start {
-  justify-items: start;
-}
+@use '../variables/breakpoints' as T;
 
-.ji-end {
-  justify-items: end;
-}
+$justify-items-values: (
+  start: start,
+  end: end,
+  center: center,
+  stretch: stretch
+);
 
-.ji-center {
-  justify-items: center;
-}
+@each $name, $value in $justify-items-values {
+  .ji-#{$name} {
+    justify-items: $value;
+  }
 
-.ji-stretch {
-  justify-items: stretch;
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:ji-#{$name} {
+      justify-items: $value;
+    }
+  }
 }

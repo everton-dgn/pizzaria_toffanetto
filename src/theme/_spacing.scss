@@ -1,23 +1,24 @@
-@use './variables/spacings' as T;
+@use './variables/breakpoints' as T;
+@use './variables/spacings' as spacings;
 
 $spacings: (
-  96: T.$spacing-96,
-  60: T.$spacing-60,
-  48: T.$spacing-48,
-  40: T.$spacing-40,
-  36: T.$spacing-36,
-  32: T.$spacing-32,
-  28: T.$spacing-28,
-  24: T.$spacing-24,
-  20: T.$spacing-20,
-  16: T.$spacing-16,
-  12: T.$spacing-12,
-  8: T.$spacing-8,
-  6: T.$spacing-6,
-  4: T.$spacing-4,
-  2: T.$spacing-2,
-  1: T.$spacing-1,
-  0: T.$spacing-0
+  96: spacings.$spacing-96,
+  60: spacings.$spacing-60,
+  48: spacings.$spacing-48,
+  40: spacings.$spacing-40,
+  36: spacings.$spacing-36,
+  32: spacings.$spacing-32,
+  28: spacings.$spacing-28,
+  24: spacings.$spacing-24,
+  20: spacings.$spacing-20,
+  16: spacings.$spacing-16,
+  12: spacings.$spacing-12,
+  8: spacings.$spacing-8,
+  6: spacings.$spacing-6,
+  4: spacings.$spacing-4,
+  2: spacings.$spacing-2,
+  1: spacings.$spacing-1,
+  0: spacings.$spacing-0
 );
 
 $sides: (
@@ -49,6 +50,15 @@ $axes: (
     .m#{$prefix}-#{$size} {
       #{$propName}: $value;
     }
+
+    @each $breakpoint, $_ in T.$breakpoints {
+      .#{$breakpoint}:p#{$prefix}-#{$size} {
+        #{$propName}: $value;
+      }
+      .#{$breakpoint}:m#{$prefix}-#{$size} {
+        #{$propName}: $value;
+      }
+    }
   }
 
   @each $axis, $dirs in $axes {
@@ -58,6 +68,15 @@ $axes: (
       }
       .m#{$axis}-#{$size} {
         margin-#{$dir}: $value;
+      }
+
+      @each $breakpoint, $_ in T.$breakpoints {
+        .#{$breakpoint}:p#{$axis}-#{$size} {
+          padding-#{$dir}: $value;
+        }
+        .#{$breakpoint}:m#{$axis}-#{$size} {
+          margin-#{$dir}: $value;
+        }
       }
     }
   }
@@ -72,5 +91,17 @@ $axes: (
 
   .gap-row-#{$size} {
     row-gap: $value;
+  }
+
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:gap-#{$size} {
+      gap: $value;
+    }
+    .#{$breakpoint}:gap-col-#{$size} {
+      column-gap: $value;
+    }
+    .#{$breakpoint}:gap-row-#{$size} {
+      row-gap: $value;
+    }
   }
 }

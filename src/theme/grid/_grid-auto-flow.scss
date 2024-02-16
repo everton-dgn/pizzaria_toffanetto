@@ -1,3 +1,5 @@
+@use '../variables/breakpoints' as T;
+
 .grid-flow-row {
   grid-auto-flow: row;
 }
@@ -16,4 +18,22 @@
 
 .grid-flow-col-dense {
   grid-auto-flow: column dense;
+}
+
+$grid-flows: (
+  row: row,
+  col: column,
+  dense: dense,
+  row-dense: row dense,
+  col-dense: column dense
+);
+
+@each $breakpoint, $_ in T.$breakpoints {
+  @each $grid-flow-name, $grid-flow-value in $grid-flows {
+    @include T.breakpoint($breakpoint) {
+      .#{$breakpoint}:grid-flow-#{$grid-flow-name} {
+        grid-auto-flow: $grid-flow-value;
+      }
+    }
+  }
 }

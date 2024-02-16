@@ -1,21 +1,26 @@
-@use '../variables/colors' as T;
+@use '../variables/breakpoints' as T;
+@use '../variables/colors' as colors;
 
-.border-none {
-  border: 0;
+$border-styles: (
+  none: 0,
+  error: 1.5px solid #{colors.$color-error},
+  white: 2px solid #{colors.$color-white},
+  secondary: 1.5px solid #{colors.$color-secondary},
+  grey-light: 1px solid #{colors.$color-grey-light}
+);
+
+@each $style-name, $style-value in $border-styles {
+  .border-#{$style-name} {
+    border: #{$style-value};
+  }
 }
 
-.border-error {
-  border: 1.5px solid T.$color-error;
-}
-
-.border-white {
-  border: 2px solid T.$color-white;
-}
-
-.border-secondary {
-  border: 1.5px solid T.$color-secondary;
-}
-
-.border-grey-light {
-  border: 1px solid T.$color-grey-light;
+@each $breakpoint, $_ in T.$breakpoints {
+  @each $style-name, $style-value in $border-styles {
+    @include T.breakpoint($breakpoint) {
+      .#{$breakpoint}:border-#{$style-name} {
+        border: #{$style-value};
+      }
+    }
+  }
 }

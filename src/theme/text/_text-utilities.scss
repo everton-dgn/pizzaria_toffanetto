@@ -1,172 +1,194 @@
+@use '../variables/breakpoints' as T;
+
 // font-style
 
-.italic {
-  font-style: italic;
+$font-styles: ('italic', 'normal');
+
+@each $value in $font-styles {
+  .#{$value} {
+    font-style: $value;
+  }
+
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:#{$value} {
+      font-style: $value;
+    }
+  }
 }
 
-.text-normal {
-  font-style: normal;
-}
+// text-decoration-line
 
-// text-decoration
+$text-decorations: (
+  underline: underline,
+  overline: overline,
+  line-through: line-through,
+  no-underline: none
+);
 
-.underline {
-  text-decoration-line: underline;
-}
+@each $name, $value in $text-decorations {
+  .#{$name} {
+    text-decoration-line: $value;
+  }
 
-.overline {
-  text-decoration-line: overline;
-}
-
-.line-through {
-  text-decoration-line: line-through;
-}
-
-.no-underline {
-  text-decoration-line: none;
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:#{$name} {
+      text-decoration-line: $value;
+    }
+  }
 }
 
 // text-decoration-style
 
-.decoration-solid {
-  text-decoration-style: solid;
-}
+$text-decoration-styles: (solid, double, dotted, dashed, wavy);
 
-.decoration-double {
-  text-decoration-style: double;
-}
+@each $value in $text-decoration-styles {
+  .decoration-#{$value} {
+    text-decoration-style: $value;
+  }
 
-.decoration-dotted {
-  text-decoration-style: dotted;
-}
-
-.decoration-dashed {
-  text-decoration-style: dashed;
-}
-
-.decoration-wavy {
-  text-decoration-style: wavy;
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:decoration-#{$value} {
+      text-decoration-style: $value;
+    }
+  }
 }
 
 // text-underline-offset
 
-.underline-offset-auto {
-  text-underline-offset: auto;
-}
+$text-underline-offsets: (
+  auto: auto,
+  0: 0,
+  1: 1px,
+  2: 2px,
+  4: 4px,
+  8: 8px
+);
 
-.underline-offset-0 {
-  text-underline-offset: 0;
-}
+@each $name, $value in $text-underline-offsets {
+  .underline-offset-#{$name} {
+    text-underline-offset: $value;
+  }
 
-.underline-offset-1 {
-  text-underline-offset: 1px;
-}
-
-.underline-offset-2 {
-  text-underline-offset: 2px;
-}
-
-.underline-offset-4 {
-  text-underline-offset: 4px;
-}
-
-.underline-offset-8 {
-  text-underline-offset: 8px;
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:underline-offset-#{$name} {
+      text-underline-offset: $value;
+    }
+  }
 }
 
 // text-transform
 
-.uppercase {
-  text-transform: uppercase;
+$text-transforms: (
+  uppercase: uppercase,
+  lowercase: lowercase,
+  capitalize: capitalize,
+  normal-case: none
+);
+
+@each $name, $value in $text-transforms {
+  .#{$name} {
+    text-transform: $value;
+  }
+
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:#{$name} {
+      text-transform: $value;
+    }
+  }
 }
 
-.lowercase {
-  text-transform: lowercase;
-}
+// text-overflow
 
-.capitalize {
-  text-transform: capitalize;
-}
-
-.normal-case {
-  text-transform: none;
-}
-
-// text truncate
-
-.truncate {
+.text-truncate {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.text-ellipsis {
-  text-overflow: ellipsis;
+@each $breakpoint, $_ in T.$breakpoints {
+  .#{$breakpoint}:text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 
-.text-clip {
-  text-overflow: clip;
+$text-overflows: (ellipsis, clip);
+
+@each $name, $_ in $text-overflows {
+  .text-#{$name} {
+    text-overflow: $name;
+  }
+
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:text-#{$name} {
+      text-overflow: $name;
+    }
+  }
 }
 
 // text-wrap
 
-.text-wrap {
-  text-wrap: wrap;
-}
+$text-wraps: (wrap, nowrap, balance, pretty);
 
-.text-nowrap {
-  text-wrap: nowrap;
-}
+@each $value in $text-wraps {
+  .text-#{$value} {
+    text-wrap: $value;
+  }
 
-.text-balance {
-  text-wrap: balance;
-}
-
-.text-pretty {
-  text-wrap: pretty;
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:text-#{$value} {
+      text-wrap: $value;
+    }
+  }
 }
 
 // white-space
 
-.whitespace-normal {
-  white-space: normal;
-}
+$white-spaces: (normal, nowrap, pre, pre-line, pre-wrap, break-spaces);
 
-.whitespace-nowrap {
-  white-space: nowrap;
-}
+@each $value in $white-spaces {
+  .white-space-#{$value} {
+    white-space: $value;
+  }
 
-.whitespace-pre {
-  white-space: pre;
-}
-
-.whitespace-pre-line {
-  white-space: pre-line;
-}
-
-.whitespace-pre-wrap {
-  white-space: pre-wrap;
-}
-
-.whitespace-break-spaces {
-  white-space: break-spaces;
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:white-space-#{$value} {
+      white-space: $value;
+    }
+  }
 }
 
 // word break
 
-.break-normal {
-  overflow-wrap: normal;
-  word-break: normal;
-}
+$word-breaks: (
+  normal: (
+    overflow-wrap: normal,
+    word-break: normal
+  ),
+  words: (
+    overflow-wrap: break-word
+  ),
+  all: (
+    word-break: break-all
+  ),
+  keep: (
+    word-break: keep-all
+  )
+);
 
-.break-words {
-  overflow-wrap: break-word;
-}
+@each $name, $properties in $word-breaks {
+  .break-#{$name} {
+    @each $property, $value in $properties {
+      #{$property}: $value;
+    }
+  }
 
-.break-all {
-  word-break: break-all;
-}
-
-.break-keep {
-  word-break: keep-all;
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:break-#{$name} {
+      @each $property, $value in $properties {
+        #{$property}: $value;
+      }
+    }
+  }
 }

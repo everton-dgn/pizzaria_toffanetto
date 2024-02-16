@@ -1,3 +1,5 @@
+@use '../variables/breakpoints' as T;
+
 $backdrop-blurs: (
   none: 0,
   sm: 4px,
@@ -12,5 +14,11 @@ $backdrop-blurs: (
 @each $name, $size in $backdrop-blurs {
   .backdrop-blur-#{$name} {
     backdrop-filter: blur($size);
+  }
+
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:backdrop-blur-#{$name} {
+      backdrop-filter: blur($size);
+    }
   }
 }

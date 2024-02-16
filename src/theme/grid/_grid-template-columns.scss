@@ -1,3 +1,5 @@
+@use '../variables/breakpoints' as T;
+
 @for $i from 1 through 12 {
   .grid-cols-#{$i} {
     grid-template-columns: repeat($i, minmax(0, 1fr));
@@ -10,4 +12,20 @@
 
 .grid-cols-subgrid {
   grid-template-columns: subgrid;
+}
+
+@each $breakpoint, $_ in T.$breakpoints {
+  @for $i from 1 through 12 {
+    .#{$breakpoint}:grid-cols-#{$i} {
+      grid-template-columns: repeat($i, minmax(0, 1fr));
+    }
+  }
+
+  .#{$breakpoint}:grid-cols-none {
+    grid-template-columns: none;
+  }
+
+  .#{$breakpoint}:grid-cols-subgrid {
+    grid-template-columns: subgrid;
+  }
 }

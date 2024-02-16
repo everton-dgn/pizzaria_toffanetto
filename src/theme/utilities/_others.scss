@@ -1,11 +1,19 @@
+@use '../variables/breakpoints' as T;
+
 // caption-side
 
-.caption-top {
-  caption-side: top;
-}
+$caption-sides: (top, bottom);
 
-.caption-bottom {
-  caption-side: bottom;
+@each $side in $caption-sides {
+  .caption-#{$side} {
+    caption-side: $side;
+  }
+
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:caption-#{$side} {
+      caption-side: $side;
+    }
+  }
 }
 
 // appearance
@@ -14,90 +22,99 @@
   appearance: none;
 }
 
+@each $breakpoint, $_ in T.$breakpoints {
+  .#{$breakpoint}:appearance-none {
+    appearance: none;
+  }
+}
+
 // resize
 
-.resize-none {
-  resize: none;
-}
-
-.resize-y {
-  resize: vertical;
-}
-
-.resize-x {
-  resize: horizontal;
-}
+$resize-values: (
+  none: none,
+  y: vertical,
+  x: horizontal
+);
 
 .resize {
   resize: both;
 }
 
-// aspect-ratio
-
-.aspect-square {
-  aspect-ratio: 1 / 1;
+@each $breakpoint, $_ in T.$breakpoints {
+  .#{$breakpoint}:resize {
+    resize: both;
+  }
 }
 
-.aspect-video {
-  aspect-ratio: 16 / 9;
+@each $name, $value in $resize-values {
+  .resize-#{$name} {
+    resize: $value;
+  }
+
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:resize-#{$name} {
+      resize: $value;
+    }
+  }
+}
+
+// aspect-ratio
+
+$aspect-ratios: (
+  square: 1 / 1,
+  video: 16 / 9
+);
+
+@each $name, $ratio in $aspect-ratios {
+  .aspect-#{$name} {
+    aspect-ratio: $ratio;
+  }
+
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:aspect-#{$name} {
+      aspect-ratio: $ratio;
+    }
+  }
 }
 
 // position
 
-.static {
-  position: static;
-}
+$positions: (static, fixed, absolute, relative, sticky);
 
-.fixed {
-  position: fixed;
-}
+@each $name, $_ in $positions {
+  .#{$name} {
+    position: $name;
+  }
 
-.absolute {
-  position: absolute;
-}
-
-.relative {
-  position: relative;
-}
-
-.sticky {
-  position: sticky;
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:#{$name} {
+      position: $name;
+    }
+  }
 }
 
 // object-position
 
-.object-bottom {
-  object-position: bottom;
-}
+$object-positions: (
+  bottom,
+  center,
+  left,
+  left-bottom,
+  left-top,
+  right,
+  right-bottom,
+  right-top,
+  top
+);
 
-.object-center {
-  object-position: center;
-}
+@each $position in $object-positions {
+  .object-#{$position} {
+    object-position: $position;
+  }
 
-.object-left {
-  object-position: left;
-}
-
-.object-left-bottom {
-  object-position: left bottom;
-}
-
-.object-left-top {
-  object-position: left top;
-}
-
-.object-right {
-  object-position: right;
-}
-
-.object-right-bottom {
-  object-position: right bottom;
-}
-
-.object-right-top {
-  object-position: right top;
-}
-
-.object-top {
-  object-position: top;
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:object-#{$position} {
+      object-position: $position;
+    }
+  }
 }

@@ -1,18 +1,26 @@
+@use '../variables/breakpoints' as T;
+
 $display-types: (
-  block: block,
-  inline-block: inline-block,
-  inline: inline,
-  flex: flex,
-  inline-flex: inline-flex,
-  grid: grid,
-  inline-grid: inline-grid,
-  contents: contents,
-  list-item: list-item,
-  hidden: none
+  block,
+  inline-block,
+  inline,
+  flex,
+  inline-flex,
+  grid,
+  inline-grid,
+  contents,
+  list-item,
+  none
 );
 
-@each $class, $type in $display-types {
+@each $class in $display-types {
   .#{$class} {
-    display: $type;
+    display: $class;
+  }
+
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:#{$class} {
+      display: $class;
+    }
   }
 }

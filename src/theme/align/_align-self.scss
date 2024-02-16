@@ -1,23 +1,26 @@
-.as-auto {
-  align-self: auto;
+@use '../variables/breakpoints' as T;
+
+$align-self: (
+  auto,
+  flex-start,
+  flex-end,
+  center,
+  baseline,
+  stretch
+);
+
+@each $as in $align-self {
+  .as-#{$as} {
+    align-self: $as;
+  }
 }
 
-.as-start {
-  align-self: flex-start;
-}
-
-.as-end {
-  align-self: flex-end;
-}
-
-.as-center {
-  align-self: center;
-}
-
-.as-stretch {
-  align-self: stretch;
-}
-
-.as-baseline {
-  align-self: baseline;
+@each $breakpoint, $_ in T.$breakpoints {
+  @each $as in $align-self {
+    @include T.breakpoint($breakpoint) {
+      .#{$breakpoint}:as-#{$as} {
+        align-self: $as;
+      }
+    }
+  }
 }

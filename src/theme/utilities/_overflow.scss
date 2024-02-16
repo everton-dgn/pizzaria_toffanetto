@@ -1,55 +1,35 @@
-.overflow-hidden {
-  overflow: hidden;
-}
+@use '../variables/breakpoints' as T;
 
-.overflow-clip {
-  overflow: clip;
-}
+$overflow-y-values: (visible, auto, hidden, clip, scroll);
 
-.overflow-visible {
-  overflow: visible;
-}
+@each $value in $overflow-y-values {
+  .overflow-#{$value} {
+    overflow: $value;
+  }
 
-.overflow-scroll {
-  overflow: scroll;
-}
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:overflow-#{$value} {
+      overflow: $value;
+    }
+  }
 
-.overflow-x-auto {
-  overflow-x: auto;
-}
+  .overflow-x-#{$value} {
+    overflow-x: $value;
+  }
 
-.overflow-y-auto {
-  overflow-y: auto;
-}
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:overflow-x-#{$value} {
+      overflow-x: $value;
+    }
+  }
 
-.overflow-x-hidden {
-  overflow-x: hidden;
-}
+  .overflow-y-#{$value} {
+    overflow-y: $value;
+  }
 
-.overflow-y-hidden {
-  overflow-y: hidden;
-}
-
-.overflow-x-clip {
-  overflow-x: clip;
-}
-
-.overflow-y-clip {
-  overflow-y: clip;
-}
-
-.overflow-x-visible {
-  overflow-x: visible;
-}
-
-.overflow-y-visible {
-  overflow-y: visible;
-}
-
-.overflow-x-scroll {
-  overflow-x: scroll;
-}
-
-.overflow-y-scroll {
-  overflow-y: scroll;
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:overflow-y-#{$value} {
+      overflow-y: $value;
+    }
+  }
 }

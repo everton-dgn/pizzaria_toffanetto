@@ -1,19 +1,21 @@
-.js-auto {
-  justify-self: auto;
-}
+@use '../variables/breakpoints' as T;
 
-.js-start {
-  justify-self: start;
-}
+$justify-self-values: (
+  auto: auto,
+  start: start,
+  end: end,
+  center: center,
+  stretch: stretch
+);
 
-.js-end {
-  justify-self: end;
-}
+@each $name, $value in $justify-self-values {
+  .js-#{$name} {
+    justify-self: $value;
+  }
 
-.js-center {
-  justify-self: center;
-}
-
-.js-stretch {
-  justify-self: stretch;
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:js-#{$name} {
+      justify-self: $value;
+    }
+  }
 }

@@ -1,6 +1,8 @@
+@use '../variables/breakpoints' as T;
+
 // flex-grow
 
-.grow {
+.grow-1 {
   flex-grow: 1;
 }
 
@@ -8,14 +10,38 @@
   flex-grow: 0;
 }
 
+$grow-values: (1, 0);
+
+@each $breakpoint, $_ in T.$breakpoints {
+  @each $grow in $grow-values {
+    @include T.breakpoint($breakpoint) {
+      .#{$breakpoint}:grow-#{$grow} {
+        flex-grow: $grow;
+      }
+    }
+  }
+}
+
 // flex-shrink
 
-.shrink {
+.shrink-1 {
   flex-shrink: 1;
 }
 
 .shrink-0 {
   flex-shrink: 0;
+}
+
+$shrink-values: (1, 0);
+
+@each $breakpoint, $_ in T.$breakpoints {
+  @each $shrink in $shrink-values {
+    @include T.breakpoint($breakpoint) {
+      .#{$breakpoint}:shrink-#{$shrink} {
+        flex-shrink: $shrink;
+      }
+    }
+  }
 }
 
 // flex-direction
@@ -36,6 +62,18 @@
   flex-direction: column-reverse;
 }
 
+$directions: (row, row-reverse, column, column-reverse);
+
+@each $breakpoint, $_ in T.$breakpoints {
+  @each $direction in $directions {
+    @include T.breakpoint($breakpoint) {
+      .#{$breakpoint}:flex-#{$direction} {
+        flex-direction: $direction;
+      }
+    }
+  }
+}
+
 // flex-wrap
 
 .flex-wrap {
@@ -48,4 +86,16 @@
 
 .flex-nowrap {
   flex-wrap: nowrap;
+}
+
+$wraps: (wrap, wrap-reverse, nowrap);
+
+@each $breakpoint, $_ in T.$breakpoints {
+  @each $wrap in $wraps {
+    @include T.breakpoint($breakpoint) {
+      .#{$breakpoint}:flex-#{$wrap} {
+        flex-wrap: $wrap;
+      }
+    }
+  }
 }

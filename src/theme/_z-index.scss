@@ -1,18 +1,25 @@
-@use './variables/zIndex' as T;
+@use './variables/breakpoints' as T;
+@use './variables/zIndex' as zIndex;
 
 $z-indexes: (
-  z-bottom-bar: T.$z-index-bottom-bar,
-  z-header: T.$z-index-header,
-  z-overlay: T.$z-index-overlay,
-  z-modal: T.$z-index-modal,
-  z-always-on-top: T.$z-index-always-on-top,
-  z-sidebar: T.$z-index-sidebar,
-  z-elevation: T.$z-index-elevation,
-  z-base: T.$z-index-base
+  z-bottom-bar: zIndex.$z-index-bottom-bar,
+  z-header: zIndex.$z-index-header,
+  z-overlay: zIndex.$z-index-overlay,
+  z-modal: zIndex.$z-index-modal,
+  z-always-on-top: zIndex.$z-index-always-on-top,
+  z-sidebar: zIndex.$z-index-sidebar,
+  z-elevation: zIndex.$z-index-elevation,
+  z-base: zIndex.$z-index-base
 );
 
 @each $name, $value in $z-indexes {
   .#{$name} {
     z-index: $value;
+  }
+
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:#{$name} {
+      z-index: $value;
+    }
   }
 }

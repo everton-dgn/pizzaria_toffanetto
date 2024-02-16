@@ -1,3 +1,5 @@
+@use '../variables/breakpoints' as T;
+
 @mixin line-clamp($lines) {
   overflow: hidden;
   display: -webkit-box;
@@ -9,6 +11,12 @@
   .line-clamp-#{$i} {
     @include line-clamp($i);
   }
+
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:line-clamp-#{$i} {
+      @include line-clamp($i);
+    }
+  }
 }
 
 .line-clamp-none {
@@ -16,4 +24,13 @@
   display: block;
   -webkit-box-orient: horizontal;
   -webkit-line-clamp: none;
+}
+
+@each $breakpoint, $_ in T.$breakpoints {
+  .#{$breakpoint}:line-clamp-none {
+    overflow: visible;
+    display: block;
+    -webkit-box-orient: horizontal;
+    -webkit-line-clamp: none;
+  }
 }

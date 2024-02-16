@@ -6,6 +6,12 @@ $breakpoints: (
   'xl': '1280px'
 );
 
+@mixin breakpoint($breakpoint) {
+  @media (min-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
 $tablet: 600px;
 $desktop: 1024px;
 

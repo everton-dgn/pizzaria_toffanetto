@@ -1,3 +1,5 @@
+@use '../variables/breakpoints' as T;
+
 .col-auto {
   grid-column: auto;
 }
@@ -28,4 +30,38 @@
 
 .col-end-auto {
   grid-column-end: auto;
+}
+
+@each $breakpoint, $_ in T.$breakpoints {
+  .#{$breakpoint}:col-auto {
+    grid-column: auto;
+  }
+
+  @for $i from 1 through 12 {
+    .#{$breakpoint}:col-span-#{$i} {
+      grid-column: span #{$i} / span #{$i};
+    }
+  }
+
+  .#{$breakpoint}:col-span-full {
+    grid-column: 1 / -1;
+  }
+
+  @for $i from 1 through 13 {
+    .#{$breakpoint}:col-start-#{$i} {
+      grid-column-start: #{$i};
+    }
+
+    .#{$breakpoint}:col-end-#{$i} {
+      grid-column-end: #{$i};
+    }
+  }
+
+  .#{$breakpoint}:col-start-auto {
+    grid-column-start: auto;
+  }
+
+  .#{$breakpoint}:col-end-auto {
+    grid-column-end: auto;
+  }
 }

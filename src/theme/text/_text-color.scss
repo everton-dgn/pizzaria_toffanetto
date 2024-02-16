@@ -1,19 +1,26 @@
-@use '../variables/colors' as T;
+@use '../variables/breakpoints' as T;
+@use '../variables/colors' as colors;
 
 $text-colors: (
-  primary: T.$color-primary,
-  grey: T.$color-grey,
-  grey-dark: T.$color-grey-dark,
-  dark: T.$color-dark,
-  white: T.$color-white,
-  success: T.$color-success,
-  warning: T.$color-warning,
-  info: T.$color-info,
-  error: T.$color-error
+  primary: colors.$color-primary,
+  grey: colors.$color-grey,
+  grey-dark: colors.$color-grey-dark,
+  dark: colors.$color-dark,
+  white: colors.$color-white,
+  success: colors.$color-success,
+  warning: colors.$color-warning,
+  info: colors.$color-info,
+  error: colors.$color-error
 );
 
 @each $name, $color in $text-colors {
   .text-#{$name} {
     color: $color;
+  }
+
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:text-#{$name} {
+      color: $color;
+    }
   }
 }

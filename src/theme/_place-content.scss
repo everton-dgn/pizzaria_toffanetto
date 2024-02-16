@@ -1,31 +1,24 @@
-.place-content-center {
-  place-content: center;
-}
+@use './variables/breakpoints' as T;
 
-.place-content-start {
-  place-content: start;
-}
+$place-content-values: (
+  center: center,
+  start: start,
+  end: end,
+  between: space-between,
+  around: space-around,
+  evenly: space-evenly,
+  baseline: baseline,
+  stretch: stretch
+);
 
-.place-content-end {
-  place-content: end;
-}
+@each $name, $value in $place-content-values {
+  .place-content-#{$name} {
+    place-content: $value;
+  }
 
-.place-content-between {
-  place-content: space-between;
-}
-
-.place-content-around {
-  place-content: space-around;
-}
-
-.place-content-evenly {
-  place-content: space-evenly;
-}
-
-.place-content-baseline {
-  place-content: baseline;
-}
-
-.place-content-stretch {
-  place-content: stretch;
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:place-content-#{$name} {
+      place-content: $value;
+    }
+  }
 }

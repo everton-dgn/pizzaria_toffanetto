@@ -1,35 +1,29 @@
-.ac-normal {
-  align-content: normal;
+@use '../variables/breakpoints' as T;
+
+$align-contents: (
+  normal,
+  center,
+  start,
+  end,
+  between,
+  around,
+  evenly,
+  baseline,
+  stretch
+);
+
+@each $ac in $align-contents {
+  .ac-#{$ac} {
+    align-content: $ac;
+  }
 }
 
-.ac-center {
-  align-content: center;
-}
-
-.ac-start {
-  align-content: flex-start;
-}
-
-.ac-end {
-  align-content: flex-end;
-}
-
-.ac-between {
-  align-content: space-between;
-}
-
-.ac-around {
-  align-content: space-around;
-}
-
-.ac-evenly {
-  align-content: space-evenly;
-}
-
-.ac-baseline {
-  align-content: baseline;
-}
-
-.ac-stretch {
-  align-content: stretch;
+@each $breakpoint, $_ in T.$breakpoints {
+  @each $ac in $align-contents {
+    @include T.breakpoint($breakpoint) {
+      .#{$breakpoint}:ac-#{$ac} {
+        align-content: $ac;
+      }
+    }
+  }
 }

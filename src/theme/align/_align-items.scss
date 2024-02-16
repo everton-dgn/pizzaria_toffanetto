@@ -1,19 +1,19 @@
-.ai-start {
-  align-items: flex-start;
+@use '../variables/breakpoints' as T;
+
+$align-items: (flex-start, flex-end, center, baseline, stretch);
+
+@each $ai in $align-items {
+  .ai-#{$ai} {
+    align-items: $ai;
+  }
 }
 
-.ai-end {
-  align-items: flex-end;
-}
-
-.ai-center {
-  align-items: center;
-}
-
-.ai-baseline {
-  align-items: baseline;
-}
-
-.ai-stretch {
-  align-items: stretch;
+@each $breakpoint, $_ in T.$breakpoints {
+  @each $ai in $align-items {
+    @include T.breakpoint($breakpoint) {
+      .#{$breakpoint}:ai-#{$ai} {
+        align-items: $ai;
+      }
+    }
+  }
 }

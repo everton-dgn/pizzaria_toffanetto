@@ -1,23 +1,22 @@
-.leading-none {
-  line-height: 1;
-}
+@use '../variables/breakpoints' as T;
 
-.leading-tight {
-  line-height: 1.25;
-}
+$line-height-values: (
+  none: 1,
+  tight: 1.25,
+  snug: 1.375,
+  normal: 1.5,
+  relaxed: 1.625,
+  loose: 2
+);
 
-.leading-snug {
-  line-height: 1.375;
-}
+@each $name, $value in $line-height-values {
+  .leading-#{$name} {
+    line-height: $value;
+  }
 
-.leading-normal {
-  line-height: 1.5;
-}
-
-.leading-relaxed {
-  line-height: 1.625;
-}
-
-.leading-loose {
-  line-height: 2;
+  @each $breakpoint, $_ in T.$breakpoints {
+    .#{$breakpoint}:leading-#{$name} {
+      line-height: $value;
+    }
+  }
 }

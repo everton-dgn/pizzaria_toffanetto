@@ -1,3 +1,5 @@
+@use '../variables/breakpoints' as T;
+
 .flex-1 {
   flex: 1 1 0;
 }
@@ -12,4 +14,22 @@
 
 .flex-none {
   flex: none;
+}
+
+@each $breakpoint, $_ in T.$breakpoints {
+  .#{$breakpoint}:flex-1 {
+    flex: 1 1 0;
+  }
+
+  .#{$breakpoint}:flex-auto {
+    flex: 1 1 auto;
+  }
+
+  .#{$breakpoint}:flex-initial {
+    flex: 0 1 auto;
+  }
+
+  .#{$breakpoint}:flex-none {
+    flex: none;
+  }
 }
