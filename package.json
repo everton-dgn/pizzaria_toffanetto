@@ -52,6 +52,7 @@
   "devDependencies": {
     "@commitlint/cli": "^18.4.4",
     "@commitlint/config-conventional": "^18.4.4",
+    "@fullhuman/postcss-purgecss": "^5.0.0",
     "@playwright/test": "^1.41.0",
     "@testing-library/dom": "^9.3.4",
     "@testing-library/jest-dom": "^6.2.0",
@@ -89,6 +90,9 @@
     "jsdom-global": "^3.0.2",
     "lint-staged": "^15.2.0",
     "plop": "^4.0.1",
+    "postcss": "^8.4.35",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^9.3.0",
     "prettier": "^3.2.4",
     "sass": "^1.70.0",
     "sharp": "^0.33.2",
