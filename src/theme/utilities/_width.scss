@@ -1,5 +1,29 @@
-.w-0 {
-  width: 0;
+@use '../variables/spacings' as T;
+
+$widths: (
+  96: T.$spacing-96,
+  60: T.$spacing-60,
+  48: T.$spacing-48,
+  40: T.$spacing-40,
+  36: T.$spacing-36,
+  32: T.$spacing-32,
+  28: T.$spacing-28,
+  24: T.$spacing-24,
+  20: T.$spacing-20,
+  16: T.$spacing-16,
+  12: T.$spacing-12,
+  8: T.$spacing-8,
+  6: T.$spacing-6,
+  4: T.$spacing-4,
+  2: T.$spacing-2,
+  1: T.$spacing-1,
+  0: T.$spacing-0
+);
+
+@each $name, $value in $widths {
+  .w-#{$name} {
+    width: $value;
+  }
 }
 
 .w-100 {
