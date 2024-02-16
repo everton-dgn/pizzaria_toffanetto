@@ -2,7 +2,13 @@ import { clsx } from 'clsx'
 
 import S from './styles.module.scss'
 
-import type { SkeletonProps } from './types'
+import type { SkeletonProps, VariantsType } from './types'
+
+const variants: Record<VariantsType, string> = {
+  text: 'rounded-4 h-16',
+  circle: 'rounded-circle aspect-square',
+  square: 'aspect-square'
+}
 
 export const Skeleton = ({
   variant,
@@ -12,25 +18,25 @@ export const Skeleton = ({
   count = 1,
   className
 }: SkeletonProps) => {
+  const defaultStyles = {
+    aspectRatio: aspectRatio ?? 'auto',
+    width: width ?? '100%',
+    height: height ?? '100%'
+  }
+  const variantsStyles = {
+    ...(aspectRatio && { aspectRatio }),
+    ...(width && { width }),
+    ...(height && { height })
+  }
+  const styles = variant ? variantsStyles : defaultStyles
+
   return (
     <>
       {Array.from({ length: count }, (_, i) => (
         <div
           key={i}
-          className={clsx(
-            S.container,
-            variant === 'text' && 'rounded-4 h-16',
-            variant === 'circle' && 'rounded-circle aspect-square',
-            variant === 'square' && 'aspect-square',
-            className
-          )}
-          style={{
-            height: height || '100%',
-            width: width || '100%',
-            ...(variant === 'text'
-              ? {}
-              : { aspectRatio: aspectRatio || 'auto' })
-          }}
+          className={clsx(S.container, variant && variants[variant], className)}
+          style={styles}
         />
       ))}
     </>

@@ -1,5 +1,7 @@
+export type VariantsType = 'square' | 'circle' | 'text'
+
 export interface SkeletonProps {
-  variant?: 'square' | 'circle' | 'text'
+  variant?: VariantsType
   className?: string
   height?: string
   width?: string
