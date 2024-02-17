@@ -8,6 +8,7 @@ import { BottomBar, Footer, TopBar } from 'components/organisms'
 import { MainProvider } from 'providers/mainProvider'
 
 import 'theme/main.scss'
+import 'theme/globals.css'
 import { ROOT_METADATA } from 'constants/rootMetadata'
 import { VIEWPORT } from 'constants/viewport'
 
