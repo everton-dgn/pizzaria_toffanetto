@@ -14,10 +14,18 @@ import {
 } from './src/theme'
 import {
   alignContent,
-  alignItems, alignSelf,
+  alignItems,
+  alignSelf,
+  col,
+  colFull,
+  containerCol,
+  containerRow,
+  flexCenter,
   justifyContent,
   justifyItems,
-  justifySelf
+  justifySelf,
+  row,
+  rowFull
 } from './src/theme/plugins'
 
 const config: Config = {
@@ -52,7 +60,14 @@ const config: Config = {
     justifySelf,
     alignContent,
     alignItems,
-    alignSelf
+    alignSelf,
+    flexCenter,
+    col,
+    row,
+    colFull,
+    rowFull,
+    containerCol,
+    containerRow
   ]
 }
 

@@ -1,5 +1,5 @@
 export const justifyContent = ({ addUtilities }: any) => {
-  const newJustifyContentUtilities = {
+  const newUtilities = {
     '.jc-normal': { justifyContent: 'normal' },
     '.jc-start': { justifyContent: 'flex-start' },
     '.jc-end': { justifyContent: 'flex-end' },
@@ -9,5 +9,5 @@ export const justifyContent = ({ addUtilities }: any) => {
     '.jc-evenly': { justifyContent: 'space-evenly' },
     '.jc-stretch': { justifyContent: 'stretch' }
   }
-  addUtilities(newJustifyContentUtilities, ['responsive'])
+  addUtilities(newUtilities, ['responsive'])
 }
