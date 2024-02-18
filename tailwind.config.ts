@@ -12,7 +12,7 @@ import {
   boxShadow,
   borderRadius,
   screens
-} from './src/theme'
+} from './src/theme/variables'
 import { utilities } from './src/theme/utilities'
 import { components } from './src/theme/components'
 

@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 
-import quicksand from 'theme/fontFamily'
+import quicksand from 'theme/variables/fontFamily'
 
 import { CookieWarning, PopupInstallPwa, Toast } from 'components/molecules'
 import { BottomBar, Footer, TopBar } from 'components/organisms'

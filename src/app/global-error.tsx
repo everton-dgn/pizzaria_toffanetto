@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
-import quicksand from 'theme/fontFamily'
+import quicksand from 'theme/variables/fontFamily'
 
 import 'theme/globals.css'
 import S from './styles.module.scss'
