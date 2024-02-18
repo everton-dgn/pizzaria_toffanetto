@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss'
 
-import defaultTheme from 'tailwindcss/defaultTheme'
+import containerQueries from '@tailwindcss/container-queries'
 
 import {
   colors,
