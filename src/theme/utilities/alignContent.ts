@@ -1,5 +1,7 @@
-export const alignContent = ({ addUtilities }: any) => {
-  const newUtilities = {
+import plugin from 'tailwindcss/plugin'
+
+export const alignContent = plugin(({ addUtilities }) => {
+  addUtilities({
     '.ac-normal': {
       alignContent: 'normal'
     },
@@ -27,6 +29,5 @@ export const alignContent = ({ addUtilities }: any) => {
     '.ac-stretch': {
       alignContent: 'stretch'
     }
-  }
-  addUtilities(newUtilities, ['responsive'])
-}
+  })
+})

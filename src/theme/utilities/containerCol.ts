@@ -1,5 +1,7 @@
-export const containerCol = ({ addUtilities }: any) => {
-  const newUtilities = {
+import plugin from 'tailwindcss/plugin'
+
+export const containerCol = plugin(({ addUtilities }) => {
+  addUtilities({
     '.container-col': {
       display: 'flex',
       flexDirection: 'column',
@@ -8,6 +10,5 @@ export const containerCol = ({ addUtilities }: any) => {
         width: `min(100% - 48px, 1500px - 48px)`
       }
     }
-  }
-  addUtilities(newUtilities, ['responsive'])
-}
+  })
+})

@@ -1,5 +1,7 @@
-export const justifyContent = ({ addUtilities }: any) => {
-  const newUtilities = {
+import plugin from 'tailwindcss/plugin'
+
+export const justifyContent = plugin(({ addUtilities }) => {
+  addUtilities({
     '.jc-normal': { justifyContent: 'normal' },
     '.jc-start': { justifyContent: 'flex-start' },
     '.jc-end': { justifyContent: 'flex-end' },
@@ -8,6 +10,5 @@ export const justifyContent = ({ addUtilities }: any) => {
     '.jc-around': { justifyContent: 'space-around' },
     '.jc-evenly': { justifyContent: 'space-evenly' },
     '.jc-stretch': { justifyContent: 'stretch' }
-  }
-  addUtilities(newUtilities, ['responsive'])
-}
+  })
+})

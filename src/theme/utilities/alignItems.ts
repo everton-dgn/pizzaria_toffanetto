@@ -1,5 +1,7 @@
-export const alignItems = ({ addUtilities }: any) => {
-  const newUtilities = {
+import plugin from 'tailwindcss/plugin'
+
+export const alignItems = plugin(({ addUtilities }) => {
+  addUtilities({
     '.ai-flex-start': {
       alignItems: 'flex-start'
     },
@@ -15,6 +17,5 @@ export const alignItems = ({ addUtilities }: any) => {
     '.ai-stretch': {
       alignItems: 'stretch'
     }
-  }
-  addUtilities(newUtilities, ['responsive'])
-}
+  })
+})

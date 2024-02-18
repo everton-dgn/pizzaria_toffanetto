@@ -41,7 +41,8 @@
     "jest",
     "jsx-a11y",
     "import",
-    "eslint-plugin-import-helpers"
+    "eslint-plugin-import-helpers",
+    "tailwindcss"
   ],
   "extends": [
     "standard-with-typescript",
@@ -57,6 +58,7 @@
     "plugin:sonarjs/recommended",
     "prettier",
     "plugin:prettier/recommended",
+    "plugin:tailwindcss/recommended",
     "plugin:jest-dom/recommended",
     "plugin:testing-library/react",
     "plugin:jest/style",
@@ -82,6 +84,7 @@
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
     ],
+    "tailwindcss/no-custom-classname": "off",
     "@typescript-eslint/no-floating-promises": "off",
     "@typescript-eslint/no-misused-promises": "off",
     "jsx-a11y/label-has-associated-control": "off",

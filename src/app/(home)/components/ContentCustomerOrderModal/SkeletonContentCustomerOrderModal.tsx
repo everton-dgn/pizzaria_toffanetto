@@ -3,7 +3,7 @@ import { Skeleton } from 'components/atoms'
 const SkeletonSection = () => (
   <>
     <Skeleton height="70px" />
-    <div className="col-full gap-16 px-24 pt-24 pb-24">
+    <div className="gap-16 p-24 col-full">
       <Skeleton variant="text" count={4} />
     </div>
   </>
@@ -11,10 +11,10 @@ const SkeletonSection = () => (
 
 export const SkeletonContentCustomerOrderModal = () => (
   <div className="col-full">
-    <Skeleton className="mb-12 h-auto" aspectRatio="600/317" />
-    <div className="col-full gap-8 px-24 pb-24">
+    <Skeleton className="h-auto mb-12" aspectRatio="600/317" />
+    <div className="gap-8 px-24 pb-24 col-full">
       <Skeleton variant="text" className="my-12" width="174px" height="24px" />
-      <div className="col-full gap-8 h-100">
+      <div className="h-100 gap-8 col-full">
         <Skeleton variant="text" count={2} />
         <Skeleton variant="text" width="100px" />
       </div>

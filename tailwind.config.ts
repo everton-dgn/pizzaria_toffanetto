@@ -1,3 +1,4 @@
+import defaultTheme from 'tailwindcss/defaultTheme'
 import type { Config } from 'tailwindcss'
 
 import containerQueries from '@tailwindcss/container-queries'
@@ -12,23 +13,10 @@ import {
   borderRadius,
   screens
 } from './src/theme'
-import {
-  alignContent,
-  alignItems,
-  alignSelf,
-  col,
-  colFull,
-  containerCol,
-  containerRow,
-  flexCenter,
-  justifyContent,
-  justifyItems,
-  justifySelf,
-  row,
-  rowFull
-} from './src/theme/plugins'
+import { utilities } from './src/theme/utilities'
+import { components } from './src/theme/components'
 
-const config: Config = {
+export default {
   content: [
     './src/app/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}'
@@ -54,21 +42,5 @@ const config: Config = {
     },
     extend: {}
   },
-  plugins: [
-    justifyContent,
-    justifyItems,
-    justifySelf,
-    alignContent,
-    alignItems,
-    alignSelf,
-    flexCenter,
-    col,
-    row,
-    colFull,
-    rowFull,
-    containerCol,
-    containerRow
-  ]
-}
-
-export default config
+  plugins: [containerQueries, ...components, ...utilities]
+} satisfies Config

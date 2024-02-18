@@ -1,5 +1,7 @@
-export const containerRow = ({ addUtilities }: any) => {
-  const newUtilities = {
+import plugin from 'tailwindcss/plugin'
+
+export const containerRow = plugin(({ addUtilities }) => {
+  addUtilities({
     '.container-row': {
       display: 'flex',
       flexFlow: 'row wrap',
@@ -8,6 +10,5 @@ export const containerRow = ({ addUtilities }: any) => {
         width: `min(100% - 48px, 1500px - 48px)`
       }
     }
-  }
-  addUtilities(newUtilities, ['responsive'])
-}
+  })
+})

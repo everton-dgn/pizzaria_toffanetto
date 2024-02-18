@@ -1,5 +1,7 @@
-export const alignSelf = ({ addUtilities }: any) => {
-  const newUtilities = {
+import plugin from 'tailwindcss/plugin'
+
+export const alignSelf = plugin(({ addUtilities }) => {
+  addUtilities({
     '.as-auto': {
       alignSelf: 'auto'
     },
@@ -18,6 +20,5 @@ export const alignSelf = ({ addUtilities }: any) => {
     '.as-stretch': {
       alignSelf: 'stretch'
     }
-  }
-  addUtilities(newUtilities, ['responsive'])
-}
+  })
+})

@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation'
 
 import quicksand from 'theme/fontFamily'
 
-import 'theme/main.scss'
 import 'theme/globals.css'
 import S from './styles.module.scss'
 
