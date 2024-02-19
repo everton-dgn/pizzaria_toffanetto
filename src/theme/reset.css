@@ -4,7 +4,6 @@
     line-height: calc(1em + 0.5rem);
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important;
-
     @apply m-0 box-border list-none p-0 font-sans no-underline antialiased;
   }
 
@@ -73,7 +72,7 @@
   }
 
   :focus:not(:focus-visible) {
-    @apply shadow-none outline-none;
+    @apply outline-0;
   }
 
   mark {
