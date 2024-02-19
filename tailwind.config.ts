@@ -24,7 +24,7 @@ export default {
   theme: {
     screens,
     spacing: { ...defaultTheme.spacing, ...spacing },
-    colors: { ...defaultTheme.colors, ...colors },
+    colors,
     borderRadius: { ...defaultTheme.borderRadius, ...borderRadius },
     zIndex: { ...defaultTheme.zIndex, ...zIndex },
     fontWeight: { ...defaultTheme.fontWeight, ...fontWeight },

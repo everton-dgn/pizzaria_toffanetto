@@ -2,10 +2,10 @@ import plugin from 'tailwindcss/plugin'
 
 export const alignItems = plugin(({ addUtilities }) => {
   addUtilities({
-    '.ai-flex-start': {
+    '.ai-start': {
       alignItems: 'flex-start'
     },
-    '.ai-flex-end': {
+    '.ai-end': {
       alignItems: 'flex-end'
     },
     '.ai-center': {

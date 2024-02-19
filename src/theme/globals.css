@@ -1,4 +1,6 @@
 @import 'reset.css';
+@import './components/underlined-title.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

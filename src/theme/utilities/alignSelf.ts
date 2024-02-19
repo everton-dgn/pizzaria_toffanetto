@@ -5,10 +5,10 @@ export const alignSelf = plugin(({ addUtilities }) => {
     '.as-auto': {
       alignSelf: 'auto'
     },
-    '.as-flex-start': {
+    '.as-start': {
       alignSelf: 'flex-start'
     },
-    '.as-flex-end': {
+    '.as-end': {
       alignSelf: 'flex-end'
     },
     '.as-center': {

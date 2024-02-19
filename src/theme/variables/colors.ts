@@ -11,6 +11,7 @@ export const colors = {
   'light-blue-hint': 'rgba(249, 249, 255, 1)',
   'soft-white-blue': 'rgba(245, 245, 255, 1)',
 
+  white: 'rgb(255, 255, 255, 1)',
   green: 'rgba(43, 201, 144, 1)',
   cherry: 'rgba(226, 38, 77, 1)',
 
