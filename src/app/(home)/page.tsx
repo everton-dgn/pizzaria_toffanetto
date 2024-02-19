@@ -3,8 +3,6 @@ import { Suspense } from 'react'
 
 import { Banner } from 'components/organisms'
 
-import S from './styles.module.scss'
-
 import ContainerCustomerOrderModal from './components/ContainerCustomerOrderModal'
 
 const ProductListingSection = dynamic(
@@ -14,7 +12,7 @@ const ProductListingSection = dynamic(
 const Home = () => (
   <>
     <Banner />
-    <main className={S.container}>
+    <main className="mx-auto my-48 gap-48 container-col">
       <Suspense>
         <ProductListingSection />
       </Suspense>

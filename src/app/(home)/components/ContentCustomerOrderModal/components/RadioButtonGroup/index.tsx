@@ -4,8 +4,6 @@ import { LabeledRadioButton } from 'components/atoms'
 
 import { converterNumberToCurrency } from 'data/formatters'
 
-import S from './styles.module.scss'
-
 import type { RadioButtonGroupProps } from './types'
 
 export const RadioButtonGroup = ({
@@ -23,7 +21,7 @@ export const RadioButtonGroup = ({
       })
       return (
         <Fragment key={option.id}>
-          <div className={S.container}>
+          <div className="ai-start flex-nowrap gap-16 jc-between row">
             <LabeledRadioButton
               label={option.name}
               name={optionNameId}
@@ -31,7 +29,9 @@ export const RadioButtonGroup = ({
               onChange={() => setSelectedRadioButtonGroupValue(option)}
               value={option.id}
             />
-            <p className={S.price}>{formattedPrice}</p>
+            <p className="whitespace-nowrap text-14 font-600 text-dark">
+              {formattedPrice}
+            </p>
           </div>
           {!lastItem && <hr className="separator-x" />}
         </Fragment>

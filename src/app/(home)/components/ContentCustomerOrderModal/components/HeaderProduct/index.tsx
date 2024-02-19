@@ -2,8 +2,6 @@ import Image from 'next/image'
 
 import { FavoriteButton } from 'components/atoms'
 
-import S from './styles.module.scss'
-
 import type { HeaderProductProps } from './types'
 
 export const HeaderProduct = ({
@@ -13,21 +11,21 @@ export const HeaderProduct = ({
 }: HeaderProductProps) => (
   <>
     {!!img && (
-      <div className={S.wrapper_thumbnail}>
-        <FavoriteButton className={S.icon_button_favorite} />
+      <div className="relative mb-12 aspect-600/317 overflow-hidden">
+        <FavoriteButton className="absolute right-8 top-8 z-base" />
         <Image
           src={img}
           alt={product}
-          className={S.thumbnail}
+          className="object-cover"
           sizes="600px"
           fill
           priority
         />
       </div>
     )}
-    <section className={S.wrapper_info}>
-      <h2 className={S.product_title}>{product}</h2>
-      <p className={S.product_description}>{description}</p>
+    <section className="gap-16 px-16 py-8 col sm:px-24 sm:py-12">
+      <h2 className="underlined-title">{product}</h2>
+      <p className="pb-12 text-16 font-500 text-grey-dark">{description}</p>
     </section>
   </>
 )

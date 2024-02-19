@@ -7,8 +7,6 @@ import { QuantityCounterButton } from 'components/molecules'
 import { converterNumberToCurrency } from 'data/formatters'
 import { useCustomerOrder } from 'infra/store/customerOrder'
 
-import S from './styles.module.scss'
-
 import type { FlavorQuantitySelectorGroupProps, OnIncreaseProps } from './types'
 
 export const FlavorQuantitySelectorGroup = ({
@@ -65,12 +63,14 @@ export const FlavorQuantitySelectorGroup = ({
         })
         return (
           <Fragment key={option.id}>
-            <div className={S.container}>
-              <div className={S.flavor}>
-                <h4 className={S.flavor_title}>{option.name}</h4>
-                <p className={S.flavor_description}>{option.description}</p>
+            <div className="ai-start flex-nowrap gap-16 jc-between row-full">
+              <div className="col-full">
+                <h4 className="text-14 font-700 uppercase text-primary">
+                  {option.name}
+                </h4>
+                <p className="text-14">{option.description}</p>
               </div>
-              <div className={S.wrapper_quantity_price}>
+              <div className="ai-end gap-8 jc-end col">
                 <QuantityCounterButton
                   quantity={calcQuantityById(option.id)}
                   onDecrease={() => onDecrease(option.id)}
@@ -79,7 +79,9 @@ export const FlavorQuantitySelectorGroup = ({
                   }
                   isContractible
                 />
-                <p className={S.price}>{formattedPrice}</p>
+                <p className="whitespace-nowrap pr-3 text-14 font-600 text-dark">
+                  {formattedPrice}
+                </p>
               </div>
             </div>
             {!lastItem && <hr className="separator-x" />}

@@ -6,8 +6,6 @@ import { Textarea } from 'components/molecules'
 
 import { useCustomerOrder } from 'infra/store/customerOrder'
 
-import S from './styles.module.scss'
-
 import {
   FlavorQuantitySelectorGroup,
   HeaderProduct,
@@ -22,7 +20,7 @@ const ContentCustomerOrderModal = ({
   const { stateCustomerOrder } = useCustomerOrder()
 
   return (
-    <div className={S.container}>
+    <div className="h-full col-full">
       {!!product && (
         <HeaderProduct
           img={product.img}

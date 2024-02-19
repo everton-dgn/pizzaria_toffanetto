@@ -5,8 +5,6 @@ import { CardProduct } from 'components/molecules'
 
 import { availableProductsFindAll } from 'infra/services/availableProducts'
 
-import S from './styles.module.scss'
-
 const ProductListingSection = async () => {
   const { data: availableProducts } = await availableProductsFindAll()
 
@@ -15,9 +13,9 @@ const ProductListingSection = async () => {
   return (
     <>
       {availableProducts?.map(({ id, category, items }) => (
-        <section key={id} className={S.section}>
-          <h2 className={S.title}>{category}</h2>
-          <div className={S.products}>
+        <section key={id} className="gap-20 col-full sm:gap-32">
+          <h2 className="underlined-title md:text-32 sm:text-28">{category}</h2>
+          <div className="w-full grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-20 sm:grid-cols-[repeat(auto-fill,minmax(210px,1fr))] sm:gap-24 lg:grid-cols-[repeat(auto-fill,minmax(240px,1fr))]">
             {items.map(item => (
               <CardProduct key={item.id} category={category} {...item} />
             ))}
