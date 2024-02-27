@@ -11,11 +11,11 @@ export const SectionProduct = ({
 }: SectionProductProps) => {
   const required = isRequired ? 'Obrigatório' : 'Opcional'
   const completed = isDone ? 'Concluído' : required
-  const colorCompleted = isDone ? 'green' : 'gray'
+  const colorCompleted = isDone ? 'green' : 'grey'
 
   return (
     <section className="col-full">
-      <div className="ai-start border-white sticky top-0 z-base gap-4 border-y bg-soft-white-blue px-16 py-8 col-full sm:px-24 sm:py-12">
+      <div className="sticky top-0 z-base gap-4 border-y border-white bg-soft-white-blue px-16 py-8 ai-start col-full sm:px-24 sm:py-12">
         <div className="flex-nowrap gap-16 jc-between ai-center row-full">
           <h3 className="text-16 font-700 uppercase text-primary sm:text-18">
             {title}
