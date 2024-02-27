@@ -9,6 +9,7 @@ import { flexCenter } from './flexCenter'
 import { justifyContent } from './justifyContent'
 import { justifyItems } from './justifyItems'
 import { justifySelf } from './justifySelf'
+import { pseudo } from './pseudo'
 import { row } from './row'
 import { rowFull } from './rowFull'
 
@@ -25,5 +26,6 @@ export const utilities = [
   colFull,
   rowFull,
   containerCol,
-  containerRow
+  containerRow,
+  pseudo
 ]

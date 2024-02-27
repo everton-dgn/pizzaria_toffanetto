@@ -26,6 +26,7 @@ export default {
     spacing: { ...defaultTheme.spacing, ...spacing },
     colors,
     borderRadius: { ...defaultTheme.borderRadius, ...borderRadius },
+    borderWidth: { ...defaultTheme.borderWidth, ...spacing },
     zIndex: { ...defaultTheme.zIndex, ...zIndex },
     fontWeight: { ...defaultTheme.fontWeight, ...fontWeight },
     boxShadow: { ...defaultTheme.boxShadow, ...boxShadow },

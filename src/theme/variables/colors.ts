@@ -1,29 +1,30 @@
 export const colors = {
-  primary: 'rgba(110, 17, 17, 1)',
-  'primary-dark-translucent': 'rgba(142, 64, 64, 0.29)',
-  secondary: 'rgba(52, 211, 126, 1)',
+  primary: 'var(--color-primary)',
+  'primary-dark-translucent': 'var(--color-primary-dark-translucent)',
+  secondary: 'var(--color-secondary)',
 
-  dark: 'rgba(14, 12, 27, 1)',
-  'dark-translucency': 'rgba(160, 166, 198, 0.28)',
+  dark: 'var(--color-dark)',
+  'dark-translucency': 'var(--color-dark-translucency)',
 
-  'ultra-light': 'rgba(249, 249, 255, 1)',
-  'neutral-light-lavender': 'rgba(224, 224, 239, 1)',
-  'light-blue-hint': 'rgba(249, 249, 255, 1)',
-  'soft-white-blue': 'rgba(245, 245, 255, 1)',
+  'ultra-light': 'var(--color-ultra-light)',
+  'neutral-light-lavender': 'var(--color-neutral-light-lavender)',
+  'light-blue-hint': 'var(--color-light-blue-hint)',
+  'soft-white-blue': 'var(--color-soft-white-blue)',
 
-  white: 'rgb(255, 255, 255, 1)',
-  green: 'rgba(43, 201, 144, 1)',
-  cherry: 'rgba(226, 38, 77, 1)',
+  white: 'var(--color-white)',
+  green: 'var(--color-green)',
+  cherry: 'var(--color-cherry)',
 
-  'grey-dark': 'rgba(55, 65, 81, 1)',
-  grey: 'rgba(93, 107, 129, 1)',
-  'grey-light': 'rgba(160, 166, 198, 1)',
-  'grey-ultra-light': 'rgba(231, 231, 246, 1)',
+  'grey-dark': 'var(--color-grey-dark)',
+  grey: 'var(--color-grey)',
+  'grey-light': 'var(--color-grey-light)',
+  'grey-ultra-light': 'var(--color-grey-ultra-light)',
 
-  error: 'rgba(233, 45, 45, 1)',
-  success: 'rgba(13, 168, 119, 1)',
-  warning: 'rgba(255, 122, 0, 1)',
-  info: 'rgba(0, 132, 255, 1)',
+  error: 'var(--color-error)',
+  success: 'var(--color-success)',
+  warning: 'var(--color-warning)',
+  info: 'var(--color-info)',
 
-  focus: 'rgba(0, 125, 250, 0.6)'
+  focus: 'var(--color-focus)',
+  transparent: 'var(--color-transparent)'
 }
