@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 import { clsx } from 'clsx'
 
-import S from './styles.module.scss'
+import S from './styles.module.css'
 
 import type { FavoriteButtonProps } from './types'
 
@@ -15,13 +15,16 @@ export const FavoriteButton = ({ className }: FavoriteButtonProps) => {
     <button
       aria-label="Adicionar item aos favoritos"
       title="Adicionar item aos favoritos"
-      className={clsx(S.button, className)}
+      className={clsx('flex size-32 rounded-circle bg-white center', className)}
       onClick={() => setIsChecked(prev => !prev)}
     >
       <svg
         viewBox="467 392 58 57"
         xmlns="http://www.w3.org/2000/svg"
-        className={clsx(isChecked && S.checked)}
+        className={clsx(
+          'size-28 cursor-pointer overflow-visible',
+          isChecked && S.checked
+        )}
       >
         <g fill="none" fillRule="evenodd" transform="translate(467 392)">
           <path

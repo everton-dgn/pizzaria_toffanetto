@@ -1,7 +1,5 @@
 import { converterNumberToCurrency } from 'data/formatters'
 
-import S from './styles.module.scss'
-
 import type { CartButtonProps } from './types'
 
 const getCartImageUrlByItemCount = (amount: number) => {
@@ -19,12 +17,15 @@ export const CartButton = ({ label }: CartButtonProps) => {
   })
 
   return (
-    <button className={S.button} aria-label="Abrir carrinho de compras">
+    <button
+      className="flex max-w-fit gap-8 rounded-60 bg-secondary px-12 py-6 text-14 font-600 transition-all duration-150 ease-linear center hover:bg-green"
+      aria-label="Abrir carrinho de compras"
+    >
       <img
         src={getCartImageUrlByItemCount(0)}
         alt="Carrinho de compras"
         fetchPriority="high"
-        className={S.image}
+        className="flex h-[21px] min-h-[21px] w-[31px] min-w-[31px]"
         width="144px"
         height="100px"
       />

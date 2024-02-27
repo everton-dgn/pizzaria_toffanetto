@@ -3,9 +3,16 @@
 import { clsx } from 'clsx'
 import { GoSync as IconSync } from 'react-icons/go'
 
-import S from './styles.module.scss'
-
 import type { ButtonProps } from './types'
+
+const btn =
+  'flex items-center justify-center rounded-8 bg-secondary font-700 shadow-[0_4px_16px_#aeaebed4] transition-all duration-150  ease-linear hover:translate-y-[-1.5px] hover:shadow-[0_5px_18px_#aeaebed4] active:translate-y-[1.5px] active:shadow-[0_1px_3px_#aeaebed4] disabled:cursor-not-allowed disabled:bg-secondary disabled:shadow-[0_4px_16px_#aeaebed4]'
+
+const btnSize = {
+  small: 'py-4 px-12 gap-4 text-12',
+  medium: 'py-12 px-28 gap-12 text-14',
+  large: 'py-16 px-40 gap-12 text-16'
+}
 
 export const Button = ({
   label,
@@ -21,9 +28,9 @@ export const Button = ({
 }: ButtonProps) => (
   <button
     className={clsx(
-      S.button,
-      isFullWidth && S.full_width,
-      S[`button_size--${size}`],
+      btn,
+      isFullWidth ? 'w-full' : 'max-w-fit',
+      btnSize[size],
       className
     )}
     aria-label={ariaLabel || label}

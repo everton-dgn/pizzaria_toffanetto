@@ -1,16 +1,22 @@
 import Link from 'next/link'
 
-import S from './styles.module.scss'
+import { clsx } from 'clsx'
+
+import S from './styles.module.css'
 
 export const Logo = () => (
-  <Link href="/" title="Ir para a Página Inicial" className={S.link_logo}>
+  <Link
+    href="/"
+    title="Ir para a Página Inicial"
+    className="h-36 w-[77px] sm:h-[30px] sm:w-[203px]"
+  >
     <picture>
       <source
         media="(min-width: 600px)"
         srcSet="/img/logos/logo-horizontal.png"
       />
       <img
-        className={S.logo}
+        className={clsx(S.logo, 'w-full h-full opacity-0')}
         src="/img/logos/logo-vertical-pequeno.webp"
         alt="Logo - Pizzaria Toffanetto"
         width="216"

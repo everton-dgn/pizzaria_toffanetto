@@ -1,4 +1,6 @@
+export type Colors = 'green' | 'grey' | 'red'
+
 export type BadgeProps = {
   label: string
-  color?: 'green' | 'gray' | 'red'
+  color?: Colors
 }

@@ -4,9 +4,14 @@ import { forwardRef } from 'react'
 
 import { clsx } from 'clsx'
 
-import S from './styles.module.scss'
+import S from './styles.module.css'
 
 import type { IconButtonProps } from './types'
+
+const btnSize = {
+  small: 'p-8',
+  medium: 'p-12'
+}
 
 export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
   (
@@ -27,11 +32,11 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
       ref={ref}
       className={clsx(
         S.button,
-        S[`button_size--${size}`],
+        btnSize[size],
         isTransparent && S.transparent,
-        isCircle && S.circle,
         isDisableBoxShadow && S.box_shadow,
         isDisableTransform && S.transform,
+        isCircle ? 'rounded-circle' : 'rounded-8',
         className
       )}
       aria-label={ariaLabel}

@@ -1,7 +1,5 @@
 import { normalizeString } from 'data/formatters'
 
-import S from './styles.module.scss'
-
 import type { AvatarProps } from './types'
 
 const getFirstAndLastInitialsUpperCase = (name: string) => {
@@ -23,14 +21,19 @@ const Content = ({ imageUrl, name }: AvatarProps) =>
       alt={`Foto de ${name}`}
       title={`Foto de ${name}`}
       fetchPriority="high"
-      className={S.image}
+      className="h-full w-full object-cover"
     />
   ) : (
-    <p className={S.text}>{getFirstAndLastInitialsUpperCase(name)}</p>
+    <p className="text-14 font-700 text-dark">
+      {getFirstAndLastInitialsUpperCase(name)}
+    </p>
   )
 
 export const Avatar = ({ name, imageUrl }: AvatarProps) => (
-  <div className={S.container} role="figure">
+  <div
+    className="relative flex size-32 overflow-hidden rounded-circle border-[1.5px] border-secondary bg-soft-white-blue center"
+    role="figure"
+  >
     <Content name={name} imageUrl={imageUrl} />
   </div>
 )

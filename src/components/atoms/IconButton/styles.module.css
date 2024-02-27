@@ -1,13 +1,10 @@
-@use 'src/theme' as T;
-
 .button {
   display: flex;
   justify-content: center;
   align-items: center;
   width: fit-content;
   height: fit-content;
-  background-color: T.$color-secondary;
-  border-radius: T.$border-radius-8;
+  background-color: rgba(52, 211, 126, 1);
   transition: all 0.15s linear;
 
   &:not(:active) {
@@ -27,18 +24,8 @@
 
   &:disabled {
     cursor: not-allowed;
-    background-color: T.$color-secondary;
+    background-color: rgba(52, 211, 126, 1);
     box-shadow: 0 4px 16px #aeaebed4;
-  }
-}
-
-.button_size {
-  &--small {
-    padding: T.$spacing-8;
-  }
-
-  &--medium {
-    padding: T.$spacing-12;
   }
 }
 
@@ -62,10 +49,6 @@
   }
 }
 
-.circle {
-  border-radius: 50%;
-}
-
 .box_shadow {
   box-shadow: none !important;
 
@@ -75,7 +58,7 @@
 
   &:hover:not(:disabled) {
     box-shadow: none !important;
-    background-color: T.$color-light-blue-hint !important;
+    background-color: rgba(249, 249, 255, 1) !important;
   }
 
   &:active:not(:disabled) {

@@ -8,7 +8,7 @@ import {
   MdDone as IconSuccess
 } from 'react-icons/md'
 
-import S from './styles.module.scss'
+import S from './styles.module.css'
 
 import type { InfoMessageProps, TypeMessage } from './types'
 
@@ -25,10 +25,10 @@ export const InfoMessage = ({
   message
 }: InfoMessageProps) => (
   <div
-    className={clsx(S.container, S[`variant--${type}`], S[`size--${size}`])}
+    className={clsx('flex gap-4 bg-none ai-center', S.container, type, size)}
     role="alert"
   >
     {icons[type]}
-    <span className={S.message}>{message}</span>
+    <span className="font-600">{message}</span>
   </div>
 )
