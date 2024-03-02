@@ -12,7 +12,7 @@ const ProductListingSection = dynamic(
 const Home = () => (
   <>
     <Banner />
-    <main className="mx-auto my-48 gap-48 container-col">
+    <main className="mx-auto my-48 container-col g-48">
       <Suspense>
         <ProductListingSection />
       </Suspense>

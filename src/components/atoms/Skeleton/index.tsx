@@ -14,7 +14,7 @@ export const Skeleton = ({ variant, count = 1, className }: SkeletonProps) => (
       <div
         key={i}
         className={clsx(
-          'skeleton w-full h-full',
+          'skeleton size-full',
           variant && variants[variant],
           className
         )}

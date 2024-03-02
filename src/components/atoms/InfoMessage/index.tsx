@@ -25,10 +25,15 @@ export const InfoMessage = ({
   message
 }: InfoMessageProps) => (
   <div
-    className={clsx('flex gap-4 bg-none ai-center', S.container, type, size)}
+    className={clsx(
+      'flex bg-none ai-center g-4',
+      S.container,
+      S[type],
+      S[size]
+    )}
     role="alert"
   >
     {icons[type]}
-    <span className="font-600">{message}</span>
+    <span className="message font-600">{message}</span>
   </div>
 )

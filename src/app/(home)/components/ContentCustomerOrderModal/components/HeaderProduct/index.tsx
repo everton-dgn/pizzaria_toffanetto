@@ -23,7 +23,7 @@ export const HeaderProduct = ({
         />
       </div>
     )}
-    <section className="gap-16 px-16 py-8 col sm:px-24 sm:py-12">
+    <section className="px-16 py-8 col g-16 sm:px-24 sm:py-12">
       <h2 className="underlined-title">{product}</h2>
       <p className="pb-12 text-16 font-500 text-grey-dark">{description}</p>
     </section>

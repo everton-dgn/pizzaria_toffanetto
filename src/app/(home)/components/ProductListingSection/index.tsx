@@ -13,9 +13,9 @@ const ProductListingSection = async () => {
   return (
     <>
       {availableProducts?.map(({ id, category, items }) => (
-        <section key={id} className="gap-20 col-full sm:gap-32">
+        <section key={id} className="col-full g-20 sm:g-32">
           <h2 className="underlined-title sm:text-28 md:text-32">{category}</h2>
-          <div className="w-full grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-20 sm:grid-cols-[repeat(auto-fill,minmax(210px,1fr))] sm:gap-24 lg:grid-cols-[repeat(auto-fill,minmax(240px,1fr))]">
+          <div className="grid w-full grid-cols-[repeat(auto-fill,minmax(200px,1fr))] g-20 sm:grid-cols-[repeat(auto-fill,minmax(210px,1fr))] sm:g-24 lg:grid-cols-[repeat(auto-fill,minmax(240px,1fr))]">
             {items.map(item => (
               <CardProduct key={item.id} category={category} {...item} />
             ))}

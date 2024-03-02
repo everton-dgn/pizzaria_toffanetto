@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
+import { clsx } from 'clsx'
 import { MdClose as IconClose } from 'react-icons/md'
 
 import { Button } from 'components/atoms'
@@ -62,20 +63,26 @@ export const PopupInstallPwa = () => {
   return (
     <>
       {isShowPopup && (
-        <div className={S.containerPopup}>
-          <div className={S.wrapper}>
+        <div
+          className={clsx(
+            S.containerPopup,
+            'invisible fixed left-auto right-0 top-60 z-elevation mx-16 h-fit max-w-[360px] rounded-16 bg-white px-20 pb-28 pt-20 container-col g-8'
+          )}
+        >
+          <div className="relative flex-nowrap center row">
             <button
               aria-label="Fechar alerta"
               onClick={closePopup}
-              className={S.button_close}
+              className="absolute right-[-20px] top-[-20px] flex size-[38px] min-h-[38px] min-w-[38px] cursor-pointer rounded-b-4 rounded-tl-4 rounded-tr-16 border-0 bg-transparent center"
             >
-              <IconClose className={S.icon_close} />
+              <IconClose className="size-20 min-h-20 min-w-20 fill-grey-dark" />
             </button>
             <img
               src="/icons/icon-72x72.png"
               width="50"
               height="50"
               alt="Pizzaria Toffanetto"
+              className="mr-10 max-w-[72%] object-contain"
             />
             <img
               src="/img/logos/logo-popup-pwa.png"
@@ -84,7 +91,9 @@ export const PopupInstallPwa = () => {
               height="40"
             />
           </div>
-          <p className={S.text}>Adicione nosso App à tela inicial!</p>
+          <p className="mx-0 my-10 text-center text-18 font-600">
+            Adicione nosso App à tela inicial!
+          </p>
           <Button
             label="ADICIONAR ATALHO"
             onClick={handleInstallPwa}

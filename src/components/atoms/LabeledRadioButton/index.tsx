@@ -13,7 +13,7 @@ export const LabeledRadioButton = ({
 }: LabeledRadioButtonProps) => (
   <label
     className={clsx(
-      'max-h-fit max-w-fit gap-8 text-14 jc-start ai-start row',
+      'max-h-fit max-w-fit text-14 jc-start ai-start row g-8',
       disabled ? 'cursor-not-allowed opacity-[0.6]' : 'cursor-pointer'
     )}
   >

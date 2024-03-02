@@ -29,25 +29,25 @@
 }
 
 .small {
-  @apply gap-4;
+  @apply g-4;
 
   svg {
     @apply size-16;
   }
 
-  .message {
+  span {
     @apply text-12;
   }
 }
 
 .medium {
-  @apply gap-8;
+  @apply g-8;
 
   svg {
     @apply size-20;
   }
 
-  .message {
+  span {
     @apply text-14;
   }
 }

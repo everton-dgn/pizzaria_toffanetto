@@ -6,8 +6,6 @@ import { useCallback, useContext, useEffect, useRef, useState } from 'react'
 
 import axios from 'axios'
 
-import { Input, Select } from 'components/molecules'
-
 import { useToast } from 'hooks'
 
 import S from './styles.module.scss'
@@ -26,7 +24,7 @@ interface FormDataUnform {
   }
 }
 
-const statesOptions = [
+/* const statesOptions = [
   { value: 'AC', label: 'AC' },
   { value: 'AL', label: 'AL' },
   { value: 'AP', label: 'AP' },
@@ -54,7 +52,7 @@ const statesOptions = [
   { value: 'SP', label: 'SP' },
   { value: 'SE', label: 'SE' },
   { value: 'TO', label: 'TO' }
-]
+] */
 
 export const FormData = () => {
   const { setFormData } = useContext(DataContext)
@@ -62,8 +60,8 @@ export const FormData = () => {
   const router = useRouter()
   const toast = useToast()
 
-  const [selectState, setSelectState] = useState('')
-  const [loadZipCode, setLoadZipCode] = useState(false)
+  // const [selectState, setSelectState] = useState('')
+  // const [loadZipCode, setLoadZipCode] = useState(false)
   const [disabledField, setDisabledField] = useState(true)
 
   const SearchCep = useCallback(async (params: string, server = 0) => {
@@ -190,88 +188,88 @@ export const FormData = () => {
         <div className={S.card}>
           <form className={S.formFields} ref={formRef} onSubmit={handleSubmit}>
             <div className={S.contentForm}>
-              <Input
-                name="name"
-                id="name"
-                label="Nome Completo"
-                type="text"
-                placeholder="Nome Completo"
-              />
+              {/* <Input */}
+              {/*  name="name" */}
+              {/*  id="name" */}
+              {/*  label="Nome Completo" */}
+              {/*  type="text" */}
+              {/*  placeholder="Nome Completo" */}
+              {/* /> */}
 
-              <Input
-                name="email"
-                id="email"
-                label="E-mail"
-                type="email"
-                placeholder="E-mail"
-              />
+              {/* <Input */}
+              {/*  name="email" */}
+              {/*  id="email" */}
+              {/*  label="E-mail" */}
+              {/*  type="email" */}
+              {/*  placeholder="E-mail" */}
+              {/* /> */}
 
-              <Input
-                name="phone"
-                id="phone"
-                label="(DDD) + Celular"
-                type="text"
-                placeholder="(DDD) + Celular"
-              />
+              {/* <Input */}
+              {/*  name="phone" */}
+              {/*  id="phone" */}
+              {/*  label="(DDD) + Celular" */}
+              {/*  type="text" */}
+              {/*  placeholder="(DDD) + Celular" */}
+              {/* /> */}
 
-              <Input
-                name="zipCode"
-                id="zipCode"
-                label="CEP"
-                type="text"
-                placeholder="CEP"
-                onKeyPress={SearchCep}
-                load={loadZipCode}
-              />
+              {/* <Input */}
+              {/*  name="zipCode" */}
+              {/*  id="zipCode" */}
+              {/*  label="CEP" */}
+              {/*  type="text" */}
+              {/*  placeholder="CEP" */}
+              {/*  onKeyPress={SearchCep} */}
+              {/*  load={loadZipCode} */}
+              {/* /> */}
 
-              <Input
-                name="street"
-                id="street"
-                label="Rua"
-                type="text"
-                placeholder="Rua"
-                load={loadZipCode}
-                disabled={disabledField}
-              />
+              {/* <Input */}
+              {/*  name="street" */}
+              {/*  id="street" */}
+              {/*  label="Rua" */}
+              {/*  type="text" */}
+              {/*  placeholder="Rua" */}
+              {/*  load={loadZipCode} */}
+              {/*  disabled={disabledField} */}
+              {/* /> */}
 
-              <Input
-                name="number"
-                id="number"
-                label="Número"
-                type="text"
-                placeholder="Número"
-              />
+              {/* <Input */}
+              {/*  name="number" */}
+              {/*  id="number" */}
+              {/*  label="Número" */}
+              {/*  type="text" */}
+              {/*  placeholder="Número" */}
+              {/* /> */}
 
-              <Input
-                name="neighborhood"
-                id="neighborhood"
-                label="Bairro"
-                type="text"
-                placeholder="Bairro"
-                load={loadZipCode}
-                disabled={disabledField}
-              />
+              {/* <Input */}
+              {/*  name="neighborhood" */}
+              {/*  id="neighborhood" */}
+              {/*  label="Bairro" */}
+              {/*  type="text" */}
+              {/*  placeholder="Bairro" */}
+              {/*  load={loadZipCode} */}
+              {/*  disabled={disabledField} */}
+              {/* /> */}
 
-              <Input
-                name="city"
-                id="city"
-                label="Cidade"
-                type="text"
-                placeholder="Cidade"
-                load={loadZipCode}
-                disabled={disabledField}
-              />
+              {/* <Input */}
+              {/*  name="city" */}
+              {/*  id="city" */}
+              {/*  label="Cidade" */}
+              {/*  type="text" */}
+              {/*  placeholder="Cidade" */}
+              {/*  load={loadZipCode} */}
+              {/*  disabled={disabledField} */}
+              {/* /> */}
 
-              <Select
-                name="state"
-                id="state"
-                label="Estado"
-                type="text"
-                placeholder="Estado"
-                options={statesOptions}
-                setStateInSelect={selectState}
-                disabledField={disabledField}
-              />
+              {/* <Select */}
+              {/*  name="state" */}
+              {/*  id="state" */}
+              {/*  label="Estado" */}
+              {/*  type="text" */}
+              {/*  placeholder="Estado" */}
+              {/*  options={statesOptions} */}
+              {/*  setStateInSelect={selectState} */}
+              {/*  disabledField={disabledField} */}
+              {/* /> */}
             </div>
             <button
               className={S.btnSend}

@@ -16,7 +16,7 @@ export const Logo = () => (
         srcSet="/img/logos/logo-horizontal.png"
       />
       <img
-        className={clsx(S.logo, 'w-full h-full opacity-0')}
+        className={clsx(S.logo, 'size-full opacity-0')}
         src="/img/logos/logo-vertical-pequeno.webp"
         alt="Logo - Pizzaria Toffanetto"
         width="216"

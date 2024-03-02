@@ -33,7 +33,7 @@ export const Error = ({
           />
         </div>
 
-        <p className="w-full mx-auto mb-20 max-w-[800px] pb-12 text-center text-20">
+        <p className="mx-auto mb-20 w-full max-w-[800px] pb-12 text-center text-20">
           Página não encontrada! Por favor, verifique a url acessada.
           <br />
           <br />

@@ -21,7 +21,7 @@ export const RadioButtonGroup = ({
       })
       return (
         <Fragment key={option.id}>
-          <div className="flex-nowrap gap-16 jc-between ai-start row">
+          <div className="flex-nowrap jc-between ai-start row g-16">
             <LabeledRadioButton
               label={option.name}
               name={optionNameId}

@@ -14,25 +14,40 @@ export const QuantityCounterButton = ({
   const isContractibleButton = isContractible && quantity === 0
 
   return (
-    <div className={clsx(S.container, isContractibleButton && S.contractible)}>
+    <div
+      className={clsx(
+        'h-32 min-h-32 flex-nowrap rounded-60 bg-white jc-between ai-center row',
+        isContractibleButton
+          ? 'ml-[58px] w-32 min-w-32'
+          : 'w-[90px] min-w-[90px]'
+      )}
+    >
       {!isContractibleButton && (
         <>
           <button
             onClick={onDecrease}
             aria-label="Diminuir quantidade em 1"
-            className={S.counter_button}
+            className={clsx(
+              S.counter_button,
+              'flex size-[30px] min-h-[30px] min-w-[30px] cursor-pointer rounded-circle bg-ultra-light center'
+            )}
           >
-            <IconMinus className={S.icon} />
+            <IconMinus className="size-12 min-h-12 min-w-12 fill-primary" />
           </button>
-          <span className={S.quantity}>{quantity}</span>
+          <span className="flex h-full flex-1 text-center text-16 font-600 center">
+            {quantity}
+          </span>
         </>
       )}
       <button
         onClick={onIncrease}
         aria-label="Aumentar quantidade em 1"
-        className={S.counter_button}
+        className={clsx(
+          S.counter_button,
+          'flex size-[30px] min-h-[30px] min-w-[30px] cursor-pointer rounded-circle bg-ultra-light center'
+        )}
       >
-        <IconPlus className={S.icon} />
+        <IconPlus className="size-12 min-h-12 min-w-12 fill-primary" />
       </button>
     </div>
   )

@@ -8,8 +8,6 @@ import { queryParamsFormatter } from 'data/formatters'
 import { useCustomerOrder } from 'infra/store/customerOrder'
 import { useModalById } from 'infra/store/modalById'
 
-import S from './styles.module.scss'
-
 import type { ViewButtonProps } from './types'
 
 const ViewButton = ({ id, product, category }: ViewButtonProps) => {
@@ -33,8 +31,7 @@ const ViewButton = ({ id, product, category }: ViewButtonProps) => {
       ariaLabel="Visualizar item"
       size="small"
       onClick={handleRedirect}
-      className={S.icon_button}
-      icon={<IconPlus />}
+      icon={<IconPlus className="size-12 fill-white" />}
       isCircle
     />
   )

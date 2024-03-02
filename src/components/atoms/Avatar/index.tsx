@@ -21,7 +21,7 @@ const Content = ({ imageUrl, name }: AvatarProps) =>
       alt={`Foto de ${name}`}
       title={`Foto de ${name}`}
       fetchPriority="high"
-      className="h-full w-full object-cover"
+      className="size-full object-cover"
     />
   ) : (
     <p className="text-14 font-700 text-dark">
