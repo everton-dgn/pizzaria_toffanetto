@@ -6,6 +6,7 @@ import { colFull } from './colFull'
 import { containerCol } from './containerCol'
 import { containerRow } from './containerRow'
 import { flexCenter } from './flexCenter'
+import { gap } from './gap'
 import { justifyContent } from './justifyContent'
 import { justifyItems } from './justifyItems'
 import { justifySelf } from './justifySelf'
@@ -27,5 +28,6 @@ export const utilities = [
   rowFull,
   containerCol,
   containerRow,
-  pseudo
+  pseudo,
+  gap
 ]

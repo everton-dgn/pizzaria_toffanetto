@@ -81,7 +81,7 @@
       clip: rect(1px, 1px, 1px, 1px);
       clip-path: inset(100%);
       content: ' [start of highlighted text] ';
-      @apply absolute w-1 h-1 overflow-hidden whitespace-nowrap;
+      @apply absolute h-1 w-1 overflow-hidden whitespace-nowrap;
     }
 
     &::after {
@@ -95,7 +95,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply rounded-20 bg-grey-light border border-solid border-soft-white-blue;
+    @apply rounded-20 border border-solid border-soft-white-blue bg-grey-light;
   }
 
   :root {

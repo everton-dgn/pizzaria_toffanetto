@@ -1,5 +1,5 @@
 @layer components {
   .underlined-title {
-    @apply after-base max-w-fit text-20 font-700 uppercase text-primary after:mt-8 after:h-4 after:w-[30%] after:rounded-4 after:bg-secondary;
+    @apply max-w-fit text-20 font-700 uppercase text-primary after-base after:mt-8 after:h-4 after:w-[30%] after:rounded-4 after:bg-secondary;
   }
 }

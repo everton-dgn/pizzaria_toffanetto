@@ -22,26 +22,27 @@ export default {
     './src/components/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    screens,
-    spacing: { ...defaultTheme.spacing, ...spacing },
-    colors,
-    borderRadius: { ...defaultTheme.borderRadius, ...borderRadius },
-    borderWidth: { ...defaultTheme.borderWidth, ...spacing },
-    zIndex: { ...defaultTheme.zIndex, ...zIndex },
-    fontWeight: { ...defaultTheme.fontWeight, ...fontWeight },
-    boxShadow: { ...defaultTheme.boxShadow, ...boxShadow },
-    width: { ...defaultTheme.width, ...spacing },
-    height: { ...defaultTheme.height, ...spacing },
-    fontSize,
-    fontFamily: {
-      sans: 'var(--font-quicksand)'
+    extend: {
+      width: { ...defaultTheme.width, ...spacing },
+      height: { ...defaultTheme.height, ...spacing },
+      screens,
+      spacing: { ...defaultTheme.spacing, ...spacing },
+      colors,
+      borderRadius: { ...defaultTheme.borderRadius, ...borderRadius },
+      borderWidth: { ...defaultTheme.borderWidth, ...spacing },
+      zIndex: { ...defaultTheme.zIndex, ...zIndex },
+      fontWeight: { ...defaultTheme.fontWeight, ...fontWeight },
+      boxShadow: { ...defaultTheme.boxShadow, ...boxShadow },
+      fontSize,
+      fontFamily: {
+        sans: 'var(--font-quicksand)'
+      },
+      aspectRatio: {
+        ...defaultTheme.aspectRatio,
+        '600/317': '600/317',
+        '10/7': '10/7'
+      },
     },
-    aspectRatio: {
-      ...defaultTheme.aspectRatio,
-      '600/317': '600/317',
-      '10/7': '10/7'
-    },
-    extend: {}
   },
   plugins: [containerQueries, ...components, ...utilities]
 } satisfies Config

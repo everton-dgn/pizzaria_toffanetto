@@ -6,5 +6,6 @@ export const boxShadow = {
   sm: '0 4px 19px #97a2b438',
   xs: '0 4px 22px -4px #97a2b438',
   card: '6px 6px 20px -3px #a0a6c647',
-  'bottom-bar': '-6px 6px 20px 0 #6b708947'
+  'bottom-bar': '-6px 6px 20px 0 #6b708947',
+  'elevation-card': '0 0 24px #00000054'
 }
