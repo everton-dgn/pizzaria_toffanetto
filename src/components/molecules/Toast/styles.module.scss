@@ -1,36 +1,5 @@
 @use 'src/theme' as T;
 
-.container {
-  display: flex;
-  flex-direction: column;
-  width: calc(100% - 32px);
-  max-width: 100%;
-  height: fit-content;
-  position: fixed;
-  top: 70px;
-  right: 16px;
-  margin-left: 16px;
-  z-index: T.$z-index-always-on-top;
-
-  @include T.break-custom(420px) {
-    max-width: 320px;
-  }
-}
-
-.toast {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  width: 100%;
-  height: fit-content;
-  background-color: T.$color-white;
-  padding: T.$spacing-8 T.$spacing-8 T.$spacing-12 T.$spacing-8;
-  margin-bottom: T.$spacing-12;
-  border-radius: T.$border-radius-8;
-  box-shadow: T.$box-shadow-lg;
-  overflow: hidden;
-}
-
 .fade_enter {
   animation: toast-in 0.5s ease-in-out forwards;
 
@@ -43,20 +12,7 @@
   @include T.animation-toast-out;
 }
 
-.toast_info {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  gap: T.$spacing-12;
-  padding: 6px;
-}
-
 .icon {
-  width: 20px;
-  min-width: 20px;
-  height: 20px;
-  min-height: 20px;
-
   &--success {
     fill: T.$color-success;
   }
@@ -74,51 +30,7 @@
   }
 }
 
-.button_close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 38px;
-  min-width: 38px;
-  height: 38px;
-  min-height: 38px;
-  cursor: pointer;
-  border-radius: T.$border-radius-4;
-  border: 0;
-  background-color: transparent;
-}
-
-.icon_close {
-  width: 20px;
-  min-width: 20px;
-  height: 20px;
-  min-height: 20px;
-  fill: T.$color-grey-dark;
-}
-
-.wrapper_text {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.description {
-  font-size: T.$font-size-14;
-  font-weight: T.$font-weight-600;
-  color: T.$color-grey-dark;
-  padding-right: 20px;
-}
-
 .progress {
-  display: block;
-  width: 100%;
-  height: 4px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   animation: progress 7s linear forwards;
 
   @include T.animation-progress;

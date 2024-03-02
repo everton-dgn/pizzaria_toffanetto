@@ -30,8 +30,18 @@ export const BottomBar = () => {
   const isActiveLink = (route: string) => route === pathname
 
   return (
-    <nav className={S.container}>
-      <ul className={S.wrapper}>
+    <nav
+      className={clsx(
+        'fixed inset-x-0 bottom-0 z-bottom-bar h-[50px] bg-light-blue-hint p-8 shadow-bottom-bar col-full',
+        S.container
+      )}
+    >
+      <ul
+        className={clsx(
+          'h-full flex-nowrap jc-around ai-center row-full',
+          S.wrapper
+        )}
+      >
         {NAV_LINKS.map(({ href, label, icon }) => (
           <li key={href}>
             <Link

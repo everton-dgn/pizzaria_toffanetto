@@ -20,7 +20,7 @@ import type { IconProps } from './types'
 const TOAST_ANIMATION_TIME = 500
 
 const Icon = memo(({ status }: IconProps) => {
-  const iconClasses = clsx(S.icon, S[`icon--${status}`])
+  const iconClasses = clsx('size-20 min-h-20 min-w-20', S[`icon--${status}`])
 
   const iconMap = {
     success: <IconSuccess className={iconClasses} data-testid="icon-success" />,
@@ -46,7 +46,11 @@ const Toast = () => {
   )
 
   return stateToast.toastList.length > 0 ? (
-    <div aria-live="polite" aria-atomic="true" className={S.container}>
+    <div
+      aria-live="polite"
+      aria-atomic="true"
+      className="fixed right-16 top-72 z-always-on-top ml-16 h-fit w-[100%-32px] max-w-full col xs:max-w-[320px]"
+    >
       {stateToast.toastList.map(
         ({ status, description, id, animationClass }) => (
           <div
@@ -54,22 +58,33 @@ const Toast = () => {
             role="alert"
             aria-live="assertive"
             aria-atomic="true"
-            className={clsx(S.toast, S[animationClass])}
+            className={clsx(
+              'relative mb-12 h-fit overflow-hidden rounded-8 bg-white px-8 pb-12 pt-8 shadow-lg row-full',
+              S[animationClass]
+            )}
           >
-            <div className={S.toast_info}>
+            <div className="grow p-6 row g-12">
               <Icon status={status} />
-              <div className={S.wrapper_text}>
-                <p className={S.description}>{description}</p>
+              <div className="grow col">
+                <p className="pr-20 text-14 font-600 text-grey-dark">
+                  {description}
+                </p>
               </div>
             </div>
             <button
               aria-label="Fechar alerta"
               onClick={() => handleClickRemoveToast(id)}
-              className={S.button_close}
+              className="absolute right-0 top-0 flex size-[38px] min-h-[38px] min-w-[38px] cursor-pointer rounded-4 border-0 bg-transparent center"
             >
-              <IconClose className={S.icon_close} />
+              <IconClose className="size-20 min-h-20 min-w-20 fill-grey-dark" />
             </button>
-            <span className={clsx(S.progress, S[`progress--${status}`])} />
+            <span
+              className={clsx(
+                'absolute bottom-0 left-0 block h-4 w-full',
+                S.progress,
+                S[`progress--${status}`]
+              )}
+            />
           </div>
         )
       )}

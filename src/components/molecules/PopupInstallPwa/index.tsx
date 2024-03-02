@@ -73,7 +73,7 @@ export const PopupInstallPwa = () => {
             <button
               aria-label="Fechar alerta"
               onClick={closePopup}
-              className="absolute right-[-20px] top-[-20px] flex size-[38px] min-h-[38px] min-w-[38px] cursor-pointer rounded-b-4 rounded-tl-4 rounded-tr-16 border-0 bg-transparent center"
+              className="absolute -right-20 -top-20 flex size-[38px] min-h-[38px] min-w-[38px] cursor-pointer rounded-b-4 rounded-tl-4 rounded-tr-16 border-0 bg-transparent center"
             >
               <IconClose className="size-20 min-h-20 min-w-20 fill-grey-dark" />
             </button>
