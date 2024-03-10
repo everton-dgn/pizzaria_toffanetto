@@ -1,49 +1,29 @@
 'use client'
 
-import { memo, useCallback } from 'react'
+import { memo } from 'react'
 
 import { clsx } from 'clsx'
-import {
-  MdClose as IconClose,
-  MdCheckCircleOutline as IconSuccess,
-  MdOutlineCancel as IconError,
-  MdInfoOutline as IconInfo,
-  MdWarningAmber as IconWarning
-} from 'react-icons/md'
+import { MdClose as IconClose } from 'react-icons/md'
 
-import { useGlobalToast } from 'infra/store/toast'
+import { useControllerToast } from './hooks/useControllerToast'
 
-import S from './styles.module.scss'
+import { Icon } from './components/Icon'
 
-import type { IconProps } from './types'
+const animation = {
+  fade_enter: 'animate-[toast-in_0.5s_ease-in-out_forwards]',
+  fade_exit:
+    'animate-[toast-out_0.5s_cubic-bezier(0.36,_-0.64,_0.34,_1.76)_forwards]'
+}
 
-const TOAST_ANIMATION_TIME = 500
-
-const Icon = memo(({ status }: IconProps) => {
-  const iconClasses = clsx('size-20 min-h-20 min-w-20', S[`icon--${status}`])
-
-  const iconMap = {
-    success: <IconSuccess className={iconClasses} data-testid="icon-success" />,
-    error: <IconError className={iconClasses} data-testid="icon-error" />,
-    warning: <IconWarning className={iconClasses} data-testid="icon-warning" />,
-    info: <IconInfo className={iconClasses} data-testid="icon-info" />
-  }
-
-  return iconMap[status]
-})
+const progressStatusBgColor = {
+  success: 'bg-success',
+  warning: 'bg-warning',
+  error: 'bg-error',
+  info: 'bg-info'
+}
 
 const Toast = () => {
-  const { stateToast } = useGlobalToast()
-
-  const handleClickRemoveToast = useCallback(
-    (id: string) => {
-      stateToast.setUpdateToast(id)
-      setTimeout(() => {
-        stateToast.setRemoveToast(id)
-      }, TOAST_ANIMATION_TIME)
-    },
-    [stateToast]
-  )
+  const { stateToast, handleClickRemoveToast } = useControllerToast()
 
   return stateToast.toastList.length > 0 ? (
     <div
@@ -60,7 +40,7 @@ const Toast = () => {
             aria-atomic="true"
             className={clsx(
               'relative mb-12 h-fit overflow-hidden rounded-8 bg-white px-8 pb-12 pt-8 shadow-lg row-full',
-              S[animationClass]
+              animation[animationClass]
             )}
           >
             <div className="grow p-6 row g-12">
@@ -80,9 +60,8 @@ const Toast = () => {
             </button>
             <span
               className={clsx(
-                'absolute bottom-0 left-0 block h-4 w-full',
-                S.progress,
-                S[`progress--${status}`]
+                'absolute bottom-0 left-0 block h-4 w-full animate-[progress_7s_linear_forwards]',
+                progressStatusBgColor[status]
               )}
             />
           </div>

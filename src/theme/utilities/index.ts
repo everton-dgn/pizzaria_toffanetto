@@ -13,6 +13,7 @@ import { justifySelf } from './justifySelf'
 import { pseudo } from './pseudo'
 import { row } from './row'
 import { rowFull } from './rowFull'
+import { scrollbarHide } from './scrollbarHide'
 
 export const utilities = [
   justifyContent,
@@ -29,5 +30,6 @@ export const utilities = [
   containerCol,
   containerRow,
   pseudo,
-  gap
+  gap,
+  scrollbarHide
 ]

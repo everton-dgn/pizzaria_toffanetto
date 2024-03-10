@@ -8,8 +8,6 @@ import axios from 'axios'
 
 import { useToast } from 'hooks'
 
-import S from './styles.module.scss'
-
 interface FormDataUnform {
   name?: string
   phone?: string
@@ -183,11 +181,11 @@ export const FormData = () => {
 
   return (
     <>
-      <h1 className={S.titleComponent}>Dados do Cliente</h1>
-      <section className={S.container}>
-        <div className={S.card}>
-          <form className={S.formFields} ref={formRef} onSubmit={handleSubmit}>
-            <div className={S.contentForm}>
+      <h1>Dados do Cliente</h1>
+      <section>
+        <div>
+          <form ref={formRef} onSubmit={handleSubmit}>
+            <div>
               {/* <Input */}
               {/*  name="name" */}
               {/*  id="name" */}
@@ -271,11 +269,7 @@ export const FormData = () => {
               {/*  disabledField={disabledField} */}
               {/* /> */}
             </div>
-            <button
-              className={S.btnSend}
-              type="submit"
-              disabled={disabledField}
-            >
+            <button type="submit" disabled={disabledField}>
               Enviar
             </button>
           </form>

@@ -11,7 +11,8 @@ import {
   fontSize,
   boxShadow,
   borderRadius,
-  screens
+  screens,
+  keyframes
 } from './src/theme/variables'
 import { utilities } from './src/theme/utilities'
 import { components } from './src/theme/components'
@@ -42,7 +43,8 @@ export default {
         '600/317': '600/317',
         '10/7': '10/7'
       },
-    },
+      keyframes: { ...defaultTheme.keyframes, ...keyframes }
+    }
   },
   plugins: [containerQueries, ...components, ...utilities]
 } satisfies Config

@@ -2,14 +2,11 @@
 
 import { useEffect, useState } from 'react'
 
-import { clsx } from 'clsx'
 import { MdClose as IconClose } from 'react-icons/md'
 
 import { Button } from 'components/atoms'
 
 import { useToast } from 'hooks'
-
-import S from './styles.module.scss'
 
 import type { BeforeInstallPromptEvent } from './types'
 
@@ -63,12 +60,7 @@ export const PopupInstallPwa = () => {
   return (
     <>
       {isShowPopup && (
-        <div
-          className={clsx(
-            S.containerPopup,
-            'invisible fixed left-auto right-0 top-60 z-elevation mx-16 h-fit max-w-[360px] rounded-16 bg-white px-20 pb-28 pt-20 container-col g-8'
-          )}
-        >
+        <div className="invisible fixed left-auto right-0 top-60 z-elevation mx-16 h-fit max-w-[360px] animate-[visibility_0.1s_4s_linear_forwards,_move-up_0.4s_4s_ease-in_forwards] rounded-16 bg-white px-20 pb-28 pt-20 opacity-0 shadow-[0_0_24px_#00000054] container-col g-8">
           <div className="relative flex-nowrap center row">
             <button
               aria-label="Fechar alerta"

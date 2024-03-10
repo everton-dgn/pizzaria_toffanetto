@@ -2,11 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
-import { clsx } from 'clsx'
-
 import { Button } from 'components/atoms'
-
-import S from './styles.module.scss'
 
 export const CookieWarning = () => {
   const [isActive, setIsActive] = useState(false)
@@ -25,12 +21,7 @@ export const CookieWarning = () => {
   return (
     <>
       {isActive && (
-        <div
-          className={clsx(
-            S.container,
-            'fixed inset-x-0 bottom-0 z-elevation mx-auto max-w-fit flex-nowrap bg-soft-white-blue p-16 text-left shadow-elevation-card center row g-16 xs:px-24 xs:py-16 sm:rounded-8'
-          )}
-        >
+        <div className="invisible fixed inset-x-0 bottom-0 z-elevation mx-auto max-w-fit animate-[visibility_0.1s_3s_linear_forwards,_move-up_0.4s_3s_ease-in-out_forwards] flex-nowrap bg-soft-white-blue p-16 text-left opacity-0 shadow-elevation-card center row g-16 xs:px-24 xs:py-16 sm:rounded-8">
           <p className="text-12 xs:text-16">
             Ao navegar neste site, você aceita os cookies que usamos para
             melhorar a sua experiência.

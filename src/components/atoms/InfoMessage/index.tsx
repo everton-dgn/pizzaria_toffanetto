@@ -8,9 +8,19 @@ import {
   MdDone as IconSuccess
 } from 'react-icons/md'
 
-import S from './styles.module.css'
-
 import type { InfoMessageProps, TypeMessage } from './types'
+
+const sizes = {
+  small: 'g-4 [&>svg]:size-16 [&>span]:text-12',
+  medium: 'g-8 [&>svg]:size-20 [&>span]:text-14'
+}
+
+const types = {
+  error: 'text-error [&>path]:fill-error',
+  info: 'text-info [&>path]:fill-info',
+  success: 'fill-success [&>path]:text-success',
+  warning: 'fill-warning [&>path]:text-warning'
+}
 
 const icons: Record<TypeMessage, ReactElement> = {
   error: <IconError role="img" />,
@@ -26,10 +36,9 @@ export const InfoMessage = ({
 }: InfoMessageProps) => (
   <div
     className={clsx(
-      'flex bg-none ai-center g-4',
-      S.container,
-      S[type],
-      S[size]
+      'flex bg-none ai-center as-start g-4',
+      types[type],
+      sizes[size]
     )}
     role="alert"
   >

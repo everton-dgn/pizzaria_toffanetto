@@ -1,12 +1,8 @@
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: fit-content;
-  height: fit-content;
-  background-color: rgba(52, 211, 126, 1);
-  transition: all 0.15s linear;
+/*
+TODO: melhorar componente e estilização removendo css
+*/
 
+.button {
   &:not(:active) {
     transform: translate3d(0, 0, 0);
     box-shadow: 0 4px 16px #aeaebed4;

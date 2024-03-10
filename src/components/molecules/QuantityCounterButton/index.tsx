@@ -1,8 +1,6 @@
 import { clsx } from 'clsx'
 import { FaPlus as IconPlus, FaMinus as IconMinus } from 'react-icons/fa6'
 
-import S from './styles.module.scss'
-
 import type { QuantityCounterButtonProps } from './types'
 
 export const QuantityCounterButton = ({
@@ -27,10 +25,7 @@ export const QuantityCounterButton = ({
           <button
             onClick={onDecrease}
             aria-label="Diminuir quantidade em 1"
-            className={clsx(
-              S.counter_button,
-              'flex size-[30px] min-h-[30px] min-w-[30px] cursor-pointer rounded-circle bg-ultra-light center'
-            )}
+            className="flex size-[30px] min-h-[30px] min-w-[30px] cursor-pointer rounded-circle bg-ultra-light transition-colors duration-200 ease-linear center hover:bg-grey-ultra-light active:bg-ultra-light disabled:cursor-not-allowed disabled:hover:bg-ultra-light disabled:active:bg-ultra-light"
           >
             <IconMinus className="size-12 min-h-12 min-w-12 fill-primary" />
           </button>
@@ -42,10 +37,7 @@ export const QuantityCounterButton = ({
       <button
         onClick={onIncrease}
         aria-label="Aumentar quantidade em 1"
-        className={clsx(
-          S.counter_button,
-          'flex size-[30px] min-h-[30px] min-w-[30px] cursor-pointer rounded-circle bg-ultra-light center'
-        )}
+        className="flex size-[30px] min-h-[30px] min-w-[30px] cursor-pointer rounded-circle bg-ultra-light transition-colors duration-200 ease-linear center hover:bg-grey-ultra-light active:bg-ultra-light disabled:cursor-not-allowed disabled:hover:bg-ultra-light disabled:active:bg-ultra-light"
       >
         <IconPlus className="size-12 min-h-12 min-w-12 fill-primary" />
       </button>

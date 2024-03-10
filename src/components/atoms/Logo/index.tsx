@@ -1,9 +1,5 @@
 import Link from 'next/link'
 
-import { clsx } from 'clsx'
-
-import S from './styles.module.css'
-
 export const Logo = () => (
   <Link
     href="/"
@@ -16,7 +12,7 @@ export const Logo = () => (
         srcSet="/img/logos/logo-horizontal.png"
       />
       <img
-        className={clsx(S.logo, 'size-full opacity-0')}
+        className="size-full animate-[move-up_0.6s_cubic-bezier(0,_0.55,_0.45,_1)_forwards] opacity-0"
         src="/img/logos/logo-vertical-pequeno.webp"
         alt="Logo - Pizzaria Toffanetto"
         width="216"

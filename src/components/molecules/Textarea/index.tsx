@@ -2,7 +2,6 @@ import { clsx } from 'clsx'
 
 import { InfoMessage } from 'components/atoms'
 
-import S from './style.module.scss'
 import type { TextareaProps } from './types'
 
 export const Textarea = ({
@@ -27,9 +26,10 @@ export const Textarea = ({
       )}
       <textarea
         className={clsx(
-          S.textarea,
-          'resize-none rounded-8 border border-solid px-16 py-8 text-16 font-600 text-grey-dark row-full',
-          isErrored ? 'border-error outline-error' : 'border-grey-light'
+          'resize-none rounded-8 border border-solid px-16 py-8 text-16 font-600 text-grey-dark row-full placeholder:font-500 placeholder:text-grey-light hover:border hover:border-solid focus:border focus:border-solid focus:border-grey-light focus:outline-[1.5px] focus:outline-offset-[-2px]',
+          isErrored
+            ? 'border-error outline-error focus:outline-error'
+            : 'border-grey-light hover:border-grey-dark focus:outline-secondary'
         )}
         rows={rows}
         id={id}
