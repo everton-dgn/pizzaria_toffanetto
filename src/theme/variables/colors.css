@@ -1,30 +1,30 @@
 :root {
-  --color-primary: rgba(110, 17, 17, 1);
-  --color-primary-dark-translucent: rgba(142, 64, 64, 0.29);
-  --color-secondary: rgba(52, 211, 126, 1);
+  --color-primary: hsl(0 73% 25% / 1);
+  --color-primary-dark-translucent: hsl(0 38% 40% / 0.29);
+  --color-secondary: hsl(148 64% 52% / 1);
 
-  --color-dark: rgba(14, 12, 27, 1);
-  --color-dark-translucency: rgba(160, 166, 198, 0.28);
+  --color-dark: hsl(248 38% 8% / 1);
+  --color-dark-translucency: hsl(231 25% 70% / 0.28);
 
-  --color-white: rgba(255, 255, 255, 1);
-  --color-ultra-light: rgba(249, 249, 255, 1);
-  --color-neutral-light-lavender: rgba(224, 224, 239, 1);
-  --color-light-blue-hint: rgba(249, 249, 255, 1);
-  --color-soft-white-blue: rgba(245, 245, 255, 1);
+  --color-white: hsl(0 0% 100% / 1);
+  --color-ultra-light: hsl(240 100% 99% / 1);
+  --color-neutral-light-lavender: hsl(240 32% 91% / 1);
+  --color-light-blue-hint: hsl(240 100% 99% / 1);
+  --color-soft-white-blue: hsl(240 100% 98% / 1);
 
-  --color-green: rgba(43, 201, 144, 1);
-  --color-cherry: rgba(226, 38, 77, 1);
+  --color-green: hsl(158 65% 48% / 1);
+  --color-cherry: hsl(348 76% 52% / 1);
 
-  --color-grey-dark: rgba(55, 65, 81, 1);
-  --color-grey: rgba(93, 107, 129, 1);
-  --color-grey-light: rgba(160, 166, 198, 1);
-  --color-grey-ultra-light: rgba(231, 231, 246, 1);
+  --color-grey-dark: hsl(217 19% 27% / 1);
+  --color-grey: hsl(217 16% 44% / 1);
+  --color-grey-light: hsl(231 25% 70% / 1);
+  --color-grey-ultra-light: hsl(240 45% 94% / 1);
 
-  --color-error: rgba(233, 45, 45, 1);
-  --color-success: rgba(13, 168, 119, 1);
-  --color-warning: rgba(255, 122, 0, 1);
-  --color-info: rgba(0, 132, 255, 1);
+  --color-error: hsl(0 81% 55% / 1);
+  --color-success: hsl(161 86% 35% / 1);
+  --color-warning: hsl(29 100% 50% / 1);
+  --color-info: hsl(209 100% 50% / 1);
 
-  --color-focus: rgba(0, 125, 250, 0.6);
+  --color-focus: hsl(210 100% 49% / 0.6);
   --color-transparent: transparent;
 }
