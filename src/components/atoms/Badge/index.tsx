@@ -3,8 +3,8 @@ import { clsx } from 'clsx'
 import type { BadgeProps, Colors } from './types'
 
 const colors = (color: Colors) => ({
-  'bg-secondary': color === 'green',
-  'text-white bg-grey': color === 'grey',
+  'bg-secondary-500': color === 'green',
+  'text-white bg-grey-500': color === 'grey',
   'text-white bg-cherry': color === 'red'
 })
 

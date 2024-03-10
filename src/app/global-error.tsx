@@ -56,7 +56,7 @@ const GlobalError = ({ error, reset }: ErrorProps) => {
             inicial:
           </p>
           <button
-            className="bg-secondary text-16 uppercase"
+            className="bg-secondary-500 text-16 uppercase"
             onClick={() => push('/')}
           >
             Página Inicial

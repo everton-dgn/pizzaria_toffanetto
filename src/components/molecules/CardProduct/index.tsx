@@ -32,7 +32,7 @@ export const CardProduct = ({
         />
       </div>
       <div className="flex-1 flex-nowrap gap-x-4 gap-y-8 jc-between col-full">
-        <h3 className="line-clamp-2 text-16 font-700 uppercase text-primary">
+        <h3 className="line-clamp-2 text-16 font-700 uppercase text-primary-500">
           {product}
         </h3>
         <div className="flex-wrap jc-between ai-end row">

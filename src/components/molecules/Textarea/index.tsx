@@ -26,10 +26,10 @@ export const Textarea = ({
       )}
       <textarea
         className={clsx(
-          'resize-none rounded-8 border border-solid px-16 py-8 text-16 font-600 text-grey-dark row-full placeholder:font-500 placeholder:text-grey-light hover:border hover:border-solid focus:border focus:border-solid focus:border-grey-light focus:outline-[1.5px] focus:outline-offset-[-2px]',
+          'resize-none rounded-8 border border-solid px-16 py-8 text-16 font-600 text-grey-dark row-full placeholder:font-500 placeholder:text-grey-light-500 hover:border hover:border-solid focus:border focus:border-solid focus:border-grey-light-500 focus:outline-[1.5px] focus:outline-offset-[-2px]',
           isErrored
             ? 'border-error outline-error focus:outline-error'
-            : 'border-grey-light hover:border-grey-dark focus:outline-secondary'
+            : 'border-grey-light-500 hover:border-grey-dark focus:outline-secondary-500'
         )}
         rows={rows}
         id={id}
@@ -47,7 +47,7 @@ export const Textarea = ({
             <small
               className={clsx(
                 'ml-auto whitespace-nowrap text-12 font-600',
-                isErrored ? 'text-error' : 'text-grey'
+                isErrored ? 'text-error' : 'text-grey-500'
               )}
             >
               {value?.length}/{maxLength}

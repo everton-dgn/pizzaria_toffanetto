@@ -95,7 +95,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply rounded-20 border border-solid border-soft-white-blue bg-grey-light;
+    @apply rounded-20 border border-solid border-soft-white-blue bg-grey-light-500;
   }
 
   :root {

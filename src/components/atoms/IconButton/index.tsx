@@ -31,7 +31,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
     <button
       ref={ref}
       className={clsx(
-        'flex size-fit translate-y-0 bg-secondary transition-all duration-150 ease-linear center',
+        'flex size-fit translate-y-0 bg-secondary-500 transition-all duration-150 ease-linear center',
         S.button,
         btnSize[size],
         isTransparent && S.transparent,

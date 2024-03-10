@@ -65,7 +65,7 @@ export const FlavorQuantitySelectorGroup = ({
           <Fragment key={option.id}>
             <div className="flex-nowrap jc-between ai-start row-full g-16">
               <div className="col-full">
-                <h4 className="text-14 font-700 uppercase text-primary">
+                <h4 className="text-14 font-700 uppercase text-primary-500">
                   {option.name}
                 </h4>
                 <p className="text-14">{option.description}</p>

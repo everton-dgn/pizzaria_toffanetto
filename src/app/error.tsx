@@ -40,7 +40,7 @@ export const Error = ({
           Caso prefira, clique no botão abaixo e retorne para a página inicial:
         </p>
         <button
-          className="bg-secondary text-16 uppercase"
+          className="bg-secondary-500 text-16 uppercase"
           onClick={() => push('/')}
         >
           Ir para a página inicial

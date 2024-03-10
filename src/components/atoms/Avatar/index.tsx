@@ -31,7 +31,7 @@ const Content = ({ imageUrl, name }: AvatarProps) =>
 
 export const Avatar = ({ name, imageUrl }: AvatarProps) => (
   <div
-    className="relative flex size-32 overflow-hidden rounded-circle border-[1.5px] border-secondary bg-soft-white-blue center"
+    className="relative flex size-32 overflow-hidden rounded-circle border-[1.5px] border-secondary-500 bg-soft-white-blue center"
     role="figure"
   >
     <Content name={name} imageUrl={imageUrl} />

@@ -27,7 +27,7 @@ export const QuantityCounterButton = ({
             aria-label="Diminuir quantidade em 1"
             className="hover:bg-grey-light-blue-hint flex size-[30px] min-h-[30px] min-w-[30px] cursor-pointer rounded-circle bg-light-blue-hint transition-colors duration-200 ease-linear center active:bg-light-blue-hint disabled:cursor-not-allowed disabled:hover:bg-light-blue-hint disabled:active:bg-light-blue-hint"
           >
-            <IconMinus className="size-12 min-h-12 min-w-12 fill-primary" />
+            <IconMinus className="size-12 min-h-12 min-w-12 fill-primary-500" />
           </button>
           <span className="flex h-full flex-1 text-center text-16 font-600 center">
             {quantity}
@@ -39,7 +39,7 @@ export const QuantityCounterButton = ({
         aria-label="Aumentar quantidade em 1"
         className="hover:bg-grey-light-blue-hint flex size-[30px] min-h-[30px] min-w-[30px] cursor-pointer rounded-circle bg-light-blue-hint transition-colors duration-200 ease-linear center active:bg-light-blue-hint disabled:cursor-not-allowed disabled:hover:bg-light-blue-hint disabled:active:bg-light-blue-hint"
       >
-        <IconPlus className="size-12 min-h-12 min-w-12 fill-primary" />
+        <IconPlus className="size-12 min-h-12 min-w-12 fill-primary-500" />
       </button>
     </div>
   )

@@ -39,7 +39,7 @@ export const BottomBar = () => {
               className={clsx(
                 isActiveLink(href)
                   ? '[&>svg>path]:text-green [&>svg]:text-green'
-                  : '[&>svg>path]:text-grey [&>svg]:text-grey',
+                  : '[&>svg>path]:text-grey-500 [&>svg]:text-grey-500',
                 'size-fit ai-center col [&>svg]:size-20 [&>svg]:min-h-20 [&>svg]:min-w-20'
               )}
             >
