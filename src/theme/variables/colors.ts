@@ -1,7 +1,7 @@
 export const colors = {
-  primary: 'var(--color-primary)',
-  'primary-dark-translucent': 'var(--color-primary-dark-translucent)',
-  secondary: 'var(--color-secondary)',
+  primary: 'var(--color-primary-500)',
+
+  secondary: 'var(--color-secondary-500)',
 
   dark: 'var(--color-dark)',
   'dark-translucency': 'var(--color-dark-translucency)',
@@ -18,13 +18,13 @@ export const colors = {
   'grey-dark': 'var(--color-grey-dark)',
   grey: 'var(--color-grey)',
   'grey-light': 'var(--color-grey-light)',
-  'grey-ultra-light': 'var(--color-grey-ultra-light)',
 
   error: 'var(--color-error)',
   success: 'var(--color-success)',
   warning: 'var(--color-warning)',
   info: 'var(--color-info)',
 
+  'primary-dark-translucent': 'var(--color-primary-dark-translucent)',
   focus: 'var(--color-focus)',
   transparent: 'var(--color-transparent)'
 }

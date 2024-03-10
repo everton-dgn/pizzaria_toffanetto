@@ -25,7 +25,7 @@ export const QuantityCounterButton = ({
           <button
             onClick={onDecrease}
             aria-label="Diminuir quantidade em 1"
-            className="flex size-[30px] min-h-[30px] min-w-[30px] cursor-pointer rounded-circle bg-ultra-light transition-colors duration-200 ease-linear center hover:bg-grey-ultra-light active:bg-ultra-light disabled:cursor-not-allowed disabled:hover:bg-ultra-light disabled:active:bg-ultra-light"
+            className="hover:bg-grey-light-blue-hint flex size-[30px] min-h-[30px] min-w-[30px] cursor-pointer rounded-circle bg-light-blue-hint transition-colors duration-200 ease-linear center active:bg-light-blue-hint disabled:cursor-not-allowed disabled:hover:bg-light-blue-hint disabled:active:bg-light-blue-hint"
           >
             <IconMinus className="size-12 min-h-12 min-w-12 fill-primary" />
           </button>
@@ -37,7 +37,7 @@ export const QuantityCounterButton = ({
       <button
         onClick={onIncrease}
         aria-label="Aumentar quantidade em 1"
-        className="flex size-[30px] min-h-[30px] min-w-[30px] cursor-pointer rounded-circle bg-ultra-light transition-colors duration-200 ease-linear center hover:bg-grey-ultra-light active:bg-ultra-light disabled:cursor-not-allowed disabled:hover:bg-ultra-light disabled:active:bg-ultra-light"
+        className="hover:bg-grey-light-blue-hint flex size-[30px] min-h-[30px] min-w-[30px] cursor-pointer rounded-circle bg-light-blue-hint transition-colors duration-200 ease-linear center active:bg-light-blue-hint disabled:cursor-not-allowed disabled:hover:bg-light-blue-hint disabled:active:bg-light-blue-hint"
       >
         <IconPlus className="size-12 min-h-12 min-w-12 fill-primary" />
       </button>

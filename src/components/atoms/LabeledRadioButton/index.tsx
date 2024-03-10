@@ -22,9 +22,9 @@ export const LabeledRadioButton = ({
       name={name}
       className={clsx(
         S.input,
-        'size-16 min-h-16 min-w-16 appearance-none rounded-circle border-3 border-white bg-grey-ultra-light transition-all duration-100 ease-linear',
+        'bg-grey-light-blue-hint size-16 min-h-16 min-w-16 appearance-none rounded-circle border-3 border-white transition-all duration-100 ease-linear',
         disabled
-          ? 'cursor-not-allowed border-white bg-grey-ultra-light'
+          ? 'bg-grey-light-blue-hint cursor-not-allowed border-white'
           : 'cursor-pointer'
       )}
       disabled={disabled}
