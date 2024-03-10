@@ -12,7 +12,7 @@ export const Banner = () => (
         className="h-auto max-h-[40vh] w-full max-w-[300px] -translate-y-full animate-[move-y_0.4s_0.2s_cubic-bezier(0,_0.55,_0.45,_1)_forwards,_fade-in-blur_0.4s_0.2s_linear_forwards] object-contain object-left opacity-0 xs:max-w-[400px] lg:max-w-[500px]"
         priority
       />
-      <h1 className="mt-12 max-w-[400px] translate-y-full animate-[move-y_0.6s_0.5s_cubic-bezier(0,_0.55,_0.45,_1)_forwards,_fade-in-blur_0.5s_0.4s_linear_forwards] text-balance text-20 font-500 leading-[1.5] text-white opacity-0 xs:mt-20 xs:max-w-[500px] xs:text-[calc(15px+1.3vh)] lg:mt-24 lg:max-w-[600px] lg:text-30">
+      <h1 className="mt-12 max-w-[400px] translate-y-full animate-[move-y_0.6s_0.5s_cubic-bezier(0,_0.55,_0.45,_1)_forwards,_fade-in-blur_0.5s_0.4s_linear_forwards] text-balance text-20 font-500 leading-[1.5] text-white opacity-0 xs:mt-20 xs:max-w-[500px] xs:text-[calc(15px+1.3vh)] lg:mt-24 lg:max-w-[600px] lg:text-28">
         Pizzas exageradamente recheadas e saborosas, feitas em forno a lenha
         como manda a tradição italiana
       </h1>
