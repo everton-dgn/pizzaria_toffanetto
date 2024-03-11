@@ -6,12 +6,12 @@
       0%,
       50%,
       100% {
-        background-color: var(--color-neutral-light-lavender);
+        @apply bg-neutral-light-lavender;
       }
 
       25%,
       75% {
-        background-color: var(--color-light-blue-hint);
+        @apply bg-light-blue-hint;
       }
     }
   }
