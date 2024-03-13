@@ -31,14 +31,14 @@ export const CardProduct = ({
           fill
         />
       </div>
-      <div className="flex-1 flex-nowrap gap-x-4 gap-y-8 jc-between col-full">
-        <h3 className="line-clamp-2 text-16 font-700 uppercase text-primary-500">
+      <div className="flex-1 flex-nowrap jc-between col-full gx-4 gy-8">
+        <h3 className="fw-700 line-clamp-2 uppercase text-primary-500 fs-16">
           {product}
         </h3>
         <div className="flex-wrap jc-between ai-end row">
-          <p className="text-12 lg:text-14">
+          <p className="fs-12 lg:fs-14">
             {!hasFixedPrice && 'A partir de '}
-            <b className="text-14 font-600 lg:text-16">{formattedCurrency}</b>
+            <b className="fw-600 fs-14 lg:fs-16">{formattedCurrency}</b>
           </p>
           <ViewButton id={id} product={product} category={category} />
         </div>

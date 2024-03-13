@@ -29,7 +29,7 @@ export const RadioButtonGroup = ({
               onChange={() => setSelectedRadioButtonGroupValue(option)}
               value={option.id}
             />
-            <p className="whitespace-nowrap text-14 font-600 text-dark">
+            <p className="fw-600 whitespace-nowrap text-dark fs-14">
               {formattedPrice}
             </p>
           </div>

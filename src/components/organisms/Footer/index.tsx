@@ -1,5 +1,5 @@
 export const Footer = () => (
-  <footer className="bottom-0 mt-auto w-full bg-primary-500 py-32">
+  <footer className="mt-auto w-full bg-primary-500 py-32 b-0">
     <div className="m-auto p-16 text-white jc-center container-row">
       Desenvolvido por
       <a
@@ -7,7 +7,7 @@ export const Footer = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        <em className="ml-5 text-yellow-300">Éverton Toffanetto</em>
+        <em className="text-yellow-300 ml-5">Éverton Toffanetto</em>
       </a>
     </div>
   </footer>

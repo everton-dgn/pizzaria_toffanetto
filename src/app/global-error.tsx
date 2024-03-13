@@ -48,7 +48,7 @@ const GlobalError = ({ error, reset }: ErrorProps) => {
             />
           </div>
 
-          <p className="mx-auto mb-20 w-full max-w-[800px] pb-12 text-center text-20">
+          <p className="mx-auto mb-20 w-full max-w-[800px] pb-12 text-center fs-20">
             Página não encontrada! Por favor, verifique a url acessada.
             <br />
             <br />
@@ -56,7 +56,7 @@ const GlobalError = ({ error, reset }: ErrorProps) => {
             inicial:
           </p>
           <button
-            className="bg-secondary-500 text-16 uppercase"
+            className="bg-secondary-500 uppercase fs-16"
             onClick={() => push('/')}
           >
             Página Inicial

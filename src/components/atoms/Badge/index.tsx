@@ -11,7 +11,7 @@ const colors = (color: Colors) => ({
 export const Badge = ({ label, color = 'grey' }: BadgeProps) => (
   <span
     className={clsx(
-      'flex max-h-fit max-w-fit flex-nowrap whitespace-nowrap rounded-20 px-6 py-1 text-12 font-600 uppercase',
+      'fw-600 flex max-h-fit max-w-fit flex-nowrap whitespace-nowrap rounded-20 px-6 py-1 uppercase fs-12',
       colors(color)
     )}
   >

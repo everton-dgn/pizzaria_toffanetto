@@ -32,7 +32,7 @@ export const QuantityCounterButton = ({
           >
             <IconMinus className="size-12 min-h-12 min-w-12 fill-primary-500" />
           </button>
-          <span className="flex h-full flex-1 text-center text-16 font-600 center">
+          <span className="fw-600 flex h-full flex-1 text-center center fs-16">
             {quantity}
           </span>
         </>

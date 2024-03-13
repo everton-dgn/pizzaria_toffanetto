@@ -11,8 +11,8 @@ import {
 import type { InfoMessageProps, TypeMessage } from './types'
 
 const sizes = {
-  small: 'g-4 [&>svg]:size-16 [&>span]:text-12',
-  medium: 'g-8 [&>svg]:size-20 [&>span]:text-14'
+  small: 'g-4 [&>svg]:size-16 [&>span]:fs-12',
+  medium: 'g-8 [&>svg]:size-20 [&>span]:fs-14'
 }
 
 const types = {
@@ -43,6 +43,6 @@ export const InfoMessage = ({
     role="alert"
   >
     {icons[type]}
-    <span className="message font-600">{message}</span>
+    <span className="message fw-600">{message}</span>
   </div>
 )

@@ -42,14 +42,14 @@ const Modal = ({
     <Portal>
       <div
         className={clsx(
-          'fixed left-0 top-0 z-overlay flex size-full backdrop-blur-[2px]',
+          'fixed z-overlay flex size-full backdrop-blur-[2px] t-0 l-0',
           fullscreenMobile ? 'p-0' : 'p-16'
         )}
         ref={modalRef}
       >
         <div
           className={clsx(
-            'absolute left-0 top-0 flex size-full',
+            'absolute flex size-full t-0 l-0',
             isVisible
               ? 'visible bg-dark opacity-[0.6]'
               : 'hidden bg-transparent opacity-0'
@@ -84,7 +84,7 @@ const Modal = ({
                 onClick={handleHiddenComponent}
                 ariaLabel="Voltar"
                 icon={<IconBack color="#374151" size={24} />}
-                className="absolute left-12 top-0"
+                className="absolute t-0 l-12"
                 isTransparent
                 isDisableTransform
                 isDisableBoxShadow
@@ -92,7 +92,7 @@ const Modal = ({
               />
             )}
             {titleHeader && (
-              <h2 className="px-[54px] text-16 font-600 uppercase">
+              <h2 className="fw-600 px-[54px] uppercase fs-16">
                 {titleHeader}
               </h2>
             )}
@@ -102,7 +102,7 @@ const Modal = ({
                 onClick={handleHiddenComponent}
                 ariaLabel="Fechar Modal"
                 icon={<IconClose color="#374151" size={24} />}
-                className="absolute right-12 top-0"
+                className="absolute t-0 r-12"
                 isTransparent
                 isDisableTransform
                 isDisableBoxShadow
@@ -113,7 +113,7 @@ const Modal = ({
           <div className="h-full overflow-y-auto col-full sm:max-h-[80vh]">
             {title}
             {description && (
-              <p className="mt-8 text-16 sm:mt-16">{description}</p>
+              <p className="mt-8 fs-16 sm:mt-16">{description}</p>
             )}
             {children}
           </div>

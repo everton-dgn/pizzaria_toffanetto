@@ -12,7 +12,7 @@ export const HeaderProduct = ({
   <>
     {!!img && (
       <div className="relative mb-12 aspect-600/317 overflow-hidden">
-        <FavoriteButton className="absolute right-8 top-8 z-base" />
+        <FavoriteButton className="absolute z-base t-8 r-8" />
         <Image
           src={img}
           alt={product}
@@ -25,7 +25,7 @@ export const HeaderProduct = ({
     )}
     <section className="px-16 py-8 col g-16 sm:px-24 sm:py-12">
       <h2 className="underlined-title">{product}</h2>
-      <p className="pb-12 text-16 font-500 text-grey-dark">{description}</p>
+      <p className="fw-500 pb-12 text-grey-dark fs-16">{description}</p>
     </section>
   </>
 )

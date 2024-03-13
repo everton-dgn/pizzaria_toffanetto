@@ -29,7 +29,7 @@ const Toast = () => {
     <div
       aria-live="polite"
       aria-atomic="true"
-      className="fixed right-16 top-72 z-always-on-top ml-16 h-fit w-[100%-32px] max-w-full col xs:max-w-[320px]"
+      className="fixed z-always-on-top ml-16 h-fit w-[100%-32px] max-w-full col r-16 t-72 xs:max-w-[320px]"
     >
       {stateToast.toastList.map(
         ({ status, description, id, animationClass }) => (
@@ -46,7 +46,7 @@ const Toast = () => {
             <div className="grow p-6 row g-12">
               <Icon status={status} />
               <div className="grow col">
-                <p className="pr-20 text-14 font-600 text-grey-dark">
+                <p className="fw-600 pr-20 text-grey-dark fs-14">
                   {description}
                 </p>
               </div>
@@ -54,13 +54,13 @@ const Toast = () => {
             <button
               aria-label="Fechar alerta"
               onClick={() => handleClickRemoveToast(id)}
-              className="absolute right-0 top-0 flex size-[38px] min-h-[38px] min-w-[38px] cursor-pointer rounded-4 border-0 bg-transparent center"
+              className="absolute flex size-[38px] min-h-[38px] min-w-[38px] cursor-pointer rounded-4 border-0 bg-transparent center t-0 r-0"
             >
               <IconClose className="size-20 min-h-20 min-w-20 fill-grey-dark" />
             </button>
             <span
               className={clsx(
-                'absolute bottom-0 left-0 block h-4 w-full animate-[progress_7s_linear_forwards]',
+                'absolute block h-4 w-full animate-[progress_7s_linear_forwards] b-0 l-0',
                 progressStatusBgColor[status]
               )}
             />
