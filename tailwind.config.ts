@@ -21,13 +21,13 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    screens,
-    colors,
-    zIndex,
-    borderRadius,
-    fontWeight: fontWeights,
-    fontSize: fontSizes,
     extend: {
+      colors,
+      screens,
+      zIndex,
+      borderRadius,
+      fontWeight: fontWeights,
+      fontSize: fontSizes,
       width: { ...defaultTheme.width, ...spacings },
       height: { ...defaultTheme.height, ...spacings },
       spacing: { ...defaultTheme.spacing, ...spacings },
