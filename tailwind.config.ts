@@ -1,5 +1,6 @@
 import defaultTheme from 'tailwindcss/defaultTheme'
 import type { Config } from 'tailwindcss'
+import * as customUtilities from 'eleganceui-tailwind-utilities'
 
 import {
   colors,
@@ -44,7 +45,7 @@ const config: Config = {
       }
     }
   },
-  plugins: [...components, ...utilities]
+  plugins: [...components, ...utilities, ...Object.values(customUtilities)]
 }
 
 export default config
