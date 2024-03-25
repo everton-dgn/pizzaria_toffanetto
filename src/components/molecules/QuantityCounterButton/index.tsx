@@ -17,7 +17,7 @@ export const QuantityCounterButton = ({
   return (
     <div
       className={clsx(
-        'h-32 min-h-32 flex-nowrap rounded-60 bg-white jc-between ai-center row',
+        'row h-32 min-h-32 flex-nowrap rounded-60 bg-white ai-center jc-between',
         isContractibleButton
           ? 'ml-[58px] w-32 min-w-32'
           : 'w-[90px] min-w-[90px]'
@@ -32,7 +32,7 @@ export const QuantityCounterButton = ({
           >
             <IconMinus className="size-12 min-h-12 min-w-12 fill-primary-500" />
           </button>
-          <span className="fw-600 flex h-full flex-1 text-center center fs-16">
+          <span className="flex h-full flex-1 text-center fw-600 fs-16 center">
             {quantity}
           </span>
         </>

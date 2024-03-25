@@ -28,8 +28,8 @@ export const BottomBar = () => {
   const isActiveLink = (route: string) => route === pathname
 
   return (
-    <nav className="invisible fixed inset-x-0 z-bottom-bar h-[50px] animate-[visibility_0.5s_linear_forwards,_move-up_0.5s_ease-in-out_forwards] bg-light-blue-hint p-8 opacity-0 shadow-bottom-bar col-full b-0 sm:hidden">
-      <ul className="h-full flex-nowrap jc-around ai-center row-full">
+    <nav className="invisible fixed inset-x-0 z-bottom-bar h-[50px] animate-[visibility_0.5s_linear_forwards,_move-up_0.5s_ease-in-out_forwards] bg-light-blue-hint p-8 opacity-0 shadow-bottom-bar b-0 col-full sm:hidden">
+      <ul className="row-full h-full flex-nowrap ai-center jc-around">
         {NAV_LINKS.map(({ href, label, icon }) => (
           <li key={href}>
             <Link
@@ -44,7 +44,7 @@ export const BottomBar = () => {
               )}
             >
               {icons[icon]}
-              <span className="fw-600 tracking-[0.3px] text-grey-dark fs-12">
+              <span className="tracking-[0.3px] text-grey-dark fw-600 fs-12">
                 {label}
               </span>
             </Link>

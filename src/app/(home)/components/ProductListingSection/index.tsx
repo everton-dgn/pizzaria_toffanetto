@@ -13,7 +13,7 @@ const ProductListingSection = async () => {
   return (
     <>
       {availableProducts?.map(({ id, category, items }) => (
-        <section key={id} className="col-full g-20 sm:g-32">
+        <section key={id} className="g-20 col-full sm:g-32">
           <h2 className="underlined-title sm:fs-28 md:fs-32">{category}</h2>
           <div className="grid w-full grid-cols-[repeat(auto-fill,minmax(200px,1fr))] g-20 sm:grid-cols-[repeat(auto-fill,minmax(210px,1fr))] sm:g-24 lg:grid-cols-[repeat(auto-fill,minmax(240px,1fr))]">
             {items.map(item => (

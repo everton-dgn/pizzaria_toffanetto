@@ -29,7 +29,7 @@ const Toast = () => {
     <div
       aria-live="polite"
       aria-atomic="true"
-      className="fixed z-always-on-top ml-16 h-fit w-[100%-32px] max-w-full col r-16 t-72 xs:max-w-[320px]"
+      className="fixed z-always-on-top ml-16 h-fit w-[100%-32px] max-w-full r-16 t-72 col xs:max-w-[320px]"
     >
       {stateToast.toastList.map(
         ({ status, description, id, animationClass }) => (
@@ -39,14 +39,14 @@ const Toast = () => {
             aria-live="assertive"
             aria-atomic="true"
             className={clsx(
-              'relative mb-12 h-fit overflow-hidden rounded-8 bg-white px-8 pb-12 pt-8 shadow-lg row-full',
+              'row-full relative mb-12 h-fit overflow-hidden rounded-8 bg-white px-8 pb-12 pt-8 shadow-lg',
               animation[animationClass]
             )}
           >
-            <div className="grow p-6 row g-12">
+            <div className="row grow p-6 g-12">
               <Icon status={status} />
               <div className="grow col">
-                <p className="fw-600 pr-20 text-grey-dark fs-14">
+                <p className="pr-20 text-grey-dark fw-600 fs-14">
                   {description}
                 </p>
               </div>
@@ -54,7 +54,7 @@ const Toast = () => {
             <button
               aria-label="Fechar alerta"
               onClick={() => handleClickRemoveToast(id)}
-              className="absolute flex size-[38px] min-h-[38px] min-w-[38px] cursor-pointer rounded-4 border-0 bg-transparent center t-0 r-0"
+              className="absolute flex size-[38px] min-h-[38px] min-w-[38px] cursor-pointer rounded-4 border-0 bg-transparent t-0 r-0 center"
             >
               <IconClose className="size-20 min-h-20 min-w-20 fill-grey-dark" />
             </button>

@@ -36,7 +36,7 @@ export const InfoMessage = ({
 }: InfoMessageProps) => (
   <div
     className={clsx(
-      'flex bg-none ai-center as-start g-4',
+      'flex bg-none g-4 ai-center as-start',
       types[type],
       sizes[size]
     )}

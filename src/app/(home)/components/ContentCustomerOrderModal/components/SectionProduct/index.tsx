@@ -15,18 +15,18 @@ export const SectionProduct = ({
 
   return (
     <section className="col-full">
-      <div className="sticky z-base border-y border-white bg-soft-white-blue px-16 py-8 ai-start col-full g-4 t-0 sm:px-24 sm:py-12">
-        <div className="flex-nowrap jc-between ai-center row-full g-16">
-          <h3 className="fw-700 uppercase text-primary-500 fs-16 sm:fs-18">
+      <div className="sticky z-base border-y border-white bg-soft-white-blue px-16 py-8 g-4 t-0 ai-start col-full sm:px-24 sm:py-12">
+        <div className="row-full flex-nowrap g-16 ai-center jc-between">
+          <h3 className="uppercase text-primary-500 fw-700 fs-16 sm:fs-18">
             {title}
           </h3>
           <Badge label={completed} color={colorCompleted} />
         </div>
         {description && (
-          <p className="fw-600 text-grey-dark fs-12">{description}</p>
+          <p className="text-grey-dark fw-600 fs-12">{description}</p>
         )}
       </div>
-      <div className="px-16 py-12 col-full g-12 sm:px-24 sm:py-12">
+      <div className="px-16 py-12 g-12 col-full sm:px-24 sm:py-12">
         {children}
       </div>
     </section>

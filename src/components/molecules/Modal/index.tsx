@@ -77,7 +77,7 @@ const Modal = ({
           aria-labelledby={title}
           aria-modal={true}
         >
-          <div className="relative z-header h-40 min-h-40 w-full flex-wrap shadow-sm center row">
+          <div className="row relative z-header h-40 min-h-40 w-full flex-wrap shadow-sm center">
             {!isCloseButton && (
               <IconButton
                 ref={btnCloseModalRef}
@@ -92,7 +92,7 @@ const Modal = ({
               />
             )}
             {titleHeader && (
-              <h2 className="fw-600 px-[54px] uppercase fs-16">
+              <h2 className="px-[54px] uppercase fw-600 fs-16">
                 {titleHeader}
               </h2>
             )}
@@ -117,7 +117,7 @@ const Modal = ({
             )}
             {children}
           </div>
-          {footer && <div className="z-base center col-full">{footer}</div>}
+          {footer && <div className="z-base col-full center">{footer}</div>}
         </div>
       </div>
     </Portal>

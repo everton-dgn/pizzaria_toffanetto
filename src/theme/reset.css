@@ -26,7 +26,7 @@
   }
 
   body {
-    @apply isolate min-h-screen bg-soft-white-blue pb-[50px] text-dark jc-start col-full;
+    @apply isolate min-h-screen bg-soft-white-blue pb-[50px] text-dark col-full jc-start;
 
     @screen sm {
       @apply pb-0;

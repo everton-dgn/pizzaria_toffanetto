@@ -23,9 +23,9 @@ export const HeaderProduct = ({
         />
       </div>
     )}
-    <section className="px-16 py-8 col g-16 sm:px-24 sm:py-12">
+    <section className="px-16 py-8 g-16 col sm:px-24 sm:py-12">
       <h2 className="underlined-title">{product}</h2>
-      <p className="fw-500 pb-12 text-grey-dark fs-16">{description}</p>
+      <p className="pb-12 text-grey-dark fw-500 fs-16">{description}</p>
     </section>
   </>
 )

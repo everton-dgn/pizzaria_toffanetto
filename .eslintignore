@@ -15,3 +15,4 @@ playwright-report
 tailwind.config.ts
 postcss.config.js
 prettier.config.js
+node_modules

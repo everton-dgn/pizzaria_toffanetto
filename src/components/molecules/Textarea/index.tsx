@@ -18,15 +18,15 @@ export const Textarea = ({
   const errorMessage = `Limite de ${maxLength} caracteres excedido`
 
   return (
-    <div className="col-full g-4">
+    <div className="g-4 col-full">
       {label && (
-        <label className="fw-600 text-grey-dark fs-12" htmlFor={id}>
+        <label className="text-grey-dark fw-600 fs-12" htmlFor={id}>
           {label}
         </label>
       )}
       <textarea
         className={clsx(
-          'fw-600 placeholder:fw-500 resize-none rounded-8 border border-solid px-16 py-8 text-grey-dark row-full fs-16 placeholder:text-grey-light-500 hover:border hover:border-solid focus:border focus:border-solid focus:border-grey-light-500 focus:outline-[1.5px] focus:outline-offset-[-2px]',
+          'row-full resize-none rounded-8 border border-solid px-16 py-8 text-grey-dark fw-600 fs-16 placeholder:text-grey-light-500 placeholder:fw-500 hover:border hover:border-solid focus:border focus:border-solid focus:border-grey-light-500 focus:outline-[1.5px] focus:outline-offset-[-2px]',
           isErrored
             ? 'border-error outline-error focus:outline-error'
             : 'border-grey-light-500 hover:border-grey-dark focus:outline-secondary-500'
@@ -39,14 +39,14 @@ export const Textarea = ({
         {...props}
       />
       {!!maxLength && (
-        <div className="flex w-full jc-between g-4">
+        <div className="flex w-full g-4 jc-between">
           {isErrored && (
             <InfoMessage type="error" message={errorMessage} size="small" />
           )}
           {!!maxLength && (
             <small
               className={clsx(
-                'fw-600 ml-auto whitespace-nowrap fs-12',
+                'ml-auto whitespace-nowrap fw-600 fs-12',
                 isErrored ? 'text-error' : 'text-grey-500'
               )}
             >

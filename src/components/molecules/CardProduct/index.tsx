@@ -21,7 +21,7 @@ export const CardProduct = ({
   })
 
   return (
-    <div className="rounded-20 bg-light-blue-hint p-20 shadow-card col g-16">
+    <div className="rounded-20 bg-light-blue-hint p-20 shadow-card g-16 col">
       <div className="relative aspect-10/7 max-h-[216px] w-full overflow-hidden rounded-12">
         <Image
           className="object-cover"
@@ -31,11 +31,11 @@ export const CardProduct = ({
           fill
         />
       </div>
-      <div className="flex-1 flex-nowrap jc-between col-full gx-4 gy-8">
-        <h3 className="fw-700 line-clamp-2 uppercase text-primary-500 fs-16">
+      <div className="flex-1 flex-nowrap gx-4 gy-8 col-full jc-between">
+        <h3 className="line-clamp-2 uppercase text-primary-500 fw-700 fs-16">
           {product}
         </h3>
-        <div className="flex-wrap jc-between ai-end row">
+        <div className="row flex-wrap ai-end jc-between">
           <p className="fs-12 lg:fs-14">
             {!hasFixedPrice && 'A partir de '}
             <b className="fw-600 fs-14 lg:fs-16">{formattedCurrency}</b>

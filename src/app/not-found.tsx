@@ -10,7 +10,7 @@ const NotFound = () => {
     <>
       <h1>Erro 404</h1>
       <div className="px-20 container-col">
-        <div className="jc-center row">
+        <div className="row jc-center">
           <Image
             src="/img/not-found.svg"
             alt="Erro 404"

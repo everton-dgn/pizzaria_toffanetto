@@ -24,7 +24,7 @@ const Content = ({ imageUrl, name }: AvatarProps) =>
       className="size-full object-cover"
     />
   ) : (
-    <p className="fw-700 text-dark fs-14">
+    <p className="text-dark fw-700 fs-14">
       {getFirstAndLastInitialsUpperCase(name)}
     </p>
   )

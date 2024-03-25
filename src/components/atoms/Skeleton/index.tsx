@@ -14,7 +14,7 @@ export const Skeleton = ({ variant, count = 1, className }: SkeletonProps) => (
       <div
         key={i}
         className={clsx(
-          'skeleton size-full',
+          'size-full animate-skeleton',
           variant && variants[variant],
           className
         )}

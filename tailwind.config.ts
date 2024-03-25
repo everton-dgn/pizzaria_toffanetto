@@ -14,7 +14,6 @@ import {
   keyframes
 } from './src/theme/variables'
 import { utilities } from './src/theme/utilities'
-import { components } from './src/theme/components'
 
 const config: Config = {
   content: [
@@ -45,7 +44,7 @@ const config: Config = {
       }
     }
   },
-  plugins: [...components, ...utilities, ...Object.values(customUtilities)]
+  plugins: [...utilities, ...Object.values(customUtilities)]
 }
 
 export default config
