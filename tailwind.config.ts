@@ -1,19 +1,15 @@
 import defaultTheme from 'tailwindcss/defaultTheme'
 import type { Config } from 'tailwindcss'
-import * as customUtilities from 'eleganceui-tailwind-utilities'
+import eleganceUIUtilities from 'eleganceui-tailwind-utilities'
 
 import {
-  colors,
-  zIndex,
-  spacings,
-  fontWeights,
-  fontSizes,
   boxShadows,
+  colors,
+  keyframes,
+  zIndex,
+  fontWeights,
   borderRadius,
-  screens,
-  keyframes
 } from './src/theme/variables'
-import { utilities } from './src/theme/utilities'
 
 const config: Config = {
   content: [
@@ -23,15 +19,9 @@ const config: Config = {
   theme: {
     extend: {
       colors,
-      screens,
       zIndex,
+      fontWeights,
       borderRadius,
-      fontWeight: fontWeights,
-      fontSize: fontSizes,
-      width: { ...defaultTheme.width, ...spacings },
-      height: { ...defaultTheme.height, ...spacings },
-      spacing: { ...defaultTheme.spacing, ...spacings },
-      borderWidth: { ...defaultTheme.borderWidth, ...spacings },
       boxShadow: { ...defaultTheme.boxShadow, ...boxShadows },
       keyframes: { ...defaultTheme.keyframes, ...keyframes },
       fontFamily: {
@@ -41,10 +31,14 @@ const config: Config = {
         ...defaultTheme.aspectRatio,
         '600/317': '600/317',
         '10/7': '10/7'
+      },
+      screens: {
+        ...defaultTheme.screens,
+        xs: '440px'
       }
     }
   },
-  plugins: [...utilities, ...Object.values(customUtilities)]
+  plugins: [...eleganceUIUtilities]
 }
 
 export default config

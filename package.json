@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "next dev",
     "start": "next start",
-    "build": "next build",
+    "build": "next build --no-lint",
     "lint": "eslint --cache src --ext ts,tsx --max-warnings=0",
     "lint:fix": "eslint --cache --fix src --ext ts,tsx",
     "next:lint": "next lint",
@@ -48,7 +48,7 @@
   "devDependencies": {
     "dotenv": "^16.3.1",
     "@commitlint/cli": "^18.4.4",
-    "eleganceui-tailwind-utilities": "^2.1.0",
+    "eleganceui-tailwind-utilities": "^3.0.0",
     "@commitlint/config-conventional": "^18.4.4",
     "@playwright/test": "^1.41.0",
     "@testing-library/dom": "^9.3.4",

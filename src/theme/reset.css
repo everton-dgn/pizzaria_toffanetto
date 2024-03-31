@@ -1,7 +1,6 @@
 @layer base {
   * {
     outline: none;
-    line-height: calc(1em + 0.5rem);
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important;
     @apply m-0 box-border list-none p-0 font-sans no-underline antialiased;
@@ -21,12 +20,8 @@
     }
   }
 
-  html {
-    @apply text-[62.5%];
-  }
-
   body {
-    @apply isolate min-h-screen bg-soft-white-blue pb-[50px] text-dark col-full jc-start;
+    @apply isolate min-h-screen bg-soft-white-blue pb-12 col-full jc-start tx-dark;
 
     @screen sm {
       @apply pb-0;
@@ -45,7 +40,7 @@
 
   b,
   strong {
-    @apply font-700;
+    @apply font-bold;
   }
 
   optgroup,
@@ -54,7 +49,7 @@
   select,
   textarea,
   button {
-    @apply m-0 font-sans text-16 font-500;
+    @apply m-0 font-sans font-medium fs-base;
   }
 
   button {
@@ -68,11 +63,11 @@
 
   :focus,
   :focus-visible {
-    @apply outline outline-4 outline-offset-1 outline-focus;
+    @apply otl-4-focus otl-o-1;
   }
 
   :focus:not(:focus-visible) {
-    @apply outline-0;
+    @apply otl-0;
   }
 
   mark {
@@ -81,7 +76,7 @@
       clip: rect(1px, 1px, 1px, 1px);
       clip-path: inset(100%);
       content: ' [start of highlighted text] ';
-      @apply absolute h-1 w-1 overflow-hidden whitespace-nowrap;
+      @apply absolute h-px w-px ov-hidden whitespace-nowrap;
     }
 
     &::after {
@@ -91,11 +86,11 @@
 
   ::-webkit-scrollbar,
   scrollbar-width {
-    @apply w-12 bg-soft-white-blue;
+    @apply w-3 bg-soft-white-blue;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply rounded-20 border border-solid border-soft-white-blue bg-grey-light-500;
+    @apply br-5 bw-soft-white-blue bg-grey-light-500;
   }
 
   :root {
