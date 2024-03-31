@@ -48,7 +48,7 @@
   "devDependencies": {
     "dotenv": "^16.3.1",
     "@commitlint/cli": "^18.4.4",
-    "eleganceui-tailwind-utilities": "^3.0.0",
+    "eleganceui-tailwind-utilities": "^3.1.1",
     "@commitlint/config-conventional": "^18.4.4",
     "@playwright/test": "^1.41.0",
     "@testing-library/dom": "^9.3.4",

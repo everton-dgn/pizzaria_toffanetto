@@ -3687,10 +3687,10 @@ electron-to-chromium@^1.4.668:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.673.tgz#1f077d9a095761804aec7ec6346c3f4b69b56534"
   integrity sha512-zjqzx4N7xGdl5468G+vcgzDhaHkaYgVcf9MqgexcTqsl2UHSCmOj/Bi3HAprg4BZCpC7HyD8a6nZl6QAZf72gw==
 
-eleganceui-tailwind-utilities@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/eleganceui-tailwind-utilities/-/eleganceui-tailwind-utilities-3.0.0.tgz#0abea7ebc2c06bd1ab0d9a600fe945528bddaee2"
-  integrity sha512-/M7jpzj5WB+rjK7IIpTkEDtE4gxwQgAUuFJNJ+roJJtt1HUvIM6FLVdHipDGZSulNjmEfY/F7RcV2Ne5+SQc1w==
+eleganceui-tailwind-utilities@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/eleganceui-tailwind-utilities/-/eleganceui-tailwind-utilities-3.1.1.tgz#e675193ad493ce2d6003054b45faaf708dbb3e55"
+  integrity sha512-rrSnMEDgP1ebXxmsCLX0Ibpm0RlaM5gfq8/QHfuqatRcGSJSQl7hOS4+I8VI6TixPiiFfW0jnC6Wxh9w74kFdA==
 
 emoji-regex@^10.3.0:
   version "10.3.0"

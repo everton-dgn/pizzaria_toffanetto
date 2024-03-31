@@ -90,7 +90,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply br-5 bw-soft-white-blue bg-grey-light-500;
+    @apply br-[20px] bw bc-soft-white-blue bg-grey-light-500;
   }
 
   :root {

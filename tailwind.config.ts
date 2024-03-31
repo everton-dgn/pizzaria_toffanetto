@@ -6,9 +6,7 @@ import {
   boxShadows,
   colors,
   keyframes,
-  zIndex,
-  fontWeights,
-  borderRadius,
+  zIndex
 } from './src/theme/variables'
 
 const config: Config = {
@@ -19,9 +17,7 @@ const config: Config = {
   theme: {
     extend: {
       colors,
-      zIndex,
-      fontWeights,
-      borderRadius,
+      zIndex: { ...defaultTheme.zIndex, ...zIndex },
       boxShadow: { ...defaultTheme.boxShadow, ...boxShadows },
       keyframes: { ...defaultTheme.keyframes, ...keyframes },
       fontFamily: {
