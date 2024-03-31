@@ -63,14 +63,14 @@ export const FlavorQuantitySelectorGroup = ({
         })
         return (
           <Fragment key={option.id}>
-            <div className="row-full flex-nowrap g-16 ai-start jc-between">
+            <div className="ai-start f-nowrap g-4 jc-between row-full">
               <div className="col-full">
-                <h4 className="uppercase text-primary-500 fw-700 fs-14">
+                <h4 className="fs-sm-boldprimary-500 uppercase">
                   {option.name}
                 </h4>
-                <p className="fs-14">{option.description}</p>
+                <p className="fs-sm">{option.description}</p>
               </div>
-              <div className="g-8 ai-end col jc-end">
+              <div className="ai-end col g-2 jc-end">
                 <QuantityCounterButton
                   quantity={calcQuantityById(option.id)}
                   onDecrease={() => onDecrease(option.id)}
@@ -79,7 +79,7 @@ export const FlavorQuantitySelectorGroup = ({
                   }
                   isContractible
                 />
-                <p className="whitespace-nowrap pr-3 text-dark fw-600 fs-14">
+                <p className="whitespace-nowrap pr-[3px] fs-sm-semibold-dark">
                   {formattedPrice}
                 </p>
               </div>

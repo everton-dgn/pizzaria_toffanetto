@@ -2,8 +2,8 @@ import { Skeleton } from 'components/atoms'
 
 const SkeletonSection = () => (
   <>
-    <Skeleton className="h-[70px]" />
-    <div className="p-24 col-full g-16">
+    <Skeleton className="h-16" />
+    <div className="p-6 col-full g-4">
       <Skeleton variant="text" count={4} />
     </div>
   </>
@@ -11,12 +11,12 @@ const SkeletonSection = () => (
 
 export const SkeletonContentCustomerOrderModal = () => (
   <div className="col-full">
-    <Skeleton className="mb-12 aspect-600/317 h-auto" />
-    <div className="px-24 pb-24 col-full g-8">
-      <Skeleton variant="text" className="my-12 h-24 w-[174px]" />
-      <div className="h-100 col-full g-8">
+    <Skeleton className="mb-3 aspect-600/317 h-auto" />
+    <div className="px-6 pb-6 col-full g-2">
+      <Skeleton variant="text" className="my-3 h-6 w-44" />
+      <div className="h-24 col-full g-2">
         <Skeleton variant="text" count={2} />
-        <Skeleton variant="text" className="w-[100px]" />
+        <Skeleton variant="text" className="w-24" />
       </div>
     </div>
     <SkeletonSection />

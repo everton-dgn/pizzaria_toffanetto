@@ -3,7 +3,7 @@ import { QuantityCounterButton } from 'components/molecules'
 
 const FooterCustomerOrderModal = () => {
   return (
-    <div className="flex-wrap rounded-b-16 border-t border-neutral-light-lavender px-16 py-12 shadow-sm jc-between ai-center row-full g-16">
+    <div className="px-1 py-[3px] shadow-sm ai-center bc-neutral-light-lavender bw-b-4 bw-t f-wrap g-1 jc-between row-full">
       <QuantityCounterButton
         quantity={0}
         onDecrease={() => ({})}

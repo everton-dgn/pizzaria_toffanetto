@@ -37,8 +37,8 @@ const GlobalError = ({ error, reset }: ErrorProps) => {
         {/* <p>{error.message}</p> */}
 
         <h1>Erro 404</h1>
-        <div className="px-20 container-col">
-          <div className="row jc-center">
+        <div className="px-5 container-col">
+          <div className="jc-center row">
             <Image
               src="/img/not-found.svg"
               alt="Erro 404"
@@ -48,7 +48,7 @@ const GlobalError = ({ error, reset }: ErrorProps) => {
             />
           </div>
 
-          <p className="mx-auto mb-20 w-full max-w-[800px] pb-12 text-center fs-20">
+          <p className="mx-auto mb-5 w-full max-w-screen-md pb-3 fs-xl tx-center">
             Página não encontrada! Por favor, verifique a url acessada.
             <br />
             <br />
@@ -56,7 +56,7 @@ const GlobalError = ({ error, reset }: ErrorProps) => {
             inicial:
           </p>
           <button
-            className="bg-secondary-500 uppercase fs-16"
+            className="bg-secondary-500 uppercase fs-base"
             onClick={() => push('/')}
           >
             Página Inicial

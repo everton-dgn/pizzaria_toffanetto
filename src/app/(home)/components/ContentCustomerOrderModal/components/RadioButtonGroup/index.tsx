@@ -21,7 +21,7 @@ export const RadioButtonGroup = ({
       })
       return (
         <Fragment key={option.id}>
-          <div className="row flex-nowrap g-16 ai-start jc-between">
+          <div className="ai-start f-nowrap g-4 jc-between row">
             <LabeledRadioButton
               label={option.name}
               name={optionNameId}
@@ -29,7 +29,7 @@ export const RadioButtonGroup = ({
               onChange={() => setSelectedRadioButtonGroupValue(option)}
               value={option.id}
             />
-            <p className="whitespace-nowrap text-dark fw-600 fs-14">
+            <p className="whitespace-nowrap fs-sm-semibold-dark">
               {formattedPrice}
             </p>
           </div>
