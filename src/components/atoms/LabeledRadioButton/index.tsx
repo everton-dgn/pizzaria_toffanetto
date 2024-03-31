@@ -13,7 +13,7 @@ export const LabeledRadioButton = ({
 }: LabeledRadioButtonProps) => (
   <label
     className={clsx(
-      'row max-h-fit max-w-fit g-8 fs-14 ai-start jc-start',
+      'ai-start fs-sm g-2 jc-start row max-size-fit',
       disabled ? 'cursor-not-allowed opacity-[0.6]' : 'cursor-pointer'
     )}
   >
@@ -22,10 +22,7 @@ export const LabeledRadioButton = ({
       name={name}
       className={clsx(
         S.input,
-        'bg-grey-light-blue-hint size-16 min-h-16 min-w-16 appearance-none rounded-circle border-3 border-white transition-all duration-100 ease-linear',
-        disabled
-          ? 'bg-grey-light-blue-hint cursor-not-allowed border-white'
-          : 'cursor-pointer'
+        'bg-grey-light-blue-hint bw-3-white disabled:bg-grey-light-blue-hint size-4 cursor-pointer appearance-none transition-all duration-100 ease-linear br-circle min-size-4 disabled:cursor-not-allowed disabled:bc-white'
       )}
       disabled={disabled}
       onChange={e => onChange(e.target.value)}

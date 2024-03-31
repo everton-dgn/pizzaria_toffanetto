@@ -43,16 +43,14 @@ const Modal = ({
       <div
         className={clsx(
           'fixed z-overlay flex size-full backdrop-blur-[2px] t-0 l-0',
-          fullscreenMobile ? 'p-0' : 'p-16'
+          fullscreenMobile ? 'p-0' : 'p-4'
         )}
         ref={modalRef}
       >
         <div
           className={clsx(
             'absolute flex size-full t-0 l-0',
-            isVisible
-              ? 'visible bg-dark opacity-[0.6]'
-              : 'hidden bg-transparent opacity-0'
+            isVisible ? 'bg-dark/60 visible' : 'bg-transparent/0 hidden'
           )}
           style={{
             transition: `${TIME_TO_REMOVE_COMPONENT}ms cubic-bezier(0.4, 0, 0.2, 1)`
@@ -61,13 +59,13 @@ const Modal = ({
         />
         <div
           className={clsx(
-            'z-modal m-auto max-h-full bg-white shadow-xxl col-full sm:h-fit sm:max-h-fit sm:rounded-16',
+            'z-modal m-auto max-h-full bg-white shadow-xxl col-full sm:h-fit sm:max-h-fit sm:br-2xl',
             isVisible
               ? 'visible translate-y-0 sm:opacity-[1]'
               : 'hidden translate-y-full sm:opacity-[0.6]',
             fullscreenMobile
-              ? 'h-max min-h-full rounded-0 sm:h-fit sm:min-h-fit'
-              : 'h-fit min-h-fit rounded-16'
+              ? 'h-max min-h-full br-0 sm:h-fit sm:min-h-fit'
+              : 'h-fit min-h-fit br-2xl'
           )}
           style={{
             maxWidth: `${maxWidth}px`,
@@ -77,14 +75,14 @@ const Modal = ({
           aria-labelledby={title}
           aria-modal={true}
         >
-          <div className="row relative z-header h-40 min-h-40 w-full flex-wrap shadow-sm center">
+          <div className="relative z-header h-10 min-h-10 w-full shadow-sm center f-wrap row">
             {!isCloseButton && (
               <IconButton
                 ref={btnCloseModalRef}
                 onClick={handleHiddenComponent}
                 ariaLabel="Voltar"
                 icon={<IconBack color="#374151" size={24} />}
-                className="absolute t-0 l-12"
+                className="absolute t-0 l-3"
                 isTransparent
                 isDisableTransform
                 isDisableBoxShadow
@@ -92,7 +90,7 @@ const Modal = ({
               />
             )}
             {titleHeader && (
-              <h2 className="px-[54px] uppercase fw-600 fs-16">
+              <h2 className="px-14 uppercase fs-base-semibold">
                 {titleHeader}
               </h2>
             )}
@@ -102,7 +100,7 @@ const Modal = ({
                 onClick={handleHiddenComponent}
                 ariaLabel="Fechar Modal"
                 icon={<IconClose color="#374151" size={24} />}
-                className="absolute t-0 r-12"
+                className="absolute t-0 r-3"
                 isTransparent
                 isDisableTransform
                 isDisableBoxShadow
@@ -110,10 +108,10 @@ const Modal = ({
               />
             )}
           </div>
-          <div className="h-full overflow-y-auto col-full sm:max-h-[80vh]">
+          <div className="h-full col-full ovy-auto sm:max-h-[80vh]">
             {title}
             {description && (
-              <p className="mt-8 fs-16 sm:mt-16">{description}</p>
+              <p className="mt-2 fs-base sm:mt-4">{description}</p>
             )}
             {children}
           </div>

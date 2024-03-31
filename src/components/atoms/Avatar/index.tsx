@@ -21,17 +21,15 @@ const Content = ({ imageUrl, name }: AvatarProps) =>
       alt={`Foto de ${name}`}
       title={`Foto de ${name}`}
       fetchPriority="high"
-      className="size-full object-cover"
+      className="size-full obj-cover"
     />
   ) : (
-    <p className="text-dark fw-700 fs-14">
-      {getFirstAndLastInitialsUpperCase(name)}
-    </p>
+    <p className="fs-sm-bold-dark">{getFirstAndLastInitialsUpperCase(name)}</p>
   )
 
 export const Avatar = ({ name, imageUrl }: AvatarProps) => (
   <div
-    className="relative flex size-32 overflow-hidden rounded-circle border-[1.5px] border-secondary-500 bg-soft-white-blue center"
+    className="bw-[1.5px]-secondary-500 relative flex size-8 bg-soft-white-blue br-circle center ov-hidden"
     role="figure"
   >
     <Content name={name} imageUrl={imageUrl} />

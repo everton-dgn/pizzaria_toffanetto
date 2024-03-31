@@ -18,7 +18,7 @@ export const CartButton = ({ label }: CartButtonProps) => {
 
   return (
     <button
-      className="flex max-w-fit rounded-60 bg-secondary-500 px-12 py-6 transition-all duration-150 ease-linear g-8 fw-600 fs-14 center hover:bg-green"
+      className="flex max-w-fit bg-secondary-500 px-3 py-1.5 transition-all duration-150 ease-linear br-full center g-2 fs-sm-semibold hover:bg-green"
       aria-label="Abrir carrinho de compras"
     >
       <img

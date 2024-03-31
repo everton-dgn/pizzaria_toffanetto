@@ -60,21 +60,21 @@ export const PopupInstallPwa = () => {
   return (
     <>
       {isShowPopup && (
-        <div className="invisible fixed left-auto z-elevation mx-16 h-fit max-w-[360px] animate-[visibility_0.1s_4s_linear_forwards,_move-up_0.4s_4s_ease-in_forwards] rounded-16 bg-white px-20 pb-28 pt-20 opacity-0 shadow-[0_0_24px_#00000054] g-8 r-0 t-60 container-col">
-          <div className="row relative flex-nowrap center">
+        <div className="t-15 invisible fixed z-elevation mx-4 h-fit max-w-xs animate-[visibility_0.1s_4s_linear_forwards,_move-up_0.4s_4s_ease-in_forwards] bg-white px-5 pb-7 pt-5 opacity-0 shadow-[0_0_24px_#00000054] br-2xl container-col r-0 l-auto g-2">
+          <div className="relative center f-nowrap row">
             <button
               aria-label="Fechar alerta"
               onClick={closePopup}
-              className="absolute -right-20 -top-20 flex size-[38px] min-h-[38px] min-w-[38px] cursor-pointer rounded-b-4 rounded-tl-4 rounded-tr-16 border-0 bg-transparent center"
+              className="absolute flex cursor-pointer bg-transparent br-b br-tl br-tr-4 bw-0 -t-5 -r-5 center min-size-10"
             >
-              <IconClose className="size-20 min-h-20 min-w-20 fill-grey-dark" />
+              <IconClose className="fill-grey-dark min-size-5" />
             </button>
             <img
               src="/icons/icon-72x72.png"
               width="50"
               height="50"
               alt="Pizzaria Toffanetto"
-              className="mr-10 max-w-[72%] object-contain"
+              className="mr-2.5 max-w-[72%] obj-contain"
             />
             <img
               src="/img/logos/logo-popup-pwa.png"
@@ -83,7 +83,7 @@ export const PopupInstallPwa = () => {
               height="40"
             />
           </div>
-          <p className="mx-0 my-10 text-center fw-600 fs-18">
+          <p className="mx-0 my-2.5 fs-lg-semibold tx-center">
             Adicione nosso App à tela inicial!
           </p>
           <Button

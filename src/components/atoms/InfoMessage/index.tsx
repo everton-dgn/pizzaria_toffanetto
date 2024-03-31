@@ -11,15 +11,15 @@ import {
 import type { InfoMessageProps, TypeMessage } from './types'
 
 const sizes = {
-  small: 'g-4 [&>svg]:size-16 [&>span]:fs-12',
-  medium: 'g-8 [&>svg]:size-20 [&>span]:fs-14'
+  small: 'g-1 [&>svg]:size-4 [&>span]:fs-xs',
+  medium: 'g-2 [&>svg]:size-5 [&>span]:fs-sm'
 }
 
 const types = {
-  error: 'text-error [&>path]:fill-error',
-  info: 'text-info [&>path]:fill-info',
-  success: 'fill-success [&>path]:text-success',
-  warning: 'fill-warning [&>path]:text-warning'
+  error: 'tx-error [&>path]:fill-error',
+  info: 'tx-info [&>path]:fill-info',
+  success: 'fill-success [&>path]:tx-success',
+  warning: 'fill-warning [&>path]:tx-warning'
 }
 
 const icons: Record<TypeMessage, ReactElement> = {
@@ -36,13 +36,13 @@ export const InfoMessage = ({
 }: InfoMessageProps) => (
   <div
     className={clsx(
-      'flex bg-none g-4 ai-center as-start',
+      'flex bg-none ai-center as-start g-1',
       types[type],
       sizes[size]
     )}
     role="alert"
   >
     {icons[type]}
-    <span className="message fw-600">{message}</span>
+    <span className="message fw-semibold">{message}</span>
   </div>
 )

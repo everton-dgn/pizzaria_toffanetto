@@ -4,7 +4,7 @@ export const Logo = () => (
   <Link
     href="/"
     title="Ir para a Página Inicial"
-    className="h-36 w-[77px] sm:h-[30px] sm:w-[203px]"
+    className="h-18 w-[77px] sm:h-[30px] sm:w-[203px]"
   >
     <picture>
       <source

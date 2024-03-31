@@ -18,18 +18,18 @@ export const Textarea = ({
   const errorMessage = `Limite de ${maxLength} caracteres excedido`
 
   return (
-    <div className="g-4 col-full">
+    <div className="col-full g-1">
       {label && (
-        <label className="text-grey-dark fw-600 fs-12" htmlFor={id}>
+        <label className="fs-xs-semibold-grey-dark" htmlFor={id}>
           {label}
         </label>
       )}
       <textarea
         className={clsx(
-          'row-full resize-none rounded-8 border border-solid px-16 py-8 text-grey-dark fw-600 fs-16 placeholder:text-grey-light-500 placeholder:fw-500 hover:border hover:border-solid focus:border focus:border-solid focus:border-grey-light-500 focus:outline-[1.5px] focus:outline-offset-[-2px]',
+          'bw-solid hover:bw-solid focus:bw-solid-grey-light-500 resize-none px-4 py-2 br-lg row-full fs-base-semibold-grey-dark placeholder:fw-medium placeholder:tx-grey-light-500 focus:outline-[1.5px] focus:outline-offset-[-2px]',
           isErrored
-            ? 'border-error outline-error focus:outline-error'
-            : 'border-grey-light-500 hover:border-grey-dark focus:outline-secondary-500'
+            ? 'outline-error bc-error focus:otl-error'
+            : 'bc-grey-light-500 hover:bc-grey-dark focus:otl-secondary-500'
         )}
         rows={rows}
         id={id}
@@ -39,15 +39,15 @@ export const Textarea = ({
         {...props}
       />
       {!!maxLength && (
-        <div className="flex w-full g-4 jc-between">
+        <div className="flex w-full g-1 jc-between">
           {isErrored && (
             <InfoMessage type="error" message={errorMessage} size="small" />
           )}
           {!!maxLength && (
             <small
               className={clsx(
-                'ml-auto whitespace-nowrap fw-600 fs-12',
-                isErrored ? 'text-error' : 'text-grey-500'
+                'ml-auto whitespace-nowrap fs-xs-semibold',
+                isErrored ? 'tx-error' : 'tx-grey-500'
               )}
             >
               {value?.length}/{maxLength}

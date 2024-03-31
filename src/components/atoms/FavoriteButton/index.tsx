@@ -22,7 +22,7 @@ export const FavoriteButton = ({ className }: FavoriteButtonProps) => {
         viewBox="467 392 58 57"
         xmlns="http://www.w3.org/2000/svg"
         className={clsx(
-          'size-28 cursor-pointer overflow-visible',
+          'size-28 cursor-pointer ov-visible',
           isChecked && S.checked
         )}
       >

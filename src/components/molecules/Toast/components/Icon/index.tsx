@@ -18,7 +18,7 @@ const icon = {
 }
 
 export const Icon = memo(({ status }: IconProps) => {
-  const iconClasses = clsx('size-20 min-h-20 min-w-20', icon[status])
+  const iconClasses = clsx('min-size-5', icon[status])
 
   const iconMap = {
     success: <IconSuccess className={iconClasses} data-testid="icon-success" />,

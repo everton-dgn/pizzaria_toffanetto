@@ -31,7 +31,7 @@ const ViewButton = ({ id, product, category }: ViewButtonProps) => {
       ariaLabel="Visualizar item"
       size="small"
       onClick={handleRedirect}
-      icon={<IconPlus className="size-12 fill-white" />}
+      icon={<IconPlus className="size-3 fill-white" />}
       isCircle
     />
   )

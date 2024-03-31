@@ -3,7 +3,7 @@ import { clsx } from 'clsx'
 import type { SkeletonProps, VariantsType } from './types'
 
 const variants: Record<VariantsType, string> = {
-  text: 'rounded-4 h-16',
+  text: 'br h-4',
   circle: 'rounded-circle aspect-square',
   square: 'aspect-square'
 }

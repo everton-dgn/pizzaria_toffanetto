@@ -29,7 +29,7 @@ const Toast = () => {
     <div
       aria-live="polite"
       aria-atomic="true"
-      className="fixed z-always-on-top ml-16 h-fit w-[100%-32px] max-w-full r-16 t-72 col xs:max-w-[320px]"
+      className="t-18 fixed z-always-on-top ml-4 h-fit w-[100%-32px] max-w-full col r-4 xs:max-w-80"
     >
       {stateToast.toastList.map(
         ({ status, description, id, animationClass }) => (
@@ -39,28 +39,26 @@ const Toast = () => {
             aria-live="assertive"
             aria-atomic="true"
             className={clsx(
-              'row-full relative mb-12 h-fit overflow-hidden rounded-8 bg-white px-8 pb-12 pt-8 shadow-lg',
+              'relative mb-3 h-fit bg-white px-2 pb-3 pt-2 shadow-lg br-lg ov-hidden row-full',
               animation[animationClass]
             )}
           >
-            <div className="row grow p-6 g-12">
+            <div className="grow p-1.5 g-3 row">
               <Icon status={status} />
               <div className="grow col">
-                <p className="pr-20 text-grey-dark fw-600 fs-14">
-                  {description}
-                </p>
+                <p className="pr-5 fs-sm-semibold-grey-dark">{description}</p>
               </div>
             </div>
             <button
               aria-label="Fechar alerta"
               onClick={() => handleClickRemoveToast(id)}
-              className="absolute flex size-[38px] min-h-[38px] min-w-[38px] cursor-pointer rounded-4 border-0 bg-transparent t-0 r-0 center"
+              className="absolute flex cursor-pointer bg-transparent br bw-0 t-0 r-0 center min-size-10"
             >
-              <IconClose className="size-20 min-h-20 min-w-20 fill-grey-dark" />
+              <IconClose className="fill-grey-dark min-size-5" />
             </button>
             <span
               className={clsx(
-                'absolute block h-4 w-full animate-[progress_7s_linear_forwards] b-0 l-0',
+                'absolute block h-1 w-full animate-[progress_7s_linear_forwards] b-0 l-0',
                 progressStatusBgColor[status]
               )}
             />
