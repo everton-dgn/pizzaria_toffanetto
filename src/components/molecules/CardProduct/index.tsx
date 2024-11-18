@@ -9,7 +9,7 @@ import type { CardProductProps } from './types'
 
 export const CardProduct = ({
   id,
-  img,
+  img = PRODUCT_WITHOUT_IMAGE,
   product,
   price,
   hasFixedPrice,
@@ -23,13 +23,7 @@ export const CardProduct = ({
   return (
     <div className="bg-light-blue-hint p-5 shadow-card br-[5px] col g-4">
       <div className="rounded-3 relative aspect-10/7 max-h-56 w-full ov-hidden">
-        <Image
-          className="obj-cover"
-          src={img || PRODUCT_WITHOUT_IMAGE}
-          alt="title"
-          sizes="132px"
-          fill
-        />
+        <Image className="obj-cover" src={img} alt="title" sizes="132px" fill />
       </div>
       <div className="col-full f-1 f-nowrap gx-1 gy-2 jc-between">
         <h3 className="line-clamp-2 uppercase fs-base-bold-primary-500">
